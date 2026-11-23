@@ -306,3 +306,7 @@ ztf h=15 alpha=0.05: MaxClassCP + C1                    marg 0.997 worst 0.973 c
       per class SN_Ia:1.00 SN_CC:1.00 SLSN:0.98 AGN:0.99 TDE:0.98 CV:0.97
 ztf h=15 alpha=0.05: TwoStepCP + C1                     marg 0.993 worst 0.967 ccg 0.031 width 3.566 IS 3.638 cls-IS 4.442 miscls 0.988 (0.9s)
       per class SN_Ia:0.99 SN_CC:0.99 SLSN:0.97 AGN:0.98 TDE:0.97 CV:0.97
+ztf h=15 alpha=0.32: GAMUT-Q                            marg 0.735 worst 0.692 ccg 0.044 width 1.081 IS 1.485 cls-IS 2.097 miscls 0.638 (50.5s)
+      per class SN_Ia:0.73 SN_CC:0.76 SLSN:0.71 AGN:0.75 TDE:0.71 CV:0.69
+ztf h=15 alpha=0.05: GAMUT-Q                            marg 0.966 worst 0.955 ccg 0.014 width 2.991 IS 3.251 cls-IS 4.139 miscls 0.960 (48.5s)
+      per class SN_Ia:0.96 SN_CC:0.98 SLSN:0.95 AGN:0.97 TDE:0.96 CV:0.96

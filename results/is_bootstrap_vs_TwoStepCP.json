@@ -1,0 +1,362 @@
+{
+ "ztf|10|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.937122398289354,
+  "lo": 0.8848403300970173,
+  "hi": 0.9946294811783608,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ztf|10|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 1.0159862935998345,
+  "lo": 0.9818248747237069,
+  "hi": 1.0473449338211323,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ztf|15|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.8496028979622289,
+  "lo": 0.8059674747333369,
+  "hi": 0.8971295824975619,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ztf|15|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9888715566443298,
+  "lo": 0.953855658265335,
+  "hi": 1.0304715364716088,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ztf|20|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.8485079906475684,
+  "lo": 0.8158657248458748,
+  "hi": 0.8851728769946192,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ztf|20|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9698478799945711,
+  "lo": 0.932262292610165,
+  "hi": 1.0090108730633207,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ztf|30|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9256877523183311,
+  "lo": 0.8769533417808346,
+  "hi": 0.9759159550879676,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ztf|30|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9863332951408647,
+  "lo": 0.9501499378597374,
+  "hi": 1.0209731483152065,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ztf|5|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.994265957953143,
+  "lo": 0.9477113208312137,
+  "hi": 1.0518227362731951,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ztf|5|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 1.0134740516358554,
+  "lo": 0.9869522353553035,
+  "hi": 1.0433666167299627,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "plasticc_train|15|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 1.0684086108480686,
+  "lo": 1.033639405224664,
+  "hi": 1.1011064223201348,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_train|15|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.8455807908221121,
+  "lo": 0.8153526648029786,
+  "hi": 0.8780988203931215,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "plasticc_train|30|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.5246314224029069,
+  "lo": 0.505300748057341,
+  "hi": 0.547277619169494,
+  "gamut_valid": false,
+  "better": true,
+  "worse": false
+ },
+ "plasticc_train|30|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.8446973250387347,
+  "lo": 0.8154526590228963,
+  "hi": 0.876203275114718,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "plasticc_train|5|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9332506188861573,
+  "lo": 0.9053625216019523,
+  "hi": 0.9612420246475903,
+  "gamut_valid": false,
+  "better": true,
+  "worse": false
+ },
+ "plasticc_train|5|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9686657979296581,
+  "lo": 0.9451011175369014,
+  "hi": 0.9950660494175215,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "plasticc_ddf|15|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.6189343949454499,
+  "lo": 0.5873230109628884,
+  "hi": 0.6570257227107682,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "plasticc_ddf|15|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9036801968139586,
+  "lo": 0.8715609840446352,
+  "hi": 0.9386038839459452,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "plasticc_ddf|30|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.819757338731564,
+  "lo": 0.780651820891507,
+  "hi": 0.8570542697184129,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "plasticc_ddf|30|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9029008129846416,
+  "lo": 0.8631259758705822,
+  "hi": 0.9422864579630408,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "plasticc_ddf|5|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.7606784615731315,
+  "lo": 0.7359614949543569,
+  "hi": 0.7881381656564841,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "plasticc_ddf|5|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9485266714404345,
+  "lo": 0.921652491673853,
+  "hi": 0.9767053397630554,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_starlightcurves|20|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.979948335517115,
+  "lo": 0.9734690492483397,
+  "hi": 0.9860347251570539,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_starlightcurves|20|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9911040550475358,
+  "lo": 0.9881416772539977,
+  "hi": 0.9942059198809435,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_starlightcurves|40|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9897960785417165,
+  "lo": 0.9830496701845487,
+  "hi": 0.9974113735415886,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_starlightcurves|40|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 1.0039452273918454,
+  "lo": 1.0002958972082794,
+  "hi": 1.0071489696095781,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_starlightcurves|60|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 1.0013810212141023,
+  "lo": 0.992264454188274,
+  "hi": 1.0109492109613902,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ucr_starlightcurves|60|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9995004350283999,
+  "lo": 0.9952809615663876,
+  "hi": 1.0034996253871886,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ucr_ecg5000|20|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 1.1528846981205574,
+  "lo": 1.1181999754884222,
+  "hi": 1.1929539327939056,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_ecg5000|20|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 1.054041069843029,
+  "lo": 0.993141146191203,
+  "hi": 1.1279937270474845,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ucr_ecg5000|40|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 1.0389956274150174,
+  "lo": 0.9864596529450765,
+  "hi": 1.0977721307720842,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ucr_ecg5000|40|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 1.0492353060192208,
+  "lo": 1.0041050229123292,
+  "hi": 1.1016671419761828,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_ecg5000|60|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 1.3270272269488157,
+  "lo": 1.27213541326564,
+  "hi": 1.3864524278183932,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_ecg5000|60|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 1.0862036830202073,
+  "lo": 1.0192650951255338,
+  "hi": 1.1685171204650586,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_electricdevices|20|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.48426401686074383,
+  "lo": 0.47757420005858875,
+  "hi": 0.4908724839668483,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|20|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9791492040662203,
+  "lo": 0.9766674732183739,
+  "hi": 0.9817361314127925,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|40|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.5966737751551995,
+  "lo": 0.5897116938651894,
+  "hi": 0.6036909806807939,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|40|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9946693197542373,
+  "lo": 0.992387086343098,
+  "hi": 0.9968550815266264,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|60|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.7481827927484298,
+  "lo": 0.7429792453671258,
+  "hi": 0.7541618514074733,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|60|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.9872478015572027,
+  "lo": 0.9851290453766588,
+  "hi": 0.9894018811947762,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ }
+}

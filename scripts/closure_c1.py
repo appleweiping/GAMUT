@@ -28,6 +28,9 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--h", type=float, required=True); ap.add_argument("--threads", type=int, default=4)
     ap.add_argument("--lr", type=float, default=0.05); ap.add_argument("--cap", type=int, default=24)
     ap.add_argument("--pooled", action="store_true", help="fit the pooled forecaster (no class input) instead, as a control")
+    ap.add_argument("--oof-train", action="store_true",
+                    help="5-fold out-of-fold C1 predictions for the train objects (class-specific residual laws without "
+                         "touching val/test)")
     a = ap.parse_args()
     B = registry.load("ztf", a.h)
     meta = pd.read_parquet(ROOT / "data" / "ztf" / "meta.parquet")
@@ -50,6 +53,24 @@ def main():
               "q84": dict(params, objective="quantile", alpha=QUANTILES["q84"])}
     yfit, yes = F.dmag.to_numpy()[r_fit], F.dmag.to_numpy()[r_es]
     out = dict(rows=r_pr)
+    if a.oof_train:
+        from sklearn.model_selection import StratifiedKFold
+        rows_all, preds = [], {n: [] for n in models}
+        for k, (tr_i, te_i) in enumerate(StratifiedKFold(5, shuffle=True, random_state=7).split(tr, y[tr])):
+            f_obj, e_obj = train_test_split(tr[tr_i], test_size=.15, stratify=y[tr[tr_i]], random_state=k)
+            rf = cap_rows(np.flatnonzero(np.isin(Fobj, f_obj)), Fobj, a.cap, 100 + k)
+            re_ = cap_rows(np.flatnonzero(np.isin(Fobj, e_obj)), Fobj, a.cap, 200 + k)
+            rp = np.flatnonzero(np.isin(Fobj, tr[te_i]))
+            Xf, Xe, Xp = (long_frame(B.X, F, rr, a.h) for rr in (rf, re_, rp))
+            Hf, He = with_class(Xf, y[Fobj[rf]]), with_class(Xe, y[Fobj[re_]])
+            for name, p in models.items():
+                m = fit_lgb(p, Hf, F.dmag.to_numpy()[rf], He, F.dmag.to_numpy()[re_], a.threads)
+                preds[name].append(np.stack([m.predict(with_class(Xp, np.full(len(Xp), c)), num_threads=a.threads) for c in range(K)], 1))
+            rows_all.append(rp)
+            print(f"h={a.h:g} oof-train fold {k}: {len(rp)} rows", flush=True)
+        out = dict(rows=np.concatenate(rows_all), **{f"hcf_{n}": np.concatenate(v) for n, v in preds.items()})
+        np.savez_compressed(ROOT / "data" / "ztf" / f"closure_c1oof_h{a.h:g}.npz", **out)
+        return
     if a.pooled:
         for name, p in models.items():
             m = fit_lgb(p, Xfit, yfit, Xes, yes, a.threads)

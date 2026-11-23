@@ -107,5 +107,43 @@ def ztf_classes():
     fig.savefig(OUT / "ztf_classes.pdf"); plt.close(fig)
 
 
+def day50():
+    """In the format of the FLARE forecast paper's Fig. 2: per class, the fraction of day-50 measurements (future
+    detections with 45 <= t <= 55 d) inside the 68% and 95% bands, by forecast origin, for FLARE and GAMUT, with 95%
+    object-level bootstrap intervals (500 resamples)."""
+    import sys
+    sys.path.insert(0, str(ROOT))
+    from gamut import data
+    hs = [5.0, 10.0, 15.0, 20.0, 30.0]; rng = np.random.default_rng(50)
+    fig, axes = plt.subplots(1, 2, figsize=(6.75, 2.3), sharey=False)
+    stats = {}
+    for ax, a in zip(axes, (0.32, 0.05)):
+        for j, (meth, col, mk) in enumerate((("FLARE", ORANGE, "s"), ("GAMUT", BLUE, "o"))):
+            for i, c in enumerate(CLS):
+                xs, ys, lo, hi = [], [], [], []
+                for k, h in enumerate(hs):
+                    t = data.load("ztf", h); P = np.load(ROOT / "results" / "ztf" / f"points_h{h:g}_a{a:g}.npz")
+                    m = (t.y[t.obj] == CLS.index(c)) & (t.t >= 45) & (t.t <= 55)
+                    if m.sum() < 5:
+                        continue
+                    cov = P[f"{meth}__cov"][m].astype(float); o = t.obj[m]
+                    uo, inv = np.unique(o, return_inverse=True); s_ = np.bincount(inv, cov); n_ = np.bincount(inv)
+                    d = rng.integers(0, len(uo), (500, len(uo)))
+                    bs = s_[d].sum(1) / n_[d].sum(1)
+                    xs.append(i + (k - 2) * 0.09 + (j - 0.5) * 0.04); ys.append(cov.mean())
+                    lo.append(cov.mean() - np.percentile(bs, 2.5)); hi.append(np.percentile(bs, 97.5) - cov.mean())
+                    stats[(meth, a, c, h)] = float(cov.mean())
+                ax.errorbar(xs, ys, yerr=[lo, hi], fmt=mk, ms=2.4, lw=0.7, color=col, capsize=0,
+                            label=("FLARE (deployed)" if meth == "FLARE" else "GAMUT") if i == 0 else None)
+        ax.axhline(1 - a, color=INK2, ls="--", lw=0.7)
+        ax.set_xticks(range(len(CLS))); ax.set_xticklabels([LABEL[c] for c in CLS])
+        ax.set_title(f"nominal {int(round(100 * (1 - a)))}% band", fontsize=7, color=INK)
+        ax.set_ylim((0.2, 1.0) if a > 0.1 else (0.6, 1.0)); style(ax)
+    axes[0].set_ylabel("fraction of day-50 measurements\ninside the band")
+    axes[1].legend(loc="lower left", fontsize=6)
+    fig.tight_layout(); fig.savefig(OUT / "day50.pdf"); plt.close(fig)
+    (ROOT / "results" / "day50.json").write_text(json.dumps({"|".join(map(str, k)): v for k, v in stats.items()}, indent=1))
+
+
 if __name__ == "__main__":
-    observation(); ztf_classes()
+    observation(); ztf_classes(); day50()

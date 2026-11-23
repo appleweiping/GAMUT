@@ -2496,5 +2496,43 @@
   "misclassified_fraction": 0.030099610220874838,
   "empty_fraction": 0.0,
   "seconds": 0.3
+ },
+ "GAMUT-Q": {
+  "n_points": 221664,
+  "marginal": 0.9642070882055724,
+  "marginal_object": 0.9642070882055723,
+  "per_class": {
+   "class_1": 0.9849510910458992,
+   "class_2": 0.9501776485788114,
+   "class_3": 0.9658266065953319
+  },
+  "per_class_object": {
+   "class_1": 0.9849510910458992,
+   "class_2": 0.9501776485788113,
+   "class_3": 0.965826606595332
+  },
+  "per_class_width": {
+   "class_1": 0.6898457479047079,
+   "class_2": 1.2996806678596247,
+   "class_3": 0.7890835362259059
+  },
+  "per_class_interval_score": {
+   "class_1": 0.7458728416932664,
+   "class_2": 1.975063600418079,
+   "class_3": 0.8897149803413229
+  },
+  "worst_class": 0.9501776485788114,
+  "ccg": 0.016985115406680868,
+  "under": 0.0,
+  "width": 0.9174349414810079,
+  "hull_width": 0.9174349414810079,
+  "interval_score": 1.1722001727985298,
+  "class_avg_interval_score": 1.2035504741508893,
+  "class_avg_width": 0.9262033173300793,
+  "misclassified_coverage": 0.9509892086330936,
+  "misclassified_fraction": 0.030099610220874838,
+  "empty_fraction": 0.0,
+  "seconds": 28.4,
+  "version": "v8"
  }
 }

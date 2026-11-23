@@ -60,6 +60,28 @@ def ece(p, y, bins=15):
     return float(sum(len(b) / len(p) * abs(p[b].mean() - y[b].mean()) for b in parts if len(b)))
 
 
+def wilson(k, n, z=1.96):
+    if n == 0:
+        return float("nan"), float("nan")
+    ph = k / n; den = 1 + z * z / n; c = (ph + z * z / (2 * n)) / den; hw = z * np.sqrt(ph * (1 - ph) / n + z * z / (4 * n * n)) / den
+    return c - hw, c + hw
+
+
+def prof_bins(p, y, tol=0.10):
+    """The professor's pre-registered criterion (FLARE forecast paper, Fig. 5b): five equal-width bins of the predicted
+    probability; in each, the realised fraction must lie within +-0.10 of the bin's mean prediction."""
+    edges = np.linspace(0, 1, 6); rows = []
+    for i in range(5):
+        m = (p >= edges[i]) & ((p < edges[i + 1]) if i < 4 else (p <= edges[i + 1]))
+        if not m.any():
+            continue
+        lo, hi = wilson(int(y[m].sum()), int(m.sum()))
+        rows.append(dict(lo_edge=float(edges[i]), n=int(m.sum()), mean_p=float(p[m].mean()), rate=float(y[m].mean()),
+                         wilson=[float(lo), float(hi)], dev=float(y[m].mean() - p[m].mean())))
+    ok = sum(abs(r["dev"]) <= tol for r in rows)
+    return dict(bins=rows, n_ok=int(ok), n_bins=len(rows), max_abs_dev=float(max(abs(r["dev"]) for r in rows)))
+
+
 def metrics(p, y):
     p = np.clip(p, EPS, 1 - EPS)
     out = dict(ece=ece(p, y), brier=float(np.mean((p - y) ** 2)), logloss=float(-np.mean(y * np.log(p) + (1 - y) * np.log(1 - p))),
@@ -108,17 +130,22 @@ def variants(df):
 
 def main():
     rng = np.random.default_rng(0)
-    report = {}; tex_rows = []; macros = {}
+    report = {}; tex_rows = []; macros = {}; rare_te = {}
     figdata = {}
     for h in (5, 10):
         f = RES / f"h{h}.parquet"
         if not f.exists():
             continue
         df = pd.read_parquet(f)
+        ft = RES / f"h{h}_trainoof.parquet"
+        if ft.exists():                                  # post hoc: class-specific residual laws from the train split
+            dt = pd.read_parquet(ft)[["obj_id", "band", "s2"]].rename(columns={"s2": "s2t"})
+            df = df.merge(dt, on=["obj_id", "band"], how="left")
         for k, v in variants(df).items():
             df[k] = v
         has3 = "s3" in df and df["s3"].notna().all()
-        common = df[np.isfinite(df.s0) & np.isfinite(df.s1) & (np.isfinite(df.s3) if "s3" in df else True)].copy()
+        common = df[np.isfinite(df.s0) & np.isfinite(df.s1) & (np.isfinite(df.s3) if "s3" in df else True)
+                    & (np.isfinite(df.s2t) if "s2t" in df else True)].copy()
         val, te = common[common.split == "val"], common[common.split == "test"].copy()
         yv, yt = val.outcome.to_numpy().astype(float), te.outcome.to_numpy().astype(float)
         spec = [("s0", None, "Deployed $p_{\\rm singleton}$ (as shipped)"), ("s0", "platt", "\\quad + Platt"),
@@ -127,7 +154,8 @@ def main():
                 ("s3", "ivap", "Pooled forecaster, same residuals + Venn--Abers"),
                 ("s2_argmax", "ivap", "Argmax class only + Venn--Abers"),
                 ("s2_raw", "ivap", "Class mixture, raw posterior + Venn--Abers"),
-                ("s2", None, "Class mixture (ours), uncalibrated"), ("s2", "ivap", "Class mixture (ours) + Venn--Abers")]
+                ("s2", None, "Class mixture (ours), uncalibrated"), ("s2", "ivap", "Class mixture (ours) + Venn--Abers"),
+                ("s2t", None, "Class-specific laws (post hoc), uncalibrated"), ("s2t", "ivap", "Class-specific laws (post hoc) + Venn--Abers")]
         cols = []
         res = {}
         for s, cal, disp in spec:
@@ -137,7 +165,7 @@ def main():
             fit = dict(platt=fit_platt, iso=fit_iso, ivap=fit_ivap).get(cal)
             p = te[s].to_numpy() if fit is None else fit(val[s].to_numpy(), yv)(te[s].to_numpy())
             te[name] = p; cols.append(name)
-            res[name] = dict(display=disp, **metrics(p, yt))
+            res[name] = dict(display=disp, **metrics(p, yt), prof=prof_bins(np.asarray(p, float), yt))
             # per class (test)
             pcl = {}
             for c in range(6):
@@ -161,6 +189,7 @@ def main():
             res["s2|ivap"]["multi"]["d_brier_ci"] = bsub["s2|ivap"]["d_brier_ci"]
         # rows where the deployed score is undefined (no prefix detection in that band): only the mixture applies
         und = df[~np.isfinite(df.s0) & (df.split == "test")]
+        rare_te[h] = te
         report[h] = dict(n_test=int(len(te)), n_val=int(len(val)), n_test_objects=int(te.obj_id.nunique()),
                          rate_test=float(yt.mean()), n_multi=int(multi.sum()), n_deployed_undefined_test=int(len(und)),
                          T=float(df["T"].iloc[0]), methods=res)
@@ -185,7 +214,7 @@ def main():
                        f"Clo{tag}LLDep": f"{d['logloss']:.3f}", f"Clo{tag}LLOurs": f"{o['logloss']:.3f}",
                        f"Clo{tag}BrierArgmax": f"{res['s2_argmax|ivap']['brier']:.3f}", f"Clo{tag}BrierRaw": f"{res['s2_raw|ivap']['brier']:.3f}",
                        f"Clo{tag}BrierRealTime": f"{res['s1|ivap']['brier']:.3f}", f"Clo{tag}ECEOursRaw": f"{res['s2|None']['ece']:.3f}"})
-        figdata[h] = {n: (te[n].to_numpy(), yt) for n in ("s0|None", "s0|ivap", "s2|ivap")}
+        figdata[h] = {n: (np.asarray(te[n].to_numpy(), float), yt) for n in ("s0|None", "s2|None", "s2|ivap")}
     # sensitivity: the first run, with the main experiments' cross-fitted C1 (trained on folds that include test objects)
     for h in (5, 10):
         f = RES / f"h{h}_crossfitC1.parquet"
@@ -221,11 +250,52 @@ def main():
         tag = {5: "Five", 10: "Ten"}[h]
         a_ = r["methods"]["s2_argmax|ivap"]["brier"]; o_ = r["methods"]["s2|ivap"]["brier"]
         macros[f"Clo{tag}MixGain"] = f"{a_ - o_:.3f}"
+        for nm, mac in (("s0|None", "Dep"), ("s0|ivap", "DepVA"), ("s2|None", "OursRaw"), ("s2|ivap", "Ours"),
+                        ("s2t|None", "ClsRaw"), ("s2t|ivap", "Cls")):
+            if nm not in r["methods"]:
+                continue
+            pr = r["methods"][nm]["prof"]
+            macros[f"Clo{tag}Prof{mac}"] = f"{pr['n_ok']}/{pr['n_bins']}"; macros[f"Clo{tag}ProfDev{mac}"] = f"{pr['max_abs_dev']:.2f}"
+        for nm, mac in (("s2t|ivap", "Cls"), ("s2t|None", "ClsRaw")):
+            if nm in r["methods"]:
+                mm_ = r["methods"][nm]
+                macros[f"Clo{tag}Brier{mac}"] = f"{mm_['brier']:.3f}"; macros[f"Clo{tag}AUC{mac}"] = f"{mm_['auc']:.3f}"
+                macros[f"Clo{tag}ECE{mac}"] = f"{mm_['ece']:.3f}"
+                sl = mm_["per_class"].get("SLSN")
+                if sl:
+                    macros[f"Clo{tag}SLSNBrier{mac}"] = f"{sl['brier']:.3f}"
+        for nm, mac in (("s0|None", "Dep"), ("s0|ivap", "DepVA"), ("s2|ivap", "Ours")):
+            sl = r["methods"][nm]["per_class"].get("SLSN")
+            if sl:
+                macros[f"Clo{tag}SLSNBrier{mac}"] = f"{sl['brier']:.3f}"
         if "s3|ivap" in r["methods"]:
             macros[f"Clo{tag}BrierPooled"] = f"{r['methods']['s3|ivap']['brier']:.3f}"
             macros[f"Clo{tag}AUCPooled"] = f"{r['methods']['s3|ivap']['auc']:.3f}"
         macros[f"Clo{tag}ECEVerdict"] = "lower" if r["methods"]["s2|ivap"]["d_ece_va_ci"][1] < 0 else "not significantly different"
     (PAPER / "closure_numbers.tex").write_text("\n".join(f"\\newcommand{{\\{k}}}{{{v}}}" for k, v in macros.items()) + "\n")
+    # rare classes: paired object-level bootstrap of the Brier difference, ours - deployed (raw and with Venn-Abers)
+    rare_rows = []; rrng = np.random.default_rng(1)
+    for h in report:
+        te = rare_te[h]
+        for c, name in ((2, "SLSN"), (3, "AGN"), (4, "TDE"), (5, "CV")):
+            s_ = te[te.y.to_numpy() == c]
+            if len(s_) < 5:
+                continue
+            yv_ = s_.outcome.to_numpy().astype(float); objs = s_.obj_id.to_numpy(); uo = np.unique(objs)
+            ix = [np.flatnonzero(objs == o) for o in uo]; cells = []
+            for a_, b_ in (("s2|None", "s0|None"), ("s2|ivap", "s0|ivap")):
+                pa, pb = s_[a_].to_numpy(), s_[b_].to_numpy(); d = []
+                for _ in range(2000):
+                    idx = np.concatenate([ix[k] for k in rrng.integers(0, len(uo), len(uo))])
+                    d.append(np.mean((pa[idx] - yv_[idx]) ** 2) - np.mean((pb[idx] - yv_[idx]) ** 2))
+                pt = np.mean((pa - yv_) ** 2) - np.mean((pb - yv_) ** 2)
+                cells.append(f"{pt:+.3f} [{np.percentile(d, 2.5):+.3f}, {np.percentile(d, 97.5):+.3f}]")
+            rare_rows.append(f"{h} & {name} & {len(s_)} & " + " & ".join(cells) + " \\\\")
+        rare_rows.append("\\midrule")
+    (PAPER / "tables" / "closure_rare.tex").write_text(
+        "\\begin{table}[H]\n\\centering\n\\caption{Rare classes: Brier difference, ours $-$ deployed, on the test split with its paired "
+        "object-level bootstrap interval (negative favours ours).}\n\\label{tab:closurerare}\n\\scriptsize\n\\begin{tabular}{rlrcc}\n\\toprule\n"
+        "Day & Class & Rows & Uncalibrated & Both + Venn--Abers \\\\\n\\midrule\n" + "\n".join(rare_rows[:-1]) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
     RES.mkdir(parents=True, exist_ok=True)
     (RES / "eval.json").write_text(json.dumps({str(k): v for k, v in report.items()}, indent=1))
     tex = ("\\begin{table}[H]\n\\centering\n\\caption{Closure probability on FLARE's test split (calibrators fitted on its validation split): "
@@ -259,15 +329,17 @@ def main():
     import matplotlib.pyplot as plt
     if figdata:
         fig, axes = plt.subplots(1, len(figdata), figsize=(3.3 * len(figdata), 3.0), squeeze=False)
-        sty = {"s0|None": ("Deployed", "#9aa0a6", "o"), "s0|ivap": ("Deployed + Venn-Abers", "#e8710a", "s"),
-               "s2|ivap": ("Class mixture + Venn-Abers (ours)", "#1a73e8", "D")}
+        sty = {"s0|None": ("FLARE (deployed)", "#9aa0a6", "o"), "s2|None": ("Ours, no recalibration", "#1a73e8", "D"),
+               "s2|ivap": ("Ours + Venn-Abers", "#0b5394", "s")}
         for ax, (h, dd) in zip(axes[0], sorted(figdata.items())):
+            ax.fill_between([0, 1], [-0.1, 0.9], [0.1, 1.1], color="#e8eaed", lw=0, label="tolerance $\\pm0.10$")
             ax.plot([0, 1], [0, 1], ls="--", color="#5f6368", lw=1)
-            for n, (p, y) in dd.items():
-                order = np.argsort(p, kind="stable"); parts = [b for b in np.array_split(order, 10) if len(b)]
-                ax.plot([p[b].mean() for b in parts], [y[b].mean() for b in parts], marker=sty[n][2], ms=4, lw=1.6,
-                        color=sty[n][1], label=sty[n][0])
-            ax.set_title(f"Day {h}", fontsize=9); ax.set_xlabel("predicted closure probability", fontsize=8)
+            for k, (n, (p, y)) in enumerate(dd.items()):
+                pb = prof_bins(p, y)["bins"]; off = (k - 1) * 0.012
+                x = np.array([b["mean_p"] for b in pb]) + off; yy = np.array([b["rate"] for b in pb])
+                err = np.array([[b["rate"] - b["wilson"][0] for b in pb], [b["wilson"][1] - b["rate"] for b in pb]])
+                ax.errorbar(x, yy, yerr=err, marker=sty[n][2], ms=4, lw=1.4, capsize=2, color=sty[n][1], label=sty[n][0])
+            ax.set_title(f"Day {h} (five bins, Wilson 95% intervals)", fontsize=9); ax.set_xlabel("predicted closure probability", fontsize=8)
             ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.tick_params(labelsize=7); ax.grid(alpha=.25, lw=.5)
         axes[0][0].set_ylabel("observed closure rate", fontsize=8)
         axes[0][0].legend(fontsize=6.5, frameon=False, loc="upper left")

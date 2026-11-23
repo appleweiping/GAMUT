@@ -178,3 +178,7 @@ ucr_starlightcurves h=40 alpha=0.05: MaxClassCP + C1                    marg 0.9
       per class class_1:0.98 class_2:0.97 class_3:0.96
 ucr_starlightcurves h=40 alpha=0.05: TwoStepCP + C1                     marg 0.952 worst 0.950 ccg 0.003 width 0.766 IS 1.092 cls-IS 1.112 miscls 0.920 (0.3s)
       per class class_1:0.96 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=40 alpha=0.32: GAMUT-Q                            marg 0.687 worst 0.680 ccg 0.014 width 0.307 IS 0.530 cls-IS 0.529 miscls 0.617 (28.6s)
+      per class class_1:0.72 class_2:0.69 class_3:0.68
+ucr_starlightcurves h=40 alpha=0.05: GAMUT-Q                            marg 0.954 worst 0.951 ccg 0.007 width 0.786 IS 1.089 cls-IS 1.120 miscls 0.930 (27.9s)
+      per class class_1:0.97 class_2:0.95 class_3:0.95

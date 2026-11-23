@@ -192,3 +192,9 @@ plasticc_wfd03 h=5 alpha=0.05: GAMUT-Q                            marg 0.974 wor
       per class TDE:0.97 EB:0.99 SNII:0.98 SNIax:0.98 SNIbc:0.97 SNIa91bg:0.97 AGN:0.97 SNIa:0.98 RRL:0.93 SLSN:0.93 CaRT:0.97
 plasticc_wfd03 h=5 alpha=0.32: GAMUT-Q                            marg 0.781 worst 0.679 ccg 0.087 width 2.251 IS 2.888 cls-IS 3.038 miscls 0.771 (59.1s)
       per class TDE:0.74 EB:0.87 SNII:0.81 SNIax:0.79 SNIbc:0.79 SNIa91bg:0.68 AGN:0.79 SNIa:0.78 RRL:0.68 SLSN:0.71 CaRT:0.78
+plasticc_wfd03 h=5 alpha=0.05: GAMUT-Q                            marg 0.974 worst 0.932 ccg 0.024 width 4.560 IS 5.004 cls-IS 5.241 miscls 0.970 (55.1s)
+      per class TDE:0.97 EB:0.99 SNII:0.98 SNIax:0.98 SNIbc:0.97 SNIa91bg:0.97 AGN:0.97 SNIa:0.98 RRL:0.93 SLSN:0.93 CaRT:0.97
+plasticc_wfd03 h=5 alpha=0.32: GAMUT-Q                            marg 0.781 worst 0.679 ccg 0.087 width 2.251 IS 2.888 cls-IS 3.038 miscls 0.771 (60.0s)
+      per class TDE:0.74 EB:0.87 SNII:0.81 SNIax:0.79 SNIbc:0.79 SNIa91bg:0.68 AGN:0.79 SNIa:0.78 RRL:0.68 SLSN:0.71 CaRT:0.78
+plasticc_wfd03 h=5 alpha=0.05: GAMUT-Q                            marg 0.974 worst 0.932 ccg 0.024 width 4.560 IS 5.004 cls-IS 5.241 miscls 0.970 (56.6s)
+      per class TDE:0.97 EB:0.99 SNII:0.98 SNIax:0.98 SNIbc:0.97 SNIa91bg:0.97 AGN:0.97 SNIa:0.98 RRL:0.93 SLSN:0.93 CaRT:0.97

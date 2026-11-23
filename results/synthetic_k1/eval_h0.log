@@ -262,3 +262,7 @@ synthetic_k1 h=0 alpha=0.05: KandinskyCP                        marg 0.949 worst
       per class common:0.95 medium:0.94 rare:0.94
 synthetic_k1 h=0 alpha=0.05: MDCP                               marg 0.993 worst 0.948 ccg 0.028 width 5.312 IS 5.433 cls-IS 5.930 miscls 0.984 (10.1s)
       per class common:1.00 medium:0.98 rare:0.95
+synthetic_k1 h=0 alpha=0.32: GAMUT-Q                            marg 0.894 worst 0.683 ccg 0.103 width 2.707 IS 3.071 cls-IS 3.688 miscls 0.821 (9.1s)
+      per class common:0.98 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.05: GAMUT-Q                            marg 0.986 worst 0.949 ccg 0.018 width 5.336 IS 5.554 cls-IS 6.039 miscls 0.982 (8.6s)
+      per class common:1.00 medium:0.95 rare:0.95

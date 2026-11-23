@@ -230,3 +230,7 @@ plasticc_ddf h=15 alpha=0.05: MaxClassCP + C1                    marg 0.998 wors
       per class TDE:1.00 SNII:1.00 SNIax:1.00 SNIbc:1.00 AGN:1.00 SNIa:1.00 RRL:0.99 SLSN:1.00 CaRT:1.00
 plasticc_ddf h=15 alpha=0.05: TwoStepCP + C1                     marg 0.996 worst 0.987 ccg 0.046 width 5.180 IS 5.220 cls-IS 6.052 miscls 0.994 (0.4s)
       per class TDE:1.00 SNII:0.99 SNIax:1.00 SNIbc:1.00 AGN:1.00 SNIa:1.00 RRL:0.99 SLSN:1.00 CaRT:1.00
+plasticc_ddf h=15 alpha=0.32: GAMUT-Q                            marg 0.827 worst 0.792 ccg 0.147 width 2.220 IS 2.572 cls-IS 2.796 miscls 0.816 (23.4s)
+      per class TDE:0.83 SNII:0.84 SNIax:0.86 SNIbc:0.84 AGN:0.80 SNIa:0.82 RRL:0.79 SLSN:0.81 CaRT:0.85
+plasticc_ddf h=15 alpha=0.05: GAMUT-Q                            marg 0.970 worst 0.941 ccg 0.019 width 3.702 IS 3.971 cls-IS 4.669 miscls 0.960 (20.8s)
+      per class TDE:0.98 SNII:0.96 SNIax:0.97 SNIbc:0.97 AGN:0.94 SNIa:0.99 RRL:0.97 SLSN:0.96 CaRT:0.97

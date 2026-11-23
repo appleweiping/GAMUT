@@ -178,3 +178,7 @@ ucr_ecg5000 h=20 alpha=0.05: MaxClassCP + C1                    marg 0.994 worst
       per class class_1:1.00 class_2:0.99 class_3:0.99 class_4:0.99 class_5:0.96
 ucr_ecg5000 h=20 alpha=0.05: TwoStepCP + C1                     marg 0.994 worst 0.957 ccg 0.033 width 2.240 IS 2.301 cls-IS 3.310 miscls 0.982 (0.3s)
       per class class_1:1.00 class_2:0.99 class_3:0.98 class_4:0.99 class_5:0.96
+ucr_ecg5000 h=20 alpha=0.32: GAMUT-Q                            marg 0.808 worst 0.694 ccg 0.089 width 0.746 IS 0.940 cls-IS 1.424 miscls 0.730 (21.2s)
+      per class class_1:0.83 class_2:0.78 class_3:0.78 class_4:0.76 class_5:0.69
+ucr_ecg5000 h=20 alpha=0.05: GAMUT-Q                            marg 0.996 worst 0.972 ccg 0.039 width 2.803 IS 2.836 cls-IS 3.935 miscls 0.988 (23.0s)
+      per class class_1:1.00 class_2:0.99 class_3:0.99 class_4:0.99 class_5:0.97

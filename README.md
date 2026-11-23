@@ -230,6 +230,9 @@ a future point at the earliest origin). FLARE: valid 0% at both levels, worst cl
 GAMUT: valid **100%** at both levels, width **1.51×** and **1.67×**. Two-step, MDCP and max-class CP: valid 100%,
 width 1.84–2.02× and 1.49–1.96×.
 
+**Day-50 coverage per class** (the format of FLARE's forecast paper, Fig. 2; `paper/figures/day50.pdf`):
+FLARE's 68% band covers about half of the SLSN day-50 measurements, as that paper reports; GAMUT covers about 0.70.
+
 **Synthetic family.** Membership-blind and probability-conditioned methods cover the rare class at 0.28–0.36 (68%).
 Prop. 1 predicts the measured class coverage to within 0.026. GAMUT is only **2.3%** (68%) and **7.5%** (95%) longer
 than the oracle band of Prop. 2; the latent-class-valid baselines are 69–73% and 22–40% longer.
@@ -261,10 +264,28 @@ All of the following are in the paper's appendix.
 - **Per-(class, horizon) cells.** Two-step and max-class CP leave no cell under-covered; GAMUT leaves 0.2 (68%) and
   0.8 (95%) per setting. GAMUT's thresholds hold per merged horizon cell, and at 95% on PLAsTiCC the merged cell spans
   all horizons.
-- **The registered efficiency endpoint.** On the class-averaged interval score, GAMUT is the best valid method in
-  only 3/20 (68%) and 5/20 (95%) settings, with median ratio to the best valid method 1.03 and 1.10. In the registered
-  paired bootstrap it is significantly better than the best valid baseline in 3/20 and 5/20 settings and significantly
-  worse in 13/20 and 14/20. Length was reported instead because Prop. 2 optimises it.
+- **The registered efficiency endpoint.** On the class-averaged interval score, GAMUT is the best of all valid
+  methods in only 3/20 (68%) and 5/20 (95%) settings, and in the registered paired bootstrap against the best valid
+  method of each setting (chosen afterwards among 16) it is significantly better in 3/20 and 5/20 and worse in 13/20
+  and 14/20. Against each always-valid baseline it is significantly better more often than worse:
+  - two-step CP: better/worse in 10/3 settings (68%) and 14/3 (95%);
+  - max-class CP: 12/2 and 15/3;
+  - MDCP: 10/3 at 68%, but only 8/10 at 95%.
+
+  GAMUT-cert is worse than these baselines more often than better. Length was reported instead because Prop. 2
+  optimises it. An interval-score variant (GAMUT-Q, pre-registered) did not change this on the development benchmarks.
+- **Per-cell coverage on GAMUT's own merged horizon cells.** Significantly under-covered (class, cell) pairs per setting:
+  | Method | 68% | 95% |
+  |---|---|---|
+  | GAMUT | 5.5 | 1.9 |
+  | GAMUT-cert | 0.8 | 0.0 |
+  | Two-step CP | 0.4 | 0.0 |
+  | Max-class CP | 0.3 | 0.0 |
+  | MDCP | 3.5 | 1.9 |
+  | FLARE | 15.7 | 7.2 |
+
+  The 68% shortfalls are large and concentrate on rare PLAsTiCC classes with 3–8 objects per cell. GAMUT-cert is the
+  operating point to use when per-cell guarantees for small classes matter.
 - **Registered claims.** C1 (validity under the fixed tolerance) holds in 85%/90% of settings, not all. C2
   (efficiency) is not met on the interval score. C3 is not met for C1 on real data. The label-noise, subsampling and
   prior-shift robustness checks of C5 were not run. The paper's appendix has the full outcome table.
@@ -272,6 +293,8 @@ All of the following are in the paper's appendix.
   classes enter its minimum with almost no risk budget.
 - **Empty bands.** On PLAsTiCC-train, up to 7.8% of points get an empty band at 68%; on ElectricDevices, up to 4.6%.
   They are counted as misses. ElectricDevices has 52–59% exactly-zero targets, which violates the density assumption.
+  Without ElectricDevices, GAMUT is valid in 100%/88% of settings with bands 1.11×/1.44× FLARE's, against
+  1.55–1.59×/1.52–1.83× for the always-valid baselines, so the conclusions do not rest on it.
 - **Kandinsky CP and CPTC** are slightly narrower when they happen to be valid. They are valid in only 70%/55% and
   35%/80% of settings.
 - **Validity rule.** The bootstrap rule replaced the pre-registered fixed tolerance, under which GAMUT is valid in 85%

@@ -2496,5 +2496,43 @@
   "misclassified_fraction": 0.05348635773061931,
   "empty_fraction": 0.0,
   "seconds": 0.3
+ },
+ "GAMUT-Q": {
+  "n_points": 221664,
+  "marginal": 0.9549633679803666,
+  "marginal_object": 0.9549633679803666,
+  "per_class": {
+   "class_1": 0.9737271131176323,
+   "class_2": 0.9511466408268734,
+   "class_3": 0.9521306551529942
+  },
+  "per_class_object": {
+   "class_1": 0.9737271131176324,
+   "class_2": 0.9511466408268734,
+   "class_3": 0.9521306551529942
+  },
+  "per_class_width": {
+   "class_1": 1.159732668294257,
+   "class_2": 1.416683576718602,
+   "class_3": 1.2813663005845504
+  },
+  "per_class_interval_score": {
+   "class_1": 1.3478232560665686,
+   "class_2": 2.1047817213583424,
+   "class_3": 1.5909349448811652
+  },
+  "worst_class": 0.9511466408268734,
+  "ccg": 0.009001469699166672,
+  "under": 0.0,
+  "width": 1.3016637751527673,
+  "hull_width": 1.3016637751527673,
+  "interval_score": 1.6994915980726462,
+  "class_avg_interval_score": 1.6811799741020252,
+  "class_avg_width": 1.2859275151991365,
+  "misclassified_coverage": 0.9310897435897436,
+  "misclassified_fraction": 0.05348635773061931,
+  "empty_fraction": 0.0,
+  "seconds": 27.8,
+  "version": "v8"
  }
 }

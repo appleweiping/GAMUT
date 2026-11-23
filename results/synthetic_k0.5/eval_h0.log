@@ -274,3 +274,7 @@ synthetic_k0.5 h=0 alpha=0.05: MaxClassCP + C1                    marg 0.994 wor
       per class common:1.00 medium:0.98 rare:0.96
 synthetic_k0.5 h=0 alpha=0.05: TwoStepCP + C1                     marg 0.991 worst 0.955 ccg 0.027 width 5.419 IS 5.551 cls-IS 6.077 miscls 0.983 (0.1s)
       per class common:1.00 medium:0.98 rare:0.96
+synthetic_k0.5 h=0 alpha=0.32: GAMUT-Q                            marg 0.894 worst 0.683 ccg 0.103 width 2.707 IS 3.071 cls-IS 3.688 miscls 0.821 (8.6s)
+      per class common:0.98 medium:0.68 rare:0.68
+synthetic_k0.5 h=0 alpha=0.05: GAMUT-Q                            marg 0.986 worst 0.949 ccg 0.018 width 5.336 IS 5.554 cls-IS 6.039 miscls 0.982 (9.0s)
+      per class common:1.00 medium:0.95 rare:0.95

@@ -696,3 +696,7 @@ ztf h=20 alpha=0.05: GAMUT-Q                            marg 0.968 worst 0.936 c
       per class SN_Ia:0.96 SN_CC:0.98 SLSN:0.94 AGN:0.98 TDE:0.95 CV:0.96
 ztf h=20 alpha=0.32: GAMUT-Q                            marg 0.699 worst 0.659 ccg 0.033 width 0.830 IS 1.236 cls-IS 1.994 miscls 0.614 (42.2s)
       per class SN_Ia:0.68 SN_CC:0.73 SLSN:0.69 AGN:0.75 TDE:0.73 CV:0.66
+ztf h=20 alpha=0.32: GAMUT-Q                            marg 0.699 worst 0.659 ccg 0.033 width 0.830 IS 1.236 cls-IS 1.994 miscls 0.614 (40.8s)
+      per class SN_Ia:0.68 SN_CC:0.73 SLSN:0.69 AGN:0.75 TDE:0.73 CV:0.66
+ztf h=20 alpha=0.05: GAMUT-Q                            marg 0.968 worst 0.936 ccg 0.016 width 2.720 IS 2.985 cls-IS 3.899 miscls 0.962 (40.9s)
+      per class SN_Ia:0.96 SN_CC:0.98 SLSN:0.94 AGN:0.98 TDE:0.95 CV:0.96

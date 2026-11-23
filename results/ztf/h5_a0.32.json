@@ -3416,6 +3416,7 @@
   "misclassified_coverage": 0.6854425749817118,
   "misclassified_fraction": 0.25452706748251236,
   "empty_fraction": 0.0,
-  "seconds": 64.4
+  "seconds": 62.8,
+  "version": "v8"
  }
 }

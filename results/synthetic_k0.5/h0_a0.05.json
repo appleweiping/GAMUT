@@ -2496,5 +2496,43 @@
   "misclassified_fraction": 0.22916666666666666,
   "empty_fraction": 0.0,
   "seconds": 0.1
+ },
+ "GAMUT-Q": {
+  "n_points": 60000,
+  "marginal": 0.9856666666666667,
+  "marginal_object": 0.9856666666666667,
+  "per_class": {
+   "common": 0.9999286902781079,
+   "medium": 0.9528590425531915,
+   "rare": 0.9487889273356401
+  },
+  "per_class_object": {
+   "common": 0.999928690278108,
+   "medium": 0.9528590425531914,
+   "rare": 0.9487889273356401
+  },
+  "per_class_width": {
+   "common": 5.218982120498371,
+   "medium": 5.632373159958247,
+   "rare": 5.493063776749592
+  },
+  "per_class_interval_score": {
+   "common": 5.221968015864923,
+   "medium": 6.276635612184682,
+   "rare": 6.619063212305812
+  },
+  "worst_class": 0.9487889273356401,
+  "ccg": 0.017999601831886463,
+  "under": 0.0012110726643598246,
+  "width": 5.335807074165746,
+  "hull_width": 5.335807074165746,
+  "interval_score": 5.553631445304312,
+  "class_avg_interval_score": 6.039222280118472,
+  "class_avg_width": 5.448139685735403,
+  "misclassified_coverage": 0.9816,
+  "misclassified_fraction": 0.22916666666666666,
+  "empty_fraction": 0.0,
+  "seconds": 9.0,
+  "version": "v8"
  }
 }

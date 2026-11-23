@@ -278,3 +278,7 @@ plasticc_train h=5 alpha=0.05: MaxClassCP + C1                    marg 0.996 wor
       per class uLens:0.96 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:1.00 SNIa91bg:1.00 AGN:1.00 SNIa:1.00 RRL:0.98 SLSN:0.99
 plasticc_train h=5 alpha=0.05: TwoStepCP + C1                     marg 0.995 worst 0.960 ccg 0.042 width 8.682 IS 8.758 cls-IS 8.951 miscls 0.993 (0.2s)
       per class uLens:0.96 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:1.00 SNIa91bg:1.00 AGN:1.00 SNIa:1.00 RRL:0.98 SLSN:0.99
+plasticc_train h=5 alpha=0.32: GAMUT-Q                            marg 0.845 worst 0.755 ccg 0.163 width 3.625 IS 4.121 cls-IS 4.323 miscls 0.831 (13.2s)
+      per class uLens:0.75 TDE:0.85 EB:0.93 SNII:0.87 SNIax:0.83 SNIbc:0.83 SNIa91bg:0.83 AGN:0.91 SNIa:0.82 RRL:0.82 SLSN:0.82
+plasticc_train h=5 alpha=0.05: GAMUT-Q                            marg 0.995 worst 0.953 ccg 0.042 width 8.394 IS 8.480 cls-IS 8.685 miscls 0.994 (11.1s)
+      per class uLens:0.95 TDE:1.00 EB:1.00 SNII:0.99 SNIax:1.00 SNIbc:0.99 SNIa91bg:1.00 AGN:1.00 SNIa:0.99 RRL:0.99 SLSN:0.99

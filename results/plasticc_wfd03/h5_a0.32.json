@@ -2851,7 +2851,8 @@
   "misclassified_coverage": 0.7711281278638108,
   "misclassified_fraction": 0.5657580231291083,
   "empty_fraction": 0.0,
-  "seconds": 59.1
+  "seconds": 60.0,
+  "version": "v8"
  },
  "GAMUT-cert (split certificate)": {
   "n_points": 113796,

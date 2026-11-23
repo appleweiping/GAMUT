@@ -1,0 +1,40 @@
+GAMUT-Q ztf h=10 a=0.05: vs TwoStepCP + C1   ratio 0.950 [0.932, 0.970] gamut_valid=True
+GAMUT-Q ztf h=10 a=0.32: vs KandinskyCP      ratio 0.954 [0.924, 0.985] gamut_valid=True
+GAMUT-Q ztf h=15 a=0.05: vs CPTC             ratio 1.061 [1.017, 1.103] gamut_valid=True
+GAMUT-Q ztf h=15 a=0.32: vs TwoStepCP + C1   ratio 0.937 [0.919, 0.955] gamut_valid=True
+GAMUT-Q ztf h=20 a=0.05: vs CPTC             ratio 1.056 [1.024, 1.086] gamut_valid=True
+GAMUT-Q ztf h=20 a=0.32: vs KandinskyCP      ratio 0.980 [0.956, 1.007] gamut_valid=True
+GAMUT-Q ztf h=30 a=0.05: vs CPTC             ratio 1.119 [1.062, 1.164] gamut_valid=True
+GAMUT-Q ztf h=30 a=0.32: vs MixtureCP        ratio 1.021 [0.985, 1.056] gamut_valid=False
+GAMUT-Q ztf h=5 a=0.05: vs MDCP             ratio 0.989 [0.961, 1.018] gamut_valid=True
+GAMUT-Q ztf h=5 a=0.32: vs KandinskyCP      ratio 0.964 [0.940, 0.991] gamut_valid=True
+GAMUT-Q plasticc_train h=15 a=0.05: vs CPTC             ratio 1.338 [1.281, 1.388] gamut_valid=True
+GAMUT-Q plasticc_train h=15 a=0.32: vs MDCP             ratio 1.041 [1.022, 1.063] gamut_valid=True
+GAMUT-Q plasticc_train h=30 a=0.05: vs MixtureCP        ratio 1.272 [1.180, 1.364] gamut_valid=True
+GAMUT-Q plasticc_train h=30 a=0.32: vs CPTC             ratio 1.490 [1.427, 1.552] gamut_valid=True
+GAMUT-Q plasticc_train h=5 a=0.05: vs MDCP             ratio 1.248 [1.218, 1.274] gamut_valid=True
+GAMUT-Q plasticc_train h=5 a=0.32: vs MDCP             ratio 1.026 [1.008, 1.045] gamut_valid=True
+GAMUT-Q plasticc_ddf h=15 a=0.05: vs MDCP             ratio 1.124 [1.090, 1.157] gamut_valid=True
+GAMUT-Q plasticc_ddf h=15 a=0.32: vs MDCP             ratio 1.131 [1.108, 1.157] gamut_valid=True
+GAMUT-Q plasticc_ddf h=30 a=0.05: vs CPTC             ratio 1.289 [1.181, 1.393] gamut_valid=True
+GAMUT-Q plasticc_ddf h=30 a=0.32: vs KandinskyCP      ratio 1.476 [1.380, 1.570] gamut_valid=True
+GAMUT-Q plasticc_ddf h=5 a=0.05: vs MDCP             ratio 1.093 [1.063, 1.119] gamut_valid=True
+GAMUT-Q plasticc_ddf h=5 a=0.32: vs MDCP             ratio 1.005 [0.989, 1.022] gamut_valid=True
+GAMUT-Q ucr_starlightcurves h=20 a=0.05: vs CPTC             ratio 1.027 [1.023, 1.032] gamut_valid=True
+GAMUT-Q ucr_starlightcurves h=20 a=0.32: vs CPTC             ratio 1.040 [1.036, 1.043] gamut_valid=True
+GAMUT-Q ucr_starlightcurves h=40 a=0.05: vs TwoStepCP + C1   ratio 1.007 [1.003, 1.012] gamut_valid=True
+GAMUT-Q ucr_starlightcurves h=40 a=0.32: vs CQR              ratio 1.021 [1.017, 1.025] gamut_valid=True
+GAMUT-Q ucr_starlightcurves h=60 a=0.05: vs TwoStepCP        ratio 1.149 [1.136, 1.163] gamut_valid=True
+GAMUT-Q ucr_starlightcurves h=60 a=0.32: vs CPTC             ratio 1.010 [1.008, 1.011] gamut_valid=True
+GAMUT-Q ucr_ecg5000 h=20 a=0.05: vs CPTC             ratio 1.490 [1.410, 1.582] gamut_valid=True
+GAMUT-Q ucr_ecg5000 h=20 a=0.32: vs PartitionCP      ratio 1.110 [1.074, 1.154] gamut_valid=True
+GAMUT-Q ucr_ecg5000 h=40 a=0.05: vs PartitionCP      ratio 1.796 [1.650, 1.940] gamut_valid=True
+GAMUT-Q ucr_ecg5000 h=40 a=0.32: vs KandinskyCP      ratio 1.062 [1.033, 1.091] gamut_valid=True
+GAMUT-Q ucr_ecg5000 h=60 a=0.05: vs CPTC             ratio 1.655 [1.540, 1.783] gamut_valid=True
+GAMUT-Q ucr_ecg5000 h=60 a=0.32: vs LocalizedCP      ratio 1.123 [1.091, 1.156] gamut_valid=True
+GAMUT-Q ucr_electricdevices h=20 a=0.05: vs MDCP             ratio 1.026 [1.019, 1.033] gamut_valid=True
+GAMUT-Q ucr_electricdevices h=20 a=0.32: vs KandinskyCP      ratio 1.031 [1.028, 1.034] gamut_valid=True
+GAMUT-Q ucr_electricdevices h=40 a=0.05: vs MDCP             ratio 0.971 [0.967, 0.975] gamut_valid=True
+GAMUT-Q ucr_electricdevices h=40 a=0.32: vs TwoStepCP        ratio 1.008 [1.005, 1.010] gamut_valid=True
+GAMUT-Q ucr_electricdevices h=60 a=0.05: vs CPTC             ratio 1.036 [1.029, 1.041] gamut_valid=True
+GAMUT-Q ucr_electricdevices h=60 a=0.32: vs KandinskyCP      ratio 0.997 [0.995, 1.000] gamut_valid=True

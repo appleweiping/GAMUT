@@ -810,6 +810,43 @@ def is_macros(R, M):
             M[f"ISMaxRatio{tag}"] = f"{max(ratios):.2f}"
 
 
+def extra_analysis_macros(M):
+    """Interval score against each always-valid baseline; validity on GAMUT's merged cells (scripts/merged_cells.py)."""
+    for meth, mt in (("", "Gamut"), ("cert_", "Cert")):
+        for c in ("TwoStepCP", "MDCP", "MaxClassCP"):
+            f = RES / f"is_bootstrap_{meth}vs_{c}.json"
+            if not f.exists():
+                continue
+            d = json.loads(f.read_text())
+            for a, tag in (("0.32", "Sixtyeight"), ("0.05", "Ninetyfive")):
+                v = [x for k, x in d.items() if k.endswith("|" + a)]
+                M[f"ISVs{c.replace('CP', '')}{mt}{tag}"] = f"{sum(x['better'] for x in v)}/{sum(x['worse'] for x in v)}"
+    f = RES / "merged_cells.json"
+    if f.exists():
+        d = json.loads(f.read_text())
+        for a, tag in (("0.32", "Sixtyeight"), ("0.05", "Ninetyfive")):
+            for m, mac in (("GAMUT", "Gamut"), ("GAMUT-cert (split certificate)", "Cert"), ("TwoStepCP", "TwoStep"),
+                           ("MDCP", "MDCP"), ("MaxClassCP", "MaxClass"), ("FLARE", "Flare")):
+                v = [x[m] for k, x in d.items() if k.split("|")[2] == a and m in x]
+                if v:
+                    M[f"Merged{mac}{tag}"] = f"{np.mean([r['n_under'] for r in v]):.1f}"
+                    de = [q for r in v for q in r["deficits"]]
+                    M[f"MergedDef{mac}{tag}"] = f"{np.median(de):.2f}" if de else "--"
+
+
+def sensitivity_macros(R, M):
+    """Main results without ElectricDevices (52-59% exactly-zero targets violate the density assumption)."""
+    sub = [b for b in MAIN if b != "ucr_electricdevices"]
+    for a, tag in ((0.32, "Sixtyeight"), (0.05, "Ninetyfive")):
+        g = agg(R, sub, "GAMUT", a)
+        if g:
+            M[f"NoEDValidGamut{tag}"] = f"{100 * g['valid']:.0f}\\%"; M[f"NoEDWidthGamut{tag}"] = f"{g['rel_width']:.2f}"
+        vb = [agg(R, sub, k, a) for k in ("TwoStepCP", "MDCP", "MaxClassCP")]
+        vb = [x for x in vb if x]
+        if vb:
+            M[f"NoEDWidthValid{tag}"] = f"{min(x['rel_width'] for x in vb):.2f}--{max(x['rel_width'] for x in vb):.2f}"
+
+
 def plan_table(M):
     """Outcome of every claim and block registered in refine-logs/EXPERIMENT_PLAN.md (main plan)."""
     f = RES / "is_bootstrap.json"
@@ -1012,7 +1049,7 @@ def main():
             fh.write(per_origin_tables(R, b))
     M = numbers(R)
     observation_table(R, M); ablation_full(R, M); hyper_table(M); cert_table(R); synthetic_table(R, M); runtime_table(R, M)
-    cnt = unfavourable_table(R); main_macros(R, M); diag_macros(R, M); strict_table(M); extra_macros(R, M); held_table(R, M); is_macros(R, M); plan_table(M)
+    cnt = unfavourable_table(R); main_macros(R, M); diag_macros(R, M); strict_table(M); extra_macros(R, M); held_table(R, M); is_macros(R, M); sensitivity_macros(R, M); extra_analysis_macros(M); plan_table(M)
     print("unfavourable counts", cnt)
     for f in ("main.tex", "bench.tex", "ablation.tex"):  # these overflow the column; scale them to the line width
         fp = PAPER / "tables" / f; t = fp.read_text()

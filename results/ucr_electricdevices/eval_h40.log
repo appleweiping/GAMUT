@@ -188,3 +188,7 @@ ucr_electricdevices h=40 alpha=0.05: MaxClassCP + C1                    marg 0.9
       per class class_1:0.97 class_2:1.00 class_3:0.97 class_4:0.98 class_5:1.00 class_6:0.97 class_7:0.99
 ucr_electricdevices h=40 alpha=0.05: TwoStepCP + C1                     marg 0.967 worst 0.959 ccg 0.017 width 5.944 IS 8.203 cls-IS 8.652 miscls 0.969 (1.7s)
       per class class_1:0.97 class_2:0.96 class_3:0.96 class_4:0.97 class_5:0.97 class_6:0.97 class_7:0.97
+ucr_electricdevices h=40 alpha=0.32: GAMUT-Q                            marg 0.753 worst 0.683 ccg 0.100 width 1.018 IS 2.465 cls-IS 2.250 miscls 0.815 (126.8s)
+      per class class_1:0.84 class_2:0.68 class_3:0.87 class_4:0.84 class_5:0.68 class_6:0.81 class_7:0.73
+ucr_electricdevices h=40 alpha=0.05: GAMUT-Q                            marg 0.959 worst 0.951 ccg 0.012 width 6.482 IS 8.779 cls-IS 8.173 miscls 0.962 (113.3s)
+      per class class_1:0.96 class_2:0.95 class_3:0.97 class_4:0.97 class_5:0.95 class_6:0.96 class_7:0.97

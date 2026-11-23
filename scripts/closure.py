@@ -112,6 +112,9 @@ def _object(job):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--h", type=int, required=True); ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--resid", choices=["val", "trainoof"], default="val",
+                    help="trainoof: class-specific residual laws from 5-fold out-of-fold C1 residuals of next detections on "
+                         "the train split (scripts/closure_c1.py --oof-train); no pooled fallback is needed")
     ap.add_argument("--c1", choices=["train", "crossfit"], default="train",
                     help="train: C1 fitted on FLARE's train split only (scripts/closure_c1.py); crossfit: the main experiments' C1")
     a = ap.parse_args(); h = a.h
@@ -177,6 +180,20 @@ def main():
             X, _ = feature_frame(D.recompute_colors(observed_events(full, float(h))), ctxd)
             Pval.append(clf.predict_proba(X.reindex(columns=clf.feature_names))[0]); Yval.append(int(r.y))
     T = _temperature(np.array(Pval), np.array(Yval), K)
+    if a.resid == "trainoof":                      # class-specific next-point residuals from the train split, out of fold
+        zo = np.load(ROOT / "data" / "ztf" / f"closure_c1oof_h{h}.npz")
+        Fo_, Fb_, Ft_, Fy_ = Fdf.obj.to_numpy(), Fdf.band.to_numpy(), Fdf.t.to_numpy(), Fdf.dmag.to_numpy()
+        pos_o = {int(r): j for j, r in enumerate(zo["rows"])}
+        HMo = zo["hcf_mu"]; HSo = np.maximum(np.abs(zo["hcf_q84"] - zo["hcf_q16"]) / 2, data.SCALE_FLOOR)
+        resid = {c: [] for c in range(K)}
+        ytr = pd.read_parquet(ROOT / "data" / "ztf" / "meta.parquet").y.to_numpy()
+        for i in np.unique(Fo_[[int(r) for r in zo["rows"]]]):
+            for b in (0, 1):
+                m = np.flatnonzero((Fo_ == i) & (Fb_ == b) & (Ft_ > h) & (Ft_ <= h + WINDOW))
+                if not len(m) or int(m[np.argmin(Ft_[m])]) not in pos_o:
+                    continue
+                r0 = int(m[np.argmin(Ft_[m])]); j = pos_o[r0]; c = int(ytr[i])
+                resid[c].append((Fy_[r0] - HMo[j, c]) / HSo[j, c])
     pooled = np.concatenate([np.array(v) for v in resid.values() if len(v)])
     qs = (np.arange(N_DRAW_CLASS) + 0.5) / N_DRAW_CLASS
     Q = {c: np.quantile(np.array(resid[c]) if len(resid[c]) >= 30 else pooled, qs) for c in range(K)}
@@ -187,7 +204,7 @@ def main():
         out = [row for rows in p.imap_unordered(_object, jobs, chunksize=4) for row in rows]
     df = pd.DataFrame(out); df["h"] = h; df["T"] = T
     (ROOT / "results" / "closure").mkdir(parents=True, exist_ok=True)
-    suffix = ("_smoke" if a.limit else "") + ("" if a.c1 == "train" else "_crossfitC1")
+    suffix = ("_smoke" if a.limit else "") + ("" if a.c1 == "train" else "_crossfitC1") + ("_trainoof" if a.resid == "trainoof" else "")
     df.drop(columns=["set_before_has_true"]).to_parquet(ROOT / "results" / "closure" / f"h{h}{suffix}.parquet")
     print(f"h={h}: rows {len(df)}, outcome rate {df.outcome.mean():.3f}", flush=True)
 

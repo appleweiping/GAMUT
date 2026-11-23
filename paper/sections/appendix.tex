@@ -70,6 +70,13 @@ Conditioning on the probabilities instead of the decision changes little, as \cr
 
 \section{Full results}
 \label{app:results}
+\Cref{fig:day50} repeats the per-class analysis of FLARE's forecast paper (its Fig.~2) for FLARE's bands and \gamut{}: the fraction of day-50 measurements inside the band, by class and forecast origin.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/day50.pdf}
+\caption{ZTF-BTS, in the format of FLARE's forecast paper: fraction of day-50 measurements (future detections at 45--55 days) inside the 68\% and 95\% bands, per class; the five points of each method are the origins 5, 10, 15, 20 and 30 days, left to right, with 95\% object-level bootstrap intervals. Dashed: nominal.}
+\label{fig:day50}
+\end{figure}
 \input{tables/validity}
 \input{tables/per_bench}
 \input{tables/per_origin}
@@ -159,9 +166,17 @@ Its ECE is not significantly different from that of the recalibrated deployed sc
 The gain comes mainly from the learned next-point law, not from class conditioning. A control that draws from a pooled forecaster trained on the same split, with the same kind of empirical residuals, gives Brier \CloFiveBrierPooled{} and \CloTenBrierPooled{} (AUC \CloFiveAUCPooled{} and \CloTenAUCPooled{}); drawing only under the argmax class gives \CloFiveBrierArgmax{} and \CloTenBrierArgmax{}, so mixing adds \CloFiveMixGain{} and \CloTenMixGain{}. The deployed construction at the real next time gives \CloFiveBrierRealTime{} and \CloTenBrierRealTime{}, so the fixed-scatter Gaussian, not the time of the draw, is what the learned law improves on.
 On the registered subset of objects whose set has more than one class before the observation, the gains are of the same size (\cref{tab:closurereg}).
 Per class (\cref{tab:closureclass}), the class-conditional score is better for SN~Ia and CVs but worse for SLSNe at both days, and for AGN and TDEs at day 10; these classes have 7--20 test rows each, and their next-point laws use the pooled residuals.
+\paragraph{FLARE's own criterion.}
+FLARE's forecast paper pre-registered a tolerance of $\pm0.10$ between the predicted probability and the realised fraction in five equal-width bins, and found its $p_{\rm singleton}$ outside it in one bin (by 0.16), concluding that it ``still requires recalibration''.
+On our test split the deployed score meets the tolerance in \CloFiveProfDep{} bins at day 5 and \CloTenProfDep{} at day 10 (largest deviation \CloFiveProfDevDep{} and \CloTenProfDevDep{}). Our score meets it in \CloFiveProfOursRaw{} and \CloTenProfOursRaw{} bins without any recalibration (largest deviation \CloFiveProfDevOursRaw{} and \CloTenProfDevOursRaw{}); with Venn--Abers, both scores meet it in most bins (\cref{fig:closure}).
+\paragraph{Rare classes.}
+\Cref{tab:closurerare} gives the Brier difference per rare class with paired bootstrap intervals. With 7--20 test rows per class, only the day-10 SLSN difference after Venn--Abers is significant.
+\paragraph{Class-specific residual laws (post hoc).}
+Because SLSN, AGN and TDE had fewer than 30 validation residuals, their next-point laws used the pooled residuals. After seeing the test results we estimated class-specific laws from five-fold out-of-fold residuals of C1 within FLARE's training split (93, 81 and 45 residuals at day 5), which leaves the validation and test splits untouched. With Venn--Abers, this gives Brier \CloFiveBrierCls{} and \CloTenBrierCls{} and SLSN Brier \CloFiveSLSNBrierCls{} and \CloTenSLSNBrierCls{}, against \CloFiveSLSNBrierDepVA{} and \CloTenSLSNBrierDepVA{} for the deployed score with Venn--Abers; it is test-informed and reported only here.
 \input{tables/closure}
 \input{tables/closure_reg}
 \input{tables/closure_class}
+\input{tables/closure_rare}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\columnwidth]{figures/closure.pdf}
@@ -184,9 +199,11 @@ We tried two alternatives (\texttt{refine-logs/DESIGN\_LOG.md}). Raising the inc
 On PLAsTiCC-train at 95\%, SN~Ia is covered at 0.93 when pooled over points, although the calibration targets object-averaged coverage.
 Objects with many points are covered less often.
 \item \textbf{Interval score.}
-The class-averaged interval score was the efficiency endpoint of our experiment plan. Among the methods valid in a setting, \gamut{} has the lowest one in only \ISWinsGamutSixtyeight{} settings at 68\% and \ISWinsGamutNinetyfive{} at 95\%; its median ratio to the best valid method is \ISMedRatioSixtyeight{} and \ISMedRatioNinetyfive{}, and the largest \ISMaxRatioNinetyfive{}.
+The class-averaged interval score was the efficiency endpoint of our experiment plan. Against each always-valid baseline (paired object-level bootstrap), \gamut{} is significantly better/worse in \ISVsTwoStepGamutSixtyeight{} and \ISVsTwoStepGamutNinetyfive{} settings against two-step CP, \ISVsMaxClassGamutSixtyeight{} and \ISVsMaxClassGamutNinetyfive{} against max-class CP and \ISVsMDGamutSixtyeight{} and \ISVsMDGamutNinetyfive{} against MDCP (68\%, 95\%); \gamut-cert is worse more often than better (\ISVsTwoStepCertSixtyeight{}, \ISVsTwoStepCertNinetyfive{}; \ISVsMaxClassCertSixtyeight{}, \ISVsMaxClassCertNinetyfive{}; \ISVsMDCertSixtyeight{}, \ISVsMDCertNinetyfive{}). The comparison with the best valid method of each setting is harder, because that method is chosen afterwards among 16. Among the methods valid in a setting, \gamut{} has the lowest one in only \ISWinsGamutSixtyeight{} settings at 68\% and \ISWinsGamutNinetyfive{} at 95\%; its median ratio to the best valid method is \ISMedRatioSixtyeight{} and \ISMedRatioNinetyfive{}, and the largest \ISMaxRatioNinetyfive{}.
 At 95\% it is often higher than that of MDCP or CPTC.
 Its level sets end where the class densities thin out, so misses lie further from the band; the interval score penalises distance, which this does not minimise.
+\item \textbf{Per-cell coverage on the merged cells.}
+On the horizon cells \gamut{} calibrates (its merged cells, pooled over folds when the folds share one cell map), the default \gamut{} leaves \MergedGamutSixtyeight{} (68\%) and \MergedGamutNinetyfive{} (95\%) (class, cell) pairs significantly under-covered per setting, against \MergedTwoStepSixtyeight{} and \MergedTwoStepNinetyfive{} for two-step CP, \MergedMaxClassSixtyeight{} and \MergedMaxClassNinetyfive{} for max-class CP, \MergedMDCPSixtyeight{} and \MergedMDCPNinetyfive{} for MDCP and \MergedFlareSixtyeight{} and \MergedFlareNinetyfive{} for FLARE. At 95\% the shortfalls are small (median \MergedDefGamutNinetyfive{} below nominal). At 68\% they are large (median \MergedDefGamutSixtyeight{}) and concentrate on rare PLAsTiCC classes (TDE, $\mu$Lens, SLSN) whose cells hold 3--8 objects per fold: reusing the calibration data for the weights leaves these cells unprotected even when the class as a whole is covered. \gamut-cert, whose thresholds are fitted on held-out objects, leaves \MergedCertSixtyeight{} and \MergedCertNinetyfive{}, and is the operating point to use when per-cell guarantees for small classes matter.
 \item \textbf{Closure probability.}
 For the closure probability (\cref{app:closure}), the class-conditional score has a higher Brier score than the deployed score for SLSNe at both days and for AGN and TDEs at day 10 (7--20 test rows each), and its ECE is not better than that of the recalibrated deployed score.
 \item \textbf{Kandinsky CP and CPTC when they are valid.}

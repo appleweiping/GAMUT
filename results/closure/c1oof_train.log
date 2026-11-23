@@ -1,0 +1,10 @@
+h=5 oof-train fold 0: 37434 rows
+h=5 oof-train fold 1: 38685 rows
+h=5 oof-train fold 2: 38741 rows
+h=5 oof-train fold 3: 38968 rows
+h=5 oof-train fold 4: 38307 rows
+h=10 oof-train fold 0: 32991 rows
+h=10 oof-train fold 1: 33994 rows
+h=10 oof-train fold 2: 34309 rows
+h=10 oof-train fold 3: 34301 rows
+h=10 oof-train fold 4: 33823 rows

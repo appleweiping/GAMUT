@@ -122,3 +122,7 @@ ucr_wafer h=20 alpha=0.05: MaxClassCP + C1                    marg 0.981 worst 0
       per class class_-1:0.96 class_1:0.98
 ucr_wafer h=20 alpha=0.05: TwoStepCP + C1                     marg 0.950 worst 0.948 ccg 0.001 width 0.528 IS 1.062 cls-IS 1.458 miscls 0.708 (0.2s)
       per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.32: GAMUT-Q                            marg 0.682 worst 0.680 ccg 0.008 width 0.141 IS 0.423 cls-IS 0.554 miscls 0.385 (18.2s)
+      per class class_-1:0.70 class_1:0.68
+ucr_wafer h=20 alpha=0.05: GAMUT-Q                            marg 0.958 worst 0.950 ccg 0.004 width 0.606 IS 1.091 cls-IS 1.455 miscls 0.840 (17.2s)
+      per class class_-1:0.95 class_1:0.96

@@ -1,0 +1,362 @@
+{
+ "ztf|10|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.0452053037700837,
+  "lo": 0.977683878981208,
+  "hi": 1.1145000054203154,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ztf|10|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.9972057074869481,
+  "lo": 0.9581569658609025,
+  "hi": 1.037821744624467,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ztf|15|0.05": {
+  "comparator": "MDCP",
+  "ratio": 0.9187809493629484,
+  "lo": 0.8709508601056583,
+  "hi": 0.9691509195707744,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ztf|15|0.32": {
+  "comparator": "MDCP",
+  "ratio": 1.008015100780742,
+  "lo": 0.968082679666741,
+  "hi": 1.0536213991684837,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ztf|20|0.05": {
+  "comparator": "MDCP",
+  "ratio": 0.8779530022586143,
+  "lo": 0.8474674086123514,
+  "hi": 0.9117461312733535,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ztf|20|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.9060964952246373,
+  "lo": 0.8654145017142613,
+  "hi": 0.950362430947308,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ztf|30|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.0050562704937185,
+  "lo": 0.9664008890524506,
+  "hi": 1.0460148416785584,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ztf|30|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.9337343046232153,
+  "lo": 0.8922959173455799,
+  "hi": 0.9713554781468045,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ztf|5|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.065741589619406,
+  "lo": 1.0176101245850404,
+  "hi": 1.129277215786324,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ztf|5|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.9901687448336708,
+  "lo": 0.9560833683520439,
+  "hi": 1.0270045364231566,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "plasticc_train|15|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.3018730576272224,
+  "lo": 1.236976447354044,
+  "hi": 1.3546665112053844,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_train|15|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.9945346652408544,
+  "lo": 0.961916994374285,
+  "hi": 1.0301445322440193,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "plasticc_train|30|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.1533113434722166,
+  "lo": 1.0950462355302926,
+  "hi": 1.2072889520110595,
+  "gamut_valid": false,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_train|30|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.9292105033693657,
+  "lo": 0.9009162495824072,
+  "hi": 0.9624330439093683,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "plasticc_train|5|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.2498178500295802,
+  "lo": 1.2056585202085943,
+  "hi": 1.2901372037949368,
+  "gamut_valid": false,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_train|5|0.32": {
+  "comparator": "MDCP",
+  "ratio": 1.030094985043782,
+  "lo": 1.0041912630102254,
+  "hi": 1.0597718878970264,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_ddf|15|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.2444706547230524,
+  "lo": 1.1805197029347316,
+  "hi": 1.3202377816261628,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_ddf|15|0.32": {
+  "comparator": "MDCP",
+  "ratio": 1.0721611473613037,
+  "lo": 1.0341262251787031,
+  "hi": 1.1099616860725896,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_ddf|30|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.1413949568861408,
+  "lo": 1.0945048684979746,
+  "hi": 1.1891591241416504,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_ddf|30|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.9327028152357378,
+  "lo": 0.8940940141666083,
+  "hi": 0.9744755403209497,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "plasticc_ddf|5|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.1006296498212897,
+  "lo": 1.0554026504627474,
+  "hi": 1.1517063648098629,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_ddf|5|0.32": {
+  "comparator": "MDCP",
+  "ratio": 1.0762119920168325,
+  "lo": 1.0457484884377932,
+  "hi": 1.1053733217005794,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_starlightcurves|20|0.05": {
+  "comparator": "MDCP",
+  "ratio": 0.9503446783261769,
+  "lo": 0.9440227537553649,
+  "hi": 0.957046290104112,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_starlightcurves|20|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.7967667272973991,
+  "lo": 0.7924870813593441,
+  "hi": 0.8008270411221732,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_starlightcurves|40|0.05": {
+  "comparator": "MDCP",
+  "ratio": 0.9841435979735972,
+  "lo": 0.9764177478240202,
+  "hi": 0.9918740443384085,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_starlightcurves|40|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.8484571926321389,
+  "lo": 0.8443267234171165,
+  "hi": 0.8528785568322295,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_starlightcurves|60|0.05": {
+  "comparator": "MDCP",
+  "ratio": 0.8832518631718106,
+  "lo": 0.8762814386086853,
+  "hi": 0.8908548664242395,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_starlightcurves|60|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.7723351176766883,
+  "lo": 0.7677637657576397,
+  "hi": 0.7773469087561792,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_ecg5000|20|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.4743891181086735,
+  "lo": 1.35560872975797,
+  "hi": 1.5808034902204635,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_ecg5000|20|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.9291519940046323,
+  "lo": 0.8566241565401936,
+  "hi": 1.0190929455125928,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ucr_ecg5000|40|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.6020280988449178,
+  "lo": 1.4846326978701663,
+  "hi": 1.7145467545320352,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_ecg5000|40|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.9785631640667162,
+  "lo": 0.9397440228871564,
+  "hi": 1.0239893910465432,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ucr_ecg5000|60|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.6103174235448454,
+  "lo": 1.5285799148729124,
+  "hi": 1.6933485146854403,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_ecg5000|60|0.32": {
+  "comparator": "MDCP",
+  "ratio": 1.0079603411047533,
+  "lo": 0.9458092116971248,
+  "hi": 1.0857997946265492,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ },
+ "ucr_electricdevices|20|0.05": {
+  "comparator": "MDCP",
+  "ratio": 0.8721685669341568,
+  "lo": 0.8673085847161037,
+  "hi": 0.8769316257949694,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|20|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.8777770826811081,
+  "lo": 0.8747899435525491,
+  "hi": 0.8808152458927007,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|40|0.05": {
+  "comparator": "MDCP",
+  "ratio": 0.8206151151334456,
+  "lo": 0.8160019167296042,
+  "hi": 0.8247490936769236,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|40|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.8512616448665641,
+  "lo": 0.8487557010261504,
+  "hi": 0.8540358463776383,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|60|0.05": {
+  "comparator": "MDCP",
+  "ratio": 0.8817018871635981,
+  "lo": 0.8759256015250086,
+  "hi": 0.8877575264604362,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|60|0.32": {
+  "comparator": "MDCP",
+  "ratio": 0.8343136822782466,
+  "lo": 0.8311664643064064,
+  "hi": 0.8377283126161167,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ }
+}

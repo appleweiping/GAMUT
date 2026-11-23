@@ -1,0 +1,362 @@
+{
+ "ztf|10|0.05": {
+  "comparator": "TwoStepCP + C1",
+  "ratio": 1.2748940123651253,
+  "lo": 1.2260983313217944,
+  "hi": 1.3121099490474375,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ztf|10|0.32": {
+  "comparator": "KandinskyCP",
+  "ratio": 1.1088895558673342,
+  "lo": 1.0639306509093667,
+  "hi": 1.1550042735996557,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ztf|15|0.05": {
+  "comparator": "CPTC",
+  "ratio": 1.3746726901645139,
+  "lo": 1.276693153994564,
+  "hi": 1.4640397861388985,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ztf|15|0.32": {
+  "comparator": "TwoStepCP + C1",
+  "ratio": 1.0896849731056841,
+  "lo": 1.0580132940928224,
+  "hi": 1.1254308171524432,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ztf|20|0.05": {
+  "comparator": "CPTC",
+  "ratio": 1.3926999217304814,
+  "lo": 1.3329328603340849,
+  "hi": 1.4548018913925724,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ztf|20|0.32": {
+  "comparator": "KandinskyCP",
+  "ratio": 1.1124739596196598,
+  "lo": 1.0689488583004938,
+  "hi": 1.156655814013692,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ztf|30|0.05": {
+  "comparator": "CPTC",
+  "ratio": 1.3311958477259886,
+  "lo": 1.26011324618476,
+  "hi": 1.4081688528135878,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ztf|30|0.32": {
+  "comparator": "MixtureCP",
+  "ratio": 1.1192520966887862,
+  "lo": 1.0660228774593261,
+  "hi": 1.177629393720804,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ztf|5|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.309886882391645,
+  "lo": 1.2402269969243787,
+  "hi": 1.3826949964742936,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ztf|5|0.32": {
+  "comparator": "KandinskyCP",
+  "ratio": 1.1012536351237772,
+  "lo": 1.0643832312752877,
+  "hi": 1.1360728117250638,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_train|15|0.05": {
+  "comparator": "CPTC",
+  "ratio": 1.2719309489294568,
+  "lo": 1.2079648254933373,
+  "hi": 1.3213966693733832,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_train|15|0.32": {
+  "comparator": "MDCP",
+  "ratio": 1.1427984670978855,
+  "lo": 1.1106864363347442,
+  "hi": 1.1767000713888198,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_train|30|0.05": {
+  "comparator": "MixtureCP",
+  "ratio": 1.5354029379659722,
+  "lo": 1.4130354145628932,
+  "hi": 1.6505337328589418,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_train|30|0.32": {
+  "comparator": "CPTC",
+  "ratio": 1.318661725527818,
+  "lo": 1.26430230603593,
+  "hi": 1.3791803400709641,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_train|5|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.2937790890850405,
+  "lo": 1.2569386584799622,
+  "hi": 1.3273999136794656,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_train|5|0.32": {
+  "comparator": "MDCP",
+  "ratio": 1.1155006801095728,
+  "lo": 1.0905814738946926,
+  "hi": 1.1447419666346799,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_ddf|15|0.05": {
+  "comparator": "MDCP",
+  "ratio": 2.3215029057569296,
+  "lo": 2.2528290712329535,
+  "hi": 2.3884346292248364,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_ddf|15|0.32": {
+  "comparator": "MDCP",
+  "ratio": 1.2608529169679172,
+  "lo": 1.2121847389278677,
+  "hi": 1.3107013683157118,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_ddf|30|0.05": {
+  "comparator": "CPTC",
+  "ratio": 1.643338655743642,
+  "lo": 1.5028347136357922,
+  "hi": 1.77917894883128,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_ddf|30|0.32": {
+  "comparator": "KandinskyCP",
+  "ratio": 1.3539780974087277,
+  "lo": 1.2775920889156687,
+  "hi": 1.4310877705177323,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_ddf|5|0.05": {
+  "comparator": "MDCP",
+  "ratio": 1.5305195620482157,
+  "lo": 1.4779533459183867,
+  "hi": 1.5772234184232818,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "plasticc_ddf|5|0.32": {
+  "comparator": "MDCP",
+  "ratio": 1.203719373405628,
+  "lo": 1.1642717451248634,
+  "hi": 1.242930764785505,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_starlightcurves|20|0.05": {
+  "comparator": "CPTC",
+  "ratio": 1.0043092530136184,
+  "lo": 1.0013712611079915,
+  "hi": 1.0071595563134652,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_starlightcurves|20|0.32": {
+  "comparator": "CPTC",
+  "ratio": 1.0039697454240593,
+  "lo": 1.0024858566891668,
+  "hi": 1.0054170286952828,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_starlightcurves|40|0.05": {
+  "comparator": "TwoStepCP + C1",
+  "ratio": 1.0061935580152275,
+  "lo": 1.0042411856363227,
+  "hi": 1.0080870978068746,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_starlightcurves|40|0.32": {
+  "comparator": "CQR",
+  "ratio": 1.0205463392443648,
+  "lo": 1.0162957285420622,
+  "hi": 1.0248628642822797,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_starlightcurves|60|0.05": {
+  "comparator": "TwoStepCP",
+  "ratio": 1.0129416791983017,
+  "lo": 1.0032690635793895,
+  "hi": 1.0231887502403776,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_starlightcurves|60|0.32": {
+  "comparator": "CPTC",
+  "ratio": 1.0045804442967547,
+  "lo": 1.0039964941403514,
+  "hi": 1.0051230005043763,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_ecg5000|20|0.05": {
+  "comparator": "CPTC",
+  "ratio": 1.1799686463423922,
+  "lo": 1.1430277633378358,
+  "hi": 1.221189996438081,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_ecg5000|20|0.32": {
+  "comparator": "PartitionCP",
+  "ratio": 1.242331593953219,
+  "lo": 1.1462649585857672,
+  "hi": 1.3586596959339141,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_ecg5000|40|0.05": {
+  "comparator": "PartitionCP",
+  "ratio": 1.2566831257615456,
+  "lo": 1.1672032544244386,
+  "hi": 1.3499113314780318,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_ecg5000|40|0.32": {
+  "comparator": "KandinskyCP",
+  "ratio": 1.4051748327446372,
+  "lo": 1.3125047538197725,
+  "hi": 1.5198678147237972,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_ecg5000|60|0.05": {
+  "comparator": "CPTC",
+  "ratio": 1.2583116577607485,
+  "lo": 1.1921078954317765,
+  "hi": 1.3391225097210606,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_ecg5000|60|0.32": {
+  "comparator": "LocalizedCP",
+  "ratio": 1.4035097587378365,
+  "lo": 1.2802641790102796,
+  "hi": 1.5397587297927198,
+  "gamut_valid": true,
+  "better": false,
+  "worse": true
+ },
+ "ucr_electricdevices|20|0.05": {
+  "comparator": "MDCP",
+  "ratio": 0.9308263747133563,
+  "lo": 0.9261669284287589,
+  "hi": 0.9356385991852155,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|20|0.32": {
+  "comparator": "KandinskyCP",
+  "ratio": 0.9916499936050504,
+  "lo": 0.9897019398645913,
+  "hi": 0.9937317007712707,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|40|0.05": {
+  "comparator": "MDCP",
+  "ratio": 0.8706705746594087,
+  "lo": 0.866527573576106,
+  "hi": 0.8747268591634375,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|40|0.32": {
+  "comparator": "TwoStepCP",
+  "ratio": 0.995300841012145,
+  "lo": 0.9928753173366001,
+  "hi": 0.9974427235687439,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|60|0.05": {
+  "comparator": "CPTC",
+  "ratio": 0.9309335666021495,
+  "lo": 0.9267457655967791,
+  "hi": 0.9348007327484852,
+  "gamut_valid": true,
+  "better": true,
+  "worse": false
+ },
+ "ucr_electricdevices|60|0.32": {
+  "comparator": "KandinskyCP",
+  "ratio": 0.9994464279510639,
+  "lo": 0.9976850147435394,
+  "hi": 1.001209445831464,
+  "gamut_valid": true,
+  "better": false,
+  "worse": false
+ }
+}

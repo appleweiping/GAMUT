@@ -1,0 +1,12 @@
+ztf h=20: exit 0 in 93s
+ztf h=10: exit 0 in 127s
+plasticc_train h=5: exit 0 in 26s
+plasticc_train h=15: exit 0 in 22s
+plasticc_train h=30: exit 0 in 17s
+plasticc_ddf h=5: exit 0 in 62s
+plasticc_ddf h=30: exit 0 in 27s
+ucr_starlightcurves h=40: exit 0 in 69s
+ucr_ecg5000 h=20: exit 0 in 51s
+ucr_ecg5000 h=40: exit 0 in 54s
+ucr_electricdevices h=20: exit 0 in 266s
+ucr_electricdevices h=60: exit 0 in 244s

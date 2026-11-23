@@ -1,0 +1,40 @@
+GAMUT-cert (split certificate) ztf h=10 a=0.05: vs TwoStepCP + C1   ratio 1.275 [1.226, 1.312] gamut_valid=True
+GAMUT-cert (split certificate) ztf h=10 a=0.32: vs KandinskyCP      ratio 1.109 [1.064, 1.155] gamut_valid=True
+GAMUT-cert (split certificate) ztf h=15 a=0.05: vs CPTC             ratio 1.375 [1.277, 1.464] gamut_valid=True
+GAMUT-cert (split certificate) ztf h=15 a=0.32: vs TwoStepCP + C1   ratio 1.090 [1.058, 1.125] gamut_valid=True
+GAMUT-cert (split certificate) ztf h=20 a=0.05: vs CPTC             ratio 1.393 [1.333, 1.455] gamut_valid=True
+GAMUT-cert (split certificate) ztf h=20 a=0.32: vs KandinskyCP      ratio 1.112 [1.069, 1.157] gamut_valid=True
+GAMUT-cert (split certificate) ztf h=30 a=0.05: vs CPTC             ratio 1.331 [1.260, 1.408] gamut_valid=True
+GAMUT-cert (split certificate) ztf h=30 a=0.32: vs MixtureCP        ratio 1.119 [1.066, 1.178] gamut_valid=True
+GAMUT-cert (split certificate) ztf h=5 a=0.05: vs MDCP             ratio 1.310 [1.240, 1.383] gamut_valid=True
+GAMUT-cert (split certificate) ztf h=5 a=0.32: vs KandinskyCP      ratio 1.101 [1.064, 1.136] gamut_valid=True
+GAMUT-cert (split certificate) plasticc_train h=15 a=0.05: vs CPTC             ratio 1.272 [1.208, 1.321] gamut_valid=True
+GAMUT-cert (split certificate) plasticc_train h=15 a=0.32: vs MDCP             ratio 1.143 [1.111, 1.177] gamut_valid=True
+GAMUT-cert (split certificate) plasticc_train h=30 a=0.05: vs MixtureCP        ratio 1.535 [1.413, 1.651] gamut_valid=True
+GAMUT-cert (split certificate) plasticc_train h=30 a=0.32: vs CPTC             ratio 1.319 [1.264, 1.379] gamut_valid=True
+GAMUT-cert (split certificate) plasticc_train h=5 a=0.05: vs MDCP             ratio 1.294 [1.257, 1.327] gamut_valid=True
+GAMUT-cert (split certificate) plasticc_train h=5 a=0.32: vs MDCP             ratio 1.116 [1.091, 1.145] gamut_valid=True
+GAMUT-cert (split certificate) plasticc_ddf h=15 a=0.05: vs MDCP             ratio 2.322 [2.253, 2.388] gamut_valid=True
+GAMUT-cert (split certificate) plasticc_ddf h=15 a=0.32: vs MDCP             ratio 1.261 [1.212, 1.311] gamut_valid=True
+GAMUT-cert (split certificate) plasticc_ddf h=30 a=0.05: vs CPTC             ratio 1.643 [1.503, 1.779] gamut_valid=True
+GAMUT-cert (split certificate) plasticc_ddf h=30 a=0.32: vs KandinskyCP      ratio 1.354 [1.278, 1.431] gamut_valid=True
+GAMUT-cert (split certificate) plasticc_ddf h=5 a=0.05: vs MDCP             ratio 1.531 [1.478, 1.577] gamut_valid=True
+GAMUT-cert (split certificate) plasticc_ddf h=5 a=0.32: vs MDCP             ratio 1.204 [1.164, 1.243] gamut_valid=True
+GAMUT-cert (split certificate) ucr_starlightcurves h=20 a=0.05: vs CPTC             ratio 1.004 [1.001, 1.007] gamut_valid=True
+GAMUT-cert (split certificate) ucr_starlightcurves h=20 a=0.32: vs CPTC             ratio 1.004 [1.002, 1.005] gamut_valid=True
+GAMUT-cert (split certificate) ucr_starlightcurves h=40 a=0.05: vs TwoStepCP + C1   ratio 1.006 [1.004, 1.008] gamut_valid=True
+GAMUT-cert (split certificate) ucr_starlightcurves h=40 a=0.32: vs CQR              ratio 1.021 [1.016, 1.025] gamut_valid=True
+GAMUT-cert (split certificate) ucr_starlightcurves h=60 a=0.05: vs TwoStepCP        ratio 1.013 [1.003, 1.023] gamut_valid=True
+GAMUT-cert (split certificate) ucr_starlightcurves h=60 a=0.32: vs CPTC             ratio 1.005 [1.004, 1.005] gamut_valid=True
+GAMUT-cert (split certificate) ucr_ecg5000 h=20 a=0.05: vs CPTC             ratio 1.180 [1.143, 1.221] gamut_valid=True
+GAMUT-cert (split certificate) ucr_ecg5000 h=20 a=0.32: vs PartitionCP      ratio 1.242 [1.146, 1.359] gamut_valid=True
+GAMUT-cert (split certificate) ucr_ecg5000 h=40 a=0.05: vs PartitionCP      ratio 1.257 [1.167, 1.350] gamut_valid=True
+GAMUT-cert (split certificate) ucr_ecg5000 h=40 a=0.32: vs KandinskyCP      ratio 1.405 [1.313, 1.520] gamut_valid=True
+GAMUT-cert (split certificate) ucr_ecg5000 h=60 a=0.05: vs CPTC             ratio 1.258 [1.192, 1.339] gamut_valid=True
+GAMUT-cert (split certificate) ucr_ecg5000 h=60 a=0.32: vs LocalizedCP      ratio 1.404 [1.280, 1.540] gamut_valid=True
+GAMUT-cert (split certificate) ucr_electricdevices h=20 a=0.05: vs MDCP             ratio 0.931 [0.926, 0.936] gamut_valid=True
+GAMUT-cert (split certificate) ucr_electricdevices h=20 a=0.32: vs KandinskyCP      ratio 0.992 [0.990, 0.994] gamut_valid=True
+GAMUT-cert (split certificate) ucr_electricdevices h=40 a=0.05: vs MDCP             ratio 0.871 [0.867, 0.875] gamut_valid=True
+GAMUT-cert (split certificate) ucr_electricdevices h=40 a=0.32: vs TwoStepCP        ratio 0.995 [0.993, 0.997] gamut_valid=True
+GAMUT-cert (split certificate) ucr_electricdevices h=60 a=0.05: vs CPTC             ratio 0.931 [0.927, 0.935] gamut_valid=True
+GAMUT-cert (split certificate) ucr_electricdevices h=60 a=0.32: vs KandinskyCP      ratio 0.999 [0.998, 1.001] gamut_valid=True

@@ -35,6 +35,7 @@ def key(m):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--method", default="GAMUT"); ap.add_argument("--benches", nargs="*", default=MAIN)
     ap.add_argument("--out", default=str(ROOT / "results" / "is_bootstrap.json"))
+    ap.add_argument("--comparator", default=None, help="fixed comparator (e.g. TwoStepCP) instead of the best valid baseline")
     a_ = ap.parse_args(); M = a_.method; MK = key(M)
     boot = json.loads((ROOT / "results" / "bootstrap.json").read_text())
     out = {}
@@ -45,6 +46,8 @@ def main():
             h = float(f.stem.split("_a")[0][1:]); a = float(f.stem.split("_a")[1])
             R = json.loads(f.read_text()); bk = boot.get(f"{b}|{h:g}|{a:g}", {})
             valid = [m for m in BASE if m in R and m in bk and bk[m]["n_under"] == 0]
+            if a_.comparator is not None:
+                valid = [a_.comparator] if a_.comparator in R else []
             if not valid or M not in R:
                 continue
             comp = min(valid, key=lambda m: R[m]["class_avg_interval_score"])

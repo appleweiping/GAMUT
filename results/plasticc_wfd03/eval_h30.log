@@ -1,0 +1,102 @@
+plasticc_wfd03 h=30 alpha=0.32: CPTC                               marg 0.695 worst 0.506 ccg 0.044 width 1.144 IS 1.823 cls-IS 2.247 miscls 0.636 (0.6s)
+      per class TDE:0.62 EB:0.76 SNII:0.71 SNIax:0.63 SNIbc:0.68 SNIa91bg:0.51 AGN:0.67 SNIa:0.71 RRL:0.64 SLSN:0.66 CaRT:0.68
+plasticc_wfd03 h=30 alpha=0.32: CQR                                marg 0.680 worst 0.382 ccg 0.093 width 1.133 IS 1.768 cls-IS 2.241 miscls 0.601 (0.0s)
+      per class TDE:0.64 EB:0.57 SNII:0.70 SNIax:0.76 SNIbc:0.69 SNIa91bg:0.38 AGN:0.61 SNIa:0.73 RRL:0.53 SLSN:0.50 CaRT:0.66
+plasticc_wfd03 h=30 alpha=0.32: DCP                                marg 0.680 worst 0.382 ccg 0.096 width 1.171 IS 1.785 cls-IS 2.238 miscls 0.607 (0.5s)
+      per class TDE:0.63 EB:0.55 SNII:0.70 SNIax:0.78 SNIbc:0.70 SNIa91bg:0.38 AGN:0.60 SNIa:0.72 RRL:0.54 SLSN:0.50 CaRT:0.67
+plasticc_wfd03 h=30 alpha=0.32: FLARE                              marg 0.681 worst 0.391 ccg 0.074 width 1.106 IS 1.779 cls-IS 2.257 miscls 0.591 (0.1s)
+      per class TDE:0.60 EB:0.67 SNII:0.68 SNIax:0.71 SNIbc:0.67 SNIa91bg:0.39 AGN:0.62 SNIa:0.73 RRL:0.61 SLSN:0.54 CaRT:0.61
+plasticc_wfd03 h=30 alpha=0.32: GAMUT                              marg 0.685 worst 0.670 ccg 0.012 width 1.211 IS 1.983 cls-IS 2.426 miscls 0.618 (21.1s)
+      per class TDE:0.69 EB:0.70 SNII:0.69 SNIax:0.70 SNIbc:0.69 SNIa91bg:0.67 AGN:0.68 SNIa:0.68 RRL:0.69 SLSN:0.69 CaRT:0.71
+plasticc_wfd03 h=30 alpha=0.32: GAMUT (point-level unit)           marg 0.682 worst 0.677 ccg 0.008 width 1.224 IS 2.004 cls-IS 2.460 miscls 0.616 (20.7s)
+      per class TDE:0.68 EB:0.70 SNII:0.68 SNIax:0.69 SNIbc:0.69 SNIa91bg:0.68 AGN:0.68 SNIa:0.68 RRL:0.69 SLSN:0.68 CaRT:0.70
+plasticc_wfd03 h=30 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.709 worst 0.682 ccg 0.026 width 1.564 IS 2.172 cls-IS 2.577 miscls 0.670 (21.9s)
+      per class TDE:0.72 EB:0.69 SNII:0.71 SNIax:0.74 SNIbc:0.72 SNIa91bg:0.69 AGN:0.69 SNIa:0.71 RRL:0.68 SLSN:0.71 CaRT:0.70
+plasticc_wfd03 h=30 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.873 worst 0.741 ccg 0.152 width 2.388 IS 2.769 cls-IS 3.570 miscls 0.745 (21.3s)
+      per class TDE:0.79 EB:0.82 SNII:0.86 SNIax:0.86 SNIbc:0.84 SNIa91bg:0.74 AGN:0.86 SNIa:0.91 RRL:0.87 SLSN:0.79 CaRT:0.81
+plasticc_wfd03 h=30 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.735 worst 0.667 ccg 0.058 width 1.868 IS 2.579 cls-IS 2.793 miscls 0.729 (21.1s)
+      per class TDE:0.77 EB:0.80 SNII:0.79 SNIax:0.70 SNIbc:0.73 SNIa91bg:0.67 AGN:0.80 SNIa:0.70 RRL:0.69 SLSN:0.69 CaRT:0.75
+plasticc_wfd03 h=30 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.684 worst 0.655 ccg 0.012 width 1.233 IS 2.010 cls-IS 2.478 miscls 0.615 (20.9s)
+      per class TDE:0.69 EB:0.70 SNII:0.69 SNIax:0.70 SNIbc:0.69 SNIa91bg:0.66 AGN:0.68 SNIa:0.68 RRL:0.69 SLSN:0.68 CaRT:0.72
+plasticc_wfd03 h=30 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.677 worst 0.443 ccg 0.071 width 0.993 IS 1.852 cls-IS 2.389 miscls 0.528 (16.0s)
+      per class TDE:0.56 EB:0.69 SNII:0.67 SNIax:0.64 SNIbc:0.60 SNIa91bg:0.44 AGN:0.64 SNIa:0.73 RRL:0.68 SLSN:0.50 CaRT:0.65
+plasticc_wfd03 h=30 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.767 worst 0.688 ccg 0.161 width 1.741 IS 2.195 cls-IS 2.707 miscls 0.789 (16.8s)
+      per class TDE:0.88 EB:0.96 SNII:0.78 SNIax:0.80 SNIbc:0.87 SNIa91bg:0.80 AGN:0.88 SNIa:0.69 RRL:0.91 SLSN:0.85 CaRT:0.83
+plasticc_wfd03 h=30 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.685 worst 0.670 ccg 0.012 width 1.211 IS 1.983 cls-IS 2.426 miscls 0.618 (20.8s)
+      per class TDE:0.69 EB:0.70 SNII:0.69 SNIax:0.70 SNIbc:0.69 SNIa91bg:0.67 AGN:0.68 SNIa:0.68 RRL:0.69 SLSN:0.69 CaRT:0.71
+plasticc_wfd03 h=30 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.689 worst 0.624 ccg 0.016 width 1.187 IS 1.958 cls-IS 2.420 miscls 0.615 (18.4s)
+      per class TDE:0.70 EB:0.72 SNII:0.69 SNIax:0.69 SNIbc:0.68 SNIa91bg:0.62 AGN:0.68 SNIa:0.69 RRL:0.69 SLSN:0.69 CaRT:0.69
+plasticc_wfd03 h=30 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.683 worst 0.670 ccg 0.010 width 1.204 IS 1.980 cls-IS 2.423 miscls 0.616 (21.8s)
+      per class TDE:0.68 EB:0.70 SNII:0.69 SNIax:0.70 SNIbc:0.69 SNIa91bg:0.67 AGN:0.68 SNIa:0.68 RRL:0.68 SLSN:0.69 CaRT:0.71
+plasticc_wfd03 h=30 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.679 worst 0.661 ccg 0.007 width 1.125 IS 2.045 cls-IS 2.472 miscls 0.586 (20.0s)
+      per class TDE:0.68 EB:0.69 SNII:0.68 SNIax:0.68 SNIbc:0.68 SNIa91bg:0.66 AGN:0.68 SNIa:0.68 RRL:0.68 SLSN:0.68 CaRT:0.71
+plasticc_wfd03 h=30 alpha=0.32: GAMUT-Q                            marg 0.710 worst 0.679 ccg 0.048 width 1.706 IS 2.419 cls-IS 2.504 miscls 0.694 (36.7s)
+      per class TDE:0.76 EB:0.80 SNII:0.72 SNIax:0.71 SNIbc:0.78 SNIa91bg:0.70 AGN:0.68 SNIa:0.70 RRL:0.68 SLSN:0.70 CaRT:0.77
+plasticc_wfd03 h=30 alpha=0.32: GAMUT-cert (split certificate)     marg 0.824 worst 0.801 ccg 0.149 width 1.939 IS 2.335 cls-IS 2.789 miscls 0.785 (16.7s)
+      per class TDE:0.82 EB:0.85 SNII:0.83 SNIax:0.84 SNIbc:0.85 SNIa91bg:0.85 AGN:0.82 SNIa:0.82 RRL:0.80 SLSN:0.81 CaRT:0.83
+plasticc_wfd03 h=30 alpha=0.32: GCC-prob                           marg 0.682 worst 0.428 ccg 0.070 width 1.110 IS 1.779 cls-IS 2.247 miscls 0.591 (55.3s)
+      per class TDE:0.61 EB:0.67 SNII:0.68 SNIax:0.71 SNIbc:0.67 SNIa91bg:0.43 AGN:0.63 SNIa:0.73 RRL:0.61 SLSN:0.53 CaRT:0.60
+plasticc_wfd03 h=30 alpha=0.32: KandinskyCP                        marg 0.680 worst 0.603 ccg 0.020 width 1.203 IS 1.847 cls-IS 2.311 miscls 0.612 (126.6s)
+      per class TDE:0.66 EB:0.70 SNII:0.68 SNIax:0.69 SNIbc:0.68 SNIa91bg:0.60 AGN:0.65 SNIa:0.69 RRL:0.66 SLSN:0.68 CaRT:0.65
+plasticc_wfd03 h=30 alpha=0.32: LocalizedCP                        marg 0.682 worst 0.397 ccg 0.080 width 1.114 IS 1.778 cls-IS 2.243 miscls 0.587 (60.6s)
+      per class TDE:0.60 EB:0.67 SNII:0.67 SNIax:0.72 SNIbc:0.66 SNIa91bg:0.40 AGN:0.61 SNIa:0.74 RRL:0.60 SLSN:0.53 CaRT:0.60
+plasticc_wfd03 h=30 alpha=0.32: MDCP                               marg 0.873 worst 0.672 ccg 0.169 width 2.185 IS 2.463 cls-IS 2.732 miscls 0.844 (43.6s)
+      per class TDE:0.88 EB:0.88 SNII:0.91 SNIax:0.88 SNIbc:0.88 SNIa91bg:0.67 AGN:0.85 SNIa:0.87 RRL:0.82 SLSN:0.80 CaRT:0.88
+plasticc_wfd03 h=30 alpha=0.32: MDCP + C1                          marg 0.879 worst 0.716 ccg 0.188 width 2.289 IS 2.603 cls-IS 2.901 miscls 0.856 (50.5s)
+      per class TDE:0.89 EB:0.92 SNII:0.92 SNIax:0.88 SNIbc:0.89 SNIa91bg:0.72 AGN:0.88 SNIa:0.86 RRL:0.87 SLSN:0.82 CaRT:0.90
+plasticc_wfd03 h=30 alpha=0.32: MaxClassCP                         marg 0.887 worst 0.675 ccg 0.164 width 1.943 IS 2.181 cls-IS 2.554 miscls 0.826 (0.0s)
+      per class TDE:0.82 EB:0.90 SNII:0.88 SNIax:0.91 SNIbc:0.88 SNIa91bg:0.68 AGN:0.83 SNIa:0.93 RRL:0.81 SLSN:0.76 CaRT:0.87
+plasticc_wfd03 h=30 alpha=0.32: MaxClassCP + C1                    marg 0.966 worst 0.833 ccg 0.267 width 3.101 IS 3.167 cls-IS 3.274 miscls 0.954 (0.6s)
+      per class TDE:0.98 EB:0.99 SNII:0.99 SNIax:0.97 SNIbc:0.96 SNIa91bg:0.83 AGN:0.95 SNIa:0.97 RRL:0.87 SLSN:0.94 CaRT:0.97
+plasticc_wfd03 h=30 alpha=0.32: MixtureCP                          marg 0.692 worst 0.414 ccg 0.057 width 1.159 IS 1.785 cls-IS 2.259 miscls 0.613 (1.9s)
+      per class TDE:0.65 EB:0.71 SNII:0.68 SNIax:0.72 SNIbc:0.69 SNIa91bg:0.41 AGN:0.67 SNIa:0.73 RRL:0.66 SLSN:0.57 CaRT:0.62
+plasticc_wfd03 h=30 alpha=0.32: Oracle-true-class                  marg 0.680 worst 0.578 ccg 0.019 width 1.133 IS 1.762 cls-IS 2.239 miscls 0.605 (0.1s)
+      per class TDE:0.69 EB:0.69 SNII:0.68 SNIax:0.70 SNIbc:0.68 SNIa91bg:0.58 AGN:0.68 SNIa:0.68 RRL:0.68 SLSN:0.68 CaRT:0.62
+plasticc_wfd03 h=30 alpha=0.32: PartitionCP                        marg 0.680 worst 0.385 ccg 0.073 width 1.117 IS 1.776 cls-IS 2.246 miscls 0.596 (0.3s)
+      per class TDE:0.61 EB:0.68 SNII:0.68 SNIax:0.72 SNIbc:0.67 SNIa91bg:0.39 AGN:0.62 SNIa:0.73 RRL:0.61 SLSN:0.54 CaRT:0.62
+plasticc_wfd03 h=30 alpha=0.32: SplitCP                            marg 0.680 worst 0.397 ccg 0.083 width 1.116 IS 1.780 cls-IS 2.244 miscls 0.585 (0.0s)
+      per class TDE:0.59 EB:0.67 SNII:0.67 SNIax:0.72 SNIbc:0.66 SNIa91bg:0.40 AGN:0.60 SNIa:0.74 RRL:0.60 SLSN:0.52 CaRT:0.60
+plasticc_wfd03 h=30 alpha=0.32: TwoStepCP                          marg 0.886 worst 0.675 ccg 0.163 width 1.940 IS 2.179 cls-IS 2.552 miscls 0.826 (0.1s)
+      per class TDE:0.82 EB:0.90 SNII:0.88 SNIax:0.91 SNIbc:0.88 SNIa91bg:0.68 AGN:0.83 SNIa:0.93 RRL:0.81 SLSN:0.76 CaRT:0.87
+plasticc_wfd03 h=30 alpha=0.32: TwoStepCP + C1                     marg 0.952 worst 0.833 ccg 0.252 width 2.790 IS 2.876 cls-IS 3.041 miscls 0.941 (0.7s)
+      per class TDE:0.96 EB:0.98 SNII:0.97 SNIax:0.97 SNIbc:0.96 SNIa91bg:0.83 AGN:0.91 SNIa:0.97 RRL:0.85 SLSN:0.90 CaRT:0.96
+plasticc_wfd03 h=30 alpha=0.05: CPTC                               marg 0.980 worst 0.946 ccg 0.026 width 3.338 IS 3.579 cls-IS 4.035 miscls 0.975 (0.6s)
+      per class TDE:0.98 EB:0.99 SNII:0.98 SNIax:0.98 SNIbc:0.98 SNIa91bg:0.98 AGN:0.97 SNIa:0.98 RRL:0.95 SLSN:0.97 CaRT:0.96
+plasticc_wfd03 h=30 alpha=0.05: CQR                                marg 0.950 worst 0.776 ccg 0.045 width 2.551 IS 3.141 cls-IS 3.811 miscls 0.924 (0.0s)
+      per class TDE:0.94 EB:0.94 SNII:0.97 SNIax:0.98 SNIbc:0.95 SNIa91bg:0.78 AGN:0.90 SNIa:0.97 RRL:0.86 SLSN:0.86 CaRT:0.95
+plasticc_wfd03 h=30 alpha=0.05: DCP                                marg 0.950 worst 0.787 ccg 0.038 width 2.808 IS 3.337 cls-IS 3.926 miscls 0.934 (0.5s)
+      per class TDE:0.95 EB:0.94 SNII:0.97 SNIax:0.98 SNIbc:0.95 SNIa91bg:0.79 AGN:0.91 SNIa:0.96 RRL:0.89 SLSN:0.88 CaRT:0.94
+plasticc_wfd03 h=30 alpha=0.05: FLARE                              marg 0.950 worst 0.839 ccg 0.037 width 2.626 IS 3.286 cls-IS 4.146 miscls 0.917 (0.1s)
+      per class TDE:0.89 EB:0.95 SNII:0.95 SNIax:0.96 SNIbc:0.94 SNIa91bg:0.84 AGN:0.92 SNIa:0.97 RRL:0.90 SLSN:0.89 CaRT:0.90
+plasticc_wfd03 h=30 alpha=0.05: GAMUT                              marg 0.969 worst 0.954 ccg 0.018 width 4.345 IS 5.078 cls-IS 5.537 miscls 0.965 (17.8s)
+      per class TDE:0.97 EB:0.96 SNII:0.97 SNIax:0.98 SNIbc:0.98 SNIa91bg:0.95 AGN:0.96 SNIa:0.97 RRL:0.96 SLSN:0.96 CaRT:0.98
+plasticc_wfd03 h=30 alpha=0.05: GAMUT (point-level unit)           marg 0.972 worst 0.954 ccg 0.020 width 4.468 IS 5.217 cls-IS 5.627 miscls 0.973 (17.9s)
+      per class TDE:0.97 EB:0.96 SNII:0.98 SNIax:0.99 SNIbc:0.99 SNIa91bg:0.96 AGN:0.96 SNIa:0.97 RRL:0.95 SLSN:0.96 CaRT:0.98
+plasticc_wfd03 h=30 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.970 worst 0.953 ccg 0.017 width 4.047 IS 4.382 cls-IS 5.058 miscls 0.964 (18.7s)
+      per class TDE:0.95 EB:0.95 SNII:0.97 SNIax:0.97 SNIbc:0.98 SNIa91bg:0.97 AGN:0.95 SNIa:0.98 RRL:0.96 SLSN:0.96 CaRT:0.98
+plasticc_wfd03 h=30 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.992 worst 0.963 ccg 0.037 width 5.853 IS 6.091 cls-IS 6.942 miscls 0.978 (19.0s)
+      per class TDE:0.99 EB:0.98 SNII:0.99 SNIax:1.00 SNIbc:0.99 SNIa91bg:0.99 AGN:0.99 SNIa:1.00 RRL:0.98 SLSN:0.96 CaRT:0.99
+plasticc_wfd03 h=30 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.978 worst 0.947 ccg 0.027 width 3.860 IS 4.061 cls-IS 4.273 miscls 0.976 (19.3s)
+      per class TDE:0.99 EB:0.99 SNII:0.98 SNIax:0.98 SNIbc:0.98 SNIa91bg:0.95 AGN:0.98 SNIa:0.98 RRL:0.95 SLSN:0.97 CaRT:0.98
+plasticc_wfd03 h=30 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.967 worst 0.959 ccg 0.021 width 4.365 IS 5.071 cls-IS 5.539 miscls 0.965 (17.6s)
+      per class TDE:0.97 EB:0.97 SNII:0.97 SNIax:0.98 SNIbc:0.98 SNIa91bg:0.97 AGN:0.96 SNIa:0.96 RRL:0.96 SLSN:0.96 CaRT:0.98
+plasticc_wfd03 h=30 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.953 worst 0.891 ccg 0.022 width 2.413 IS 3.048 cls-IS 3.811 miscls 0.922 (14.1s)
+      per class TDE:0.92 EB:0.96 SNII:0.96 SNIax:0.96 SNIbc:0.95 SNIa91bg:0.89 AGN:0.93 SNIa:0.97 RRL:0.92 SLSN:0.91 CaRT:0.93
+plasticc_wfd03 h=30 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.980 worst 0.956 ccg 0.031 width 3.677 IS 3.889 cls-IS 4.620 miscls 0.975 (14.8s)
+      per class TDE:0.98 EB:1.00 SNII:0.98 SNIax:0.98 SNIbc:0.99 SNIa91bg:0.99 AGN:0.98 SNIa:0.98 RRL:0.98 SLSN:0.98 CaRT:0.96
+plasticc_wfd03 h=30 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.972 worst 0.956 ccg 0.021 width 4.783 IS 5.320 cls-IS 5.929 miscls 0.967 (19.4s)
+      per class TDE:0.98 EB:0.97 SNII:0.97 SNIax:0.98 SNIbc:0.98 SNIa91bg:0.98 AGN:0.96 SNIa:0.97 RRL:0.96 SLSN:0.96 CaRT:0.96
+plasticc_wfd03 h=30 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.963 worst 0.943 ccg 0.014 width 3.809 IS 4.534 cls-IS 4.969 miscls 0.960 (17.7s)
+      per class TDE:0.96 EB:0.95 SNII:0.97 SNIax:0.98 SNIbc:0.98 SNIa91bg:0.96 AGN:0.95 SNIa:0.96 RRL:0.94 SLSN:0.95 CaRT:0.98
+plasticc_wfd03 h=30 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.957 worst 0.943 ccg 0.012 width 3.444 IS 4.076 cls-IS 4.537 miscls 0.955 (16.4s)
+      per class TDE:0.96 EB:0.96 SNII:0.96 SNIax:0.98 SNIbc:0.98 SNIa91bg:0.95 AGN:0.95 SNIa:0.95 RRL:0.94 SLSN:0.95 CaRT:0.97
+plasticc_wfd03 h=30 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.972 worst 0.949 ccg 0.019 width 4.068 IS 4.792 cls-IS 5.164 miscls 0.966 (17.7s)
+      per class TDE:0.97 EB:0.96 SNII:0.98 SNIax:0.99 SNIbc:0.98 SNIa91bg:0.96 AGN:0.96 SNIa:0.97 RRL:0.95 SLSN:0.96 CaRT:0.98
+plasticc_wfd03 h=30 alpha=0.05: GAMUT-Q                            marg 0.974 worst 0.958 ccg 0.027 width 4.042 IS 4.403 cls-IS 4.499 miscls 0.971 (34.2s)
+      per class TDE:0.99 EB:0.99 SNII:0.98 SNIax:0.98 SNIbc:0.98 SNIa91bg:0.96 AGN:0.98 SNIa:0.97 RRL:0.96 SLSN:0.97 CaRT:0.98
+plasticc_wfd03 h=30 alpha=0.05: GAMUT-cert (split certificate)     marg 0.997 worst 0.986 ccg 0.047 width 7.870 IS 8.149 cls-IS 8.717 miscls 0.996 (14.4s)
+      per class TDE:1.00 EB:1.00 SNII:1.00 SNIax:1.00 SNIbc:1.00 SNIa91bg:1.00 AGN:0.99 SNIa:1.00 RRL:0.99 SLSN:1.00 CaRT:1.00
+plasticc_wfd03 h=30 alpha=0.05: GCC-prob                           marg 0.951 worst 0.881 ccg 0.031 width 2.609 IS 3.269 cls-IS 4.045 miscls 0.916 (52.3s)
+      per class TDE:0.89 EB:0.96 SNII:0.95 SNIax:0.96 SNIbc:0.95 SNIa91bg:0.90 AGN:0.92 SNIa:0.97 RRL:0.89 SLSN:0.88 CaRT:0.92
+plasticc_wfd03 h=30 alpha=0.05: KandinskyCP                        marg 0.948 worst 0.917 ccg 0.010 width 3.270 IS 3.892 cls-IS 4.695 miscls 0.929 (122.7s)
+      per class TDE:0.94 EB:0.96 SNII:0.94 SNIax:0.94 SNIbc:0.94 SNIa91bg:0.93 AGN:0.94 SNIa:0.95 RRL:0.94 SLSN:0.95 CaRT:0.92
