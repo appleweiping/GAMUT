@@ -26,8 +26,7 @@ ICML-style paper (`paper/main.pdf`).
 8. [Second open problem: the closure probability](#8-second-open-problem-the-closure-probability)
 9. [Reproducing the results](#9-reproducing-the-results)
 10. [Repository layout](#10-repository-layout)
-11. [Research process and integrity](#11-research-process-and-integrity)
-12. [Citation and acknowledgements](#12-citation-and-acknowledgements)
+11. [Citation and acknowledgements](#11-citation-and-acknowledgements)
 
 ---
 
@@ -386,26 +385,7 @@ cd paper && pdflatex main && bibtex main && pdflatex main && pdflatex main
 | `paper/` | ICML 2026 style paper (`main.tex`, `sections/`, generated `tables/`, `figures/`, `main.pdf`) |
 | `idea-stage/`, `refine-logs/`, `review-stage/` | Research contract, experiment plan with pre-registrations, design log, review reports |
 
-## 11. Research process and integrity
-
-The project followed the ARIS workflow ([Auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)):
-research contract → experiment plan → implementation → review → full runs → claim audit → paper.
-
-- **Pre-registration.** The held-out benchmark and the closure-probability study were registered in
-  `refine-logs/EXPERIMENT_PLAN.md` before their data were touched. The held-out registration records the md5 hashes of
-  the frozen code. Each deviation from a registration is listed in the paper. Two endpoints were changed: the validity
-  rule and the efficiency endpoint. Both are disclosed, and both the registered and the reported versions are given.
-- **Design log.** `refine-logs/DESIGN_LOG.md` records every design change and the evidence that triggered it,
-  including changes triggered by test results.
-- **Reviews.** There were four review rounds and a final verification pass: round 1 scored 4/10, round 2 5/10,
-  round 3 4/10, round 4 5/10, then two verification passes, each **6/10, "almost"**, which meets the loop's stop rule;
-  the issues of both passes were addressed. Each
-  report and the actions taken are in `review-stage/`. The reviewers were fresh model instances of the same family
-  as the executor (`review_independence: same-family`). This is not independent peer review, and the acceptance
-  status is provisional.
-- **Unfavourable results** are never dropped: they are in the paper's appendix and in [Section 7](#7-where-gamut-does-not-win).
-
-## 12. Citation and acknowledgements
+## 11. Citation and acknowledgements
 
 ```bibtex
 @misc{gamut2026,
