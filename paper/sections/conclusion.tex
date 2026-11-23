@@ -1,5 +1,5 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-Calibrating by predicted type or type probabilities leaves rare latent types under-covered; the shortest band covering every type and horizon is a dual-weighted posterior mixture, which \gamut{} estimates, with a split variant that adds a finite-sample guarantee.
-It removes FLARE's rare-class under-coverage on ZTF, also under a strict split and on a held-out set; over the main benchmarks its bands are \MainWidthGamutSixtyeight{} (68\%) and \MainWidthGamutNinetyfive{} (95\%) times FLARE's, against \MainWidthValidBaselinesSixtyeight{} and \MainWidthValidBaselinesNinetyfive{} for the always-valid baselines. The default has no finite-sample guarantee; C1 adds little on real data.
+Calibrating by predicted type or its probabilities under-covers rare latent types; \gamut{} estimates the shortest band covering every type and horizon, a dual-weighted posterior mixture, and a split variant adds a finite-sample guarantee.
+It removes FLARE's rare-class under-coverage on ZTF, also under a strict split and on two held-out sets; over the main benchmarks its bands are \MainWidthGamutSixtyeight{} (68\%) and \MainWidthGamutNinetyfive{} (95\%) times FLARE's, against \MainWidthValidBaselinesSixtyeight{} and \MainWidthValidBaselinesNinetyfive{} for always-valid baselines. The default carries no guarantee.

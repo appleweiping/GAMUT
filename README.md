@@ -61,14 +61,18 @@ ICML-style paper (`paper/main.pdf`).
   - GAMUT is valid at all three origins at both levels, with bands 1.51× and 1.67× FLARE's.
   - The always-valid baselines need 1.84–2.02× and 1.49–1.96×; MDCP is narrower than GAMUT at 95%.
   - FLARE's worst class falls to 0.27.
+- **Second untouched held-out set** (PLAsTiCC test chunk 03): GAMUT is again valid at every origin and level, with bands
+  1.40× and 1.58× FLARE's (always-valid baselines 1.83–2.01× and 1.54–2.64×); FLARE is valid nowhere.
 - **Closure probability** (FLARE's second open problem): simulating the next observation from a learned next-point
   law (GAMUT's C1 with empirical residuals, mixed by C2) instead of a fixed-scatter Gaussian, then adding a Venn–Abers
   layer, lowers the test Brier score:
   - by **21%** (day 5) and **14%** (day 10) against FLARE's score with the same Venn–Abers layer;
   - by 27% and 19% against FLARE's score as shipped.
   
-  AUC rises from 0.937 to 0.963 and from 0.955 to 0.973. A pooled version of the same learned law does almost as well
-  (Brier 0.080 and 0.064), so the gain comes mainly from the learned law, not from class conditioning.
+  AUC rises from 0.937 to 0.963 and from 0.955 to 0.973. On the ±0.10 five-bin tolerance pre-registered in FLARE's
+  forecast paper, the deployed score passes 2/5 (day 5) and 3/5 (day 10) bins; ours passes 5/5 and 4/5 **without any
+  recalibration**. A pooled version of the same learned law does almost as well (Brier 0.080 and 0.064), so the gain
+  comes mainly from the learned law, not from class conditioning.
 
 Every unfavourable result is reported in the paper's appendix and summarised in [Section 7](#7-where-gamut-does-not-win).
 
@@ -273,7 +277,8 @@ All of the following are in the paper's appendix.
   - MDCP: 10/3 at 68%, but only 8/10 at 95%.
 
   GAMUT-cert is worse than these baselines more often than better. Length was reported instead because Prop. 2
-  optimises it. An interval-score variant (GAMUT-Q, pre-registered) did not change this on the development benchmarks.
+  optimises it. An interval-score variant (GAMUT-Q) was pre-registered and confirmed on the untouched chunk 03: its
+  registered claim is not met (valid in only 33% of the 95% settings), so it is not adopted.
 - **Per-cell coverage on GAMUT's own merged horizon cells.** Significantly under-covered (class, cell) pairs per setting:
   | Method | 68% | 95% |
   |---|---|---|
@@ -336,7 +341,8 @@ What the study does **not** show:
 - ECE is not significantly lower than that of the recalibrated FLARE score. That registered claim is not met.
 - The gain comes mainly from the learned next-point law: the pooled control is almost as good. Class conditioning
   adds AUC 0.004–0.005 and at most 0.003 Brier; mixing over classes adds 0.001 Brier over the argmax class alone.
-- The score is worse for SLSNe at both days and for AGN and TDEs at day 10 (7–20 test rows each).
+- Per rare class (7–20 test rows each), the differences are not significant except SLSNe at day 10 with Venn–Abers
+  (+0.043 Brier, interval [+0.009, +0.089]). Class-specific residual laws (post hoc) did not fix this.
 
 ## 9. Reproducing the results
 

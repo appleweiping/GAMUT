@@ -92,3 +92,17 @@ All numbers: leave-one-fold-out on the development data indicated; recorded befo
 17. **Registered B1 paired IS bootstrap** (scripts/is_bootstrap.py, run after the second verification review):
     GAMUT vs the best valid baseline on class-averaged IS is significantly better in 3/20 (68%) and 5/20 (95%)
     settings and significantly worse in 13/20 and 14/20. Reported in the registered-outcomes table (tab:plan).
+18. **GAMUT-Q (registered interval-score variant)**: central intervals of the dual-weighted mixture CDF, same C1-C3,
+    in gamut/variants.py (gamut/methods.py kept byte-identical). Development (test-informed): valid 95%/100%, width
+    1.62x/1.75x FLARE, IS better/worse than the best valid method in 3/13 and 2/17 settings. Confirmation on the untouched
+    PLAsTiCC chunk 03 (frozen code): valid in 100%/33% of settings, IS better/worse 3/0 and 1/2 -> registered claim not
+    met, not adopted. Bug found on the way: run_all.py re-evaluated unversioned GAMUT-named entries forever; fixed by
+    stamping the version on variants in evaluate.py.
+19. **Second held-out confirmation of GAMUT** on chunk 03: valid at every origin and level, bands 1.40x/1.58x FLARE vs
+    1.83-2.01x/1.54-2.64x for the always-valid baselines; FLARE valid nowhere.
+20. **Analyses of the remaining weaknesses** (no method change): IS against each always-valid baseline; validity on
+    GAMUT's own merged cells (default 5.5/1.9 under-covered cells per setting, GAMUT-cert 0.8/0.0); closure against FLARE's
+    pre-registered +-0.10 five-bin criterion (deployed 2/5 and 3/5 bins, ours without recalibration 5/5 and 4/5);
+    rare-class paired bootstrap; class-specific residual laws for the closure study from within-train out-of-fold C1
+    (post hoc; day-10 SLSN worse, not adopted); ElectricDevices sensitivity; day-50 per-class figure in the format of
+    FLARE's forecast paper.

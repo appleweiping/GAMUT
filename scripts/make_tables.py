@@ -17,11 +17,13 @@ RES = ROOT / "results"; PAPER = ROOT / "paper"
 MAIN = ["ztf", "plasticc_train", "plasticc_ddf", "ucr_starlightcurves", "ucr_ecg5000", "ucr_electricdevices"]
 APPX = ["ucr_wafer"]
 HELD = ["plasticc_wfd"]          # pre-registered held-out set (review round 4); never used for design
+HELD2 = ["plasticc_wfd03"]       # second held-out set (registered for GAMUT-Q); also a second confirmation of GAMUT
 SYN = ["synthetic_k1", "synthetic_k0.5", "synthetic_k2"]
 BNAME = {"ztf": "ZTF-BTS", "plasticc_train": "PLAsTiCC-train", "plasticc_ddf": "PLAsTiCC-DDF",
          "ucr_starlightcurves": "StarLight", "ucr_ecg5000": "ECG5000", "ucr_electricdevices": "ElecDevices",
          "ucr_wafer": "Wafer", "synthetic_k1": "Synth ($\\kappa{=}1$)", "synthetic_k0.5": "Synth ($\\kappa{=}0.5$)",
-         "synthetic_k2": "Synth ($\\kappa{=}2$)", "plasticc_wfd": "PLAsTiCC-WFD (held out)"}
+         "synthetic_k2": "Synth ($\\kappa{=}2$)", "plasticc_wfd": "PLAsTiCC-WFD (held out)",
+         "plasticc_wfd03": "PLAsTiCC-WFD03 (held out)"}
 # method key -> (display name, family)
 BASE = [("FLARE", "FLARE", "deployed"), ("SplitCP", "Split CP", "blind"), ("CQR", "CQR", "blind"), ("DCP", "DCP", "blind"),
         ("LocalizedCP", "Localized CP", "prob"), ("MixtureCP", "Label-shift mixture", "prob"), ("GCC-prob", "GCC ($p$)", "prob"),
@@ -189,7 +191,7 @@ def per_origin_tables(R, bench):
                 r = res[key]
                 lines.append(disp + " & " + f3(r["marginal"]) + " & " + " & ".join(f2(r["per_class"].get(c, np.nan)) for c in cls)
                              + f" & {f3(r['worst_class'])} & {f3(r['ccg'])} & {f3(r['width'])} & {f3(r['interval_score'])} & {f3(r['class_avg_interval_score'])} \\\\")
-            unit = "d" if bench in ("ztf", "plasticc_train", "plasticc_ddf", "plasticc_wfd") else "\\%"
+            unit = "d" if bench in ("ztf", "plasticc_train", "plasticc_ddf", "plasticc_wfd", "plasticc_wfd03") else "\\%"
             blocks.append(f"""\\begin{{table}}[H]
 \\centering
 \\caption{{{BNAME[bench]}, origin {h:g}{unit}, {int(round(100 * (1 - a)))}\\% bands. Per-class coverage (point-pooled), worst class, CCG, mean length, interval score (IS) and class-averaged IS.}}
@@ -314,11 +316,11 @@ def bench_table():
     rows = []
     origins = {"ztf": "5,10,15,20,30 d", "plasticc_train": "5,15,30 d", "plasticc_ddf": "5,15,30 d",
                "ucr_starlightcurves": "20,40,60\\%", "ucr_ecg5000": "20,40,60\\%", "ucr_electricdevices": "20,40,60\\%",
-               "ucr_wafer": "20\\%", "plasticc_wfd": "5,15,30 d"}
+               "ucr_wafer": "20\\%", "plasticc_wfd": "5,15,30 d", "plasticc_wfd03": "5,15,30 d"}
     domain = {"ztf": "ZTF transients", "plasticc_train": "LSST sim.", "plasticc_ddf": "LSST sim. (DDF)",
               "ucr_starlightcurves": "stellar light curves", "ucr_ecg5000": "ECG", "ucr_electricdevices": "electricity",
-              "ucr_wafer": "semiconductor", "plasticc_wfd": "LSST sim. (WFD)"}
-    for b in MAIN + APPX + HELD:
+              "ucr_wafer": "semiconductor", "plasticc_wfd": "LSST sim. (WFD)", "plasticc_wfd03": "LSST sim. (WFD, chunk 3)"}
+    for b in MAIN + APPX + HELD + HELD2:
         d = ROOT / "data" / b
         hs = sorted(float(x.stem.split("_h")[1]) for x in d.glob("oof_h*.npz"))
         if not hs:
@@ -834,6 +836,24 @@ def extra_analysis_macros(M):
                     M[f"MergedDef{mac}{tag}"] = f"{np.median(de):.2f}" if de else "--"
 
 
+def gamutq_macros(R, M):
+    """GAMUT-Q (registered interval-score variant): development on the main benchmarks, confirmation on chunk 03."""
+    for a, tag in ((0.32, "Sixtyeight"), (0.05, "Ninetyfive")):
+        g = agg(R, MAIN, "GAMUT-Q", a)
+        if g:
+            M[f"QValid{tag}"] = f"{100 * g['valid']:.0f}\\%"; M[f"QWidth{tag}"] = f"{g['rel_width']:.2f}"
+        g2 = agg(R, HELD2, "GAMUT-Q", a)
+        if g2:
+            M[f"QHeldValid{tag}"] = f"{100 * g2['valid']:.0f}\\%"
+    for fn, pre in (("is_bootstrap_q.json", "QIS"), ("is_bootstrap_wfd03_GAMUTQ.json", "QHeldIS"), ("is_bootstrap_wfd03_GAMUT.json", "HeldBIS")):
+        f = RES / fn
+        if f.exists():
+            d = json.loads(f.read_text())
+            for a, tag in (("0.32", "Sixtyeight"), ("0.05", "Ninetyfive")):
+                v = [x for k, x in d.items() if k.endswith("|" + a)]
+                M[f"{pre}{tag}"] = f"{sum(x['better'] for x in v)}/{sum(x['worse'] for x in v)}"
+
+
 def sensitivity_macros(R, M):
     """Main results without ElectricDevices (52-59% exactly-zero targets violate the density assumption)."""
     sub = [b for b in MAIN if b != "ucr_electricdevices"]
@@ -874,6 +894,8 @@ def plan_table(M):
          f"Run after review (\\texttt{{scripts/is\\_bootstrap.py}}): significantly better in {g('ISBetterSixtyeight')}/{g('ISBetterNinetyfive')}, worse in {g('ISWorseSixtyeight')}/{g('ISWorseNinetyfive')}"),
         ("B4 grid", "Bandwidth $\\times\\{0.5,1,2\\}$ and other hyperparameters on validation folds",
          "Run with bandwidth $\\times\\{1,2,4\\}$ (the default moved to $\\times2$), plus dual iterations and fixed lead bins; the other registered values as planned"),
+        ("GAMUT-Q (registered after review)", "Valid at every origin and level of PLAsTiCC chunk 03 and lower class-averaged IS than every valid baseline in most settings",
+         f"Not met: valid in {g('QHeldValidSixtyeight')} and {g('QHeldValidNinetyfive')} of the chunk-03 settings, IS better/worse in {g('QHeldISSixtyeight')} and {g('QHeldISNinetyfive')}; not adopted"),
         ("B0, B2, B3, B5, B7, B8", "Observation, ablations, synthetic, per-horizon curves, runtime, closure probability",
          "Run as registered (B8 with its own registration, \\cref{app:closure})"),
     ]
@@ -922,6 +944,47 @@ def held_table(R, M):
         ct = agg(R, HELD, "GAMUT-cert (split certificate)", a)
         if ct:
             M[f"HeldWidthCert{tag}"] = f"{ct['rel_width']:.2f}"; M[f"HeldValidCert{tag}"] = f"{100 * ct['valid']:.0f}\\%"
+
+
+
+def held2_table(R, M):
+    """Pre-registered held-out benchmark (PLAsTiCC-WFD, test chunk 02): the summary of tab:main for that benchmark alone."""
+    rows = []
+    for key, disp, fam in BASE + [(OURS[0], OURS[1], "ours"), ("GAMUT-Q", "\\gamut-Q (interval-score variant)", "q"), ("GAMUT-cert (split certificate)", "\\gamut-cert (split certificate)", "ours2"),
+                                  (ORACLE[0], ORACLE[1], "oracle")]:
+        cells = []
+        for a in LEVELS:
+            g = agg(R, HELD2, key, a)
+            cells += ["--"] * 5 if g is None else [f"{100 * g['valid']:.0f}", f3(g["worst"]), f3(g["ccg"]),
+                                                   "--" if not np.isfinite(g["cells"]) else f"{g['cells']:.1f}", f2(g["rel_width"])]
+        if any(c != "--" for c in cells):
+            rows.append(disp + " & " + " & ".join(cells) + " \\\\")
+        if key in ("DCP", "CPTC", "MaxClassCP", "MaxClassCP + C1") and rows:
+            rows.append("\\midrule")
+    n = agg(R, HELD2, "GAMUT", 0.32)
+    tex = ("\\begin{table}[H]\n\\centering\n\\caption{Pre-registered held-out benchmark: wide-fast-deep objects of PLAsTiCC test chunk 03, "
+           "registered for the interval-score variant and evaluated once with frozen code (" + str(n["n"] if n else 0) + " origins per level). Columns as in \\cref{tab:main}.}\n"
+           "\\label{tab:held2}\n\\scriptsize\n\\resizebox{\\textwidth}{!}{%\n\\begin{tabular}{lccccc@{\\hspace{8pt}}ccccc}\n\\toprule\n"
+           " & \\multicolumn{5}{c}{68\\% bands} & \\multicolumn{5}{c}{95\\% bands} \\\\\n\\cmidrule(lr){2-6} \\cmidrule(lr){7-11}\n"
+           "Method & Valid & Worst & CCG & Cells & Width & Valid & Worst & CCG & Cells & Width \\\\\n\\midrule\n"
+           + ("\n".join(rows) if rows else "\\multicolumn{11}{c}{(pending)} \\\\") + "\n\\bottomrule\n\\end{tabular}}\n\\end{table}\n")
+    (PAPER / "tables" / "held2.tex").write_text(tex.replace("\\midrule\n\\bottomrule", "\\bottomrule"))
+    for a, tag in ((0.32, "Sixtyeight"), (0.05, "Ninetyfive")):
+        g = agg(R, HELD2, "GAMUT", a)
+        if g:
+            M[f"HeldBValidGamut{tag}"] = f"{100 * g['valid']:.0f}\\%"; M[f"HeldBWidthGamut{tag}"] = f"{g['rel_width']:.2f}"
+            M[f"HeldBWorstGamut{tag}"] = f"{g['min_worst']:.3f}"; M[f"HeldBCellsGamut{tag}"] = f"{g['cells']:.1f}"
+        fl = agg(R, HELD2, "FLARE", a)
+        if fl:
+            M[f"HeldBValidFlare{tag}"] = f"{100 * fl['valid']:.0f}\\%"; M[f"HeldBWorstFlare{tag}"] = f"{fl['min_worst']:.3f}"
+        vb = [agg(R, HELD2, k, a) for k in ("TwoStepCP", "MDCP", "MaxClassCP")]
+        vb = [x for x in vb if x]
+        if vb:
+            M[f"HeldBWidthValid{tag}"] = f"{min(x['rel_width'] for x in vb):.2f}--{max(x['rel_width'] for x in vb):.2f}"
+            M[f"HeldBValidValid{tag}"] = f"{100 * min(x['valid'] for x in vb):.0f}--{100 * max(x['valid'] for x in vb):.0f}\\%"
+        ct = agg(R, HELD2, "GAMUT-cert (split certificate)", a)
+        if ct:
+            M[f"HeldBWidthCert{tag}"] = f"{ct['rel_width']:.2f}"; M[f"HeldBValidCert{tag}"] = f"{100 * ct['valid']:.0f}\\%"
 
 
 def extra_macros(R, M):
@@ -1045,11 +1108,11 @@ def main():
     (PAPER / "tables" / "per_bench.tex").write_text(per_bench_table(
         R, MAIN + APPX + [b for b in HELD if any(k[0] == b for k in R)], "tab:perbench", "Per benchmark: worst-class coverage (minimum over origins) / mean band length relative to FLARE.", meth))
     with open(PAPER / "tables" / "per_origin.tex", "w") as fh:
-        for b in MAIN + APPX + SYN + HELD:
+        for b in MAIN + APPX + SYN + HELD + HELD2:
             fh.write(per_origin_tables(R, b))
     M = numbers(R)
     observation_table(R, M); ablation_full(R, M); hyper_table(M); cert_table(R); synthetic_table(R, M); runtime_table(R, M)
-    cnt = unfavourable_table(R); main_macros(R, M); diag_macros(R, M); strict_table(M); extra_macros(R, M); held_table(R, M); is_macros(R, M); sensitivity_macros(R, M); extra_analysis_macros(M); plan_table(M)
+    cnt = unfavourable_table(R); main_macros(R, M); diag_macros(R, M); strict_table(M); extra_macros(R, M); held_table(R, M); held2_table(R, M); is_macros(R, M); gamutq_macros(R, M); sensitivity_macros(R, M); extra_analysis_macros(M); plan_table(M)
     print("unfavourable counts", cnt)
     for f in ("main.tex", "bench.tex", "ablation.tex"):  # these overflow the column; scale them to the line width
         fp = PAPER / "tables" / f; t = fp.read_text()
