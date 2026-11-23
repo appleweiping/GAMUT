@@ -20,7 +20,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from gamut import data, latent_baselines, methods, metrics  # noqa: E402
 
-ALL = {**methods.METHODS, **latent_baselines.LATENT_BASELINES}
+from gamut import variants  # noqa: E402
+ALL = {**methods.METHODS, **latent_baselines.LATENT_BASELINES, **variants.VARIANTS}
 
 
 def run(task, name, fn, alpha, kw):
@@ -71,7 +72,7 @@ def main():
             t0 = time.time()
             res, arr = run(task, name, fn, alpha, kw)
             res["seconds"] = round(time.time() - t0, 1)
-            if fn in (methods.gamut,):
+            if fn in (methods.gamut,) or fn in variants.VARIANTS.values():
                 res["version"] = methods.GAMUT_VERSION
             elif name in ("KandinskyCP", "MDCP"):
                 res["version"] = methods.GRID_VERSION

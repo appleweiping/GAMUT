@@ -9,7 +9,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 SCALE_FLOOR = 0.05            # FLARE: scale = max(|q84 - q16| / 2, 0.05)
-ASTRO = {"ztf", "plasticc_train", "plasticc_ddf", "plasticc_wfd"}
+ASTRO = {"ztf", "plasticc_train", "plasticc_ddf", "plasticc_wfd", "plasticc_wfd03"}
 FLARE_GRID = np.array([10, 15, 20, 25, 30, 40, 50, 60, 75, 90], float)
 
 

@@ -97,3 +97,23 @@ set becomes a singleton. It ranks objects but is not calibrated.
   before has more than one class.
 - **Primary claim to test.** S2 + IVAP has lower test ECE and Brier than S0 (and S0 + IVAP), without lower AUC.
   Results are reported whatever they are.
+
+## GAMUT-Q: interval-score variant (registered 2026-11-23, before any implementation)
+
+Motivation (test-informed): on the registered efficiency endpoint, the class-averaged interval score (IS), GAMUT is
+significantly worse than the best valid baseline in 13/20 (68%) and 14/20 (95%) main settings. GAMUT minimises band
+length; IS also penalises the distance of misses, which density level sets do not control.
+
+- **Variant.** Same C1 (residual laws), C2 (temperature) and C3 (dual fixed point on per-class object-level CRC
+  thresholds, adaptive horizon cells). Only the score changes: s_v(x, y) = min(F_v(y|x), 1 - F_v(y|x)), with
+  F_v the CDF of the dual-weighted posterior mixture sum_c v_c p_c(x) F_c(y|x) / sum_c v_c p_c(x). The band is the
+  central interval [F_v^{-1}(t), F_v^{-1}(1 - t)].
+- **Development.** The six main benchmarks are used for development only; anything measured there is test-informed
+  and labelled as such.
+- **Confirmation (the only basis for a claim).** A fresh held-out set never read before: wide-fast-deep objects of
+  the unblinded PLAsTiCC test chunk 03, same pipeline as PLAsTiCC-WFD (chunk 02), origins 5/15/30 d, frozen code, run
+  once. Primary claim: GAMUT-Q is valid (bootstrap rule) at every origin and level and has a lower class-averaged IS
+  than every valid baseline in the paired bootstrap in a majority of the 6 settings. Reported whatever it is.
+- **Code frozen for the chunk-03 confirmation** (recorded before chunk 03 was read): md5 gamut/methods.py a4e1cb90e66749e5e7ddd37069a9ceb9,
+  gamut/variants.py (GAMUT-Q) aa2bf36a4b5d40513411669c5a622192, gamut/metrics.py 1febdfedc18aac75c9b1aeefa99e9e13, gamut/latent_baselines.py 7eeb7ba86a74140142a90419e39963eb. No change to GAMUT-Q
+  after the development runs on the main benchmarks (they started at the same time as this freeze).

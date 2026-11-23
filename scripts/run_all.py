@@ -16,14 +16,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-ORDER = ["ztf", "plasticc_train", "ucr_ecg5000", "ucr_starlightcurves", "plasticc_ddf", "ucr_electricdevices", "ucr_wafer", "plasticc_wfd",
+ORDER = ["ztf", "plasticc_train", "ucr_ecg5000", "ucr_starlightcurves", "plasticc_ddf", "ucr_electricdevices", "ucr_wafer", "plasticc_wfd", "plasticc_wfd03",
          "synthetic_k1", "synthetic_k0.5", "synthetic_k2"]
 H_ORDER = {"ztf": [5, 20, 10, 30, 15]}
 
 
 def expected_names():
-    from gamut import latent_baselines, methods
-    return set(methods.METHODS) | set(latent_baselines.LATENT_BASELINES) | set(methods.ABLATIONS)
+    from gamut import latent_baselines, methods, variants
+    return set(methods.METHODS) | set(latent_baselines.LATENT_BASELINES) | set(methods.ABLATIONS) | set(variants.VARIANTS)
 
 
 def missing(bench, h, names):

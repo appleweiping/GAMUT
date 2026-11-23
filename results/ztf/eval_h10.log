@@ -330,3 +330,215 @@ ztf h=10 alpha=0.05: MaxClassCP + C1                    marg 0.997 worst 0.966 c
       per class SN_Ia:1.00 SN_CC:1.00 SLSN:0.97 AGN:1.00 TDE:0.99 CV:0.97
 ztf h=10 alpha=0.05: TwoStepCP + C1                     marg 0.991 worst 0.965 ccg 0.031 width 3.685 IS 3.778 cls-IS 4.316 miscls 0.986 (1.1s)
       per class SN_Ia:0.99 SN_CC:0.99 SLSN:0.97 AGN:0.98 TDE:0.98 CV:0.97
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (60.4s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (53.8s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (54.9s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (55.7s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (59.3s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (60.0s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (86.1s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (60.4s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (67.5s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (66.6s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (75.8s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (62.0s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (65.4s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (62.3s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (63.5s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (62.8s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (64.3s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (61.9s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (64.2s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (66.8s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (75.7s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (71.8s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (71.1s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (68.6s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (71.7s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (66.6s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (66.9s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (64.0s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (68.0s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (63.9s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (62.4s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (63.5s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (63.6s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (59.9s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (64.2s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (62.5s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (65.8s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (61.9s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (65.5s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (64.2s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (70.1s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (61.3s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (64.6s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (55.5s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (58.6s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (56.7s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (58.9s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (55.0s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (60.6s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (57.9s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (58.4s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (57.1s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (60.5s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (58.0s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (60.9s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (56.8s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (59.6s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (55.1s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (58.6s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (58.7s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (59.4s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (57.3s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (59.3s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (56.7s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (60.3s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (57.6s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (58.3s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (59.1s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (61.6s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (58.5s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (57.0s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (55.6s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (57.8s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (55.6s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (58.8s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (57.5s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (59.4s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (55.0s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (56.1s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (53.8s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (60.1s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (55.9s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (59.0s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (57.0s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (56.4s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (53.6s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (58.8s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (57.2s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (56.8s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (55.8s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (56.8s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (54.6s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (59.9s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (57.0s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (59.9s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (56.1s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (57.6s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (54.5s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (61.2s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (58.2s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (58.3s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (57.2s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (59.1s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (54.6s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96
+ztf h=10 alpha=0.32: GAMUT-Q                            marg 0.764 worst 0.719 ccg 0.066 width 1.296 IS 1.703 cls-IS 2.172 miscls 0.697 (55.8s)
+      per class SN_Ia:0.76 SN_CC:0.79 SLSN:0.72 AGN:0.75 TDE:0.74 CV:0.72
+ztf h=10 alpha=0.05: GAMUT-Q                            marg 0.971 worst 0.959 ccg 0.016 width 3.362 IS 3.642 cls-IS 4.100 miscls 0.960 (53.7s)
+      per class SN_Ia:0.97 SN_CC:0.98 SLSN:0.96 AGN:0.97 TDE:0.97 CV:0.96

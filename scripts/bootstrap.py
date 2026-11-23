@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 B = 500
 METHODS = ["FLARE", "SplitCP", "CQR", "DCP", "LocalizedCP", "MixtureCP", "GCC-prob", "PartitionCP", "CPTC", "TwoStepCP",
-           "KandinskyCP", "MDCP", "MaxClassCP", "MDCP + C1", "TwoStepCP + C1", "MaxClassCP + C1", "GAMUT", "Oracle-true-class"]
+           "KandinskyCP", "MDCP", "MaxClassCP", "MDCP + C1", "TwoStepCP + C1", "MaxClassCP + C1", "GAMUT", "GAMUT-Q", "Oracle-true-class"]
 sys.path.insert(0, str(ROOT))
 from gamut import methods as _m  # noqa: E402
 METHODS += list(_m.ABLATIONS)

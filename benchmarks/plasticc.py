@@ -3,6 +3,7 @@
 Two benchmarks with different cadence and selection:
   * plasticc_train: the 7,848-object training set (spectroscopically biased, bright, WFD + DDF);
   * plasticc_ddf:   the deep-drilling-field objects of test chunk 01 with their unblinded classes (deep, unbiased);
+  * plasticc_wfd03: the same for test chunk 03 (second held-out set, registered for GAMUT-Q);
   * plasticc_wfd:   the wide-fast-deep objects of test chunk 02 (held-out set, pre-registered after review round 4;
                     never used for design). Rows are pre-filtered to the detections that to_events keeps, and objects to
                     those that can pass the quality cut, before feature extraction (equivalent result, for speed).
@@ -84,14 +85,15 @@ def _object(job):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--which", choices=["train", "ddf", "wfd"], required=True)
+    ap = argparse.ArgumentParser(); ap.add_argument("--which", choices=["train", "ddf", "wfd", "wfd03"], required=True)
     ap.add_argument("--workers", type=int, default=4); a = ap.parse_args()
     if a.which == "train":
         lc = pd.read_csv(RAW / "plasticc_train_lightcurves.csv.gz"); meta = pd.read_csv(RAW / "plasticc_train_metadata.csv.gz")
         meta["label"] = meta.target
-    elif a.which == "wfd":
+    elif a.which in ("wfd", "wfd03"):
         parts = []
-        for ch in pd.read_csv(RAW / "plasticc_test_lightcurves_02.csv.gz", chunksize=5_000_000):
+        chunk = "02" if a.which == "wfd" else "03"
+        for ch in pd.read_csv(RAW / f"plasticc_test_lightcurves_{chunk}.csv.gz", chunksize=5_000_000):
             parts.append(ch[(ch.detected_bool == 1) & ch.passband.isin([1, 2, 3]) & (ch.flux > 0)])
         lc = pd.concat(parts, ignore_index=True); del parts
         cnt = lc.groupby("object_id").passband.agg(n="size", g=lambda b: (b == 1).sum(), r=lambda b: (b == 2).sum())
