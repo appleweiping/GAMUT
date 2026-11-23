@@ -1,0 +1,40 @@
+ztf h=10 a=0.05: vs TwoStepCP + C1   ratio 1.071 [1.007, 1.136] gamut_valid=True
+ztf h=10 a=0.32: vs KandinskyCP      ratio 1.060 [1.019, 1.099] gamut_valid=True
+ztf h=15 a=0.05: vs CPTC             ratio 1.094 [1.027, 1.161] gamut_valid=True
+ztf h=15 a=0.32: vs TwoStepCP + C1   ratio 1.032 [0.994, 1.078] gamut_valid=True
+ztf h=20 a=0.05: vs CPTC             ratio 1.090 [1.056, 1.123] gamut_valid=True
+ztf h=20 a=0.32: vs KandinskyCP      ratio 1.009 [0.968, 1.052] gamut_valid=True
+ztf h=30 a=0.05: vs CPTC             ratio 1.124 [1.070, 1.175] gamut_valid=True
+ztf h=30 a=0.32: vs MixtureCP        ratio 1.041 [1.002, 1.073] gamut_valid=True
+ztf h=5 a=0.05: vs MDCP             ratio 1.066 [1.018, 1.129] gamut_valid=True
+ztf h=5 a=0.32: vs KandinskyCP      ratio 1.040 [1.011, 1.073] gamut_valid=True
+plasticc_train h=15 a=0.05: vs CPTC             ratio 1.381 [1.318, 1.436] gamut_valid=True
+plasticc_train h=15 a=0.32: vs MDCP             ratio 0.995 [0.962, 1.030] gamut_valid=True
+plasticc_train h=30 a=0.05: vs MixtureCP        ratio 1.187 [1.099, 1.274] gamut_valid=False
+plasticc_train h=30 a=0.32: vs CPTC             ratio 1.142 [1.108, 1.178] gamut_valid=True
+plasticc_train h=5 a=0.05: vs MDCP             ratio 1.250 [1.206, 1.290] gamut_valid=False
+plasticc_train h=5 a=0.32: vs MDCP             ratio 1.030 [1.004, 1.060] gamut_valid=True
+plasticc_ddf h=15 a=0.05: vs MDCP             ratio 1.244 [1.181, 1.320] gamut_valid=True
+plasticc_ddf h=15 a=0.32: vs MDCP             ratio 1.072 [1.034, 1.110] gamut_valid=True
+plasticc_ddf h=30 a=0.05: vs CPTC             ratio 1.259 [1.139, 1.371] gamut_valid=True
+plasticc_ddf h=30 a=0.32: vs KandinskyCP      ratio 1.032 [0.979, 1.086] gamut_valid=True
+plasticc_ddf h=5 a=0.05: vs MDCP             ratio 1.101 [1.055, 1.152] gamut_valid=True
+plasticc_ddf h=5 a=0.32: vs MDCP             ratio 1.076 [1.046, 1.105] gamut_valid=True
+ucr_starlightcurves h=20 a=0.05: vs CPTC             ratio 0.984 [0.982, 0.987] gamut_valid=True
+ucr_starlightcurves h=20 a=0.32: vs CPTC             ratio 1.002 [1.000, 1.003] gamut_valid=True
+ucr_starlightcurves h=40 a=0.05: vs TwoStepCP + C1   ratio 0.997 [0.995, 0.999] gamut_valid=True
+ucr_starlightcurves h=40 a=0.32: vs CQR              ratio 1.019 [1.015, 1.023] gamut_valid=True
+ucr_starlightcurves h=60 a=0.05: vs TwoStepCP        ratio 1.001 [0.992, 1.011] gamut_valid=True
+ucr_starlightcurves h=60 a=0.32: vs CPTC             ratio 1.003 [1.002, 1.003] gamut_valid=True
+ucr_ecg5000 h=20 a=0.05: vs CPTC             ratio 1.516 [1.439, 1.596] gamut_valid=True
+ucr_ecg5000 h=20 a=0.32: vs PartitionCP      ratio 1.081 [1.010, 1.166] gamut_valid=True
+ucr_ecg5000 h=40 a=0.05: vs PartitionCP      ratio 1.767 [1.626, 1.908] gamut_valid=True
+ucr_ecg5000 h=40 a=0.32: vs KandinskyCP      ratio 1.062 [1.017, 1.115] gamut_valid=True
+ucr_ecg5000 h=60 a=0.05: vs CPTC             ratio 1.798 [1.672, 1.940] gamut_valid=True
+ucr_ecg5000 h=60 a=0.32: vs LocalizedCP      ratio 1.129 [1.050, 1.229] gamut_valid=True
+ucr_electricdevices h=20 a=0.05: vs MDCP             ratio 0.872 [0.867, 0.877] gamut_valid=True
+ucr_electricdevices h=20 a=0.32: vs KandinskyCP      ratio 0.992 [0.991, 0.994] gamut_valid=True
+ucr_electricdevices h=40 a=0.05: vs MDCP             ratio 0.821 [0.816, 0.825] gamut_valid=True
+ucr_electricdevices h=40 a=0.32: vs TwoStepCP        ratio 0.995 [0.992, 0.997] gamut_valid=True
+ucr_electricdevices h=60 a=0.05: vs CPTC             ratio 0.892 [0.887, 0.896] gamut_valid=True
+ucr_electricdevices h=60 a=0.32: vs KandinskyCP      ratio 0.996 [0.994, 0.998] gamut_valid=True

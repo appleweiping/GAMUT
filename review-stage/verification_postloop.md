@@ -24,3 +24,22 @@ frozen code matches, run once, fully reported); round-4 items 1-6 and 8-16 resol
 | 10 | minor | "methods that also cover every class" | "always-valid baselines" |
 | 11 | minor | ElectricDevices zero targets break the density assumption | Limitation added (52-59% exact zeros) |
 | 12 | minor | Fixed bins "do as well" understates | "do better at 95%" with numbers |
+
+## Second verification (after the fixes above)
+
+**Score 6/10 · verdict: almost** (same-family). Items 2-12 of the first verification confirmed fixed. Remaining issues
+and actions:
+
+| # | Severity | Issue | Action |
+|---|---|---|---|
+| 1 | major | Closure gain may come from a better next-point law, not class conditioning; rare-class reversal only in appendix | Pooled control run (`scripts/closure_pooled.py`): Brier 0.080/0.064 vs ours 0.077/0.064, so the gain is mainly the learned law; text reframed ("learned next-point law"), SLSN reversal stated in the main text |
+| 2 | major | ZTF widths quoted only under cross-fitting | Strict-split widths (1.08/1.70) added in the introduction |
+| 3 | major | Registered plan outcomes reported only in part; B6 not run; B1 paired IS test missing | Registered-outcome table for C1-C5 and B0-B8 (tab:plan); B1 paired IS bootstrap run (`scripts/is_bootstrap.py`): better in 3/20 and 5/20, worse in 13/20 and 14/20; B6 reported as not run |
+| 4 | minor | "always-valid baselines do better" on cells is false for MDCP | Two-step and max-class do better, MDCP worse (1.8/1.9) |
+| 5 | minor | Prop. 1 overstated in abstract | "plus the posterior's own error" |
+| 6 | minor | Certificate scope | "(rare classes may have too few)" |
+| 7 | minor | 23% average hides weak cases | Per-level gains (27%/20%) in the abstract; MDCP-at-95% 8% in README and tab:plan |
+| 8 | minor | Wording (CV at day 20; which hyperparameters) | Fixed |
+| 9 | minor | Closure per-class ECE and subset intervals missing | Added (tab:closureclass, tab:closurereg) |
+| 10 | minor | Stale numbers in README and design log | Updated |
+| 11 | minor | No limitation in the conclusion | Added |

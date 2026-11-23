@@ -258,6 +258,14 @@ def numbers(R):
             for k in ("TwoStepCP", "MDCP", "MaxClassCP"):
                 gains.append(1 - R[(b, h, a)]["GAMUT"]["width"] / R[(b, h, a)][k]["width"])
     M["WidthGainValidMean"] = f"{100 * np.mean(gains):.0f}\\%" if gains else "--"
+    for a, tag in ((0.32, "Sixtyeight"), (0.05, "Ninetyfive")):
+        S = settings(R, MAIN, a, need=("GAMUT", "TwoStepCP", "MDCP", "MaxClassCP"))
+        g = [1 - R[(b, h, a)]["GAMUT"]["width"] / R[(b, h, a)][k]["width"] for b, h in S for k in ("TwoStepCP", "MDCP", "MaxClassCP")]
+        if g:
+            M[f"WidthGainValid{tag}"] = f"{100 * np.mean(g):.0f}\\%"
+        gm = [1 - R[(b, h, a)]["GAMUT"]["width"] / R[(b, h, a)]["MDCP"]["width"] for b, h in S]
+        if gm:
+            M[f"WidthGainMDCP{tag}"] = f"{100 * np.mean(gm):.0f}\\%"
     gains = []
     C1 = ("TwoStepCP + C1", "MDCP + C1", "MaxClassCP + C1")
     for a in LEVELS:
@@ -802,6 +810,43 @@ def is_macros(R, M):
             M[f"ISMaxRatio{tag}"] = f"{max(ratios):.2f}"
 
 
+def plan_table(M):
+    """Outcome of every claim and block registered in refine-logs/EXPERIMENT_PLAN.md (main plan)."""
+    f = RES / "is_bootstrap.json"
+    if f.exists():
+        d = json.loads(f.read_text())
+        for a, tag in (("0.32", "Sixtyeight"), ("0.05", "Ninetyfive")):
+            v = [x for k, x in d.items() if k.endswith("|" + a)]
+            M[f"ISBetter{tag}"] = f"{sum(x['better'] for x in v)}/{len(v)}"; M[f"ISWorse{tag}"] = f"{sum(x['worse'] for x in v)}/{len(v)}"
+    g = lambda k: M.get(k, "??")
+    rows = [
+        ("C1 validity", "Worst class $\\ge$ nominal $-0.02$/$-0.015$ on $\\ge$6 benchmarks at every origin",
+         f"Not met as registered: {g('MainValidTolGamutSixtyeight')} (68\\%) and {g('MainValidTolGamutNinetyfive')} (95\\%) of settings under this tolerance; "
+         f"{g('MainValidGamutSixtyeight')} and {g('MainValidGamutNinetyfive')} under the bootstrap rule used in the text"),
+        ("C2 efficiency", "Smallest class-averaged IS and width among valid methods on $\\ge$6 benchmarks",
+         f"Not met: lowest class-averaged IS in {g('ISWinsGamutSixtyeight')} and {g('ISWinsGamutNinetyfive')} settings; paired bootstrap significantly better in "
+         f"{g('ISBetterSixtyeight')} and {g('ISBetterNinetyfive')}, worse in {g('ISWorseSixtyeight')} and {g('ISWorseNinetyfive')}. Width: shorter than the "
+         f"always-valid baselines by {g('WidthGainValidSixtyeight')} (68\\%) and {g('WidthGainValidNinetyfive')} (95\\%) on average, but wider than MDCP in {g('NinetyfiveWiderThanMDCP')} settings at 95\\%"),
+        ("C3 components", "Removing any of C1/C2/C3 degrades validity or IS on most benchmarks",
+         "Met for C2 and C3 (validity or width, \\cref{tab:ablation}); not met for C1 on the real benchmarks (+3--4\\% width, validity at 95\\% 90\\% $\\to$ 85\\%), met on the synthetic family"),
+        ("C4 theory", "Synthetic: observed gap matches Prop.~1; \\gamut{} near the oracle length",
+         f"Met: Prop.~1 within {g('SynPropGapErr')}; \\gamut{{}} {g('SynOracleGapSixtyeight')}/{g('SynOracleGapNinetyfive')} longer than the oracle band"),
+        ("C5 robustness", "Coverage under degraded posteriors, prior shift, small calibration sets",
+         "Partly run: posterior temperature distortion (synthetic $\\kappa$) only. Label-noise posteriors, calibration subsampling and the train$\\to$DDF prior shift (block B6) were not run; the strict split and the held-out set were added instead"),
+        ("B1 paired IS test", "Paired object-level bootstrap of class-averaged IS vs the best valid baseline",
+         f"Run after review (\\texttt{{scripts/is\\_bootstrap.py}}): significantly better in {g('ISBetterSixtyeight')}/{g('ISBetterNinetyfive')}, worse in {g('ISWorseSixtyeight')}/{g('ISWorseNinetyfive')}"),
+        ("B4 grid", "Bandwidth $\\times\\{0.5,1,2\\}$ and other hyperparameters on validation folds",
+         "Run with bandwidth $\\times\\{1,2,4\\}$ (the default moved to $\\times2$), plus dual iterations and fixed lead bins; the other registered values as planned"),
+        ("B0, B2, B3, B5, B7, B8", "Observation, ablations, synthetic, per-horizon curves, runtime, closure probability",
+         "Run as registered (B8 with its own registration, \\cref{app:closure})"),
+    ]
+    body = "\n".join(f"{a} & {b} & {c} \\\\" for a, b, c in rows)
+    tex = ("{\\scriptsize\n\\begin{longtable}{p{1.6cm}p{4.2cm}p{9.2cm}}\n\\caption{Every claim and block registered in the experiment plan, with its outcome.}\n\\label{tab:plan}\\\\\n"
+           "\\toprule\nRegistered & Criterion & Outcome \\\\\n\\midrule\n\\endfirsthead\n\\toprule\nRegistered & Criterion & Outcome \\\\\n\\midrule\n\\endhead\n"
+           + body + "\n\\bottomrule\n\\end{longtable}}\n")
+    (PAPER / "tables" / "plan.tex").write_text(tex)
+
+
 def held_table(R, M):
     """Pre-registered held-out benchmark (PLAsTiCC-WFD, test chunk 02): the summary of tab:main for that benchmark alone."""
     rows = []
@@ -846,6 +891,7 @@ def extra_macros(R, M):
     """Macros added after review round 3 (guarantee-matched widths, tolerance validity, ablation details)."""
     tol = lambda key, a: np.mean([R[(b, h, a)][key]["worst_class"] >= 1 - a - TOL[a] for b, h in settings(R, MAIN, a, need=(key,))])
     M["MainValidTolGamutSixtyeight"] = f"{100 * tol('GAMUT', 0.32):.0f}\\%"
+    M["MainValidTolGamutNinetyfive"] = f"{100 * tol('GAMUT', 0.05):.0f}\\%"
     S95 = settings(R, MAIN, 0.05, need=("GAMUT", "MDCP"))
     M["NinetyfiveWiderThanMDCP"] = f"{sum(R[(b, h, 0.05)]['GAMUT']['width'] > R[(b, h, 0.05)]['MDCP']['width'] for b, h in S95)}/{len(S95)}"
     for key, mac in (("CPTC", "CPTC"), ("GAMUT-cert (split certificate)", "Cert")):
@@ -966,7 +1012,7 @@ def main():
             fh.write(per_origin_tables(R, b))
     M = numbers(R)
     observation_table(R, M); ablation_full(R, M); hyper_table(M); cert_table(R); synthetic_table(R, M); runtime_table(R, M)
-    cnt = unfavourable_table(R); main_macros(R, M); diag_macros(R, M); strict_table(M); extra_macros(R, M); held_table(R, M); is_macros(R, M)
+    cnt = unfavourable_table(R); main_macros(R, M); diag_macros(R, M); strict_table(M); extra_macros(R, M); held_table(R, M); is_macros(R, M); plan_table(M)
     print("unfavourable counts", cnt)
     for f in ("main.tex", "bench.tex", "ablation.tex"):  # these overflow the column; scale them to the line width
         fp = PAPER / "tables" / f; t = fp.read_text()

@@ -2,13 +2,13 @@
 Forecasts of transient light curves must be issued days before the object's class is known.
 Conformal bands calibrated per \emph{predicted} class reach nominal coverage overall but under-cover rare classes, because early classifications of rare objects are often wrong.
 We study forecast bands whose coverage holds for every latent class, a class that is labelled in the calibration data but uncertain at test time.
-We show that calibrating under reweighting by the classifier's probabilities leaves a class-coverage error equal to a conditional covariance between membership and miscoverage.
+We show that calibrating under reweighting by the classifier's probabilities leaves a class-coverage error equal to a conditional covariance between membership and miscoverage, plus the posterior's own error.
 We then show that the band of smallest scale-weighted length meeting one constraint per class and horizon is a level set of a dual-weighted mixture of class-conditional predictive densities.
 \gamut{} estimates this band with three coupled components: a forecaster queried under every class hypothesis, a calibrated membership posterior, and dual weights that balance per-class conformal risk-control thresholds.
-A split variant is valid in finite samples under a strict split for every class with enough certification objects, however poor the posterior.
+A split variant is valid in finite samples under a strict split for every class with enough certification objects (rare classes may have too few), however poor the posterior.
 We evaluate on the ZTF Bright Transient Survey benchmark with the deployed model's folds, five further benchmarks and a pre-registered held-out set, against 13 published methods.
 The default \gamut{}, which reuses the calibration data and is validated empirically, leaves no class significantly under-covered in \MainValidGamutSixtyeight{} of the main settings at 68\% and \MainValidGamutNinetyfive{} at 95\%, and in every held-out setting.
 On ZTF it raises day-5 superluminous-supernova coverage from \ZTFflareSLSNsixtyeight{} to \ZTFgamutSLSNsixtyeight{} at 68\%, with bands \ZTFfiveWidthRatioSixtyeight{} times as long as the deployed ones.
-Its bands are on average \WidthGainValidMean{} shorter than those of the always-valid baselines; the split variant is about as long as they are.
-Class-conditional simulation also sharpens FLARE's calibrated probability that one more observation resolves the class, lowering its Brier score by \CloTenBrierGainVA{}--\CloFiveBrierGainVA{}.
+Its bands are on average \WidthGainValidSixtyeight{} (68\%) and \WidthGainValidNinetyfive{} (95\%) shorter than those of the always-valid baselines; the split variant is about as long as they are.
+A learned next-point law also sharpens FLARE's recalibrated probability that one more observation resolves the class, lowering its Brier score by \CloTenBrierGainVA{}--\CloFiveBrierGainVA{}.
 \end{abstract}

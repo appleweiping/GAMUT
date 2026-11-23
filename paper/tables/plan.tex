@@ -1,0 +1,22 @@
+{\scriptsize
+\begin{longtable}{p{1.6cm}p{4.2cm}p{9.2cm}}
+\caption{Every claim and block registered in the experiment plan, with its outcome.}
+\label{tab:plan}\\
+\toprule
+Registered & Criterion & Outcome \\
+\midrule
+\endfirsthead
+\toprule
+Registered & Criterion & Outcome \\
+\midrule
+\endhead
+C1 validity & Worst class $\ge$ nominal $-0.02$/$-0.015$ on $\ge$6 benchmarks at every origin & Not met as registered: 85\% (68\%) and 90\% (95\%) of settings under this tolerance; 100\% and 90\% under the bootstrap rule used in the text \\
+C2 efficiency & Smallest class-averaged IS and width among valid methods on $\ge$6 benchmarks & Not met: lowest class-averaged IS in 3/20 and 5/20 settings; paired bootstrap significantly better in 3/20 and 5/20, worse in 13/20 and 14/20. Width: shorter than the always-valid baselines by 27\% (68\%) and 20\% (95\%) on average, but wider than MDCP in 7/20 settings at 95\% \\
+C3 components & Removing any of C1/C2/C3 degrades validity or IS on most benchmarks & Met for C2 and C3 (validity or width, \cref{tab:ablation}); not met for C1 on the real benchmarks (+3--4\% width, validity at 95\% 90\% $\to$ 85\%), met on the synthetic family \\
+C4 theory & Synthetic: observed gap matches Prop.~1; \gamut{} near the oracle length & Met: Prop.~1 within 0.026; \gamut{} 2.3\%/7.5\% longer than the oracle band \\
+C5 robustness & Coverage under degraded posteriors, prior shift, small calibration sets & Partly run: posterior temperature distortion (synthetic $\kappa$) only. Label-noise posteriors, calibration subsampling and the train$\to$DDF prior shift (block B6) were not run; the strict split and the held-out set were added instead \\
+B1 paired IS test & Paired object-level bootstrap of class-averaged IS vs the best valid baseline & Run after review (\texttt{scripts/is\_bootstrap.py}): significantly better in 3/20/5/20, worse in 13/20/14/20 \\
+B4 grid & Bandwidth $\times\{0.5,1,2\}$ and other hyperparameters on validation folds & Run with bandwidth $\times\{1,2,4\}$ (the default moved to $\times2$), plus dual iterations and fixed lead bins; the other registered values as planned \\
+B0, B2, B3, B5, B7, B8 & Observation, ablations, synthetic, per-horizon curves, runtime, closure probability & Run as registered (B8 with its own registration, \cref{app:closure}) \\
+\bottomrule
+\end{longtable}}

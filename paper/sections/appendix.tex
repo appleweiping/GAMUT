@@ -156,7 +156,7 @@ The deployed score is over-dispersed (calibration slope \CloFiveSlopeDep{} and \
 Against the deployed score with the same Venn--Abers layer, the class-conditional score lowers the Brier score by \CloFiveBrierGainVA{} (day 5) and \CloTenBrierGainVA{} (day 10), with paired bootstrap intervals of the difference \CloFiveDBrierVA{} and \CloTenDBrierVA{}; against the score as shipped, by \CloFiveBrierGain{} and \CloTenBrierGain{}.
 Its AUC rises from \CloFiveAUCDep{} to \CloFiveAUCOurs{} and from \CloTenAUCDep{} to \CloTenAUCOurs{}.
 Its ECE is not significantly different from that of the recalibrated deployed score, so the registered ECE claim against that reference is not met; the gain is in sharpness and ranking.
-The gain comes from the class-conditional next-point laws, not from mixing over classes: drawing only under the argmax class gives Brier \CloFiveBrierArgmax{} and \CloTenBrierArgmax{}, so the mixture adds \CloFiveMixGain{} and \CloTenMixGain{}. The deployed construction at the real next time gives \CloFiveBrierRealTime{} and \CloTenBrierRealTime{}.
+The gain comes mainly from the learned next-point law, not from class conditioning. A control that draws from a pooled forecaster trained on the same split, with the same kind of empirical residuals, gives Brier \CloFiveBrierPooled{} and \CloTenBrierPooled{} (AUC \CloFiveAUCPooled{} and \CloTenAUCPooled{}); drawing only under the argmax class gives \CloFiveBrierArgmax{} and \CloTenBrierArgmax{}, so mixing adds \CloFiveMixGain{} and \CloTenMixGain{}. The deployed construction at the real next time gives \CloFiveBrierRealTime{} and \CloTenBrierRealTime{}, so the fixed-scatter Gaussian, not the time of the draw, is what the learned law improves on.
 On the registered subset of objects whose set has more than one class before the observation, the gains are of the same size (\cref{tab:closurereg}).
 Per class (\cref{tab:closureclass}), the class-conditional score is better for SN~Ia and CVs but worse for SLSNe at both days, and for AGN and TDEs at day 10; these classes have 7--20 test rows each, and their next-point laws use the pooled residuals.
 \input{tables/closure}
@@ -211,6 +211,11 @@ Several changes were triggered by results on test folds, so the reported results
 \item The bootstrap's random draws were re-seeded per setting (and per method for the cell test) so that they do not depend on the list of methods; with one shared stream, adding baselines had moved Kandinsky CP's validity rates by one setting at each level, which shows that settings near the decision boundary depend on the Monte-Carlo draws. All validity numbers use the stable seeds.
 \end{itemize}
 To bound the effect of this exposure, the held-out benchmark of \cref{app:held} was registered and evaluated once after the last change.
+
+\section{Registered plan and outcomes}
+\label{app:plan}
+\Cref{tab:plan} lists every claim and block of the experiment plan registered before the main runs, with its outcome; the held-out set and the closure study have their own registrations (\cref{app:held,app:closure}).
+\input{tables/plan}
 Earlier designs (a union of class bands, absolute-length level sets, highest-density-mass levels) were rejected on development data and are recorded in the log.
 
 \section{Limitations}

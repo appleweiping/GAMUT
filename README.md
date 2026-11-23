@@ -50,8 +50,8 @@ ICML-style paper (`paper/main.pdf`).
 - **Six main benchmarks, 20 settings per level.** "Valid" means no class is significantly under-covered under an
   object-level bootstrap test. The default GAMUT is valid in **100%** of settings at 68% and **90%** at 95%, with
   bands **1.09×** and **1.36×** FLARE's. The always-valid baselines (two-step, MDCP, max-class) need 1.48–1.62× and
-  1.49–2.61×. Averaged over both levels, GAMUT is **23% shorter** than them and **29% shorter** than their versions
-  given GAMUT's forecaster.
+  1.49–2.61×. GAMUT is on average **27% (68%) and 20% (95%) shorter** than them (only 8% shorter than MDCP at 95%,
+  and wider than MDCP in 7/20 settings there) and 29% shorter than their versions given GAMUT's forecaster.
 - **On ZTF**, day-5 SLSN coverage at 68% rises from 0.53 to **0.71**, with bands only **1.05×** FLARE's.
 - **Strict split on ZTF**, at all five origins (the premise of the theorem):
   - GAMUT has no under-covered class at either level, with bands **1.08×** (68%) and 1.70× (95%) FLARE's.
@@ -61,12 +61,14 @@ ICML-style paper (`paper/main.pdf`).
   - GAMUT is valid at all three origins at both levels, with bands 1.51× and 1.67× FLARE's.
   - The always-valid baselines need 1.84–2.02× and 1.49–1.96×; MDCP is narrower than GAMUT at 95%.
   - FLARE's worst class falls to 0.27.
-- **Closure probability** (FLARE's second open problem): simulating the next observation from the class-conditional
-  next-point laws, then adding a Venn–Abers layer, lowers the test Brier score:
+- **Closure probability** (FLARE's second open problem): simulating the next observation from a learned next-point
+  law (GAMUT's C1 with empirical residuals, mixed by C2) instead of a fixed-scatter Gaussian, then adding a Venn–Abers
+  layer, lowers the test Brier score:
   - by **21%** (day 5) and **14%** (day 10) against FLARE's score with the same Venn–Abers layer;
-  - by 27% and 18% against FLARE's score as shipped.
+  - by 27% and 19% against FLARE's score as shipped.
   
-  AUC rises from 0.937 to 0.963 and from 0.955 to 0.973.
+  AUC rises from 0.937 to 0.963 and from 0.955 to 0.973. A pooled version of the same learned law does almost as well
+  (Brier 0.080 and 0.064), so the gain comes mainly from the learned law, not from class conditioning.
 
 Every unfavourable result is reported in the paper's appendix and summarised in [Section 7](#7-where-gamut-does-not-win).
 
@@ -223,7 +225,8 @@ under-covered.
 threshold needs. GAMUT-cert's guarantee then covers only the two supernova classes; the others are covered
 empirically but not certified.
 
-**Pre-registered held-out set** (PLAsTiCC-WFD, 3 origins). FLARE: valid 0% at both levels, worst class 0.266.
+**Pre-registered held-out set** (PLAsTiCC-WFD, 3 origins; 20,763 objects pass the quality cut, 20,760 of them have
+a future point at the earliest origin). FLARE: valid 0% at both levels, worst class 0.266.
 GAMUT: valid **100%** at both levels, width **1.51×** and **1.67×**. Two-step, MDCP and max-class CP: valid 100%,
 width 1.84–2.02× and 1.49–1.96×.
 
@@ -259,8 +262,12 @@ All of the following are in the paper's appendix.
   0.8 (95%) per setting. GAMUT's thresholds hold per merged horizon cell, and at 95% on PLAsTiCC the merged cell spans
   all horizons.
 - **The registered efficiency endpoint.** On the class-averaged interval score, GAMUT is the best valid method in
-  only 3/20 (68%) and 5/20 (95%) settings, with median ratio to the best valid method 1.03 and 1.10. Length was
-  reported instead because Prop. 2 optimises it.
+  only 3/20 (68%) and 5/20 (95%) settings, with median ratio to the best valid method 1.03 and 1.10. In the registered
+  paired bootstrap it is significantly better than the best valid baseline in 3/20 and 5/20 settings and significantly
+  worse in 13/20 and 14/20. Length was reported instead because Prop. 2 optimises it.
+- **Registered claims.** C1 (validity under the fixed tolerance) holds in 85%/90% of settings, not all. C2
+  (efficiency) is not met on the interval score. C3 is not met for C1 on real data. The label-noise, subsampling and
+  prior-shift robustness checks of C5 were not run. The paper's appendix has the full outcome table.
 - **Strict split at 95%.** The default GAMUT is wider than GAMUT-cert, and at day 10 wider than two-step CP. Small
   classes enter its minimum with almost no risk budget.
 - **Empty bands.** On PLAsTiCC-train, up to 7.8% of points get an empty band at 68%; on ElectricDevices, up to 4.6%.
@@ -293,8 +300,10 @@ object's *real* next detection.
 | 5 | FLARE p_singleton (as shipped) | 0.071 | 0.105 | 0.403 | 0.937 |
 | 5 | FLARE + Venn–Abers | 0.023 | 0.098 | 0.319 | 0.937 |
 | 5 | **Class-conditional + Venn–Abers (ours)** | 0.023 | **0.077** | **0.247** | **0.963** |
+| 5 | Pooled learned law + Venn–Abers (control) | 0.025 | 0.080 | 0.256 | 0.959 |
 | 10 | FLARE p_singleton (as shipped) | 0.054 | 0.078 | 0.356 | 0.955 |
 | 10 | FLARE + Venn–Abers | 0.017 | 0.074 | 0.254 | 0.954 |
+| 10 | Pooled learned law + Venn–Abers (control) | 0.019 | 0.064 | 0.213 | 0.968 |
 | 10 | **Class-conditional + Venn–Abers (ours)** | 0.017 | **0.064** | **0.203** | **0.973** |
 
 The paired bootstrap intervals of the Brier difference against FLARE + Venn–Abers exclude zero:
@@ -302,8 +311,9 @@ $[-0.028,-0.013]$ at day 5 and $[-0.019,-0.002]$ at day 10.
 
 What the study does **not** show:
 - ECE is not significantly lower than that of the recalibrated FLARE score. That registered claim is not met.
-- The gain comes from the class-conditional next-point laws; mixing over classes adds only 0.001 Brier.
-- The score is worse for SLSNe, which have 16–18 test rows.
+- The gain comes mainly from the learned next-point law: the pooled control is almost as good. Class conditioning
+  adds AUC 0.004–0.005 and at most 0.003 Brier; mixing over classes adds 0.001 Brier over the argmax class alone.
+- The score is worse for SLSNe at both days and for AGN and TDEs at day 10 (7–20 test rows each).
 
 ## 9. Reproducing the results
 

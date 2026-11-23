@@ -4,6 +4,10 @@
  "ZTFflareCorrectSixtyeight": "0.70",
  "ZTFgamutSLSNsixtyeight": "0.71",
  "WidthGainValidMean": "23\\%",
+ "WidthGainValidSixtyeight": "27\\%",
+ "WidthGainMDCPSixtyeight": "30\\%",
+ "WidthGainValidNinetyfive": "20\\%",
+ "WidthGainMDCPNinetyfive": "8\\%",
  "WidthGainCOneMean": "29\\%",
  "ZTFprobGainMax": "0.069",
  "ZTFflareMargDev": "0.001",
@@ -122,6 +126,7 @@
  "StrictWidthFlareNinetyfive": "1.00",
  "StrictNOrigins": "5",
  "MainValidTolGamutSixtyeight": "85\\%",
+ "MainValidTolGamutNinetyfive": "90\\%",
  "NinetyfiveWiderThanMDCP": "7/20",
  "MainWidthCPTCSixtyeight": "1.01",
  "MainValidCPTCSixtyeight": "35\\%",
@@ -175,5 +180,9 @@
  "ISMaxRatioSixtyeight": "1.14",
  "ISWinsGamutNinetyfive": "5/20",
  "ISMedRatioNinetyfive": "1.10",
- "ISMaxRatioNinetyfive": "1.80"
+ "ISMaxRatioNinetyfive": "1.80",
+ "ISBetterSixtyeight": "3/20",
+ "ISWorseSixtyeight": "13/20",
+ "ISBetterNinetyfive": "5/20",
+ "ISWorseNinetyfive": "14/20"
 }

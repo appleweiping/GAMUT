@@ -13,12 +13,7 @@ Every benchmark uses five stratified folds and leave-one-fold-out cross-conforma
 A method is calibrated on the out-of-fold outputs of four folds and evaluated on the fifth, and the results of all folds are pooled.
 
 \paragraph{Models.}
-On ZTF the classifier is FLARE's hierarchical model.
-On the other benchmarks it is a class-weighted LightGBM classifier.
-The forecasters follow FLARE's recipe \citep{ke2017lightgbm}: an L1 median and 2.5/16/84/97.5\% quantile models on the prefix features plus lead time and band.
-C1 is the same recipe with the one-hot class appended.
-All models are cross-fitted, so every object receives out-of-fold outputs (\cref{app:protocol}).
-Every method uses these same outputs; only the calibration step differs.
+The classifier is FLARE's hierarchical model on ZTF and a class-weighted LightGBM elsewhere; the forecasters follow FLARE's recipe \citep{ke2017lightgbm} (L1 median and 2.5/16/84/97.5\% quantiles on the prefix features, lead time and band), and C1 appends the one-hot class. All models are cross-fitted (\cref{app:protocol}); every method uses the same outputs and only the calibration step differs.
 
 \paragraph{Baselines.}
 We compare against 13 published methods.
@@ -26,17 +21,12 @@ We compare against 13 published methods.
 \emph{Membership-blind:} split CP with normalised residuals \citep{lei2018distribution}, CQR \citep{romano2019conformalized} and DCP \citep{chernozhukov2021distributional}.
 \emph{Probability-conditioned:} localised CP in posterior space \citep{guan2023localized}, the label-shift mixture of class-wise score laws \citep{podkopaev2021distribution}, GCC with posterior features \citep{gibbs2025conformal}, learned-partition Mondrian CP \citep{kiyani2024conformal} and CPTC \citep{sun2025conformal}.
 \emph{Latent-class-valid:} two-step CP \citep{timans2024adaptive}, Kandinsky CP with a learned $\P(Z\mid X,Y)$ \citep{bairaktari2025kandinsky}, MDCP \citep{yang2026multi} and the max-class quantile \citep{barber2021limits}.
-Where a baseline needed a component that this setting lacks, we gave it ours.
-CPTC, Kandinsky CP and MDCP use our hypothesis-conditional forecaster: MDCP with its own Gaussian working densities, and with the posterior as the basis of its multipliers.
-Two-step and max-class CP use the pooled forecaster, as in their papers.
-To separate calibration from modelling, we also run the three latent-class-valid methods with our C1 (marked +\,C1). MDCP then uses \gamut's residual laws as working densities, and two-step and max-class CP take unions of class-conditional intervals from the hypothesis-conditional forecaster.
-GCC and Kandinsky CP fit their quantile regressions on 15,000-point subsamples (\cref{app:baselines}).
-The Mondrian band by \emph{true} class is shown as a reference; it needs the test label and is not an optimality bound.
+Where a baseline needed a component this setting lacks, we gave it ours: CPTC, Kandinsky CP and MDCP use our hypothesis-conditional forecaster, two-step and max-class CP the pooled one, as in their papers (\cref{app:baselines}). To separate calibration from modelling we also run the three latent-class-valid methods with our C1 (+\,C1: MDCP with \gamut's residual laws, two-step and max-class CP with unions of class-conditional intervals). The Mondrian band by \emph{true} class is a reference that needs the test label.
 
 \paragraph{Metrics.}
 We report per-class coverage pooled over future points (FLARE's metric), the object-level coverage per (class, lead-time bin) cell of \cref{eq:target}, the worst-class coverage, the class-coverage gap $\mathrm{CCG}=\frac1K\sum_c|\mathrm{cov}_c-(1-\alpha)|$ and the mean band length.
 A setting (benchmark, origin, level) is \emph{valid} for a method if no class is significantly under-covered: the upper end of its 95\% object-level bootstrap interval (500 resamples) is not below nominal.
-Two endpoints differ from our plan, which registered a fixed tolerance (worst class $\ge$ nominal $-0.02$/$-0.015$; \cref{app:results} reports both) and the class-averaged interval score \citep{gneiting2007strictly}; on the latter \gamut{} is the best valid method in only \ISWinsGamutSixtyeight{} and \ISWinsGamutNinetyfive{} settings (median ratio \ISMedRatioSixtyeight{} and \ISMedRatioNinetyfive{}; \cref{app:unfavourable}). We report length because \cref{prop:oracle} optimises it.
+Two endpoints differ from our plan, which registered a fixed tolerance (worst class $\ge$ nominal $-0.02$/$-0.015$; \cref{app:results} reports both) and the class-averaged interval score \citep{gneiting2007strictly}; on the latter \gamut{} is the best valid method in only \ISWinsGamutSixtyeight{} and \ISWinsGamutNinetyfive{} settings (median ratio \ISMedRatioSixtyeight{} and \ISMedRatioNinetyfive{}; \cref{app:unfavourable}). We report length because \cref{prop:oracle} optimises it; \cref{app:plan} gives the outcome of every registered claim.
 
 
 \subsection{Main results}
@@ -48,7 +38,7 @@ Two-step CP, MDCP and max-class CP are valid in every setting by over-covering t
 Across both levels its bands are on average \WidthGainValidMean{} shorter than those of the three always-valid baselines and \WidthGainCOneMean{} shorter than their +\,C1 versions, though at 95\% it is wider than MDCP in \NinetyfiveWiderThanMDCP{} of the settings.
 At 95\% \gamut{} is valid in \MainValidGamutNinetyfive{} of the settings (the exceptions: SN~Ia on PLAsTiCC-train, at 0.93); CPTC is valid in \MainValidBestNonValidNinetyfive{} there with shorter bands (\MainWidthCPTCNinetyfive{}), but in only \MainValidCPTCSixtyeight{} at 68\%.
 With tiny classes (PLAsTiCC-train, 30--40 calibration objects; ECG5000, about 19) the per-class finite-sample thresholds make \gamut{} wider at 95\% than MDCP or than every valid baseline (\cref{app:unfavourable}).
-On the per-(class, horizon) quantity of \cref{eq:target} the always-valid baselines do better: per setting, two-step and max-class CP leave no (class, lead-time bin) cell significantly under-covered and MDCP \MainCellsMDCPSixtyeight{}, against \MainCellsGamutSixtyeight{} (68\%) and \MainCellsGamutNinetyfive{} (95\%) for \gamut{} and \MainCellsFlareSixtyeight{} and \MainCellsFlareNinetyfive{} for FLARE; \gamut's thresholds hold per merged cell, whereas this check uses FLARE's bins.
+On the per-(class, horizon) quantity of \cref{eq:target}, two-step and max-class CP do better, leaving no (class, lead-time bin) cell significantly under-covered; MDCP does worse (\MainCellsMDCPSixtyeight{} and \MainCellsMDCPNinetyfive{} per setting), against \MainCellsGamutSixtyeight{} (68\%) and \MainCellsGamutNinetyfive{} (95\%) for \gamut{} and \MainCellsFlareSixtyeight{} and \MainCellsFlareNinetyfive{} for FLARE; \gamut's thresholds hold per merged cell, whereas this check uses FLARE's bins.
 \gamut's efficiency comes from using all calibration data, without a finite-sample guarantee; \gamut-cert, run under the same cross-fitted protocol, is \MainWidthCertSixtyeight{} and \MainWidthCertNinetyfive{} times FLARE's, about as wide as two-step CP at 68\% and wider than MDCP at 95\%.
 \paragraph{Held-out benchmark.}
 As some design choices followed test results (\cref{app:history}), we pre-registered one run on unseen data with frozen code: the wide-fast-deep objects of PLAsTiCC test chunk 02 (20,763 objects, 12 classes; \cref{app:held}).
@@ -56,8 +46,7 @@ FLARE under-covers a class at every origin (worst \HeldWorstFlareSixtyeight{} at
 Two-step CP, MDCP and max-class CP need \HeldWidthValidSixtyeight{} and \HeldWidthValidNinetyfive{} times; at 95\% MDCP is narrower than \gamut{}, and two-step and max-class CP leave no (class, lead-time bin) cell under-covered, against \HeldCellsGamutNinetyfive{} per setting for \gamut{}.
 
 \paragraph{Closure probability.}
-The latent-class argument also applies to FLARE's probability that one more detection makes its 90\% classification set a singleton, simulated from the predicted class's forecast with a fixed scatter.
-Simulating instead from C1's class-conditional next-point laws, mixed by the C2 posterior and followed by a Venn--Abers layer \citep{vovk2014venn}, lowers the test Brier score by \CloFiveBrierGainVA{} (day 5) and \CloTenBrierGainVA{} (day 10) against the deployed score with the same layer, and raises the AUC from \CloFiveAUCDep{} to \CloFiveAUCOurs{} and from \CloTenAUCDep{} to \CloTenAUCOurs{}; ECE is not significantly different. The gain comes from the class-conditional laws, not from mixing (pre-registered; all models trained on FLARE's training split; \cref{app:closure}).
+FLARE simulates the probability that one more detection makes its 90\% set a singleton from a fixed-scatter Gaussian. Drawing instead from C1's laws with empirical residuals, mixed by C2, plus a Venn--Abers layer \citep{vovk2014venn}, lowers the test Brier score by \CloFiveBrierGainVA{} (day 5) and \CloTenBrierGainVA{} (day 10) against the deployed score with the same layer and raises the AUC (\CloFiveAUCDep{} to \CloFiveAUCOurs{}, \CloTenAUCDep{} to \CloTenAUCOurs{}); ECE is unchanged. A pooled version does almost as well (Brier \CloFiveBrierPooled{}, \CloTenBrierPooled{}), and SLSNe are worse (pre-registered; \cref{app:closure}).
 
 \paragraph{ZTF.}
 In \cref{fig:ztf}, \gamut{} is \ZTFWidthRatioSixtyeight{} (68\%) and \ZTFWidthRatioNinetyfive{} (95\%) times as wide as FLARE, whose SLSN and TDE coverage at 68\% stays between \ZTFflareSLSNmin{} and \ZTFflareSLSNmax{}; \gamut{} never falls more than \ZTFgamutMaxUnderSixtyeight{} (68\%) or \ZTFgamutMaxUnderNinetyfive{} (95\%) below nominal for any class at any origin.
@@ -79,7 +68,7 @@ Without dual weights (HPD-split on the posterior mixture) it is valid in \AblVal
 Prior-ratio weights, the class-balanced score without the fixed point, are valid but \AblWidthBalanced{} wider, and over-cover the common classes.
 On the real benchmarks the hypothesis-conditional forecaster (C1) matters little: without it the band length changes by \AblWNoConeSixtyeight{} (68\%) and \AblWNoConeNinetyfive{} (95\%), and validity at 95\% falls from \MainValidGamutNinetyfive{} to \AblValidNoConeNinetyfive{}.
 On the synthetic family, where the class forecasts differ most, it shortens the bands by \AblConeSynSixtyeight{} (68\%) and \AblConeSynNinetyfive{} (95\%).
-Scoring calibration points leave-one-object-out matters for small classes: without it, CVs at day 20 fall to \AblWorstNoLooZTF{} at 68\%, and validity at 95\% drops to \AblValidNoLooNinetyfive{}.
+Scoring calibration points leave-one-object-out matters for small classes: without it, ZTF CV coverage at day 20 falls to \AblWorstNoLooZTF{} at 68\%, and validity at 95\% drops to \AblValidNoLooNinetyfive{}.
 A single threshold for all horizons lets one (class, horizon) cell fall to \AblOneThreshWorstCell{} on ZTF.
 Temperature scaling also changes little here (\AblWRawSixtyeight{} width at 68\%; valid in \AblValidRawNinetyfive{} of settings at 95\%), as the classifiers are nearly calibrated.
 On these benchmarks, then, \gamut's gains come from using the posterior at all (C2) and from the dual weights (C3); C1 and the temperature step protect against class-specific dynamics and miscalibration, which they do not exhibit.
@@ -88,7 +77,7 @@ Points instead of objects as calibration units keep the width and validity (\cre
 
 \paragraph{Synthetic data and hyperparameters.}
 With known laws (\cref{app:synthetic}), \cref{prop:gap} predicts the rare-class under-coverage of the single-interval methods to within \SynPropGapErr{}, and \gamut{} covers every class with bands \SynOracleGapSixtyeight{} (68\%) and \SynOracleGapNinetyfive{} (95\%) longer than the oracle band of \cref{prop:oracle}, against \SynOracleGapValidSixtyeight{} and \SynOracleGapValidNinetyfive{} for the latent-class-valid baselines.
-On validation folds only (\cref{app:hyper}), the hyperparameters change the worst class by at most \HyperMaxWorstChange{} and the width by at most \HyperMaxWidthChange{}, but stopping the fixed point after 5 iterations raises the CCG from \HyperDualFiveCCGFrom{} to \HyperDualFiveCCGTo{} on \HyperDualFiveCCGBench{}. Calibration and prediction take about \RuntimeGamutZTF{} seconds per fold on ZTF.
+On validation folds only (\cref{app:hyper}), pooling size, bandwidth, pruning and dual iterations change the worst class by at most \HyperMaxWorstChange{} and the width by at most \HyperMaxWidthChange{}, but stopping the fixed point after 5 iterations raises the CCG from \HyperDualFiveCCGFrom{} to \HyperDualFiveCCGTo{} on \HyperDualFiveCCGBench{}. Calibration and prediction take about \RuntimeGamutZTF{} seconds per fold on ZTF.
 
 \paragraph{Strict split and certificate.} Only a strict split (base models on three folds, calibration on a fourth, test on the fifth, rotated) meets the premise of \cref{thm:valid}. On ZTF at all \StrictNOrigins{} origins (\cref{tab:strictsum}), FLARE has an under-covered class at every origin and \gamut{} none at either level, with bands \StrictWidthGamutSixtyeight{} (68\%) and \StrictWidthGamutNinetyfive{} (95\%) times FLARE's; two-step CP, MDCP and max-class CP, also valid everywhere, need \StrictWidthTwoStepSixtyeight{}--\StrictWidthMDCPSixtyeight{} and \StrictWidthTwoStepNinetyfive{}--\StrictWidthMDCPNinetyfive{} times.
 \gamut-cert needs \StrictWidthCertSixtyeight{} and \StrictWidthCertNinetyfive{} times.

@@ -117,18 +117,22 @@ def main():
         df = pd.read_parquet(f)
         for k, v in variants(df).items():
             df[k] = v
-        common = df[np.isfinite(df.s0) & np.isfinite(df.s1)].copy()
+        has3 = "s3" in df and df["s3"].notna().all()
+        common = df[np.isfinite(df.s0) & np.isfinite(df.s1) & (np.isfinite(df.s3) if "s3" in df else True)].copy()
         val, te = common[common.split == "val"], common[common.split == "test"].copy()
         yv, yt = val.outcome.to_numpy().astype(float), te.outcome.to_numpy().astype(float)
         spec = [("s0", None, "Deployed $p_{\\rm singleton}$ (as shipped)"), ("s0", "platt", "\\quad + Platt"),
                 ("s0", "iso", "\\quad + isotonic"), ("s0", "ivap", "\\quad + Venn--Abers"),
                 ("s1", "ivap", "Deployed at the real time + Venn--Abers"),
+                ("s3", "ivap", "Pooled forecaster, same residuals + Venn--Abers"),
                 ("s2_argmax", "ivap", "Argmax class only + Venn--Abers"),
                 ("s2_raw", "ivap", "Class mixture, raw posterior + Venn--Abers"),
                 ("s2", None, "Class mixture (ours), uncalibrated"), ("s2", "ivap", "Class mixture (ours) + Venn--Abers")]
         cols = []
         res = {}
         for s, cal, disp in spec:
+            if s not in te:
+                continue
             name = f"{s}|{cal}"
             fit = dict(platt=fit_platt, iso=fit_iso, ivap=fit_ivap).get(cal)
             p = te[s].to_numpy() if fit is None else fit(val[s].to_numpy(), yv)(te[s].to_numpy())
@@ -140,7 +144,7 @@ def main():
                 m = te.y.to_numpy() == c
                 if m.sum() >= 5:
                     pcl[CLASSES[c]] = dict(n=int(m.sum()), mean_p=float(np.mean(p[m])), rate=float(yt[m].mean()),
-                                           brier=float(np.mean((p[m] - yt[m]) ** 2)))
+                                           brier=float(np.mean((p[m] - yt[m]) ** 2)), ece=ece(np.clip(p[m], EPS, 1 - EPS), yt[m], bins=min(15, max(1, int(m.sum()) // 5))))
             res[name]["per_class"] = pcl
         bt = boot(te, cols, yt, rng)
         for name in cols:
@@ -150,6 +154,11 @@ def main():
         for name in cols:
             if multi.sum() > 30:
                 res[name]["multi"] = metrics(te[name].to_numpy()[multi], yt[multi])
+        if multi.sum() > 30:
+            sub = te[multi].reset_index(drop=True)
+            bsub = boot(sub, ["s0|None", "s0|ivap", "s2|ivap"], yt[multi], rng)
+            res["s2|ivap"]["multi"]["d_brier_va_ci"] = bsub["s2|ivap"]["d_brier_va_ci"]
+            res["s2|ivap"]["multi"]["d_brier_ci"] = bsub["s2|ivap"]["d_brier_ci"]
         # rows where the deployed score is undefined (no prefix detection in that band): only the mixture applies
         und = df[~np.isfinite(df.s0) & (df.split == "test")]
         report[h] = dict(n_test=int(len(te)), n_val=int(len(val)), n_test_objects=int(te.obj_id.nunique()),
@@ -198,7 +207,9 @@ def main():
             reg.append(f"{h} & ours vs {ref} & AUC & {o['auc'] - nm['auc']:+.3f} & -- & {'met' if o['auc'] >= nm['auc'] else 'not met'} \\\\")
         mm = r["methods"]["s2|ivap"].get("multi"); md = r["methods"]["s0|ivap"].get("multi"); m0 = r["methods"]["s0|None"].get("multi")
         if mm and md:
-            reg.append(f"{h} & sets with $>1$ class ($n={r['n_multi']}$) & Brier & ours {mm['brier']:.3f}, S0 {m0['brier']:.3f}, S0+VA {md['brier']:.3f} & -- & -- \\\\")
+            ci = mm.get("d_brier_va_ci", [float("nan")] * 2)
+            reg.append(f"{h} & sets with $>1$ class ($n={r['n_multi']}$) vs S0 + VA & Brier & {mm['brier'] - md['brier']:+.3f} & [{ci[0]:+.3f}, {ci[1]:+.3f}] & "
+                       f"{'met' if ci[1] < 0 else 'not met'} \\\\")
             reg.append(f"{h} & sets with $>1$ class & ECE & ours {mm['ece']:.3f}, S0 {m0['ece']:.3f}, S0+VA {md['ece']:.3f} & -- & -- \\\\")
         reg.append("\\midrule")
     rtex = ("\\begin{table}[H]\n\\centering\n\\caption{Outcome of the pre-registered closure-probability comparisons on the test split "
@@ -210,6 +221,9 @@ def main():
         tag = {5: "Five", 10: "Ten"}[h]
         a_ = r["methods"]["s2_argmax|ivap"]["brier"]; o_ = r["methods"]["s2|ivap"]["brier"]
         macros[f"Clo{tag}MixGain"] = f"{a_ - o_:.3f}"
+        if "s3|ivap" in r["methods"]:
+            macros[f"Clo{tag}BrierPooled"] = f"{r['methods']['s3|ivap']['brier']:.3f}"
+            macros[f"Clo{tag}AUCPooled"] = f"{r['methods']['s3|ivap']['auc']:.3f}"
         macros[f"Clo{tag}ECEVerdict"] = "lower" if r["methods"]["s2|ivap"]["d_ece_va_ci"][1] < 0 else "not significantly different"
     (PAPER / "closure_numbers.tex").write_text("\n".join(f"\\newcommand{{\\{k}}}{{{v}}}" for k, v in macros.items()) + "\n")
     RES.mkdir(parents=True, exist_ok=True)
@@ -230,13 +244,13 @@ def main():
             o = r["methods"]["s2|ivap"]["per_class"].get(c)
             if a and o:
                 pc_rows.append(f"{h} & {c} & {a['n']} & {a['rate']:.2f} & {a['mean_p']:.2f} & {b['mean_p']:.2f} & {o['mean_p']:.2f} & "
-                               f"{a['brier']:.3f} & {b['brier']:.3f} & {o['brier']:.3f} \\\\")
+                               f"{a['brier']:.3f} & {b['brier']:.3f} & {o['brier']:.3f} & {b['ece']:.3f} & {o['ece']:.3f} \\\\")
         pc_rows.append("\\midrule")
     ptex = ("\\begin{table}[H]\n\\centering\n\\caption{Closure probability per true class on the test split: observed closure rate, mean predicted "
             "probability and Brier score for the deployed score, the deployed score with Venn--Abers, and the class mixture with Venn--Abers (ours). "
             "Classes with at least five test rows.}\n\\label{tab:closureclass}\n\\scriptsize\n\\resizebox{\\columnwidth}{!}{%\n"
-            "\\begin{tabular}{rlrccccccc}\n\\toprule\n & & & & \\multicolumn{3}{c}{Mean predicted} & \\multicolumn{3}{c}{Brier} \\\\\n"
-            "\\cmidrule(lr){5-7}\\cmidrule(lr){8-10}\nDay & Class & $n$ & Rate & Dep. & Dep.+VA & Ours & Dep. & Dep.+VA & Ours \\\\\n\\midrule\n"
+            "\\begin{tabular}{rlrccccccccc}\n\\toprule\n & & & & \\multicolumn{3}{c}{Mean predicted} & \\multicolumn{3}{c}{Brier} & \\multicolumn{2}{c}{ECE} \\\\\n"
+            "\\cmidrule(lr){5-7}\\cmidrule(lr){8-10}\\cmidrule(lr){11-12}\nDay & Class & $n$ & Rate & Dep. & Dep.+VA & Ours & Dep. & Dep.+VA & Ours & Dep.+VA & Ours \\\\\n\\midrule\n"
             + "\n".join(pc_rows) + "\n\\bottomrule\n\\end{tabular}}\n\\end{table}\n").replace("\\midrule\n\\bottomrule", "\\bottomrule")
     (PAPER / "tables" / "closure_class.tex").write_text(ptex)
     # reliability figure

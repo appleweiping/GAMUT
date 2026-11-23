@@ -1,0 +1,6 @@
+h=5 pooled mu: 227 iterations
+h=5 pooled q16: 150 iterations
+h=5 pooled q84: 143 iterations
+h=10 pooled mu: 239 iterations
+h=10 pooled q16: 136 iterations
+h=10 pooled q84: 134 iterations

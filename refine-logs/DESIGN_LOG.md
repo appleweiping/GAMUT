@@ -85,5 +85,10 @@ All numbers: leave-one-fold-out on the development data indicated; recorded befo
     the registration (it was fixed in the script before the first run) and is disclosed in the paper. After the
     post-loop verification review, C1 was retrained on FLARE's `train` split only (scripts/closure_c1.py) so that no
     val/test object enters the score's training; the first run (cross-fitted C1) is kept as a sensitivity result.
-    Result: Brier -25% at days 5 and 10 vs deployed, -19%/-20% vs deployed + Venn-Abers, AUC up; ECE on par with the
-    recalibrated deployed score; worse for SLSNe (16-18 test rows).
+    First run (cross-fitted C1): Brier -25% vs deployed, -19%/-20% vs deployed + Venn-Abers. Final run (C1 on `train`):
+    Brier -27%/-19% vs deployed, -21%/-14% vs deployed + Venn-Abers, AUC 0.937->0.963 and 0.955->0.973, ECE on par
+    with the recalibrated deployed score. A pooled control (scripts/closure_pooled.py) reaches Brier 0.080/0.064 vs
+    ours 0.077/0.064: the gain is mainly the learned next-point law. Worse for SLSNe (both days) and AGN/TDE (day 10).
+17. **Registered B1 paired IS bootstrap** (scripts/is_bootstrap.py, run after the second verification review):
+    GAMUT vs the best valid baseline on class-averaged IS is significantly better in 3/20 (68%) and 5/20 (95%)
+    settings and significantly worse in 13/20 and 14/20. Reported in the registered-outcomes table (tab:plan).

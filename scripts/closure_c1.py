@@ -27,6 +27,7 @@ from crossfit import FORECAST_PARAMS, QUANTILES, cap_rows, fit_lgb, long_frame  
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--h", type=float, required=True); ap.add_argument("--threads", type=int, default=4)
     ap.add_argument("--lr", type=float, default=0.05); ap.add_argument("--cap", type=int, default=24)
+    ap.add_argument("--pooled", action="store_true", help="fit the pooled forecaster (no class input) instead, as a control")
     a = ap.parse_args()
     B = registry.load("ztf", a.h)
     meta = pd.read_parquet(ROOT / "data" / "ztf" / "meta.parquet")
@@ -47,9 +48,16 @@ def main():
     params = dict(FORECAST_PARAMS, learning_rate=a.lr)
     models = {"mu": params, "q16": dict(params, objective="quantile", alpha=QUANTILES["q16"]),
               "q84": dict(params, objective="quantile", alpha=QUANTILES["q84"])}
-    Hfit, Hes = with_class(Xfit, y[Fobj[r_fit]]), with_class(Xes, y[Fobj[r_es]])
     yfit, yes = F.dmag.to_numpy()[r_fit], F.dmag.to_numpy()[r_es]
     out = dict(rows=r_pr)
+    if a.pooled:
+        for name, p in models.items():
+            m = fit_lgb(p, Xfit, yfit, Xes, yes, a.threads)
+            out[f"pool_{name}"] = m.predict(Xpr, num_threads=a.threads)
+            print(f"h={a.h:g} pooled {name}: {m.best_iteration} iterations", flush=True)
+        np.savez_compressed(ROOT / "data" / "ztf" / f"closure_pool_h{a.h:g}.npz", **out)
+        return
+    Hfit, Hes = with_class(Xfit, y[Fobj[r_fit]]), with_class(Xes, y[Fobj[r_es]])
     for name, p in models.items():
         m = fit_lgb(p, Hfit, yfit, Hes, yes, a.threads)
         out[f"hcf_{name}"] = np.stack([m.predict(with_class(Xpr, np.full(len(Xpr), c)), num_threads=a.threads) for c in range(K)], 1)
