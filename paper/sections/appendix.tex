@@ -1,0 +1,218 @@
+\input{sections/app_proofs}
+
+\section{Benchmarks, models and protocol}
+\label{app:protocol}
+\input{tables/bench}
+
+\paragraph{ZTF-BTS.}
+The objects, classes, light curves and catalogue context are those of FLARE's public benchmark \citep{sasli2026flare}.
+For each origin $h\in\{5,10,15,20,30\}$ days after the first detection, the input is FLARE's prefix-causal feature vector computed on the detections up to $h$, exactly the inference path of FLARE's forecaster.
+The targets are all later $g$- or $r$-band detections with $h<t\le90$ days, as AB magnitude relative to the brightest prefix detection.
+Folds are FLARE's: \texttt{StratifiedKFold(5, shuffle, seed 42)} over the pool in the order train, val, test.
+FLARE's classifier is retrained in every fold with FLARE's hierarchical recipe, and we use its uncalibrated probabilities.
+As in FLARE's code, bands are routed by the probability argmax.
+FLARE also switches to a class-weighted point model when the predicted class is rare; every method here shares one pooled point model, so the comparison isolates calibration.
+
+\paragraph{PLAsTiCC.}
+We use the unblinded release.
+The $g$, $r$, $i$ detections are converted to FLARE's event layout (time since first detection, log flux in $\mu$Jy).
+We apply FLARE's quality cut (at least 8 detections, with at least two in $g$ and two in $r$, within 100 days) and build the same features and targets as for ZTF, without catalogue context.
+Classes with fewer than 30 objects are dropped.
+\emph{PLAsTiCC-train} is the spectroscopically biased training set.
+\emph{PLAsTiCC-DDF} contains the deep-drilling objects of test chunk 01 with their true classes.
+
+\paragraph{UCR.}
+TRAIN and TEST files are pooled, and the archive's class labels are the latent classes.
+A prefix of $h\in\{20,40,60\}\%$ of the series is observed.
+Its features are the prefix resampled to 32 points, its mean, standard deviation, extremes, last value, recent slope and curvature, and its quartiles.
+The targets are up to 24 equally spaced later positions, expressed as the change from the last observed value.
+The UCR series are z-normalised by the archive over the whole series, which leaks scale information from the future into the prefix \citep{renault2025early}.
+The leak is the same for all methods, so it does not affect the comparison of calibration methods (\cref{app:limits}).
+StarLightCurves is phase-folded, so its ``future'' is a later phase.
+
+\paragraph{Cross-fitting.}
+For each outer fold, models are fitted on the other folds, with an 85/15 object split for early stopping, and predict the held-out fold.
+The forecasters use FLARE's LightGBM hyperparameters (127 leaves, minimum child size 100, feature fraction 0.6, bagging 0.8).
+To fit our compute budget we use learning rate 0.05 instead of FLARE's 0.02, and at most 24 future points per object in training, on ZTF.
+On the other benchmarks we use learning rate 0.1 and at most 16 points per object.
+All points are kept for evaluation, and every method uses the same outputs.
+The scale is $\sigma=\max(|q_{84}-q_{16}|/2,0.05)$, as in FLARE.
+Lead-time bins are FLARE's grid midpoints for the astronomical benchmarks. For UCR, five equally spaced edges over the remaining series give six bins.
+
+\section{Baselines}
+\label{app:baselines}
+All baselines use the same out-of-fold outputs and the same leave-one-fold-out protocol.
+Mondrian cells with fewer than 20 points fall back to coarser cells, as in FLARE.
+\begin{itemize}
+\item \textbf{FLARE}: normalised residual $|y-\hat\mu|/\sigma$ with multipliers per (predicted class, band, lead-time bin), falling back to (band, lead-time bin).
+\item \textbf{Split CP} \citep{lei2018distribution}: one global multiplier of the normalised residual.
+\item \textbf{CQR} \citep{romano2019conformalized}: the 16/84\% quantiles at the 68\% level and the 2.5/97.5\% quantiles at the 95\% level.
+\item \textbf{DCP} \citep{chernozhukov2021distributional}: piecewise-linear CDF through the five forecast quantiles; score $|F(y)-1/2|$.
+\item \textbf{Localised CP} \citep{guan2023localized}: Gaussian kernel on posterior vectors with the median-distance bandwidth, per lead-time bin.
+\item \textbf{Label-shift mixture} \citep{podkopaev2021distribution}: per (class, bin) score CDFs mixed with the test posterior; this is the ``mixture of class-wise bands'' suggested to us.
+\item \textbf{GCC} \citep{gibbs2025conformal}: unaugmented quantile regression of the score on $[1,\hat p_{1..K-1},$ bin indicators, band$]$, fitted on a 15,000-point subsample.
+\item \textbf{Learned partition} \citep{kiyani2024conformal}: $k$-means with 8 groups on $\sqrt{\hat p}$, Mondrian by (group, bin).
+\item \textbf{CPTC} \citep{sun2025conformal}: state-specific sets from our hypothesis-conditional forecaster, calibrated on each class's points, aggregated by the paper's implemented rule (union over the most probable states with posterior mass $\ge1-\alpha$). The online ACI updates have no batch counterpart and are omitted.
+\item \textbf{Two-step CP} \citep{timans2024adaptive}: class-conditional label sets at $\alpha_L=0.01$ (the paper's setting), then the largest true-class Mondrian multiplier among the classes in the set.
+\item \textbf{Kandinsky CP} \citep{bairaktari2025kandinsky}, fractional membership: $\Phi_c(x,y)=\hat\P(Z=c\mid x,y)$ from a multinomial logistic model. Its features are the log posterior and, for each class hypothesis, the standardised residual, its square and the log scale, plus bin indicators. It is fitted on half of the calibration objects; the quantile regression on $[\Phi,$ bin indicators$]$ is fitted on the other half; the set is found on a $y$-grid.
+\item \textbf{MDCP} \citep{yang2026multi}: Gaussian working models from our hypothesis-conditional forecaster. Multipliers $\lambda_k(x)=\mathrm{softplus}(\Lambda(x)^\top\theta_k)$ with basis $[1,\hat p,$ bin indicators$]$ maximise the empirical dual (their Eq.~10) with Adam (learning rate $10^{-3}$, batch 256, relative-change stopping at $10^{-4}$) on half of the calibration objects. Max-$p$ aggregation of per-class conformal $p$-values is applied on the other half, on a $y$-grid.
+\item \textbf{Max-class CP} \citep{barber2021limits}: the largest true-class multiplier over all classes.
+\item \textbf{+\,C1 variants.} To separate calibration from modelling, the three latent-class-valid methods are also run with \gamut's C1. \emph{MDCP\,+\,C1} replaces MDCP's Gaussian working densities by \gamut's per-(class, lead-time bin) kernel residual laws under each class hypothesis, fitted on MDCP's first half of the calibration objects; everything else is as above. \emph{Two-step CP\,+\,C1} and \emph{Max-class CP\,+\,C1} replace the pooled interval by the union, over the classes in the label set (respectively over all classes), of class-$c$ intervals $\hat\mu_c\pm q_{c,b}\hat\sigma_c$ from the hypothesis-conditional forecaster, with $q_{c,b}$ the true-class (class, lead-time bin) conformal quantile of the class-$c$ standardised residual. Their guarantees are those of the original methods.
+\end{itemize}
+
+\section{Observation study}
+\label{app:observation}
+\Cref{tab:observation} breaks FLARE's coverage down by origin and class.
+It also gives the coverage of objects whose predicted class is wrong, and the best worst-class coverage reached by any of the five probability-conditioned methods.
+The under-coverage concentrates on misclassified objects.
+Conditioning on the probabilities instead of the decision changes little, as \cref{prop:gap} predicts.
+\input{tables/observation}
+
+\section{Full results}
+\label{app:results}
+\input{tables/validity}
+\input{tables/per_bench}
+\input{tables/per_origin}
+
+\section{Ablations}
+\label{app:ablation}
+\input{tables/ablation_full}
+
+\section{Hyperparameter analysis on validation folds}
+\label{app:hyper}
+\input{tables/hyper}
+
+\section{Finite-sample certificate, strict split and excluded cells}
+\label{app:cert}
+\paragraph{Cross-conformal protocol.}
+All results in \cref{sec:exp} use the cross-conformal protocol of FLARE's bands, for every method.
+A calibration object's base-model outputs come from models whose training folds include the test fold.
+Calibration and test scores are therefore not exactly exchangeable, and no method has an exact finite-sample guarantee under this protocol \citep{barber2021predictive}.
+\Cref{tab:cert} compares \gamut{}, \gamut-cert and the point-level variant under this protocol.
+\input{tables/cert}
+\paragraph{Strict three-way split.}
+For each rotation $r$, fold $r$ is the test set and fold $r{+}1$ the calibration set.
+The classifier, the base forecaster and the hypothesis-conditional forecaster are retrained on the remaining three folds.
+This satisfies the premise of \cref{thm:valid}.
+\Cref{tab:strictsum} summarises ZTF over all five origins and \cref{tab:strict} gives every setting, with the object-level bootstrap of the main text.
+\input{tables/strict}
+\paragraph{Excluded cells and borrowed bins.}
+\input{tables/excluded}
+
+\section{Synthetic study}
+\label{app:synthetic}
+\paragraph{Generating process.}
+There are $K=3$ classes with priors $(0.70,0.25,0.05)$, and 6,000 objects in five stratified folds.
+Prefix features are drawn as $x\mid Z=c\sim\mathcal N(m_c,I_2)$, with $m=\{(0,0),(1.2,0.6),(0.6,1.4)\}$.
+Each object has 10 future points at lead times $t=10,20,\dots,100$, with $y=a_c x_1 t/100+s_c(0.3+t/100)\,\varepsilon$, $a=(1,-0.5,2)$ and $s=(0.4,0.8,1.6)$.
+The rare class therefore has the widest and steepest trajectories.
+The methods receive the true posterior, sharpened or flattened by an inverse temperature $\kappa$ ($\kappa=1$ is Bayes-optimal), the true class means and scales as the hypothesis-conditional forecaster, and the posterior-mixture mean and quantiles as the pooled forecaster.
+Differences between methods thus come from calibration alone.
+Because the distortion is a temperature, the temperature scaling of C2 undoes it, so the \gamut{} rows are the same for every $\kappa$ to three decimals; the family therefore tests the baselines' sensitivity to posterior sharpness, and the ablation without C2 calibration shows what \gamut{} loses without it (\AblRawKtwoSixtyeight{} longer bands at $\kappa=2$ and 68\%).
+The oracle band of \cref{prop:oracle} uses the true laws, with dual weights computed on 200,000 fresh draws.
+For \cref{prop:gap}, the class coverage of each single-interval band is predicted from \cref{eq:gap} with the true laws, and compared with the empirical coverage.
+\input{tables/synthetic}
+
+\section{Runtime}
+\label{app:runtime}
+\input{tables/runtime}
+
+\section{Pre-registered held-out benchmark}
+\label{app:held}
+The evaluation was registered in \texttt{refine-logs/EXPERIMENT\_PLAN.md} before the data were downloaded, with the md5 hashes of the frozen method and metric code.
+The data are the wide-fast-deep objects ($\texttt{ddf\_bool}=0$) of the unblinded PLAsTiCC test chunk 02 \citep{kessler2019models}, which no earlier run had read.
+The pipeline is that of PLAsTiCC-DDF: FLARE's quality cut, classes with at least 30 objects, five stratified folds, origins 5, 15 and 30 days, and the same cross-fit recipe.
+Rows were pre-filtered to the detections the event conversion keeps, and objects to those that can pass the quality cut, which changes speed but not the result.
+Every method and ablation was evaluated once, and no design decision followed.
+\input{tables/held}
+
+\section{Closure probability}
+\label{app:closure}
+\paragraph{Problem.}
+FLARE reports, for a planned next observation, the probability $p_{\rm singleton}$ that one more $g$ or $r$ detection makes the deployed 90\% classification set a singleton.
+It is the fraction of 16 simulated next-night magnitudes, drawn from a Gaussian around the forecast of the predicted class's routing model with a fixed scatter per band, for which the recomputed set is a singleton.
+It ranks objects well but is not calibrated.
+The law of the next magnitude depends on the latent class, so the argument of \cref{prop:gap} applies: a simulation routed by the predicted class mis-states the next point for the objects whose class is uncertain.
+\paragraph{Method.}
+Let $\Gamma(\cdot)$ be the deployed set and $x\oplus y$ the prefix with one more detection $y$.
+We estimate
+\[
+p_{\rm close}(x)=\textstyle\sum_c \hat p_c(x)\,\P\big(|\Gamma(x\oplus Y)|=1 \,\big|\, Y\sim\hat f_c(\cdot\mid x)\big),
+\]
+the law of total probability over the latent class. $\hat f_c$ is \gamut's C1 forecaster under class $c$ with the class-$c$ empirical standardised residuals of next detections on the validation split (eight quantile draws per class with $\hat p_c\ge0.01$), and $\hat p$ is the C2 posterior.
+An inductive Venn--Abers layer \citep{vovk2014venn} fitted on the validation split maps the score to a probability.
+Venn--Abers predictors are calibrated when the scoring function is fixed and calibration and test objects are exchangeable. Here C1 is fixed, but the temperature and the residual quantiles are fitted on the same validation split, so we make no finite-sample claim.
+\paragraph{Protocol.}
+The study was registered before any computation (\texttt{refine-logs/EXPERIMENT\_PLAN.md}).
+FLARE's deployed day-5 and day-10 classifiers and its forecaster were trained on its \texttt{train} split. For this study C1 is trained on the same split, so no validation or test object enters any model and the two forecasters see the same objects.
+Every calibrator is fitted on \texttt{val} and results are reported on \texttt{test}.
+The event is the object's real next detection in each band within two days of the origin, appended to the prefix; the outcome is whether the deployed set becomes a singleton.
+The comparison uses the rows where the deployed score is defined (\CloFiveN{} test rows from \CloFiveNObj{} objects at day 5, \CloTenN{} from \CloTenNObj{} at day 10). The mixture is also defined on the \CloFiveUndef{} and \CloTenUndef{} test rows where the deployed score is not, because a band has no prefix detection.
+The draws are at the real next time; the deployed construction at the real time is reported as a control.
+Two deviations from the registration: classes with fewer than 30 validation residuals (SLSN, AGN, TDE) use the pooled residual law, a rule fixed in the script before the first run but not registered; and C1 was first taken from the main experiments' cross-fit, which trains on folds that contain test objects, and was retrained on \texttt{train} after review. That first run gave Brier \CloFiveBrierCrossfit{} and \CloTenBrierCrossfit{}.
+\paragraph{Results.}
+\Cref{tab:closure} and \cref{fig:closure} report the test split, and \cref{tab:closurereg} the outcome of every registered comparison.
+The deployed score is over-dispersed (calibration slope \CloFiveSlopeDep{} and \CloTenSlopeDep{}). Venn--Abers alone repairs most of its ECE, but not its Brier score or log loss.
+Against the deployed score with the same Venn--Abers layer, the class-conditional score lowers the Brier score by \CloFiveBrierGainVA{} (day 5) and \CloTenBrierGainVA{} (day 10), with paired bootstrap intervals of the difference \CloFiveDBrierVA{} and \CloTenDBrierVA{}; against the score as shipped, by \CloFiveBrierGain{} and \CloTenBrierGain{}.
+Its AUC rises from \CloFiveAUCDep{} to \CloFiveAUCOurs{} and from \CloTenAUCDep{} to \CloTenAUCOurs{}.
+Its ECE is not significantly different from that of the recalibrated deployed score, so the registered ECE claim against that reference is not met; the gain is in sharpness and ranking.
+The gain comes from the class-conditional next-point laws, not from mixing over classes: drawing only under the argmax class gives Brier \CloFiveBrierArgmax{} and \CloTenBrierArgmax{}, so the mixture adds \CloFiveMixGain{} and \CloTenMixGain{}. The deployed construction at the real next time gives \CloFiveBrierRealTime{} and \CloTenBrierRealTime{}.
+On the registered subset of objects whose set has more than one class before the observation, the gains are of the same size (\cref{tab:closurereg}).
+Per class (\cref{tab:closureclass}), the class-conditional score is better for SN~Ia and CVs but worse for SLSNe at both days, and for AGN and TDEs at day 10; these classes have 7--20 test rows each, and their next-point laws use the pooled residuals.
+\input{tables/closure}
+\input{tables/closure_reg}
+\input{tables/closure_class}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{figures/closure.pdf}
+\caption{Reliability of the closure probability on FLARE's test split (ten equal-mass bins). Dashed: perfect calibration.}
+\label{fig:closure}
+\end{figure}
+
+\section{Where \gamut{} does not win}
+\label{app:unfavourable}
+We list every setting in which \gamut{} is not class-valid, or in which another method is better on width or class-averaged interval score while also being valid.
+Four patterns account for them.
+\begin{enumerate}
+\item \textbf{Small classes at 95\%.}
+On PLAsTiCC-train (smallest class 36 objects) and ECG5000 (smallest class 24 series), a class has only 19--40 calibration objects.
+\gamut{}'s object-level conformal risk control then leaves that class a risk budget $\alpha(n+1)-1$ of at most one object.
+Its threshold must cover nearly every calibration point of the class, and the minimum over classes passes this conservativeness to the whole band.
+MDCP and two-step CP calibrate on points rather than objects, which costs them less width but gives no object-level guarantee.
+We tried two alternatives (\texttt{refine-logs/DESIGN\_LOG.md}). Raising the inclusion cutoff left the small classes under-covered on validation folds. Pooling their thresholds across horizons was wider still in a check on a test fold, so we did not adopt it.
+\item \textbf{Pooled versus object-level coverage.}
+On PLAsTiCC-train at 95\%, SN~Ia is covered at 0.93 when pooled over points, although the calibration targets object-averaged coverage.
+Objects with many points are covered less often.
+\item \textbf{Interval score.}
+The class-averaged interval score was the efficiency endpoint of our experiment plan. Among the methods valid in a setting, \gamut{} has the lowest one in only \ISWinsGamutSixtyeight{} settings at 68\% and \ISWinsGamutNinetyfive{} at 95\%; its median ratio to the best valid method is \ISMedRatioSixtyeight{} and \ISMedRatioNinetyfive{}, and the largest \ISMaxRatioNinetyfive{}.
+At 95\% it is often higher than that of MDCP or CPTC.
+Its level sets end where the class densities thin out, so misses lie further from the band; the interval score penalises distance, which this does not minimise.
+\item \textbf{Closure probability.}
+For the closure probability (\cref{app:closure}), the class-conditional score has a higher Brier score than the deployed score for SLSNe at both days and for AGN and TDEs at day 10 (7--20 test rows each), and its ECE is not better than that of the recalibrated deployed score.
+\item \textbf{Kandinsky CP and CPTC when they are valid.}
+In the settings where these methods happen to be valid (\cref{tab:main}), they are often slightly narrower than \gamut{}.
+Kandinsky CP, however, is valid in only \MainValidKandinskySixtyeight{} of the settings at 68\% and \MainValidKandinskyNinetyfive{} at 95\%, and CPTC in \MainValidCPTCSixtyeight{} and \MainValidCPTCNinetyfive{}.
+\gamut{} is valid in \MainValidGamutSixtyeight{} and \MainValidGamutNinetyfive{}.
+\end{enumerate}
+\input{tables/unfavourable}
+
+\section{Design history and test-set exposure}
+\label{app:history}
+The design of \gamut{} changed during the project; every change and its evidence is logged in \texttt{refine-logs/DESIGN\_LOG.md}.
+Several changes were triggered by results on test folds, so the reported results are not fully held out.
+\begin{itemize}
+\item The data-adaptive horizon cells were motivated by PLAsTiCC-train test results and adopted on nested validation folds.
+\item The adaptive evaluation grid was triggered by ElectricDevices test results. It fixes a measurement artefact (bands narrower than the grid spacing counted as misses) and was applied to all grid-based methods.
+\item The residual-law support $[-60,60]$ (previously $[-12,12]$) was triggered by ElectricDevices test results at 95\%. It corrects a truncation that gave heavy-tail points zero density.
+\item A pooled-threshold alternative was checked on one test fold of ECG5000 and rejected.
+\item The bandwidth multiplier and the finite-sample correction were chosen on validation folds only.
+\item The validity criterion changed from the pre-registered fixed tolerance to the bootstrap rule after the runs; \cref{tab:validity} reports both.
+\item The efficiency endpoint changed from the registered class-averaged interval score to band length, which \cref{prop:oracle} optimises; \cref{app:unfavourable} reports the registered endpoint.
+\item The bootstrap's random draws were re-seeded per setting (and per method for the cell test) so that they do not depend on the list of methods; with one shared stream, adding baselines had moved Kandinsky CP's validity rates by one setting at each level, which shows that settings near the decision boundary depend on the Monte-Carlo draws. All validity numbers use the stable seeds.
+\end{itemize}
+To bound the effect of this exposure, the held-out benchmark of \cref{app:held} was registered and evaluated once after the last change.
+Earlier designs (a union of class bands, absolute-length level sets, highest-density-mass levels) were rejected on development data and are recorded in the log.
+
+\section{Limitations}
+\label{app:limits}
+\input{sections/limitations}

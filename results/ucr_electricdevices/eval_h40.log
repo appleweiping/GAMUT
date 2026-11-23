@@ -1,0 +1,190 @@
+ucr_electricdevices h=40 alpha=0.32: CPTC                               marg 0.700 worst 0.666 ccg 0.029 width 0.856 IS 2.467 cls-IS 2.229 miscls 0.780 (1.6s)
+      per class class_1:0.72 class_2:0.68 class_3:0.73 class_4:0.75 class_5:0.68 class_6:0.71 class_7:0.67
+ucr_electricdevices h=40 alpha=0.32: CQR                                marg 0.681 worst 0.609 ccg 0.057 width 1.094 IS 2.110 cls-IS 1.977 miscls 0.761 (0.1s)
+      per class class_1:0.76 class_2:0.61 class_3:0.70 class_4:0.79 class_5:0.65 class_6:0.74 class_7:0.64
+ucr_electricdevices h=40 alpha=0.32: DCP                                marg 0.685 worst 0.596 ccg 0.062 width 1.093 IS 2.106 cls-IS 1.970 miscls 0.753 (4.6s)
+      per class class_1:0.76 class_2:0.60 class_3:0.72 class_4:0.78 class_5:0.66 class_6:0.76 class_7:0.66
+ucr_electricdevices h=40 alpha=0.32: FLARE                              marg 0.680 worst 0.634 ccg 0.024 width 0.823 IS 2.474 cls-IS 2.231 miscls 0.737 (0.5s)
+      per class class_1:0.63 class_2:0.68 class_3:0.70 class_4:0.71 class_5:0.69 class_6:0.65 class_7:0.65
+ucr_electricdevices h=40 alpha=0.32: GAMUT                              marg 0.675 worst 0.646 ccg 0.009 width 0.822 IS 2.466 cls-IS 2.227 miscls 0.746 (50.2s)
+      per class class_1:0.67 class_2:0.68 class_3:0.65 class_4:0.68 class_5:0.68 class_6:0.67 class_7:0.67
+ucr_electricdevices h=40 alpha=0.32: GAMUT (point-level unit)           marg 0.675 worst 0.646 ccg 0.009 width 0.822 IS 2.466 cls-IS 2.227 miscls 0.746 (47.0s)
+      per class class_1:0.67 class_2:0.68 class_3:0.65 class_4:0.68 class_5:0.68 class_6:0.67 class_7:0.67
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.684 worst 0.679 ccg 0.005 width 0.830 IS 2.469 cls-IS 2.228 miscls 0.758 (48.0s)
+      per class class_1:0.69 class_2:0.68 class_3:0.68 class_4:0.70 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.684 worst 0.682 ccg 0.005 width 0.846 IS 2.470 cls-IS 2.231 miscls 0.741 (35.3s)
+      per class class_1:0.68 class_2:0.68 class_3:0.69 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.790 worst 0.680 ccg 0.137 width 1.105 IS 2.527 cls-IS 2.289 miscls 0.843 (49.5s)
+      per class class_1:0.86 class_2:0.68 class_3:0.90 class_4:0.87 class_5:0.76 class_6:0.84 class_7:0.81
+ucr_electricdevices h=40 alpha=0.32: CPTC                               marg 0.700 worst 0.666 ccg 0.029 width 0.856 IS 2.467 cls-IS 2.229 miscls 0.780 (2.5s)
+      per class class_1:0.72 class_2:0.68 class_3:0.73 class_4:0.75 class_5:0.68 class_6:0.71 class_7:0.67
+ucr_electricdevices h=40 alpha=0.32: CQR                                marg 0.681 worst 0.609 ccg 0.057 width 1.094 IS 2.110 cls-IS 1.977 miscls 0.761 (0.1s)
+      per class class_1:0.76 class_2:0.61 class_3:0.70 class_4:0.79 class_5:0.65 class_6:0.74 class_7:0.64
+ucr_electricdevices h=40 alpha=0.32: DCP                                marg 0.685 worst 0.596 ccg 0.062 width 1.093 IS 2.106 cls-IS 1.970 miscls 0.753 (6.7s)
+      per class class_1:0.76 class_2:0.60 class_3:0.72 class_4:0.78 class_5:0.66 class_6:0.76 class_7:0.66
+ucr_electricdevices h=40 alpha=0.32: FLARE                              marg 0.680 worst 0.634 ccg 0.024 width 0.823 IS 2.474 cls-IS 2.231 miscls 0.737 (0.9s)
+      per class class_1:0.63 class_2:0.68 class_3:0.70 class_4:0.71 class_5:0.69 class_6:0.65 class_7:0.65
+ucr_electricdevices h=40 alpha=0.32: GAMUT                              marg 0.683 worst 0.680 ccg 0.003 width 0.822 IS 2.465 cls-IS 2.226 miscls 0.756 (95.6s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT (point-level unit)           marg 0.683 worst 0.680 ccg 0.003 width 0.822 IS 2.465 cls-IS 2.226 miscls 0.756 (89.0s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.685 worst 0.680 ccg 0.005 width 0.829 IS 2.469 cls-IS 2.228 miscls 0.758 (92.6s)
+      per class class_1:0.69 class_2:0.68 class_3:0.68 class_4:0.70 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.684 worst 0.682 ccg 0.005 width 0.846 IS 2.471 cls-IS 2.232 miscls 0.741 (79.9s)
+      per class class_1:0.68 class_2:0.68 class_3:0.69 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.790 worst 0.680 ccg 0.137 width 1.104 IS 2.527 cls-IS 2.288 miscls 0.843 (92.0s)
+      per class class_1:0.86 class_2:0.68 class_3:0.90 class_4:0.87 class_5:0.76 class_6:0.84 class_7:0.81
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.682 worst 0.680 ccg 0.002 width 0.822 IS 2.466 cls-IS 2.228 miscls 0.755 (84.0s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.680 worst 0.599 ccg 0.071 width 0.665 IS 2.522 cls-IS 2.269 miscls 0.773 (79.5s)
+      per class class_1:0.75 class_2:0.60 class_3:0.82 class_4:0.77 class_5:0.62 class_6:0.71 class_7:0.67
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.771 worst 0.684 ccg 0.124 width 0.997 IS 2.582 cls-IS 2.398 miscls 0.832 (76.1s)
+      per class class_1:0.84 class_2:0.72 class_3:0.88 class_4:0.83 class_5:0.68 class_6:0.83 class_7:0.84
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.683 worst 0.680 ccg 0.003 width 0.822 IS 2.465 cls-IS 2.226 miscls 0.756 (96.7s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.680 worst 0.680 ccg 0.000 width 0.805 IS 2.465 cls-IS 2.223 miscls 0.752 (82.9s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.68 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.682 worst 0.679 ccg 0.003 width 0.820 IS 2.465 cls-IS 2.226 miscls 0.756 (80.2s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.689 worst 0.680 ccg 0.010 width 0.800 IS 2.541 cls-IS 2.297 miscls 0.763 (93.4s)
+      per class class_1:0.69 class_2:0.68 class_3:0.70 class_4:0.72 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT-cert (split certificate)     marg 0.717 worst 0.695 ccg 0.031 width 0.971 IS 2.472 cls-IS 2.229 miscls 0.772 (71.3s)
+      per class class_1:0.70 class_2:0.75 class_3:0.71 class_4:0.71 class_5:0.71 class_6:0.70 class_7:0.71
+ucr_electricdevices h=40 alpha=0.32: GCC-prob                           marg 0.681 worst 0.632 ccg 0.020 width 0.822 IS 2.473 cls-IS 2.230 miscls 0.745 (71.4s)
+      per class class_1:0.65 class_2:0.68 class_3:0.70 class_4:0.70 class_5:0.69 class_6:0.63 class_7:0.67
+ucr_electricdevices h=40 alpha=0.32: KandinskyCP                        marg 0.678 worst 0.656 ccg 0.009 width 0.822 IS 2.474 cls-IS 2.228 miscls 0.742 (425.5s)
+      per class class_1:0.66 class_2:0.68 class_3:0.69 class_4:0.68 class_5:0.68 class_6:0.66 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: LocalizedCP                        marg 0.685 worst 0.536 ccg 0.099 width 0.655 IS 2.516 cls-IS 2.254 miscls 0.786 (278.0s)
+      per class class_1:0.79 class_2:0.54 class_3:0.85 class_4:0.80 class_5:0.64 class_6:0.77 class_7:0.67
+ucr_electricdevices h=40 alpha=0.32: MDCP                               marg 0.826 worst 0.705 ccg 0.150 width 1.621 IS 2.951 cls-IS 2.609 miscls 0.847 (157.0s)
+      per class class_1:0.86 class_2:0.91 class_3:0.88 class_4:0.87 class_5:0.70 class_6:0.87 class_7:0.72
+ucr_electricdevices h=40 alpha=0.32: MaxClassCP                         marg 0.785 worst 0.680 ccg 0.133 width 1.067 IS 2.492 cls-IS 2.258 miscls 0.838 (0.2s)
+      per class class_1:0.86 class_2:0.68 class_3:0.90 class_4:0.87 class_5:0.76 class_6:0.84 class_7:0.80
+ucr_electricdevices h=40 alpha=0.32: MixtureCP                          marg 0.690 worst 0.650 ccg 0.026 width 0.808 IS 2.468 cls-IS 2.223 miscls 0.758 (11.2s)
+      per class class_1:0.71 class_2:0.68 class_3:0.73 class_4:0.74 class_5:0.67 class_6:0.69 class_7:0.65
+ucr_electricdevices h=40 alpha=0.32: Oracle-true-class                  marg 0.680 worst 0.679 ccg 0.000 width 0.803 IS 2.483 cls-IS 2.239 miscls 0.742 (0.4s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.68 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: PartitionCP                        marg 0.681 worst 0.624 ccg 0.028 width 0.832 IS 2.468 cls-IS 2.224 miscls 0.726 (1.1s)
+      per class class_1:0.62 class_2:0.68 class_3:0.70 class_4:0.72 class_5:0.69 class_6:0.64 class_7:0.65
+ucr_electricdevices h=40 alpha=0.32: SplitCP                            marg 0.680 worst 0.489 ccg 0.114 width 0.615 IS 2.546 cls-IS 2.271 miscls 0.791 (0.1s)
+      per class class_1:0.81 class_2:0.49 class_3:0.87 class_4:0.81 class_5:0.64 class_6:0.79 class_7:0.69
+ucr_electricdevices h=40 alpha=0.32: TwoStepCP                          marg 0.740 worst 0.679 ccg 0.079 width 0.912 IS 2.473 cls-IS 2.233 miscls 0.814 (0.5s)
+      per class class_1:0.79 class_2:0.68 class_3:0.86 class_4:0.81 class_5:0.69 class_6:0.77 class_7:0.71
+ucr_electricdevices h=40 alpha=0.05: CPTC                               marg 0.964 worst 0.956 ccg 0.015 width 5.515 IS 7.910 cls-IS 8.427 miscls 0.967 (2.7s)
+      per class class_1:0.97 class_2:0.96 class_3:0.96 class_4:0.97 class_5:0.97 class_6:0.97 class_7:0.97
+ucr_electricdevices h=40 alpha=0.05: CQR                                marg 0.950 worst 0.930 ccg 0.011 width 3.138 IS 4.374 cls-IS 4.751 miscls 0.956 (0.1s)
+      per class class_1:0.96 class_2:0.93 class_3:0.96 class_4:0.97 class_5:0.95 class_6:0.96 class_7:0.94
+ucr_electricdevices h=40 alpha=0.05: DCP                                marg 0.950 worst 0.929 ccg 0.011 width 3.217 IS 4.332 cls-IS 4.694 miscls 0.961 (5.4s)
+      per class class_1:0.96 class_2:0.93 class_3:0.97 class_4:0.96 class_5:0.95 class_6:0.96 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: FLARE                              marg 0.950 worst 0.936 ccg 0.004 width 4.112 IS 7.684 cls-IS 8.329 miscls 0.937 (0.6s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.96 class_6:0.94 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: GAMUT                              marg 0.970 worst 0.960 ccg 0.018 width 6.607 IS 9.507 cls-IS 9.161 miscls 0.967 (115.3s)
+      per class class_1:0.96 class_2:0.98 class_3:0.96 class_4:0.97 class_5:0.97 class_6:0.96 class_7:0.97
+ucr_electricdevices h=40 alpha=0.05: GAMUT (point-level unit)           marg 0.970 worst 0.960 ccg 0.018 width 6.607 IS 9.507 cls-IS 9.161 miscls 0.967 (105.0s)
+      per class class_1:0.96 class_2:0.98 class_3:0.96 class_4:0.97 class_5:0.97 class_6:0.96 class_7:0.97
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.978 worst 0.952 ccg 0.021 width 8.372 IS 11.592 cls-IS 10.734 miscls 0.957 (103.4s)
+      per class class_1:0.95 class_2:1.00 class_3:0.96 class_4:0.96 class_5:0.99 class_6:0.95 class_7:0.98
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.975 worst 0.960 ccg 0.021 width 6.684 IS 9.876 cls-IS 9.566 miscls 0.952 (107.0s)
+      per class class_1:0.96 class_2:0.99 class_3:0.97 class_4:0.96 class_5:0.98 class_6:0.96 class_7:0.98
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.983 worst 0.965 ccg 0.028 width 8.558 IS 11.308 cls-IS 10.274 miscls 0.971 (122.9s)
+      per class class_1:0.97 class_2:1.00 class_3:0.97 class_4:0.97 class_5:0.99 class_6:0.97 class_7:0.98
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.970 worst 0.960 ccg 0.017 width 6.563 IS 9.469 cls-IS 9.141 miscls 0.967 (109.3s)
+      per class class_1:0.96 class_2:0.98 class_3:0.96 class_4:0.97 class_5:0.97 class_6:0.96 class_7:0.97
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.950 worst 0.910 ccg 0.022 width 3.079 IS 6.802 cls-IS 7.069 miscls 0.921 (79.8s)
+      per class class_1:0.93 class_2:0.99 class_3:0.92 class_4:0.94 class_5:0.95 class_6:0.91 class_7:0.94
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.983 worst 0.961 ccg 0.027 width 7.776 IS 10.449 cls-IS 9.796 miscls 0.971 (74.1s)
+      per class class_1:0.97 class_2:1.00 class_3:0.96 class_4:0.98 class_5:0.99 class_6:0.97 class_7:0.98
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.970 worst 0.960 ccg 0.018 width 6.607 IS 9.507 cls-IS 9.161 miscls 0.967 (98.7s)
+      per class class_1:0.96 class_2:0.98 class_3:0.96 class_4:0.97 class_5:0.97 class_6:0.96 class_7:0.97
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.950 worst 0.950 ccg 0.001 width 3.129 IS 6.661 cls-IS 7.037 miscls 0.941 (95.4s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.95 class_6:0.95 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.968 worst 0.956 ccg 0.015 width 6.389 IS 9.303 cls-IS 8.992 miscls 0.963 (83.6s)
+      per class class_1:0.96 class_2:0.98 class_3:0.96 class_4:0.96 class_5:0.97 class_6:0.96 class_7:0.97
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.969 worst 0.960 ccg 0.017 width 6.178 IS 9.089 cls-IS 8.795 miscls 0.965 (96.7s)
+      per class class_1:0.96 class_2:0.97 class_3:0.96 class_4:0.97 class_5:0.97 class_6:0.97 class_7:0.97
+ucr_electricdevices h=40 alpha=0.05: GAMUT-cert (split certificate)     marg 0.978 worst 0.962 ccg 0.025 width 7.688 IS 10.642 cls-IS 9.944 miscls 0.972 (83.9s)
+      per class class_1:0.97 class_2:0.98 class_3:0.96 class_4:0.98 class_5:0.99 class_6:0.97 class_7:0.98
+ucr_electricdevices h=40 alpha=0.05: GCC-prob                           marg 0.950 worst 0.938 ccg 0.004 width 4.128 IS 7.688 cls-IS 8.294 miscls 0.941 (70.7s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.95 class_6:0.94 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: KandinskyCP                        marg 0.949 worst 0.948 ccg 0.001 width 3.551 IS 7.232 cls-IS 7.771 miscls 0.942 (280.0s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.95 class_6:0.95 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: LocalizedCP                        marg 0.951 worst 0.915 ccg 0.018 width 3.318 IS 7.505 cls-IS 8.003 miscls 0.925 (183.2s)
+      per class class_1:0.93 class_2:0.98 class_3:0.93 class_4:0.94 class_5:0.96 class_6:0.91 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: MDCP                               marg 0.976 worst 0.950 ccg 0.019 width 6.049 IS 8.540 cls-IS 8.417 miscls 0.960 (89.8s)
+      per class class_1:0.96 class_2:1.00 class_3:0.95 class_4:0.96 class_5:0.99 class_6:0.95 class_7:0.97
+ucr_electricdevices h=40 alpha=0.05: MaxClassCP                         marg 0.985 worst 0.965 ccg 0.029 width 28.816 IS 30.710 cls-IS 24.746 miscls 0.970 (0.2s)
+      per class class_1:0.97 class_2:1.00 class_3:0.97 class_4:0.97 class_5:0.99 class_6:0.97 class_7:0.99
+ucr_electricdevices h=40 alpha=0.05: MixtureCP                          marg 0.950 worst 0.938 ccg 0.004 width 4.044 IS 7.695 cls-IS 8.354 miscls 0.936 (7.1s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.95 class_6:0.94 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: Oracle-true-class                  marg 0.950 worst 0.950 ccg 0.000 width 4.614 IS 8.065 cls-IS 8.780 miscls 0.938 (0.4s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.95 class_6:0.95 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: PartitionCP                        marg 0.950 worst 0.938 ccg 0.003 width 4.180 IS 7.671 cls-IS 8.301 miscls 0.941 (0.6s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.95 class_6:0.94 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: SplitCP                            marg 0.950 worst 0.910 ccg 0.022 width 3.275 IS 7.627 cls-IS 8.085 miscls 0.920 (0.1s)
+      per class class_1:0.92 class_2:0.99 class_3:0.93 class_4:0.93 class_5:0.95 class_6:0.91 class_7:0.94
+ucr_electricdevices h=40 alpha=0.05: TwoStepCP                          marg 0.966 worst 0.958 ccg 0.016 width 8.616 IS 11.113 cls-IS 11.576 miscls 0.964 (0.3s)
+      per class class_1:0.96 class_2:0.96 class_3:0.96 class_4:0.97 class_5:0.97 class_6:0.97 class_7:0.97
+ucr_electricdevices h=40 alpha=0.32: GAMUT                              marg 0.683 worst 0.680 ccg 0.003 width 0.822 IS 2.461 cls-IS 2.221 miscls 0.756 (94.9s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT (point-level unit)           marg 0.683 worst 0.680 ccg 0.003 width 0.822 IS 2.461 cls-IS 2.221 miscls 0.756 (103.5s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.685 worst 0.680 ccg 0.005 width 0.829 IS 2.469 cls-IS 2.228 miscls 0.758 (98.9s)
+      per class class_1:0.69 class_2:0.68 class_3:0.68 class_4:0.70 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.684 worst 0.682 ccg 0.005 width 0.846 IS 2.470 cls-IS 2.231 miscls 0.741 (81.6s)
+      per class class_1:0.68 class_2:0.68 class_3:0.69 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.790 worst 0.680 ccg 0.137 width 1.104 IS 2.527 cls-IS 2.288 miscls 0.843 (92.6s)
+      per class class_1:0.86 class_2:0.68 class_3:0.90 class_4:0.87 class_5:0.76 class_6:0.84 class_7:0.81
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.682 worst 0.680 ccg 0.002 width 0.822 IS 2.462 cls-IS 2.221 miscls 0.755 (91.9s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.680 worst 0.600 ccg 0.071 width 0.665 IS 2.508 cls-IS 2.248 miscls 0.773 (75.2s)
+      per class class_1:0.75 class_2:0.60 class_3:0.82 class_4:0.77 class_5:0.62 class_6:0.71 class_7:0.67
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.771 worst 0.683 ccg 0.124 width 0.996 IS 2.483 cls-IS 2.262 miscls 0.831 (71.0s)
+      per class class_1:0.84 class_2:0.72 class_3:0.88 class_4:0.83 class_5:0.68 class_6:0.83 class_7:0.84
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.683 worst 0.680 ccg 0.003 width 0.822 IS 2.461 cls-IS 2.221 miscls 0.756 (109.6s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.681 worst 0.680 ccg 0.001 width 0.805 IS 2.465 cls-IS 2.222 miscls 0.752 (110.2s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.68 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.682 worst 0.679 ccg 0.003 width 0.820 IS 2.461 cls-IS 2.221 miscls 0.756 (102.9s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.689 worst 0.680 ccg 0.010 width 0.800 IS 2.531 cls-IS 2.288 miscls 0.763 (128.2s)
+      per class class_1:0.69 class_2:0.68 class_3:0.70 class_4:0.72 class_5:0.68 class_6:0.68 class_7:0.68
+ucr_electricdevices h=40 alpha=0.32: GAMUT-cert (split certificate)     marg 0.717 worst 0.696 ccg 0.032 width 0.973 IS 2.467 cls-IS 2.222 miscls 0.772 (135.3s)
+      per class class_1:0.70 class_2:0.75 class_3:0.71 class_4:0.71 class_5:0.71 class_6:0.70 class_7:0.71
+ucr_electricdevices h=40 alpha=0.05: GAMUT                              marg 0.951 worst 0.950 ccg 0.001 width 3.505 IS 6.561 cls-IS 6.907 miscls 0.951 (130.8s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.95 class_6:0.95 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: GAMUT (point-level unit)           marg 0.951 worst 0.950 ccg 0.001 width 3.505 IS 6.561 cls-IS 6.907 miscls 0.951 (91.8s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.95 class_6:0.95 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.956 worst 0.952 ccg 0.007 width 3.634 IS 7.657 cls-IS 7.942 miscls 0.957 (96.8s)
+      per class class_1:0.95 class_2:0.95 class_3:0.96 class_4:0.96 class_5:0.95 class_6:0.96 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.974 worst 0.960 ccg 0.021 width 5.552 IS 8.665 cls-IS 8.597 miscls 0.953 (94.8s)
+      per class class_1:0.96 class_2:0.99 class_3:0.97 class_4:0.97 class_5:0.98 class_6:0.96 class_7:0.97
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.982 worst 0.964 ccg 0.027 width 7.291 IS 10.640 cls-IS 9.695 miscls 0.969 (98.5s)
+      per class class_1:0.97 class_2:0.99 class_3:0.97 class_4:0.97 class_5:0.99 class_6:0.96 class_7:0.98
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.951 worst 0.950 ccg 0.001 width 3.501 IS 6.568 cls-IS 6.918 miscls 0.951 (87.0s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.95 class_6:0.95 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.950 worst 0.909 ccg 0.022 width 3.070 IS 6.958 cls-IS 7.361 miscls 0.921 (81.0s)
+      per class class_1:0.93 class_2:0.99 class_3:0.92 class_4:0.94 class_5:0.95 class_6:0.91 class_7:0.94
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.980 worst 0.964 ccg 0.025 width 5.746 IS 8.330 cls-IS 8.280 miscls 0.966 (91.2s)
+      per class class_1:0.97 class_2:1.00 class_3:0.96 class_4:0.97 class_5:0.98 class_6:0.97 class_7:0.98
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.951 worst 0.950 ccg 0.001 width 3.505 IS 6.561 cls-IS 6.907 miscls 0.951 (98.6s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.95 class_6:0.95 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.951 worst 0.950 ccg 0.001 width 3.106 IS 6.425 cls-IS 6.799 miscls 0.941 (76.8s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.95 class_6:0.95 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.948 worst 0.942 ccg 0.003 width 3.312 IS 6.487 cls-IS 6.841 miscls 0.944 (65.8s)
+      per class class_1:0.94 class_2:0.95 class_3:0.94 class_4:0.95 class_5:0.95 class_6:0.94 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.952 worst 0.950 ccg 0.003 width 3.224 IS 6.184 cls-IS 6.515 miscls 0.949 (88.9s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.95 class_6:0.96 class_7:0.95
+ucr_electricdevices h=40 alpha=0.05: GAMUT-cert (split certificate)     marg 0.964 worst 0.957 ccg 0.013 width 4.124 IS 7.114 cls-IS 7.328 miscls 0.962 (74.4s)
+      per class class_1:0.96 class_2:0.97 class_3:0.96 class_4:0.96 class_5:0.96 class_6:0.96 class_7:0.96
+ucr_electricdevices h=40 alpha=0.32: MDCP + C1                          marg 0.810 worst 0.691 ccg 0.136 width 1.469 IS 2.888 cls-IS 2.551 miscls 0.832 (112.9s)
+      per class class_1:0.84 class_2:0.89 class_3:0.88 class_4:0.85 class_5:0.69 class_6:0.85 class_7:0.71
+ucr_electricdevices h=40 alpha=0.32: MaxClassCP + C1                    marg 0.807 worst 0.682 ccg 0.155 width 1.230 IS 2.568 cls-IS 2.340 miscls 0.861 (1.7s)
+      per class class_1:0.88 class_2:0.68 class_3:0.91 class_4:0.88 class_5:0.80 class_6:0.86 class_7:0.83
+ucr_electricdevices h=40 alpha=0.32: TwoStepCP + C1                     marg 0.754 worst 0.680 ccg 0.096 width 1.021 IS 2.501 cls-IS 2.268 miscls 0.833 (1.7s)
+      per class class_1:0.82 class_2:0.68 class_3:0.87 class_4:0.83 class_5:0.71 class_6:0.79 class_7:0.74
+ucr_electricdevices h=40 alpha=0.05: MDCP + C1                          marg 0.976 worst 0.951 ccg 0.019 width 6.925 IS 9.784 cls-IS 8.934 miscls 0.958 (102.8s)
+      per class class_1:0.96 class_2:1.00 class_3:0.95 class_4:0.96 class_5:0.99 class_6:0.95 class_7:0.98
+ucr_electricdevices h=40 alpha=0.05: MaxClassCP + C1                    marg 0.986 worst 0.967 ccg 0.031 width 15.468 IS 17.110 cls-IS 14.723 miscls 0.975 (1.4s)
+      per class class_1:0.97 class_2:1.00 class_3:0.97 class_4:0.98 class_5:1.00 class_6:0.97 class_7:0.99
+ucr_electricdevices h=40 alpha=0.05: TwoStepCP + C1                     marg 0.967 worst 0.959 ccg 0.017 width 5.944 IS 8.203 cls-IS 8.652 miscls 0.969 (1.7s)
+      per class class_1:0.97 class_2:0.96 class_3:0.96 class_4:0.97 class_5:0.97 class_6:0.97 class_7:0.97

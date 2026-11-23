@@ -1,0 +1,180 @@
+ucr_starlightcurves h=20 alpha=0.32: CPTC                               marg 0.679 worst 0.676 ccg 0.004 width 0.496 IS 0.847 cls-IS 0.794 miscls 0.599 (0.4s)
+      per class class_1:0.69 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: CQR                                marg 0.680 worst 0.661 ccg 0.025 width 0.497 IS 0.836 cls-IS 0.793 miscls 0.603 (0.0s)
+      per class class_1:0.71 class_2:0.70 class_3:0.66
+ucr_starlightcurves h=20 alpha=0.32: DCP                                marg 0.680 worst 0.657 ccg 0.027 width 0.516 IS 0.835 cls-IS 0.794 miscls 0.603 (2.1s)
+      per class class_1:0.70 class_2:0.72 class_3:0.66
+ucr_starlightcurves h=20 alpha=0.32: FLARE                              marg 0.680 worst 0.675 ccg 0.009 width 0.502 IS 0.853 cls-IS 0.803 miscls 0.597 (0.2s)
+      per class class_1:0.70 class_2:0.68 class_3:0.67
+ucr_starlightcurves h=20 alpha=0.32: GAMUT                              marg 0.681 worst 0.680 ccg 0.001 width 0.498 IS 0.850 cls-IS 0.796 miscls 0.576 (14.6s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT (point-level unit)           marg 0.681 worst 0.680 ccg 0.001 width 0.498 IS 0.850 cls-IS 0.796 miscls 0.576 (16.0s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.681 worst 0.680 ccg 0.002 width 0.504 IS 0.855 cls-IS 0.803 miscls 0.592 (14.3s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.683 worst 0.682 ccg 0.003 width 0.500 IS 0.852 cls-IS 0.799 miscls 0.551 (14.1s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.688 worst 0.680 ccg 0.012 width 0.574 IS 0.945 cls-IS 0.935 miscls 0.627 (21.2s)
+      per class class_1:0.70 class_2:0.70 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.681 worst 0.680 ccg 0.001 width 0.498 IS 0.850 cls-IS 0.796 miscls 0.574 (14.9s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.680 worst 0.668 ccg 0.016 width 0.502 IS 0.851 cls-IS 0.797 miscls 0.580 (13.0s)
+      per class class_1:0.70 class_2:0.69 class_3:0.67
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.755 worst 0.680 ccg 0.124 width 0.625 IS 0.905 cls-IS 0.882 miscls 0.733 (12.9s)
+      per class class_1:0.89 class_2:0.84 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.681 worst 0.680 ccg 0.001 width 0.498 IS 0.850 cls-IS 0.796 miscls 0.576 (14.0s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.681 worst 0.680 ccg 0.001 width 0.506 IS 0.851 cls-IS 0.796 miscls 0.577 (13.5s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.681 worst 0.680 ccg 0.001 width 0.498 IS 0.850 cls-IS 0.796 miscls 0.576 (8.2s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.681 worst 0.680 ccg 0.001 width 0.437 IS 0.947 cls-IS 0.891 miscls 0.551 (15.3s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT-cert (split certificate)     marg 0.693 worst 0.691 ccg 0.013 width 0.515 IS 0.852 cls-IS 0.798 miscls 0.587 (10.6s)
+      per class class_1:0.70 class_2:0.69 class_3:0.69
+ucr_starlightcurves h=20 alpha=0.32: GCC-prob                           marg 0.681 worst 0.677 ccg 0.006 width 0.510 IS 0.854 cls-IS 0.804 miscls 0.598 (41.6s)
+      per class class_1:0.69 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: KandinskyCP                        marg 0.677 worst 0.676 ccg 0.003 width 0.504 IS 0.854 cls-IS 0.803 miscls 0.599 (80.0s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: LocalizedCP                        marg 0.683 worst 0.663 ccg 0.028 width 0.508 IS 0.855 cls-IS 0.806 miscls 0.610 (45.8s)
+      per class class_1:0.72 class_2:0.70 class_3:0.66
+ucr_starlightcurves h=20 alpha=0.32: MDCP                               marg 0.716 worst 0.700 ccg 0.054 width 0.497 IS 1.035 cls-IS 0.999 miscls 0.674 (23.6s)
+      per class class_1:0.79 class_2:0.71 class_3:0.70
+ucr_starlightcurves h=20 alpha=0.32: MaxClassCP                         marg 0.708 worst 0.684 ccg 0.043 width 0.542 IS 0.860 cls-IS 0.813 miscls 0.635 (0.1s)
+      per class class_1:0.75 class_2:0.73 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: MixtureCP                          marg 0.682 worst 0.678 ccg 0.007 width 0.505 IS 0.853 cls-IS 0.803 miscls 0.601 (1.7s)
+      per class class_1:0.70 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: Oracle-true-class                  marg 0.680 worst 0.680 ccg 0.000 width 0.503 IS 0.853 cls-IS 0.803 miscls 0.597 (0.2s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: PartitionCP                        marg 0.680 worst 0.677 ccg 0.005 width 0.503 IS 0.853 cls-IS 0.802 miscls 0.620 (0.4s)
+      per class class_1:0.69 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: SplitCP                            marg 0.680 worst 0.655 ccg 0.033 width 0.508 IS 0.855 cls-IS 0.807 miscls 0.606 (0.0s)
+      per class class_1:0.72 class_2:0.71 class_3:0.65
+ucr_starlightcurves h=20 alpha=0.32: TwoStepCP                          marg 0.684 worst 0.679 ccg 0.009 width 0.506 IS 0.853 cls-IS 0.803 miscls 0.624 (0.1s)
+      per class class_1:0.71 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.05: CPTC                               marg 0.952 worst 0.950 ccg 0.004 width 1.253 IS 1.688 cls-IS 1.637 miscls 0.931 (0.3s)
+      per class class_1:0.96 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: CQR                                marg 0.950 worst 0.945 ccg 0.007 width 1.163 IS 1.520 cls-IS 1.500 miscls 0.911 (0.0s)
+      per class class_1:0.97 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: DCP                                marg 0.950 worst 0.946 ccg 0.005 width 1.336 IS 1.616 cls-IS 1.605 miscls 0.920 (2.1s)
+      per class class_1:0.96 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: FLARE                              marg 0.950 worst 0.948 ccg 0.002 width 1.251 IS 1.698 cls-IS 1.647 miscls 0.909 (0.2s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT                              marg 0.950 worst 0.950 ccg 0.000 width 1.239 IS 1.675 cls-IS 1.611 miscls 0.898 (14.6s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT (point-level unit)           marg 0.950 worst 0.950 ccg 0.000 width 1.239 IS 1.675 cls-IS 1.611 miscls 0.898 (13.2s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.950 worst 0.950 ccg 0.000 width 1.256 IS 1.692 cls-IS 1.632 miscls 0.902 (13.8s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.950 worst 0.950 ccg 0.000 width 1.262 IS 1.708 cls-IS 1.634 miscls 0.856 (13.1s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.953 worst 0.950 ccg 0.006 width 1.353 IS 1.773 cls-IS 1.771 miscls 0.933 (20.7s)
+      per class class_1:0.97 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.950 worst 0.950 ccg 0.000 width 1.241 IS 1.678 cls-IS 1.613 miscls 0.894 (13.1s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.950 worst 0.945 ccg 0.005 width 1.223 IS 1.670 cls-IS 1.604 miscls 0.902 (11.8s)
+      per class class_1:0.96 class_2:0.94 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.958 worst 0.950 ccg 0.014 width 1.321 IS 1.714 cls-IS 1.686 miscls 0.925 (12.0s)
+      per class class_1:0.98 class_2:0.96 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.950 worst 0.950 ccg 0.000 width 1.239 IS 1.675 cls-IS 1.611 miscls 0.898 (13.2s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.950 worst 0.950 ccg 0.000 width 1.226 IS 1.669 cls-IS 1.603 miscls 0.896 (12.4s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.950 worst 0.950 ccg 0.000 width 1.237 IS 1.675 cls-IS 1.610 miscls 0.897 (7.9s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.950 worst 0.950 ccg 0.000 width 1.114 IS 1.598 cls-IS 1.536 miscls 0.891 (13.7s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT-cert (split certificate)     marg 0.958 worst 0.957 ccg 0.008 width 1.328 IS 1.710 cls-IS 1.644 miscls 0.911 (10.2s)
+      per class class_1:0.96 class_2:0.96 class_3:0.96
+ucr_starlightcurves h=20 alpha=0.05: GCC-prob                           marg 0.950 worst 0.949 ccg 0.003 width 1.274 IS 1.709 cls-IS 1.654 miscls 0.912 (31.6s)
+      per class class_1:0.96 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: KandinskyCP                        marg 0.950 worst 0.947 ccg 0.002 width 1.270 IS 1.707 cls-IS 1.650 miscls 0.907 (77.1s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: LocalizedCP                        marg 0.950 worst 0.949 ccg 0.005 width 1.262 IS 1.701 cls-IS 1.652 miscls 0.916 (46.1s)
+      per class class_1:0.96 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: MDCP                               marg 0.954 worst 0.949 ccg 0.009 width 1.237 IS 1.704 cls-IS 1.695 miscls 0.928 (24.2s)
+      per class class_1:0.97 class_2:0.96 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: MaxClassCP                         marg 0.957 worst 0.954 ccg 0.009 width 1.338 IS 1.732 cls-IS 1.681 miscls 0.926 (0.1s)
+      per class class_1:0.97 class_2:0.95 class_3:0.96
+ucr_starlightcurves h=20 alpha=0.05: MixtureCP                          marg 0.951 worst 0.950 ccg 0.002 width 1.260 IS 1.700 cls-IS 1.645 miscls 0.910 (2.1s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: Oracle-true-class                  marg 0.950 worst 0.950 ccg 0.000 width 1.252 IS 1.698 cls-IS 1.645 miscls 0.909 (0.2s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: PartitionCP                        marg 0.950 worst 0.949 ccg 0.001 width 1.254 IS 1.697 cls-IS 1.645 miscls 0.920 (0.3s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: SplitCP                            marg 0.950 worst 0.948 ccg 0.005 width 1.272 IS 1.708 cls-IS 1.658 miscls 0.916 (0.0s)
+      per class class_1:0.96 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: TwoStepCP                          marg 0.951 worst 0.950 ccg 0.002 width 1.257 IS 1.698 cls-IS 1.644 miscls 0.916 (0.1s)
+      per class class_1:0.96 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.32: GAMUT                              marg 0.681 worst 0.680 ccg 0.001 width 0.498 IS 0.850 cls-IS 0.796 miscls 0.576 (24.0s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT (point-level unit)           marg 0.681 worst 0.680 ccg 0.001 width 0.498 IS 0.850 cls-IS 0.796 miscls 0.576 (23.6s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.681 worst 0.680 ccg 0.002 width 0.504 IS 0.855 cls-IS 0.803 miscls 0.592 (25.4s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.683 worst 0.682 ccg 0.003 width 0.500 IS 0.851 cls-IS 0.799 miscls 0.551 (24.8s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.688 worst 0.680 ccg 0.012 width 0.575 IS 0.945 cls-IS 0.935 miscls 0.627 (34.2s)
+      per class class_1:0.70 class_2:0.70 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.681 worst 0.680 ccg 0.001 width 0.498 IS 0.850 cls-IS 0.796 miscls 0.574 (23.8s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.680 worst 0.669 ccg 0.015 width 0.502 IS 0.851 cls-IS 0.797 miscls 0.580 (23.3s)
+      per class class_1:0.70 class_2:0.69 class_3:0.67
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.755 worst 0.680 ccg 0.124 width 0.625 IS 0.905 cls-IS 0.882 miscls 0.733 (22.5s)
+      per class class_1:0.89 class_2:0.84 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.681 worst 0.680 ccg 0.001 width 0.498 IS 0.850 cls-IS 0.796 miscls 0.576 (24.0s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.681 worst 0.680 ccg 0.001 width 0.506 IS 0.851 cls-IS 0.796 miscls 0.577 (21.8s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.681 worst 0.680 ccg 0.001 width 0.498 IS 0.850 cls-IS 0.796 miscls 0.576 (14.5s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.681 worst 0.680 ccg 0.001 width 0.437 IS 0.946 cls-IS 0.891 miscls 0.551 (24.8s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: GAMUT-cert (split certificate)     marg 0.693 worst 0.691 ccg 0.013 width 0.515 IS 0.852 cls-IS 0.798 miscls 0.587 (19.9s)
+      per class class_1:0.70 class_2:0.69 class_3:0.69
+ucr_starlightcurves h=20 alpha=0.32: KandinskyCP                        marg 0.677 worst 0.676 ccg 0.003 width 0.504 IS 0.854 cls-IS 0.803 miscls 0.599 (131.0s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68
+ucr_starlightcurves h=20 alpha=0.32: MDCP                               marg 0.716 worst 0.700 ccg 0.054 width 0.497 IS 1.035 cls-IS 0.999 miscls 0.674 (36.2s)
+      per class class_1:0.79 class_2:0.71 class_3:0.70
+ucr_starlightcurves h=20 alpha=0.05: GAMUT                              marg 0.950 worst 0.950 ccg 0.000 width 1.239 IS 1.675 cls-IS 1.611 miscls 0.898 (25.3s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT (point-level unit)           marg 0.950 worst 0.950 ccg 0.000 width 1.239 IS 1.675 cls-IS 1.611 miscls 0.898 (24.7s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.950 worst 0.950 ccg 0.000 width 1.256 IS 1.692 cls-IS 1.632 miscls 0.902 (23.8s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.950 worst 0.950 ccg 0.000 width 1.262 IS 1.708 cls-IS 1.634 miscls 0.856 (23.4s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.953 worst 0.950 ccg 0.006 width 1.353 IS 1.772 cls-IS 1.771 miscls 0.933 (36.3s)
+      per class class_1:0.97 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.950 worst 0.950 ccg 0.000 width 1.241 IS 1.678 cls-IS 1.613 miscls 0.894 (25.4s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.950 worst 0.945 ccg 0.005 width 1.223 IS 1.669 cls-IS 1.604 miscls 0.902 (22.7s)
+      per class class_1:0.96 class_2:0.94 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.958 worst 0.950 ccg 0.014 width 1.321 IS 1.714 cls-IS 1.686 miscls 0.925 (21.5s)
+      per class class_1:0.98 class_2:0.96 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.950 worst 0.950 ccg 0.000 width 1.239 IS 1.675 cls-IS 1.611 miscls 0.898 (23.6s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.950 worst 0.950 ccg 0.000 width 1.226 IS 1.669 cls-IS 1.602 miscls 0.896 (24.7s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.950 worst 0.950 ccg 0.000 width 1.237 IS 1.674 cls-IS 1.610 miscls 0.897 (16.3s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.950 worst 0.950 ccg 0.000 width 1.114 IS 1.598 cls-IS 1.536 miscls 0.891 (25.5s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: GAMUT-cert (split certificate)     marg 0.958 worst 0.957 ccg 0.008 width 1.328 IS 1.710 cls-IS 1.644 miscls 0.911 (17.6s)
+      per class class_1:0.96 class_2:0.96 class_3:0.96
+ucr_starlightcurves h=20 alpha=0.05: KandinskyCP                        marg 0.950 worst 0.947 ccg 0.002 width 1.270 IS 1.707 cls-IS 1.650 miscls 0.907 (119.1s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.05: MDCP                               marg 0.954 worst 0.949 ccg 0.009 width 1.237 IS 1.704 cls-IS 1.695 miscls 0.928 (40.2s)
+      per class class_1:0.97 class_2:0.96 class_3:0.95
+ucr_starlightcurves h=20 alpha=0.32: MDCP + C1                          marg 0.707 worst 0.687 ccg 0.046 width 0.474 IS 1.054 cls-IS 1.015 miscls 0.661 (40.7s)
+      per class class_1:0.78 class_2:0.71 class_3:0.69
+ucr_starlightcurves h=20 alpha=0.32: MaxClassCP + C1                    marg 0.784 worst 0.763 ccg 0.119 width 0.720 IS 0.971 cls-IS 0.959 miscls 0.740 (0.3s)
+      per class class_1:0.83 class_2:0.81 class_3:0.76
+ucr_starlightcurves h=20 alpha=0.32: TwoStepCP + C1                     marg 0.702 worst 0.682 ccg 0.022 width 0.530 IS 0.853 cls-IS 0.802 miscls 0.678 (0.4s)
+      per class class_1:0.71 class_2:0.68 class_3:0.71
+ucr_starlightcurves h=20 alpha=0.05: MDCP + C1                          marg 0.957 worst 0.951 ccg 0.011 width 1.227 IS 1.744 cls-IS 1.738 miscls 0.934 (43.6s)
+      per class class_1:0.98 class_2:0.95 class_3:0.96
+ucr_starlightcurves h=20 alpha=0.05: MaxClassCP + C1                    marg 0.975 worst 0.973 ccg 0.027 width 1.597 IS 1.878 cls-IS 1.884 miscls 0.962 (0.3s)
+      per class class_1:0.98 class_2:0.97 class_3:0.97
+ucr_starlightcurves h=20 alpha=0.05: TwoStepCP + C1                     marg 0.955 worst 0.950 ccg 0.005 width 1.284 IS 1.700 cls-IS 1.641 miscls 0.926 (0.3s)
+      per class class_1:0.96 class_2:0.95 class_3:0.96

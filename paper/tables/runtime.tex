@@ -1,0 +1,29 @@
+\begin{table}[H]
+\centering
+\caption{Calibration plus prediction time per fold on ZTF-BTS (seconds, one CPU core, mean over origins and levels; about 190,000 calibration and 48,000 test points per fold at day 5).}
+\label{tab:runtime}
+\scriptsize
+\begin{tabular}{lc}
+\toprule
+Method & Seconds per fold \\
+\midrule
+FLARE & 0.1 \\
+Split CP & 0.0 \\
+CQR & 0.0 \\
+DCP & 0.6 \\
+Localized CP & 11.2 \\
+Label-shift mixture & 0.8 \\
+GCC ($p$) & 14.7 \\
+Learned partition & 0.1 \\
+CPTC & 0.2 \\
+Two-step CP & 0.0 \\
+Kandinsky CP & 44.5 \\
+MDCP & 14.2 \\
+Max-class CP & 0.0 \\
+Two-step CP + C1 & 0.7 \\
+MDCP + C1 & 69.5 \\
+Max-class CP + C1 & 0.7 \\
+\gamut{} (ours) & 8.5 \\
+\bottomrule
+\end{tabular}
+\end{table}

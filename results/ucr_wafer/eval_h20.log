@@ -1,0 +1,124 @@
+ucr_wafer h=20 alpha=0.32: CPTC                               marg 0.680 worst 0.678 ccg 0.002 width 0.138 IS 0.422 cls-IS 0.551 miscls 0.401 (0.2s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: CQR                                marg 0.680 worst 0.616 ccg 0.036 width 0.206 IS 0.364 cls-IS 0.495 miscls 0.369 (0.0s)
+      per class class_-1:0.62 class_1:0.69
+ucr_wafer h=20 alpha=0.32: DCP                                marg 0.680 worst 0.679 ccg 0.007 width 0.217 IS 0.359 cls-IS 0.492 miscls 0.436 (1.8s)
+      per class class_-1:0.69 class_1:0.68
+ucr_wafer h=20 alpha=0.32: FLARE                              marg 0.680 worst 0.679 ccg 0.001 width 0.155 IS 0.439 cls-IS 0.587 miscls 0.506 (0.1s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GAMUT                              marg 0.684 worst 0.683 ccg 0.004 width 0.140 IS 0.423 cls-IS 0.553 miscls 0.378 (11.0s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GAMUT (point-level unit)           marg 0.684 worst 0.683 ccg 0.004 width 0.140 IS 0.423 cls-IS 0.553 miscls 0.378 (11.1s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.682 worst 0.682 ccg 0.002 width 0.157 IS 0.439 cls-IS 0.587 miscls 0.503 (11.0s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.685 worst 0.683 ccg 0.004 width 0.140 IS 0.423 cls-IS 0.553 miscls 0.372 (11.2s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.683 worst 0.679 ccg 0.002 width 0.206 IS 0.545 cls-IS 0.652 miscls 0.446 (13.0s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.685 worst 0.683 ccg 0.004 width 0.140 IS 0.423 cls-IS 0.553 miscls 0.375 (10.6s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.683 worst 0.530 ccg 0.085 width 0.132 IS 0.425 cls-IS 0.565 miscls 0.282 (10.4s)
+      per class class_-1:0.53 class_1:0.70
+ucr_wafer h=20 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.706 worst 0.683 ccg 0.111 width 0.190 IS 0.449 cls-IS 0.676 miscls 0.657 (10.6s)
+      per class class_-1:0.90 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.684 worst 0.683 ccg 0.004 width 0.140 IS 0.423 cls-IS 0.553 miscls 0.378 (10.8s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.681 worst 0.681 ccg 0.002 width 0.133 IS 0.426 cls-IS 0.555 miscls 0.394 (10.6s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.680 worst 0.680 ccg 0.001 width 0.139 IS 0.423 cls-IS 0.553 miscls 0.372 (6.3s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.681 worst 0.681 ccg 0.001 width 0.087 IS 0.501 cls-IS 0.660 miscls 0.231 (11.1s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GAMUT-cert (split certificate)     marg 0.684 worst 0.684 ccg 0.006 width 0.141 IS 0.422 cls-IS 0.553 miscls 0.385 (8.8s)
+      per class class_-1:0.69 class_1:0.68
+ucr_wafer h=20 alpha=0.32: GCC-prob                           marg 0.681 worst 0.681 ccg 0.001 width 0.157 IS 0.440 cls-IS 0.591 miscls 0.522 (27.3s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: KandinskyCP                        marg 0.677 worst 0.676 ccg 0.003 width 0.156 IS 0.440 cls-IS 0.591 miscls 0.468 (60.9s)
+      per class class_-1:0.68 class_1:0.68
+/home/user/PRISM/gamut/methods.py:193: RuntimeWarning: invalid value encountered in divide
+  cs = np.cumsum(Wp, axis=1) / (Wp.sum(1, keepdims=True) + W.max(1, keepdims=True))       # test mass = max kernel
+ucr_wafer h=20 alpha=0.32: LocalizedCP                        marg 0.676 worst 0.662 ccg 0.010 width 0.177 IS 0.458 cls-IS 0.644 miscls 0.119 (29.6s)
+      per class class_-1:0.66 class_1:0.68
+ucr_wafer h=20 alpha=0.32: MDCP                               marg 0.852 worst 0.676 ccg 0.098 width 0.255 IS 0.652 cls-IS 0.789 miscls 0.410 (50.3s)
+      per class class_-1:0.68 class_1:0.87
+ucr_wafer h=20 alpha=0.32: MaxClassCP                         marg 0.843 worst 0.680 ccg 0.091 width 0.268 IS 0.456 cls-IS 0.596 miscls 0.593 (0.1s)
+      per class class_-1:0.68 class_1:0.86
+ucr_wafer h=20 alpha=0.32: MixtureCP                          marg 0.682 worst 0.680 ccg 0.001 width 0.156 IS 0.439 cls-IS 0.587 miscls 0.506 (1.1s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: Oracle-true-class                  marg 0.680 worst 0.680 ccg 0.000 width 0.155 IS 0.439 cls-IS 0.586 miscls 0.442 (0.2s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: PartitionCP                        marg 0.681 worst 0.680 ccg 0.000 width 0.162 IS 0.438 cls-IS 0.586 miscls 0.750 (0.5s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.32: SplitCP                            marg 0.680 worst 0.460 ccg 0.123 width 0.140 IS 0.444 cls-IS 0.604 miscls 0.388 (0.0s)
+      per class class_-1:0.46 class_1:0.71
+ucr_wafer h=20 alpha=0.32: TwoStepCP                          marg 0.680 worst 0.679 ccg 0.001 width 0.155 IS 0.439 cls-IS 0.587 miscls 0.506 (0.1s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.05: CPTC                               marg 0.951 worst 0.950 ccg 0.001 width 0.532 IS 1.056 cls-IS 1.440 miscls 0.904 (0.2s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: CQR                                marg 0.950 worst 0.898 ccg 0.029 width 0.677 IS 0.897 cls-IS 1.258 miscls 0.721 (0.0s)
+      per class class_-1:0.90 class_1:0.96
+ucr_wafer h=20 alpha=0.05: DCP                                marg 0.950 worst 0.936 ccg 0.008 width 0.879 IS 0.990 cls-IS 1.344 miscls 0.808 (1.8s)
+      per class class_-1:0.94 class_1:0.95
+ucr_wafer h=20 alpha=0.05: FLARE                              marg 0.950 worst 0.949 ccg 0.000 width 0.557 IS 1.071 cls-IS 1.483 miscls 0.837 (0.2s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GAMUT                              marg 0.951 worst 0.950 ccg 0.002 width 0.536 IS 1.056 cls-IS 1.450 miscls 0.843 (11.9s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GAMUT (point-level unit)           marg 0.951 worst 0.950 ccg 0.002 width 0.536 IS 1.056 cls-IS 1.450 miscls 0.843 (11.2s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.950 worst 0.950 ccg 0.001 width 0.563 IS 1.071 cls-IS 1.488 miscls 0.859 (11.0s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.951 worst 0.950 ccg 0.001 width 0.539 IS 1.063 cls-IS 1.471 miscls 0.721 (10.5s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.956 worst 0.951 ccg 0.004 width 0.811 IS 1.235 cls-IS 1.554 miscls 0.875 (12.9s)
+      per class class_-1:0.95 class_1:0.96
+ucr_wafer h=20 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.951 worst 0.950 ccg 0.002 width 0.536 IS 1.056 cls-IS 1.450 miscls 0.846 (10.9s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.950 worst 0.923 ccg 0.015 width 0.511 IS 1.046 cls-IS 1.404 miscls 0.769 (10.3s)
+      per class class_-1:0.92 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.953 worst 0.950 ccg 0.014 width 0.604 IS 1.103 cls-IS 1.664 miscls 0.888 (10.4s)
+      per class class_-1:0.98 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.951 worst 0.950 ccg 0.002 width 0.536 IS 1.056 cls-IS 1.450 miscls 0.843 (10.8s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.950 worst 0.950 ccg 0.001 width 0.519 IS 1.063 cls-IS 1.453 miscls 0.843 (11.2s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.950 worst 0.949 ccg 0.000 width 0.529 IS 1.056 cls-IS 1.444 miscls 0.837 (6.4s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.950 worst 0.950 ccg 0.001 width 0.479 IS 1.234 cls-IS 1.495 miscls 0.785 (10.7s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GAMUT-cert (split certificate)     marg 0.953 worst 0.953 ccg 0.005 width 0.552 IS 1.066 cls-IS 1.483 miscls 0.846 (8.4s)
+      per class class_-1:0.96 class_1:0.95
+ucr_wafer h=20 alpha=0.05: GCC-prob                           marg 0.951 worst 0.951 ccg 0.001 width 0.564 IS 1.077 cls-IS 1.507 miscls 0.849 (13.2s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: KandinskyCP                        marg 0.949 worst 0.948 ccg 0.002 width 0.556 IS 1.080 cls-IS 1.508 miscls 0.856 (44.5s)
+      per class class_-1:0.95 class_1:0.95
+/home/user/PRISM/gamut/methods.py:193: RuntimeWarning: invalid value encountered in divide
+  cs = np.cumsum(Wp, axis=1) / (Wp.sum(1, keepdims=True) + W.max(1, keepdims=True))       # test mass = max kernel
+ucr_wafer h=20 alpha=0.05: LocalizedCP                        marg 0.902 worst 0.768 ccg 0.107 width 0.503 IS 1.455 cls-IS 2.492 miscls 0.000 (27.5s)
+      per class class_-1:0.77 class_1:0.92
+ucr_wafer h=20 alpha=0.05: MDCP                               marg 0.978 worst 0.949 ccg 0.016 width 0.813 IS 1.269 cls-IS 1.601 miscls 0.907 (53.0s)
+      per class class_-1:0.95 class_1:0.98
+ucr_wafer h=20 alpha=0.05: MaxClassCP                         marg 0.981 worst 0.950 ccg 0.017 width 0.824 IS 1.163 cls-IS 1.533 miscls 0.875 (0.0s)
+      per class class_-1:0.95 class_1:0.98
+ucr_wafer h=20 alpha=0.05: MixtureCP                          marg 0.951 worst 0.950 ccg 0.001 width 0.560 IS 1.070 cls-IS 1.483 miscls 0.853 (1.2s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: Oracle-true-class                  marg 0.950 worst 0.950 ccg 0.000 width 0.556 IS 1.072 cls-IS 1.482 miscls 0.785 (0.1s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: PartitionCP                        marg 0.950 worst 0.950 ccg 0.000 width 0.580 IS 1.080 cls-IS 1.498 miscls 0.942 (0.2s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.05: SplitCP                            marg 0.950 worst 0.873 ccg 0.043 width 0.534 IS 1.072 cls-IS 1.477 miscls 0.766 (0.0s)
+      per class class_-1:0.87 class_1:0.96
+ucr_wafer h=20 alpha=0.05: TwoStepCP                          marg 0.950 worst 0.949 ccg 0.000 width 0.557 IS 1.071 cls-IS 1.482 miscls 0.833 (0.1s)
+      per class class_-1:0.95 class_1:0.95
+ucr_wafer h=20 alpha=0.32: MDCP + C1                          marg 0.820 worst 0.673 ccg 0.082 width 0.292 IS 0.692 cls-IS 0.795 miscls 0.381 (67.9s)
+      per class class_-1:0.67 class_1:0.84
+ucr_wafer h=20 alpha=0.32: MaxClassCP + C1                    marg 0.810 worst 0.713 ccg 0.088 width 0.284 IS 0.527 cls-IS 0.640 miscls 0.516 (0.1s)
+      per class class_-1:0.71 class_1:0.82
+ucr_wafer h=20 alpha=0.32: TwoStepCP + C1                     marg 0.680 worst 0.677 ccg 0.002 width 0.138 IS 0.423 cls-IS 0.553 miscls 0.365 (0.2s)
+      per class class_-1:0.68 class_1:0.68
+ucr_wafer h=20 alpha=0.05: MDCP + C1                          marg 0.970 worst 0.947 ccg 0.013 width 0.815 IS 1.476 cls-IS 1.678 miscls 0.856 (41.9s)
+      per class class_-1:0.95 class_1:0.97
+ucr_wafer h=20 alpha=0.05: MaxClassCP + C1                    marg 0.981 worst 0.958 ccg 0.021 width 0.994 IS 1.334 cls-IS 1.656 miscls 0.907 (0.2s)
+      per class class_-1:0.96 class_1:0.98
+ucr_wafer h=20 alpha=0.05: TwoStepCP + C1                     marg 0.950 worst 0.948 ccg 0.001 width 0.528 IS 1.062 cls-IS 1.458 miscls 0.708 (0.2s)
+      per class class_-1:0.95 class_1:0.95

@@ -1,0 +1,308 @@
+ztf h=15 alpha=0.32: CPTC                               marg 0.663 worst 0.590 ccg 0.033 width 0.736 IS 1.351 cls-IS 2.267 miscls 0.505 (0.7s)
+      per class SN_Ia:0.68 SN_CC:0.63 SLSN:0.59 AGN:0.69 TDE:0.67 CV:0.65
+ztf h=15 alpha=0.32: CQR                                marg 0.680 worst 0.493 ccg 0.123 width 0.743 IS 1.310 cls-IS 2.209 miscls 0.517 (0.0s)
+      per class SN_Ia:0.74 SN_CC:0.59 SLSN:0.49 AGN:0.57 TDE:0.53 CV:0.54
+ztf h=15 alpha=0.32: DCP                                marg 0.680 worst 0.503 ccg 0.093 width 0.813 IS 1.327 cls-IS 2.188 miscls 0.540 (2.0s)
+      per class SN_Ia:0.73 SN_CC:0.61 SLSN:0.50 AGN:0.61 TDE:0.55 CV:0.61
+ztf h=15 alpha=0.32: FLARE                              marg 0.680 worst 0.534 ccg 0.071 width 0.782 IS 1.305 cls-IS 2.226 miscls 0.530 (0.3s)
+      per class SN_Ia:0.72 SN_CC:0.63 SLSN:0.53 AGN:0.65 TDE:0.57 CV:0.62
+ztf h=15 alpha=0.32: GAMUT                              marg 0.679 worst 0.664 ccg 0.009 width 0.783 IS 1.374 cls-IS 2.310 miscls 0.495 (19.5s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.70 TDE:0.66 CV:0.68
+ztf h=15 alpha=0.32: GAMUT (point-level unit)           marg 0.681 worst 0.680 ccg 0.003 width 0.788 IS 1.373 cls-IS 2.307 miscls 0.498 (20.3s)
+      per class SN_Ia:0.68 SN_CC:0.68 SLSN:0.68 AGN:0.68 TDE:0.69 CV:0.68
+ztf h=15 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.676 worst 0.673 ccg 0.007 width 0.815 IS 1.327 cls-IS 2.238 miscls 0.535 (20.3s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.70 AGN:0.68 TDE:0.68 CV:0.67
+ztf h=15 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.826 worst 0.685 ccg 0.113 width 1.337 IS 1.682 cls-IS 3.146 miscls 0.578 (29.5s)
+      per class SN_Ia:0.85 SN_CC:0.79 SLSN:0.72 AGN:0.90 TDE:0.68 CV:0.82
+ztf h=15 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.710 worst 0.673 ccg 0.063 width 1.138 IS 1.597 cls-IS 2.294 miscls 0.711 (29.1s)
+      per class SN_Ia:0.69 SN_CC:0.74 SLSN:0.73 AGN:0.83 TDE:0.78 CV:0.67
+ztf h=15 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.678 worst 0.669 ccg 0.008 width 0.785 IS 1.379 cls-IS 2.333 miscls 0.491 (21.0s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.70 TDE:0.67 CV:0.68
+ztf h=15 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.672 worst 0.476 ccg 0.100 width 0.713 IS 1.372 cls-IS 2.364 miscls 0.436 (18.0s)
+      per class SN_Ia:0.72 SN_CC:0.60 SLSN:0.49 AGN:0.70 TDE:0.48 CV:0.63
+ztf h=15 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.738 worst 0.676 ccg 0.195 width 1.203 IS 1.595 cls-IS 3.444 miscls 0.695 (17.8s)
+      per class SN_Ia:0.68 SN_CC:0.81 SLSN:0.87 AGN:0.98 TDE:0.95 CV:0.96
+ztf h=15 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.681 worst 0.645 ccg 0.011 width 0.776 IS 1.378 cls-IS 2.330 miscls 0.498 (19.9s)
+      per class SN_Ia:0.68 SN_CC:0.68 SLSN:0.69 AGN:0.69 TDE:0.67 CV:0.65
+ztf h=15 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.678 worst 0.659 ccg 0.009 width 0.781 IS 1.373 cls-IS 2.308 miscls 0.493 (14.8s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.69 TDE:0.66 CV:0.67
+ztf h=15 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.687 worst 0.665 ccg 0.010 width 0.735 IS 1.419 cls-IS 2.362 miscls 0.476 (20.8s)
+      per class SN_Ia:0.69 SN_CC:0.68 SLSN:0.71 AGN:0.68 TDE:0.68 CV:0.66
+ztf h=15 alpha=0.32: GAMUT-cert (split certificate)     marg 0.767 worst 0.764 ccg 0.102 width 1.052 IS 1.448 cls-IS 2.440 miscls 0.621 (17.1s)
+      per class SN_Ia:0.77 SN_CC:0.76 SLSN:0.79 AGN:0.82 TDE:0.78 CV:0.77
+ztf h=15 alpha=0.32: GAMUT-union (early design)         marg 0.725 worst 0.713 ccg 0.053 width 0.903 IS 1.367 cls-IS 2.090 miscls 0.590 (80.2s)
+      per class SN_Ia:0.73 SN_CC:0.71 SLSN:0.74 AGN:0.73 TDE:0.77 CV:0.72
+ztf h=15 alpha=0.32: GCC-prob                           marg 0.677 worst 0.545 ccg 0.067 width 0.781 IS 1.306 cls-IS 2.247 miscls 0.534 (54.3s)
+      per class SN_Ia:0.71 SN_CC:0.63 SLSN:0.55 AGN:0.66 TDE:0.59 CV:0.60
+ztf h=15 alpha=0.32: KandinskyCP                        marg 0.678 worst 0.623 ccg 0.021 width 0.814 IS 1.310 cls-IS 2.262 miscls 0.564 (127.8s)
+      per class SN_Ia:0.69 SN_CC:0.67 SLSN:0.66 AGN:0.68 TDE:0.65 CV:0.62
+ztf h=15 alpha=0.32: LocalizedCP                        marg 0.680 worst 0.549 ccg 0.078 width 0.784 IS 1.303 cls-IS 2.218 miscls 0.534 (40.3s)
+      per class SN_Ia:0.72 SN_CC:0.63 SLSN:0.55 AGN:0.64 TDE:0.57 CV:0.58
+ztf h=15 alpha=0.32: MDCP                               marg 0.780 worst 0.690 ccg 0.066 width 1.192 IS 1.582 cls-IS 2.291 miscls 0.712 (51.6s)
+      per class SN_Ia:0.79 SN_CC:0.77 SLSN:0.69 AGN:0.77 TDE:0.74 CV:0.72
+ztf h=15 alpha=0.32: MaxClassCP                         marg 0.861 worst 0.746 ccg 0.120 width 1.316 IS 1.536 cls-IS 2.398 miscls 0.746 (0.2s)
+      per class SN_Ia:0.89 SN_CC:0.82 SLSN:0.75 AGN:0.82 TDE:0.76 CV:0.76
+ztf h=15 alpha=0.32: MixtureCP                          marg 0.680 worst 0.582 ccg 0.042 width 0.793 IS 1.307 cls-IS 2.230 miscls 0.543 (3.5s)
+      per class SN_Ia:0.70 SN_CC:0.65 SLSN:0.58 AGN:0.68 TDE:0.61 CV:0.65
+ztf h=15 alpha=0.32: Oracle-true-class                  marg 0.680 worst 0.674 ccg 0.002 width 0.804 IS 1.293 cls-IS 2.207 miscls 0.558 (0.4s)
+      per class SN_Ia:0.68 SN_CC:0.68 SLSN:0.68 AGN:0.67 TDE:0.68 CV:0.68
+ztf h=15 alpha=0.32: PartitionCP                        marg 0.680 worst 0.554 ccg 0.064 width 0.792 IS 1.303 cls-IS 2.216 miscls 0.549 (0.5s)
+      per class SN_Ia:0.71 SN_CC:0.63 SLSN:0.55 AGN:0.65 TDE:0.59 CV:0.62
+ztf h=15 alpha=0.32: SplitCP                            marg 0.680 worst 0.534 ccg 0.099 width 0.774 IS 1.307 cls-IS 2.239 miscls 0.527 (0.0s)
+      per class SN_Ia:0.73 SN_CC:0.61 SLSN:0.53 AGN:0.59 TDE:0.56 CV:0.57
+ztf h=15 alpha=0.32: TwoStepCP                          marg 0.842 worst 0.728 ccg 0.101 width 1.203 IS 1.462 cls-IS 2.336 miscls 0.721 (0.3s)
+      per class SN_Ia:0.88 SN_CC:0.79 SLSN:0.73 AGN:0.77 TDE:0.76 CV:0.76
+ztf h=15 alpha=0.05: CPTC                               marg 0.958 worst 0.923 ccg 0.012 width 2.038 IS 2.513 cls-IS 3.902 miscls 0.920 (1.1s)
+      per class SN_Ia:0.97 SN_CC:0.95 SLSN:0.92 AGN:0.96 TDE:0.94 CV:0.95
+ztf h=15 alpha=0.05: CQR                                marg 0.950 worst 0.825 ccg 0.074 width 1.872 IS 2.479 cls-IS 4.502 miscls 0.883 (0.1s)
+      per class SN_Ia:0.97 SN_CC:0.93 SLSN:0.83 AGN:0.90 TDE:0.84 CV:0.82
+ztf h=15 alpha=0.05: DCP                                marg 0.950 worst 0.849 ccg 0.054 width 2.218 IS 2.696 cls-IS 4.318 miscls 0.909 (2.8s)
+      per class SN_Ia:0.96 SN_CC:0.94 SLSN:0.85 AGN:0.92 TDE:0.87 CV:0.86
+ztf h=15 alpha=0.05: FLARE                              marg 0.950 worst 0.872 ccg 0.040 width 1.892 IS 2.491 cls-IS 4.356 miscls 0.882 (0.5s)
+      per class SN_Ia:0.97 SN_CC:0.92 SLSN:0.89 AGN:0.95 TDE:0.87 CV:0.90
+ztf h=15 alpha=0.05: GAMUT                              marg 0.948 worst 0.939 ccg 0.008 width 2.038 IS 2.598 cls-IS 4.267 miscls 0.907 (27.9s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.94 CV:0.96
+ztf h=15 alpha=0.05: GAMUT (point-level unit)           marg 0.951 worst 0.951 ccg 0.004 width 2.085 IS 2.588 cls-IS 4.279 miscls 0.915 (26.7s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.95 CV:0.96
+ztf h=15 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.952 worst 0.950 ccg 0.010 width 2.539 IS 2.986 cls-IS 4.929 miscls 0.923 (27.9s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.97 AGN:0.97 TDE:0.96 CV:0.96
+ztf h=15 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.991 worst 0.966 ccg 0.034 width 3.616 IS 3.822 cls-IS 5.969 miscls 0.957 (36.1s)
+      per class SN_Ia:1.00 SN_CC:0.98 SLSN:0.97 AGN:1.00 TDE:0.98 CV:0.98
+ztf h=15 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.988 worst 0.964 ccg 0.028 width 3.532 IS 3.664 cls-IS 4.463 miscls 0.984 (34.7s)
+      per class SN_Ia:0.99 SN_CC:0.99 SLSN:0.97 AGN:0.99 TDE:0.97 CV:0.96
+ztf h=15 alpha=0.32: CPTC                               marg 0.663 worst 0.590 ccg 0.033 width 0.736 IS 1.351 cls-IS 2.267 miscls 0.505 (0.8s)
+      per class SN_Ia:0.68 SN_CC:0.63 SLSN:0.59 AGN:0.69 TDE:0.67 CV:0.65
+ztf h=15 alpha=0.32: CQR                                marg 0.680 worst 0.493 ccg 0.123 width 0.743 IS 1.310 cls-IS 2.209 miscls 0.517 (0.0s)
+      per class SN_Ia:0.74 SN_CC:0.59 SLSN:0.49 AGN:0.57 TDE:0.53 CV:0.54
+ztf h=15 alpha=0.32: DCP                                marg 0.680 worst 0.503 ccg 0.093 width 0.813 IS 1.327 cls-IS 2.188 miscls 0.540 (2.1s)
+      per class SN_Ia:0.73 SN_CC:0.61 SLSN:0.50 AGN:0.61 TDE:0.55 CV:0.61
+ztf h=15 alpha=0.32: FLARE                              marg 0.680 worst 0.534 ccg 0.071 width 0.782 IS 1.305 cls-IS 2.226 miscls 0.530 (0.3s)
+      per class SN_Ia:0.72 SN_CC:0.63 SLSN:0.53 AGN:0.65 TDE:0.57 CV:0.62
+ztf h=15 alpha=0.32: GAMUT                              marg 0.679 worst 0.664 ccg 0.009 width 0.783 IS 1.374 cls-IS 2.310 miscls 0.495 (19.3s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.70 TDE:0.66 CV:0.68
+ztf h=15 alpha=0.32: GAMUT (point-level unit)           marg 0.681 worst 0.680 ccg 0.003 width 0.788 IS 1.373 cls-IS 2.307 miscls 0.498 (19.3s)
+      per class SN_Ia:0.68 SN_CC:0.68 SLSN:0.68 AGN:0.68 TDE:0.69 CV:0.68
+ztf h=15 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.676 worst 0.673 ccg 0.007 width 0.815 IS 1.327 cls-IS 2.238 miscls 0.535 (20.7s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.70 AGN:0.68 TDE:0.68 CV:0.67
+ztf h=15 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.826 worst 0.685 ccg 0.113 width 1.337 IS 1.682 cls-IS 3.146 miscls 0.578 (33.1s)
+      per class SN_Ia:0.85 SN_CC:0.79 SLSN:0.72 AGN:0.90 TDE:0.68 CV:0.82
+ztf h=15 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.710 worst 0.673 ccg 0.063 width 1.138 IS 1.597 cls-IS 2.294 miscls 0.711 (33.0s)
+      per class SN_Ia:0.69 SN_CC:0.74 SLSN:0.73 AGN:0.83 TDE:0.78 CV:0.67
+ztf h=15 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.678 worst 0.669 ccg 0.008 width 0.785 IS 1.379 cls-IS 2.333 miscls 0.491 (19.5s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.70 TDE:0.67 CV:0.68
+ztf h=15 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.672 worst 0.476 ccg 0.100 width 0.713 IS 1.372 cls-IS 2.364 miscls 0.436 (17.0s)
+      per class SN_Ia:0.72 SN_CC:0.60 SLSN:0.49 AGN:0.70 TDE:0.48 CV:0.63
+ztf h=15 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.738 worst 0.676 ccg 0.195 width 1.203 IS 1.595 cls-IS 3.444 miscls 0.695 (17.5s)
+      per class SN_Ia:0.68 SN_CC:0.81 SLSN:0.87 AGN:0.98 TDE:0.95 CV:0.96
+ztf h=15 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.679 worst 0.664 ccg 0.009 width 0.783 IS 1.374 cls-IS 2.310 miscls 0.495 (19.2s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.70 TDE:0.66 CV:0.68
+ztf h=15 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.681 worst 0.645 ccg 0.011 width 0.776 IS 1.378 cls-IS 2.330 miscls 0.498 (17.7s)
+      per class SN_Ia:0.68 SN_CC:0.68 SLSN:0.69 AGN:0.69 TDE:0.67 CV:0.65
+ztf h=15 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.678 worst 0.659 ccg 0.009 width 0.781 IS 1.373 cls-IS 2.308 miscls 0.493 (13.4s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.69 TDE:0.66 CV:0.67
+ztf h=15 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.687 worst 0.665 ccg 0.010 width 0.735 IS 1.419 cls-IS 2.362 miscls 0.476 (19.4s)
+      per class SN_Ia:0.69 SN_CC:0.68 SLSN:0.71 AGN:0.68 TDE:0.68 CV:0.66
+ztf h=15 alpha=0.32: GAMUT-cert (split certificate)     marg 0.767 worst 0.764 ccg 0.102 width 1.052 IS 1.448 cls-IS 2.440 miscls 0.621 (14.5s)
+      per class SN_Ia:0.77 SN_CC:0.76 SLSN:0.79 AGN:0.82 TDE:0.78 CV:0.77
+ztf h=15 alpha=0.32: GAMUT-union (early design)         marg 0.725 worst 0.713 ccg 0.053 width 0.903 IS 1.367 cls-IS 2.090 miscls 0.590 (78.2s)
+      per class SN_Ia:0.73 SN_CC:0.71 SLSN:0.74 AGN:0.73 TDE:0.77 CV:0.72
+ztf h=15 alpha=0.32: GCC-prob                           marg 0.677 worst 0.545 ccg 0.067 width 0.781 IS 1.306 cls-IS 2.247 miscls 0.534 (54.0s)
+      per class SN_Ia:0.71 SN_CC:0.63 SLSN:0.55 AGN:0.66 TDE:0.59 CV:0.60
+ztf h=15 alpha=0.32: KandinskyCP                        marg 0.678 worst 0.623 ccg 0.021 width 0.814 IS 1.310 cls-IS 2.262 miscls 0.564 (116.8s)
+      per class SN_Ia:0.69 SN_CC:0.67 SLSN:0.66 AGN:0.68 TDE:0.65 CV:0.62
+ztf h=15 alpha=0.32: LocalizedCP                        marg 0.680 worst 0.549 ccg 0.078 width 0.784 IS 1.303 cls-IS 2.218 miscls 0.534 (40.7s)
+      per class SN_Ia:0.72 SN_CC:0.63 SLSN:0.55 AGN:0.64 TDE:0.57 CV:0.58
+ztf h=15 alpha=0.32: MDCP                               marg 0.780 worst 0.690 ccg 0.066 width 1.192 IS 1.582 cls-IS 2.291 miscls 0.712 (38.8s)
+      per class SN_Ia:0.79 SN_CC:0.77 SLSN:0.69 AGN:0.77 TDE:0.74 CV:0.72
+ztf h=15 alpha=0.32: MaxClassCP                         marg 0.861 worst 0.746 ccg 0.120 width 1.316 IS 1.536 cls-IS 2.398 miscls 0.746 (0.1s)
+      per class SN_Ia:0.89 SN_CC:0.82 SLSN:0.75 AGN:0.82 TDE:0.76 CV:0.76
+ztf h=15 alpha=0.32: MixtureCP                          marg 0.680 worst 0.582 ccg 0.042 width 0.793 IS 1.307 cls-IS 2.230 miscls 0.543 (3.1s)
+      per class SN_Ia:0.70 SN_CC:0.65 SLSN:0.58 AGN:0.68 TDE:0.61 CV:0.65
+ztf h=15 alpha=0.32: Oracle-true-class                  marg 0.680 worst 0.674 ccg 0.002 width 0.804 IS 1.293 cls-IS 2.207 miscls 0.558 (0.3s)
+      per class SN_Ia:0.68 SN_CC:0.68 SLSN:0.68 AGN:0.67 TDE:0.68 CV:0.68
+ztf h=15 alpha=0.32: PartitionCP                        marg 0.680 worst 0.554 ccg 0.064 width 0.792 IS 1.303 cls-IS 2.216 miscls 0.549 (0.4s)
+      per class SN_Ia:0.71 SN_CC:0.63 SLSN:0.55 AGN:0.65 TDE:0.59 CV:0.62
+ztf h=15 alpha=0.32: SplitCP                            marg 0.680 worst 0.534 ccg 0.099 width 0.774 IS 1.307 cls-IS 2.239 miscls 0.527 (0.0s)
+      per class SN_Ia:0.73 SN_CC:0.61 SLSN:0.53 AGN:0.59 TDE:0.56 CV:0.57
+ztf h=15 alpha=0.32: TwoStepCP                          marg 0.842 worst 0.728 ccg 0.101 width 1.203 IS 1.462 cls-IS 2.336 miscls 0.721 (0.2s)
+      per class SN_Ia:0.88 SN_CC:0.79 SLSN:0.73 AGN:0.77 TDE:0.76 CV:0.76
+ztf h=15 alpha=0.05: CPTC                               marg 0.958 worst 0.923 ccg 0.012 width 2.038 IS 2.513 cls-IS 3.902 miscls 0.920 (0.9s)
+      per class SN_Ia:0.97 SN_CC:0.95 SLSN:0.92 AGN:0.96 TDE:0.94 CV:0.95
+ztf h=15 alpha=0.05: CQR                                marg 0.950 worst 0.825 ccg 0.074 width 1.872 IS 2.479 cls-IS 4.502 miscls 0.883 (0.0s)
+      per class SN_Ia:0.97 SN_CC:0.93 SLSN:0.83 AGN:0.90 TDE:0.84 CV:0.82
+ztf h=15 alpha=0.05: DCP                                marg 0.950 worst 0.849 ccg 0.054 width 2.218 IS 2.696 cls-IS 4.318 miscls 0.909 (2.1s)
+      per class SN_Ia:0.96 SN_CC:0.94 SLSN:0.85 AGN:0.92 TDE:0.87 CV:0.86
+ztf h=15 alpha=0.05: FLARE                              marg 0.950 worst 0.872 ccg 0.040 width 1.892 IS 2.491 cls-IS 4.356 miscls 0.882 (0.3s)
+      per class SN_Ia:0.97 SN_CC:0.92 SLSN:0.89 AGN:0.95 TDE:0.87 CV:0.90
+ztf h=15 alpha=0.05: GAMUT                              marg 0.948 worst 0.943 ccg 0.006 width 2.039 IS 2.592 cls-IS 4.272 miscls 0.908 (19.3s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.95 CV:0.94
+ztf h=15 alpha=0.05: GAMUT (point-level unit)           marg 0.951 worst 0.949 ccg 0.003 width 2.054 IS 2.570 cls-IS 4.305 miscls 0.913 (19.4s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.95 AGN:0.96 TDE:0.95 CV:0.95
+ztf h=15 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.947 worst 0.943 ccg 0.008 width 2.127 IS 2.649 cls-IS 4.522 miscls 0.911 (18.7s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.96 CV:0.94
+ztf h=15 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.990 worst 0.966 ccg 0.033 width 3.590 IS 3.797 cls-IS 5.955 miscls 0.954 (25.5s)
+      per class SN_Ia:1.00 SN_CC:0.98 SLSN:0.97 AGN:0.99 TDE:0.98 CV:0.98
+ztf h=15 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.988 worst 0.966 ccg 0.028 width 3.459 IS 3.573 cls-IS 4.350 miscls 0.984 (25.7s)
+      per class SN_Ia:0.99 SN_CC:0.99 SLSN:0.97 AGN:0.99 TDE:0.97 CV:0.97
+ztf h=15 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.948 worst 0.942 ccg 0.007 width 2.070 IS 2.638 cls-IS 4.385 miscls 0.906 (19.1s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.96 CV:0.94
+ztf h=15 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.942 worst 0.849 ccg 0.040 width 1.693 IS 2.443 cls-IS 4.200 miscls 0.848 (17.5s)
+      per class SN_Ia:0.96 SN_CC:0.91 SLSN:0.85 AGN:0.96 TDE:0.89 CV:0.92
+ztf h=15 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.960 worst 0.957 ccg 0.026 width 2.267 IS 2.639 cls-IS 4.869 miscls 0.932 (16.7s)
+      per class SN_Ia:0.96 SN_CC:0.96 SLSN:0.97 AGN:0.99 TDE:0.99 CV:0.99
+ztf h=15 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.948 worst 0.939 ccg 0.008 width 2.038 IS 2.598 cls-IS 4.267 miscls 0.907 (21.4s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.94 CV:0.96
+ztf h=15 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.952 worst 0.950 ccg 0.005 width 2.038 IS 2.538 cls-IS 4.187 miscls 0.911 (19.0s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.95 CV:0.96
+ztf h=15 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.947 worst 0.934 ccg 0.006 width 1.966 IS 2.528 cls-IS 4.192 miscls 0.904 (13.7s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.95 AGN:0.96 TDE:0.95 CV:0.93
+ztf h=15 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.950 worst 0.941 ccg 0.006 width 1.896 IS 2.481 cls-IS 4.085 miscls 0.906 (19.7s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.95 CV:0.94
+ztf h=15 alpha=0.05: GAMUT-cert (split certificate)     marg 0.987 worst 0.983 ccg 0.038 width 3.535 IS 3.681 cls-IS 5.353 miscls 0.978 (15.0s)
+      per class SN_Ia:0.99 SN_CC:0.99 SLSN:0.99 AGN:0.99 TDE:1.00 CV:0.98
+ztf h=15 alpha=0.05: GAMUT-union (early design)         marg 0.996 worst 0.978 ccg 0.039 width 4.276 IS 4.317 cls-IS 5.127 miscls 0.994 (74.8s)
+      per class SN_Ia:1.00 SN_CC:1.00 SLSN:0.98 AGN:0.99 TDE:0.98 CV:0.98
+ztf h=15 alpha=0.05: GCC-prob                           marg 0.948 worst 0.877 ccg 0.040 width 1.877 IS 2.484 cls-IS 4.371 miscls 0.880 (50.8s)
+      per class SN_Ia:0.97 SN_CC:0.92 SLSN:0.88 AGN:0.94 TDE:0.88 CV:0.91
+ztf h=15 alpha=0.05: KandinskyCP                        marg 0.949 worst 0.902 ccg 0.015 width 2.087 IS 2.642 cls-IS 4.492 miscls 0.907 (113.0s)
+      per class SN_Ia:0.95 SN_CC:0.94 SLSN:0.95 AGN:0.96 TDE:0.90 CV:0.93
+ztf h=15 alpha=0.05: LocalizedCP                        marg 0.950 worst 0.875 ccg 0.042 width 1.884 IS 2.474 cls-IS 4.225 miscls 0.882 (39.1s)
+      per class SN_Ia:0.97 SN_CC:0.92 SLSN:0.89 AGN:0.93 TDE:0.87 CV:0.90
+ztf h=15 alpha=0.05: MDCP                               marg 0.995 worst 0.964 ccg 0.031 width 3.687 IS 3.758 cls-IS 4.646 miscls 0.989 (30.9s)
+      per class SN_Ia:1.00 SN_CC:0.99 SLSN:0.97 AGN:0.99 TDE:0.97 CV:0.96
+ztf h=15 alpha=0.05: MaxClassCP                         marg 0.989 worst 0.955 ccg 0.027 width 3.358 IS 3.496 cls-IS 5.117 miscls 0.967 (0.1s)
+      per class SN_Ia:1.00 SN_CC:0.98 SLSN:0.97 AGN:0.99 TDE:0.96 CV:0.97
+ztf h=15 alpha=0.05: MixtureCP                          marg 0.946 worst 0.885 ccg 0.030 width 1.908 IS 2.530 cls-IS 4.447 miscls 0.874 (2.9s)
+      per class SN_Ia:0.96 SN_CC:0.93 SLSN:0.88 AGN:0.96 TDE:0.89 CV:0.93
+ztf h=15 alpha=0.05: Oracle-true-class                  marg 0.950 worst 0.940 ccg 0.003 width 1.922 IS 2.433 cls-IS 4.578 miscls 0.905 (0.3s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.95 AGN:0.95 TDE:0.94 CV:0.95
+ztf h=15 alpha=0.05: PartitionCP                        marg 0.949 worst 0.877 ccg 0.039 width 1.890 IS 2.487 cls-IS 4.272 miscls 0.885 (0.4s)
+      per class SN_Ia:0.97 SN_CC:0.92 SLSN:0.89 AGN:0.94 TDE:0.88 CV:0.91
+ztf h=15 alpha=0.05: SplitCP                            marg 0.950 worst 0.868 ccg 0.046 width 1.865 IS 2.469 cls-IS 4.237 miscls 0.881 (0.0s)
+      per class SN_Ia:0.97 SN_CC:0.93 SLSN:0.89 AGN:0.93 TDE:0.87 CV:0.88
+ztf h=15 alpha=0.05: TwoStepCP                          marg 0.989 worst 0.955 ccg 0.025 width 3.291 IS 3.440 cls-IS 5.024 miscls 0.965 (0.2s)
+      per class SN_Ia:0.99 SN_CC:0.98 SLSN:0.97 AGN:0.99 TDE:0.95 CV:0.97
+ztf h=15 alpha=0.32: GAMUT                              marg 0.679 worst 0.664 ccg 0.009 width 0.783 IS 1.373 cls-IS 2.310 miscls 0.495 (40.5s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.70 TDE:0.66 CV:0.68
+ztf h=15 alpha=0.32: GAMUT (point-level unit)           marg 0.681 worst 0.680 ccg 0.003 width 0.788 IS 1.372 cls-IS 2.307 miscls 0.498 (38.3s)
+      per class SN_Ia:0.68 SN_CC:0.68 SLSN:0.68 AGN:0.68 TDE:0.69 CV:0.68
+ztf h=15 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.676 worst 0.673 ccg 0.007 width 0.816 IS 1.327 cls-IS 2.238 miscls 0.535 (39.0s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.70 AGN:0.68 TDE:0.68 CV:0.67
+ztf h=15 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.826 worst 0.685 ccg 0.113 width 1.338 IS 1.683 cls-IS 3.152 miscls 0.578 (50.6s)
+      per class SN_Ia:0.85 SN_CC:0.79 SLSN:0.72 AGN:0.90 TDE:0.68 CV:0.82
+ztf h=15 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.710 worst 0.673 ccg 0.063 width 1.138 IS 1.597 cls-IS 2.294 miscls 0.711 (51.2s)
+      per class SN_Ia:0.69 SN_CC:0.74 SLSN:0.73 AGN:0.83 TDE:0.78 CV:0.67
+ztf h=15 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.678 worst 0.669 ccg 0.008 width 0.785 IS 1.379 cls-IS 2.332 miscls 0.491 (37.6s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.70 TDE:0.67 CV:0.68
+ztf h=15 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.672 worst 0.476 ccg 0.100 width 0.713 IS 1.372 cls-IS 2.364 miscls 0.436 (35.3s)
+      per class SN_Ia:0.72 SN_CC:0.60 SLSN:0.49 AGN:0.70 TDE:0.48 CV:0.63
+ztf h=15 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.738 worst 0.676 ccg 0.195 width 1.203 IS 1.595 cls-IS 3.444 miscls 0.695 (37.5s)
+      per class SN_Ia:0.68 SN_CC:0.81 SLSN:0.87 AGN:0.98 TDE:0.95 CV:0.96
+ztf h=15 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.679 worst 0.664 ccg 0.009 width 0.783 IS 1.373 cls-IS 2.310 miscls 0.495 (40.5s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.70 TDE:0.66 CV:0.68
+ztf h=15 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.681 worst 0.645 ccg 0.011 width 0.776 IS 1.378 cls-IS 2.330 miscls 0.498 (37.2s)
+      per class SN_Ia:0.68 SN_CC:0.68 SLSN:0.69 AGN:0.69 TDE:0.67 CV:0.65
+ztf h=15 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.678 worst 0.659 ccg 0.009 width 0.781 IS 1.373 cls-IS 2.307 miscls 0.493 (34.3s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.69 TDE:0.66 CV:0.67
+ztf h=15 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.687 worst 0.665 ccg 0.010 width 0.735 IS 1.419 cls-IS 2.362 miscls 0.476 (42.0s)
+      per class SN_Ia:0.69 SN_CC:0.68 SLSN:0.71 AGN:0.68 TDE:0.68 CV:0.66
+ztf h=15 alpha=0.32: GAMUT-cert (split certificate)     marg 0.767 worst 0.764 ccg 0.102 width 1.052 IS 1.448 cls-IS 2.440 miscls 0.621 (34.8s)
+      per class SN_Ia:0.77 SN_CC:0.76 SLSN:0.79 AGN:0.82 TDE:0.78 CV:0.77
+ztf h=15 alpha=0.32: KandinskyCP                        marg 0.678 worst 0.623 ccg 0.021 width 0.814 IS 1.310 cls-IS 2.262 miscls 0.564 (257.6s)
+      per class SN_Ia:0.69 SN_CC:0.67 SLSN:0.66 AGN:0.68 TDE:0.65 CV:0.62
+ztf h=15 alpha=0.32: MDCP                               marg 0.780 worst 0.690 ccg 0.066 width 1.192 IS 1.582 cls-IS 2.291 miscls 0.712 (71.1s)
+      per class SN_Ia:0.79 SN_CC:0.77 SLSN:0.69 AGN:0.77 TDE:0.74 CV:0.72
+ztf h=15 alpha=0.05: GAMUT                              marg 0.948 worst 0.943 ccg 0.006 width 2.039 IS 2.592 cls-IS 4.271 miscls 0.908 (39.4s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.95 CV:0.94
+ztf h=15 alpha=0.05: GAMUT (point-level unit)           marg 0.951 worst 0.949 ccg 0.003 width 2.054 IS 2.570 cls-IS 4.304 miscls 0.913 (41.7s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.95 AGN:0.96 TDE:0.95 CV:0.95
+ztf h=15 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.947 worst 0.943 ccg 0.008 width 2.126 IS 2.649 cls-IS 4.520 miscls 0.911 (41.8s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.96 CV:0.94
+ztf h=15 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.990 worst 0.966 ccg 0.033 width 3.663 IS 3.817 cls-IS 5.929 miscls 0.954 (48.4s)
+      per class SN_Ia:1.00 SN_CC:0.98 SLSN:0.97 AGN:0.99 TDE:0.98 CV:0.98
+ztf h=15 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.988 worst 0.966 ccg 0.028 width 3.459 IS 3.573 cls-IS 4.350 miscls 0.984 (51.5s)
+      per class SN_Ia:0.99 SN_CC:0.99 SLSN:0.97 AGN:0.99 TDE:0.97 CV:0.97
+ztf h=15 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.948 worst 0.942 ccg 0.007 width 2.069 IS 2.638 cls-IS 4.385 miscls 0.906 (39.8s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.96 CV:0.94
+ztf h=15 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.942 worst 0.849 ccg 0.040 width 1.693 IS 2.443 cls-IS 4.201 miscls 0.848 (32.8s)
+      per class SN_Ia:0.96 SN_CC:0.91 SLSN:0.85 AGN:0.96 TDE:0.89 CV:0.92
+ztf h=15 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.960 worst 0.957 ccg 0.026 width 2.266 IS 2.639 cls-IS 4.867 miscls 0.932 (35.1s)
+      per class SN_Ia:0.96 SN_CC:0.96 SLSN:0.97 AGN:0.99 TDE:0.99 CV:0.99
+ztf h=15 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.948 worst 0.939 ccg 0.008 width 2.038 IS 2.598 cls-IS 4.266 miscls 0.907 (39.9s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.94 CV:0.96
+ztf h=15 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.952 worst 0.950 ccg 0.005 width 2.038 IS 2.538 cls-IS 4.187 miscls 0.911 (35.8s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.95 CV:0.96
+ztf h=15 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.947 worst 0.934 ccg 0.006 width 1.966 IS 2.528 cls-IS 4.192 miscls 0.904 (33.1s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.95 AGN:0.96 TDE:0.95 CV:0.93
+ztf h=15 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.950 worst 0.941 ccg 0.006 width 1.896 IS 2.481 cls-IS 4.084 miscls 0.906 (42.3s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.95 CV:0.94
+ztf h=15 alpha=0.05: GAMUT-cert (split certificate)     marg 0.987 worst 0.983 ccg 0.038 width 3.534 IS 3.680 cls-IS 5.349 miscls 0.978 (33.9s)
+      per class SN_Ia:0.99 SN_CC:0.99 SLSN:0.99 AGN:0.99 TDE:1.00 CV:0.98
+ztf h=15 alpha=0.05: KandinskyCP                        marg 0.949 worst 0.902 ccg 0.015 width 2.086 IS 2.642 cls-IS 4.492 miscls 0.907 (200.5s)
+      per class SN_Ia:0.95 SN_CC:0.94 SLSN:0.95 AGN:0.96 TDE:0.90 CV:0.93
+ztf h=15 alpha=0.05: MDCP                               marg 0.995 worst 0.964 ccg 0.031 width 3.687 IS 3.758 cls-IS 4.646 miscls 0.989 (61.4s)
+      per class SN_Ia:1.00 SN_CC:0.99 SLSN:0.97 AGN:0.99 TDE:0.97 CV:0.96
+ztf h=15 alpha=0.32: GAMUT                              marg 0.679 worst 0.664 ccg 0.009 width 0.783 IS 1.373 cls-IS 2.310 miscls 0.495 (43.0s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.70 TDE:0.66 CV:0.68
+ztf h=15 alpha=0.32: GAMUT (point-level unit)           marg 0.681 worst 0.680 ccg 0.003 width 0.788 IS 1.372 cls-IS 2.307 miscls 0.498 (39.4s)
+      per class SN_Ia:0.68 SN_CC:0.68 SLSN:0.68 AGN:0.68 TDE:0.69 CV:0.68
+ztf h=15 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.676 worst 0.673 ccg 0.007 width 0.815 IS 1.327 cls-IS 2.238 miscls 0.535 (38.5s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.70 AGN:0.68 TDE:0.68 CV:0.67
+ztf h=15 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.826 worst 0.684 ccg 0.113 width 1.338 IS 1.683 cls-IS 3.153 miscls 0.578 (48.9s)
+      per class SN_Ia:0.85 SN_CC:0.79 SLSN:0.72 AGN:0.90 TDE:0.68 CV:0.82
+ztf h=15 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.710 worst 0.673 ccg 0.063 width 1.138 IS 1.597 cls-IS 2.294 miscls 0.711 (49.6s)
+      per class SN_Ia:0.69 SN_CC:0.74 SLSN:0.73 AGN:0.83 TDE:0.78 CV:0.67
+ztf h=15 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.678 worst 0.669 ccg 0.008 width 0.785 IS 1.379 cls-IS 2.332 miscls 0.491 (38.4s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.70 TDE:0.67 CV:0.68
+ztf h=15 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.672 worst 0.476 ccg 0.100 width 0.713 IS 1.372 cls-IS 2.364 miscls 0.436 (34.1s)
+      per class SN_Ia:0.72 SN_CC:0.60 SLSN:0.49 AGN:0.70 TDE:0.48 CV:0.63
+ztf h=15 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.738 worst 0.676 ccg 0.195 width 1.202 IS 1.594 cls-IS 3.443 miscls 0.695 (36.0s)
+      per class SN_Ia:0.68 SN_CC:0.81 SLSN:0.87 AGN:0.98 TDE:0.95 CV:0.96
+ztf h=15 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.679 worst 0.664 ccg 0.009 width 0.783 IS 1.373 cls-IS 2.310 miscls 0.495 (40.7s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.70 TDE:0.66 CV:0.68
+ztf h=15 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.680 worst 0.646 ccg 0.011 width 0.775 IS 1.378 cls-IS 2.330 miscls 0.498 (36.6s)
+      per class SN_Ia:0.68 SN_CC:0.68 SLSN:0.69 AGN:0.69 TDE:0.67 CV:0.65
+ztf h=15 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.678 worst 0.659 ccg 0.009 width 0.781 IS 1.373 cls-IS 2.307 miscls 0.493 (31.2s)
+      per class SN_Ia:0.68 SN_CC:0.67 SLSN:0.69 AGN:0.69 TDE:0.66 CV:0.67
+ztf h=15 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.687 worst 0.665 ccg 0.010 width 0.735 IS 1.419 cls-IS 2.363 miscls 0.476 (41.4s)
+      per class SN_Ia:0.69 SN_CC:0.68 SLSN:0.71 AGN:0.68 TDE:0.68 CV:0.66
+ztf h=15 alpha=0.32: GAMUT-cert (split certificate)     marg 0.767 worst 0.764 ccg 0.102 width 1.052 IS 1.447 cls-IS 2.438 miscls 0.621 (36.9s)
+      per class SN_Ia:0.77 SN_CC:0.76 SLSN:0.79 AGN:0.82 TDE:0.78 CV:0.77
+ztf h=15 alpha=0.05: GAMUT                              marg 0.948 worst 0.943 ccg 0.006 width 2.038 IS 2.591 cls-IS 4.268 miscls 0.908 (41.7s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.95 CV:0.94
+ztf h=15 alpha=0.05: GAMUT (point-level unit)           marg 0.951 worst 0.949 ccg 0.003 width 2.053 IS 2.569 cls-IS 4.302 miscls 0.913 (41.3s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.95 AGN:0.96 TDE:0.95 CV:0.95
+ztf h=15 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.947 worst 0.943 ccg 0.008 width 2.125 IS 2.648 cls-IS 4.519 miscls 0.911 (41.6s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.96 CV:0.94
+ztf h=15 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.990 worst 0.966 ccg 0.033 width 3.669 IS 3.821 cls-IS 5.933 miscls 0.954 (48.6s)
+      per class SN_Ia:1.00 SN_CC:0.98 SLSN:0.97 AGN:0.99 TDE:0.98 CV:0.98
+ztf h=15 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.988 worst 0.966 ccg 0.028 width 3.458 IS 3.570 cls-IS 4.337 miscls 0.984 (49.9s)
+      per class SN_Ia:0.99 SN_CC:0.99 SLSN:0.97 AGN:0.99 TDE:0.97 CV:0.97
+ztf h=15 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.948 worst 0.942 ccg 0.007 width 2.069 IS 2.638 cls-IS 4.385 miscls 0.906 (40.3s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.95 CV:0.94
+ztf h=15 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.942 worst 0.849 ccg 0.040 width 1.693 IS 2.443 cls-IS 4.201 miscls 0.848 (36.8s)
+      per class SN_Ia:0.96 SN_CC:0.91 SLSN:0.85 AGN:0.96 TDE:0.89 CV:0.92
+ztf h=15 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.960 worst 0.957 ccg 0.026 width 2.266 IS 2.638 cls-IS 4.865 miscls 0.932 (35.3s)
+      per class SN_Ia:0.96 SN_CC:0.96 SLSN:0.97 AGN:0.99 TDE:0.99 CV:0.99
+ztf h=15 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.948 worst 0.939 ccg 0.008 width 2.037 IS 2.597 cls-IS 4.265 miscls 0.907 (42.0s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.94 CV:0.96
+ztf h=15 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.952 worst 0.950 ccg 0.005 width 2.038 IS 2.537 cls-IS 4.184 miscls 0.911 (38.0s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.95 CV:0.96
+ztf h=15 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.947 worst 0.934 ccg 0.006 width 1.956 IS 2.517 cls-IS 4.176 miscls 0.904 (30.3s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.95 AGN:0.96 TDE:0.95 CV:0.93
+ztf h=15 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.950 worst 0.941 ccg 0.006 width 1.895 IS 2.481 cls-IS 4.082 miscls 0.906 (39.5s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.96 AGN:0.96 TDE:0.95 CV:0.94
+ztf h=15 alpha=0.05: GAMUT-cert (split certificate)     marg 0.987 worst 0.983 ccg 0.038 width 3.545 IS 3.687 cls-IS 5.364 miscls 0.978 (32.5s)
+      per class SN_Ia:0.99 SN_CC:0.99 SLSN:0.99 AGN:0.99 TDE:1.00 CV:0.98
+ztf h=15 alpha=0.32: MDCP + C1                          marg 0.761 worst 0.719 ccg 0.073 width 1.197 IS 1.669 cls-IS 2.460 miscls 0.694 (74.4s)
+      per class SN_Ia:0.76 SN_CC:0.76 SLSN:0.72 AGN:0.77 TDE:0.78 CV:0.72
+ztf h=15 alpha=0.32: MaxClassCP + C1                    marg 0.910 worst 0.757 ccg 0.177 width 1.767 IS 1.906 cls-IS 2.414 miscls 0.874 (0.8s)
+      per class SN_Ia:0.92 SN_CC:0.91 SLSN:0.83 AGN:0.87 TDE:0.86 CV:0.76
+ztf h=15 alpha=0.32: TwoStepCP + C1                     marg 0.855 worst 0.748 ccg 0.137 width 1.554 IS 1.743 cls-IS 2.237 miscls 0.839 (1.0s)
+      per class SN_Ia:0.85 SN_CC:0.87 SLSN:0.80 AGN:0.79 TDE:0.84 CV:0.75
+ztf h=15 alpha=0.05: MDCP + C1                          marg 0.994 worst 0.964 ccg 0.031 width 3.350 IS 3.424 cls-IS 4.374 miscls 0.987 (76.9s)
+      per class SN_Ia:1.00 SN_CC:0.99 SLSN:0.97 AGN:0.99 TDE:0.97 CV:0.96
+ztf h=15 alpha=0.05: MaxClassCP + C1                    marg 0.997 worst 0.973 ccg 0.035 width 3.975 IS 4.025 cls-IS 4.758 miscls 0.992 (0.9s)
+      per class SN_Ia:1.00 SN_CC:1.00 SLSN:0.98 AGN:0.99 TDE:0.98 CV:0.97
+ztf h=15 alpha=0.05: TwoStepCP + C1                     marg 0.993 worst 0.967 ccg 0.031 width 3.566 IS 3.638 cls-IS 4.442 miscls 0.988 (0.9s)
+      per class SN_Ia:0.99 SN_CC:0.99 SLSN:0.97 AGN:0.98 TDE:0.97 CV:0.97

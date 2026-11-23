@@ -1,0 +1,60 @@
+ztf h=5 alpha=0.32: SplitCP                            marg 0.680 worst 0.548 ccg 0.057 width 1.075 IS 1.775 cls-IS 2.344 miscls 0.613 (0.0s)
+      per class SN_Ia:0.69 SN_CC:0.67 SLSN:0.55 AGN:0.66 TDE:0.58 CV:0.62
+ztf h=5 alpha=0.32: FLARE                              marg 0.680 worst 0.530 ccg 0.053 width 1.070 IS 1.775 cls-IS 2.358 miscls 0.609 (0.4s)
+      per class SN_Ia:0.69 SN_CC:0.67 SLSN:0.53 AGN:0.66 TDE:0.59 CV:0.65
+ztf h=5 alpha=0.32: CQR                                marg 0.680 worst 0.535 ccg 0.057 width 1.056 IS 1.764 cls-IS 2.314 miscls 0.619 (0.1s)
+      per class SN_Ia:0.69 SN_CC:0.68 SLSN:0.54 AGN:0.65 TDE:0.59 CV:0.61
+ztf h=5 alpha=0.32: DCP                                marg 0.680 worst 0.543 ccg 0.053 width 1.087 IS 1.771 cls-IS 2.304 miscls 0.628 (2.6s)
+      per class SN_Ia:0.67 SN_CC:0.71 SLSN:0.54 AGN:0.66 TDE:0.59 CV:0.64
+ztf h=5 alpha=0.32: LocalizedCP                        marg 0.680 worst 0.540 ccg 0.057 width 1.070 IS 1.774 cls-IS 2.346 miscls 0.611 (54.3s)
+      per class SN_Ia:0.69 SN_CC:0.67 SLSN:0.54 AGN:0.66 TDE:0.58 CV:0.62
+ztf h=5 alpha=0.32: MixtureCP                          marg 0.680 worst 0.551 ccg 0.040 width 1.073 IS 1.775 cls-IS 2.363 miscls 0.612 (4.0s)
+      per class SN_Ia:0.69 SN_CC:0.67 SLSN:0.55 AGN:0.68 TDE:0.60 CV:0.67
+ztf h=5 alpha=0.32: GCC-prob                           marg 0.679 worst 0.541 ccg 0.058 width 1.066 IS 1.775 cls-IS 2.360 miscls 0.612 (202.4s)
+      per class SN_Ia:0.69 SN_CC:0.67 SLSN:0.54 AGN:0.64 TDE:0.58 CV:0.63
+ztf h=5 alpha=0.32: PartitionCP                        marg 0.680 worst 0.540 ccg 0.054 width 1.072 IS 1.775 cls-IS 2.355 miscls 0.612 (0.6s)
+      per class SN_Ia:0.69 SN_CC:0.67 SLSN:0.54 AGN:0.65 TDE:0.59 CV:0.65
+ztf h=5 alpha=0.32: PRISM                              marg 0.831 worst 0.779 ccg 0.140 width 1.708 IS 2.074 cls-IS 2.518 miscls 0.785 (77.7s)
+      per class SN_Ia:0.83 SN_CC:0.84 SLSN:0.83 AGN:0.81 TDE:0.83 CV:0.78
+ztf h=5 alpha=0.32: Oracle-true-class                  marg 0.680 worst 0.673 ccg 0.004 width 1.076 IS 1.770 cls-IS 2.357 miscls 0.620 (0.4s)
+      per class SN_Ia:0.68 SN_CC:0.68 SLSN:0.67 AGN:0.68 TDE:0.67 CV:0.69
+ztf h=5 alpha=0.32: PRISM w/o C1 (pooled forecaster)   marg 0.840 worst 0.785 ccg 0.130 width 1.767 IS 2.112 cls-IS 2.706 miscls 0.814 (78.3s)
+      per class SN_Ia:0.85 SN_CC:0.84 SLSN:0.79 AGN:0.81 TDE:0.80 CV:0.79
+ztf h=5 alpha=0.32: PRISM w/o C2 (all classes)         marg 0.911 worst 0.793 ccg 0.200 width 2.319 IS 2.510 cls-IS 2.714 miscls 0.896 (77.7s)
+      per class SN_Ia:0.91 SN_CC:0.93 SLSN:0.84 AGN:0.90 TDE:0.91 CV:0.79
+ztf h=5 alpha=0.32: PRISM w/o C2 (argmax only)         marg 0.701 worst 0.429 ccg 0.110 width 1.154 IS 1.901 cls-IS 2.606 miscls 0.526 (77.8s)
+      per class SN_Ia:0.74 SN_CC:0.63 SLSN:0.43 AGN:0.75 TDE:0.53 CV:0.76
+ztf h=5 alpha=0.32: PRISM w/o C3-CRC (union bound)     marg 0.850 worst 0.801 ccg 0.147 width 1.757 IS 2.090 cls-IS 2.571 miscls 0.788 (74.7s)
+      per class SN_Ia:0.85 SN_CC:0.85 SLSN:0.83 AGN:0.82 TDE:0.80 CV:0.81
+ztf h=5 alpha=0.32: PRISM w/o C3-adaptive              marg 0.827 worst 0.776 ccg 0.136 width 1.655 IS 2.028 cls-IS 2.489 miscls 0.777 (1.9s)
+      per class SN_Ia:0.82 SN_CC:0.84 SLSN:0.82 AGN:0.81 TDE:0.83 CV:0.78
+ztf h=5 alpha=0.05: SplitCP                            marg 0.950 worst 0.862 ccg 0.037 width 2.549 IS 3.258 cls-IS 4.370 miscls 0.922 (0.1s)
+      per class SN_Ia:0.96 SN_CC:0.95 SLSN:0.86 AGN:0.91 TDE:0.91 CV:0.90
+ztf h=5 alpha=0.05: FLARE                              marg 0.949 worst 0.852 ccg 0.034 width 2.525 IS 3.251 cls-IS 4.479 miscls 0.918 (0.5s)
+      per class SN_Ia:0.96 SN_CC:0.94 SLSN:0.85 AGN:0.93 TDE:0.90 CV:0.93
+ztf h=5 alpha=0.05: CQR                                marg 0.950 worst 0.863 ccg 0.034 width 2.465 IS 3.215 cls-IS 4.300 miscls 0.925 (0.1s)
+      per class SN_Ia:0.95 SN_CC:0.96 SLSN:0.88 AGN:0.93 TDE:0.93 CV:0.86
+ztf h=5 alpha=0.05: DCP                                marg 0.950 worst 0.874 ccg 0.027 width 2.674 IS 3.346 cls-IS 4.244 miscls 0.934 (2.7s)
+      per class SN_Ia:0.95 SN_CC:0.96 SLSN:0.90 AGN:0.94 TDE:0.95 CV:0.87
+ztf h=5 alpha=0.05: LocalizedCP                        marg 0.949 worst 0.855 ccg 0.037 width 2.505 IS 3.245 cls-IS 4.407 miscls 0.917 (53.7s)
+      per class SN_Ia:0.96 SN_CC:0.94 SLSN:0.85 AGN:0.92 TDE:0.90 CV:0.91
+ztf h=5 alpha=0.05: MixtureCP                          marg 0.949 worst 0.851 ccg 0.030 width 2.521 IS 3.268 cls-IS 4.557 miscls 0.913 (3.4s)
+      per class SN_Ia:0.96 SN_CC:0.94 SLSN:0.85 AGN:0.94 TDE:0.91 CV:0.94
+ztf h=5 alpha=0.05: GCC-prob                           marg 0.949 worst 0.852 ccg 0.035 width 2.519 IS 3.261 cls-IS 4.543 miscls 0.916 (195.4s)
+      per class SN_Ia:0.96 SN_CC:0.94 SLSN:0.85 AGN:0.93 TDE:0.90 CV:0.92
+ztf h=5 alpha=0.05: PartitionCP                        marg 0.949 worst 0.856 ccg 0.032 width 2.535 IS 3.264 cls-IS 4.438 miscls 0.916 (0.5s)
+      per class SN_Ia:0.96 SN_CC:0.94 SLSN:0.86 AGN:0.93 TDE:0.91 CV:0.93
+ztf h=5 alpha=0.05: PRISM                              marg 0.996 worst 0.987 ccg 0.043 width 5.541 IS 5.588 cls-IS 6.211 miscls 0.994 (74.3s)
+      per class SN_Ia:1.00 SN_CC:1.00 SLSN:0.99 AGN:0.99 TDE:1.00 CV:0.99
+ztf h=5 alpha=0.05: Oracle-true-class                  marg 0.950 worst 0.939 ccg 0.004 width 2.489 IS 3.192 cls-IS 4.323 miscls 0.923 (0.4s)
+      per class SN_Ia:0.95 SN_CC:0.95 SLSN:0.95 AGN:0.94 TDE:0.95 CV:0.95
+ztf h=5 alpha=0.05: PRISM w/o C1 (pooled forecaster)   marg 0.995 worst 0.982 ccg 0.042 width 6.067 IS 6.121 cls-IS 7.754 miscls 0.992 (72.4s)
+      per class SN_Ia:1.00 SN_CC:0.99 SLSN:0.99 AGN:0.98 TDE:1.00 CV:0.99
+ztf h=5 alpha=0.05: PRISM w/o C2 (all classes)         marg 0.998 worst 0.979 ccg 0.043 width 5.852 IS 5.888 cls-IS 6.023 miscls 0.996 (72.9s)
+      per class SN_Ia:1.00 SN_CC:1.00 SLSN:0.99 AGN:0.99 TDE:1.00 CV:0.98
+ztf h=5 alpha=0.05: PRISM w/o C2 (argmax only)         marg 0.914 worst 0.688 ccg 0.091 width 2.257 IS 3.647 cls-IS 5.770 miscls 0.820 (73.9s)
+      per class SN_Ia:0.94 SN_CC:0.89 SLSN:0.69 AGN:0.93 TDE:0.80 CV:0.92
+ztf h=5 alpha=0.05: PRISM w/o C3-CRC (union bound)     marg 0.994 worst 0.973 ccg 0.039 width 4.909 IS 4.984 cls-IS 5.380 miscls 0.991 (72.3s)
+      per class SN_Ia:0.99 SN_CC:1.00 SLSN:0.99 AGN:0.97 TDE:1.00 CV:0.99
+ztf h=5 alpha=0.05: PRISM w/o C3-adaptive              marg 0.994 worst 0.981 ccg 0.041 width 4.970 IS 5.049 cls-IS 5.733 miscls 0.991 (1.7s)
+      per class SN_Ia:0.99 SN_CC:1.00 SLSN:0.99 AGN:0.98 TDE:1.00 CV:0.98

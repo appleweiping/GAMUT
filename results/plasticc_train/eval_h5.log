@@ -1,0 +1,280 @@
+plasticc_train h=5 alpha=0.32: CPTC                               marg 0.732 worst 0.528 ccg 0.070 width 2.181 IS 3.124 cls-IS 3.576 miscls 0.713 (0.2s)
+      per class uLens:0.53 TDE:0.77 EB:0.78 SNII:0.75 SNIax:0.77 SNIbc:0.70 SNIa91bg:0.73 AGN:0.76 SNIa:0.73 RRL:0.66 SLSN:0.65
+plasticc_train h=5 alpha=0.32: CQR                                marg 0.679 worst 0.416 ccg 0.081 width 1.859 IS 2.942 cls-IS 3.417 miscls 0.633 (0.0s)
+      per class uLens:0.42 TDE:0.67 EB:0.78 SNII:0.72 SNIax:0.66 SNIbc:0.66 SNIa91bg:0.57 AGN:0.74 SNIa:0.68 RRL:0.57 SLSN:0.53
+plasticc_train h=5 alpha=0.32: DCP                                marg 0.678 worst 0.463 ccg 0.082 width 1.932 IS 2.977 cls-IS 3.401 miscls 0.642 (0.2s)
+      per class uLens:0.46 TDE:0.67 EB:0.82 SNII:0.74 SNIax:0.66 SNIbc:0.66 SNIa91bg:0.54 AGN:0.77 SNIa:0.65 RRL:0.61 SLSN:0.56
+plasticc_train h=5 alpha=0.32: FLARE                              marg 0.683 worst 0.441 ccg 0.063 width 1.891 IS 3.012 cls-IS 3.513 miscls 0.638 (0.0s)
+      per class uLens:0.44 TDE:0.65 EB:0.77 SNII:0.71 SNIax:0.67 SNIbc:0.66 SNIa91bg:0.69 AGN:0.72 SNIa:0.69 RRL:0.63 SLSN:0.52
+plasticc_train h=5 alpha=0.32: GAMUT                              marg 0.686 worst 0.665 ccg 0.028 width 2.826 IS 3.947 cls-IS 4.375 miscls 0.719 (6.4s)
+      per class uLens:0.70 TDE:0.74 EB:0.70 SNII:0.67 SNIax:0.74 SNIbc:0.71 SNIa91bg:0.76 AGN:0.67 SNIa:0.68 RRL:0.70 SLSN:0.67
+plasticc_train h=5 alpha=0.32: GAMUT (point-level unit)           marg 0.702 worst 0.683 ccg 0.038 width 3.256 IS 4.299 cls-IS 4.707 miscls 0.746 (6.0s)
+      per class uLens:0.75 TDE:0.77 EB:0.71 SNII:0.70 SNIax:0.73 SNIbc:0.72 SNIa91bg:0.72 AGN:0.70 SNIa:0.68 RRL:0.68 SLSN:0.73
+plasticc_train h=5 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.698 worst 0.666 ccg 0.030 width 2.978 IS 4.083 cls-IS 4.438 miscls 0.731 (6.5s)
+      per class uLens:0.70 TDE:0.73 EB:0.71 SNII:0.69 SNIax:0.75 SNIbc:0.72 SNIa91bg:0.75 AGN:0.67 SNIa:0.69 RRL:0.70 SLSN:0.69
+plasticc_train h=5 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.863 worst 0.739 ccg 0.167 width 3.939 IS 4.464 cls-IS 5.187 miscls 0.817 (6.1s)
+      per class uLens:0.74 TDE:0.87 EB:0.87 SNII:0.87 SNIax:0.86 SNIbc:0.85 SNIa91bg:0.93 AGN:0.87 SNIa:0.87 RRL:0.84 SLSN:0.76
+plasticc_train h=5 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.854 worst 0.730 ccg 0.170 width 3.964 IS 4.456 cls-IS 4.615 miscls 0.844 (5.7s)
+      per class uLens:0.73 TDE:0.89 EB:0.95 SNII:0.88 SNIax:0.81 SNIbc:0.84 SNIa91bg:0.83 AGN:0.93 SNIa:0.83 RRL:0.84 SLSN:0.82
+plasticc_train h=5 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.684 worst 0.655 ccg 0.027 width 2.886 IS 4.029 cls-IS 4.480 miscls 0.720 (5.8s)
+      per class uLens:0.70 TDE:0.73 EB:0.69 SNII:0.67 SNIax:0.74 SNIbc:0.70 SNIa91bg:0.76 AGN:0.66 SNIa:0.67 RRL:0.68 SLSN:0.67
+plasticc_train h=5 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.672 worst 0.422 ccg 0.068 width 1.800 IS 3.016 cls-IS 3.541 miscls 0.611 (2.6s)
+      per class uLens:0.42 TDE:0.66 EB:0.75 SNII:0.68 SNIax:0.64 SNIbc:0.62 SNIa91bg:0.71 AGN:0.71 SNIa:0.69 RRL:0.61 SLSN:0.52
+plasticc_train h=5 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.847 worst 0.720 ccg 0.192 width 3.563 IS 4.074 cls-IS 4.565 miscls 0.870 (2.7s)
+      per class uLens:0.72 TDE:0.91 EB:0.97 SNII:0.90 SNIax:0.87 SNIbc:0.88 SNIa91bg:0.96 AGN:0.92 SNIa:0.78 RRL:0.89 SLSN:0.79
+plasticc_train h=5 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.646 worst 0.598 ccg 0.036 width 2.306 IS 3.582 cls-IS 4.082 miscls 0.676 (3.6s)
+      per class uLens:0.61 TDE:0.68 EB:0.63 SNII:0.63 SNIax:0.70 SNIbc:0.67 SNIa91bg:0.68 AGN:0.61 SNIa:0.65 RRL:0.67 SLSN:0.60
+plasticc_train h=5 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.684 worst 0.664 ccg 0.027 width 2.781 IS 3.911 cls-IS 4.337 miscls 0.716 (5.6s)
+      per class uLens:0.69 TDE:0.73 EB:0.69 SNII:0.67 SNIax:0.75 SNIbc:0.70 SNIa91bg:0.76 AGN:0.66 SNIa:0.68 RRL:0.68 SLSN:0.66
+plasticc_train h=5 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.682 worst 0.646 ccg 0.030 width 2.646 IS 3.953 cls-IS 4.313 miscls 0.703 (6.0s)
+      per class uLens:0.70 TDE:0.74 EB:0.68 SNII:0.67 SNIax:0.77 SNIbc:0.70 SNIa91bg:0.73 AGN:0.66 SNIa:0.67 RRL:0.68 SLSN:0.65
+plasticc_train h=5 alpha=0.32: GAMUT-cert (split certificate)     marg 0.857 worst 0.829 ccg 0.183 width 4.541 IS 5.043 cls-IS 5.426 miscls 0.872 (5.7s)
+      per class uLens:0.84 TDE:0.88 EB:0.84 SNII:0.85 SNIax:0.88 SNIbc:0.86 SNIa91bg:0.91 AGN:0.83 SNIa:0.86 RRL:0.89 SLSN:0.85
+plasticc_train h=5 alpha=0.32: GCC-prob                           marg 0.678 worst 0.425 ccg 0.069 width 1.863 IS 2.997 cls-IS 3.495 miscls 0.631 (70.1s)
+      per class uLens:0.43 TDE:0.63 EB:0.77 SNII:0.70 SNIax:0.66 SNIbc:0.68 SNIa91bg:0.69 AGN:0.72 SNIa:0.69 RRL:0.58 SLSN:0.51
+plasticc_train h=5 alpha=0.32: KandinskyCP                        marg 0.683 worst 0.497 ccg 0.048 width 2.106 IS 3.223 cls-IS 3.730 miscls 0.653 (34.6s)
+      per class uLens:0.50 TDE:0.67 EB:0.75 SNII:0.70 SNIax:0.65 SNIbc:0.69 SNIa91bg:0.73 AGN:0.72 SNIa:0.68 RRL:0.70 SLSN:0.59
+plasticc_train h=5 alpha=0.32: LocalizedCP                        marg 0.681 worst 0.425 ccg 0.063 width 1.865 IS 2.988 cls-IS 3.478 miscls 0.633 (1.1s)
+      per class uLens:0.43 TDE:0.66 EB:0.76 SNII:0.70 SNIax:0.66 SNIbc:0.66 SNIa91bg:0.68 AGN:0.71 SNIa:0.69 RRL:0.61 SLSN:0.52
+plasticc_train h=5 alpha=0.32: MDCP                               marg 0.915 worst 0.693 ccg 0.206 width 3.647 IS 3.928 cls-IS 4.213 miscls 0.894 (21.7s)
+      per class uLens:0.69 TDE:0.91 EB:0.96 SNII:0.91 SNIax:0.91 SNIbc:0.91 SNIa91bg:0.91 AGN:0.94 SNIa:0.93 RRL:0.83 SLSN:0.85
+plasticc_train h=5 alpha=0.32: MaxClassCP                         marg 0.913 worst 0.727 ccg 0.209 width 3.811 IS 4.118 cls-IS 4.480 miscls 0.888 (0.0s)
+      per class uLens:0.73 TDE:0.91 EB:0.96 SNII:0.91 SNIax:0.90 SNIbc:0.89 SNIa91bg:0.93 AGN:0.92 SNIa:0.93 RRL:0.89 SLSN:0.80
+plasticc_train h=5 alpha=0.32: MixtureCP                          marg 0.691 worst 0.463 ccg 0.051 width 1.924 IS 3.013 cls-IS 3.504 miscls 0.651 (0.6s)
+      per class uLens:0.46 TDE:0.69 EB:0.75 SNII:0.71 SNIax:0.67 SNIbc:0.68 SNIa91bg:0.69 AGN:0.72 SNIa:0.70 RRL:0.67 SLSN:0.53
+plasticc_train h=5 alpha=0.32: Oracle-true-class                  marg 0.679 worst 0.491 ccg 0.027 width 1.907 IS 2.983 cls-IS 3.462 miscls 0.644 (0.1s)
+      per class uLens:0.49 TDE:0.68 EB:0.70 SNII:0.68 SNIax:0.70 SNIbc:0.69 SNIa91bg:0.65 AGN:0.69 SNIa:0.68 RRL:0.67 SLSN:0.69
+plasticc_train h=5 alpha=0.32: PartitionCP                        marg 0.680 worst 0.441 ccg 0.064 width 1.882 IS 3.004 cls-IS 3.504 miscls 0.635 (0.2s)
+      per class uLens:0.44 TDE:0.64 EB:0.77 SNII:0.70 SNIax:0.67 SNIbc:0.67 SNIa91bg:0.70 AGN:0.71 SNIa:0.69 RRL:0.61 SLSN:0.52
+plasticc_train h=5 alpha=0.32: SplitCP                            marg 0.679 worst 0.429 ccg 0.062 width 1.858 IS 2.986 cls-IS 3.476 miscls 0.631 (0.0s)
+      per class uLens:0.43 TDE:0.67 EB:0.76 SNII:0.70 SNIax:0.66 SNIbc:0.66 SNIa91bg:0.68 AGN:0.71 SNIa:0.69 RRL:0.62 SLSN:0.51
+plasticc_train h=5 alpha=0.32: TwoStepCP                          marg 0.913 worst 0.727 ccg 0.209 width 3.811 IS 4.118 cls-IS 4.480 miscls 0.888 (0.0s)
+      per class uLens:0.73 TDE:0.91 EB:0.96 SNII:0.91 SNIax:0.90 SNIbc:0.89 SNIa91bg:0.93 AGN:0.92 SNIa:0.93 RRL:0.89 SLSN:0.80
+plasticc_train h=5 alpha=0.05: CPTC                               marg 0.985 worst 0.935 ccg 0.031 width 7.092 IS 7.391 cls-IS 7.849 miscls 0.978 (0.2s)
+      per class uLens:0.93 TDE:0.99 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:0.98 SNIa91bg:0.99 AGN:0.98 SNIa:0.99 RRL:0.97 SLSN:0.95
+plasticc_train h=5 alpha=0.05: CQR                                marg 0.949 worst 0.860 ccg 0.031 width 4.129 IS 5.138 cls-IS 5.880 miscls 0.934 (0.0s)
+      per class uLens:0.86 TDE:0.93 EB:0.99 SNII:0.96 SNIax:0.95 SNIbc:0.95 SNIa91bg:0.93 AGN:0.98 SNIa:0.95 RRL:0.89 SLSN:0.88
+plasticc_train h=5 alpha=0.05: DCP                                marg 0.949 worst 0.857 ccg 0.031 width 4.495 IS 5.441 cls-IS 6.096 miscls 0.940 (0.2s)
+      per class uLens:0.86 TDE:0.95 EB:1.00 SNII:0.96 SNIax:0.96 SNIbc:0.94 SNIa91bg:0.91 AGN:0.99 SNIa:0.94 RRL:0.91 SLSN:0.90
+plasticc_train h=5 alpha=0.05: FLARE                              marg 0.948 worst 0.770 ccg 0.036 width 4.689 IS 5.883 cls-IS 6.927 miscls 0.932 (0.0s)
+      per class uLens:0.77 TDE:0.94 EB:0.98 SNII:0.96 SNIax:0.95 SNIbc:0.94 SNIa91bg:0.96 AGN:0.95 SNIa:0.96 RRL:0.91 SLSN:0.85
+plasticc_train h=5 alpha=0.05: GAMUT                              marg 0.968 worst 0.932 ccg 0.020 width 7.721 IS 8.298 cls-IS 8.693 miscls 0.973 (6.2s)
+      per class uLens:0.93 TDE:0.98 EB:0.97 SNII:0.97 SNIax:0.97 SNIbc:0.98 SNIa91bg:0.96 AGN:0.98 SNIa:0.96 RRL:0.95 SLSN:0.97
+plasticc_train h=5 alpha=0.05: GAMUT (point-level unit)           marg 0.972 worst 0.944 ccg 0.025 width 7.833 IS 8.350 cls-IS 8.818 miscls 0.975 (6.2s)
+      per class uLens:0.94 TDE:0.99 EB:0.98 SNII:0.97 SNIax:0.97 SNIbc:0.98 SNIa91bg:0.99 AGN:0.98 SNIa:0.97 RRL:0.96 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.977 worst 0.932 ccg 0.025 width 8.018 IS 8.507 cls-IS 9.044 miscls 0.979 (6.0s)
+      per class uLens:0.93 TDE:0.98 EB:0.98 SNII:0.98 SNIax:0.98 SNIbc:0.97 SNIa91bg:0.97 AGN:0.98 SNIa:0.98 RRL:0.97 SLSN:0.97
+plasticc_train h=5 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.993 worst 0.974 ccg 0.042 width 9.488 IS 9.775 cls-IS 10.497 miscls 0.989 (6.1s)
+      per class uLens:1.00 TDE:1.00 EB:1.00 SNII:1.00 SNIax:0.98 SNIbc:0.99 SNIa91bg:1.00 AGN:0.99 SNIa:0.99 RRL:0.99 SLSN:0.97
+plasticc_train h=5 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.987 worst 0.932 ccg 0.036 width 8.706 IS 8.931 cls-IS 9.216 miscls 0.985 (5.6s)
+      per class uLens:0.93 TDE:0.99 EB:1.00 SNII:0.99 SNIax:0.98 SNIbc:0.98 SNIa91bg:0.99 AGN:1.00 SNIa:0.99 RRL:0.97 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.964 worst 0.932 ccg 0.018 width 7.585 IS 8.239 cls-IS 8.621 miscls 0.971 (6.0s)
+      per class uLens:0.93 TDE:0.98 EB:0.97 SNII:0.96 SNIax:0.98 SNIbc:0.98 SNIa91bg:0.96 AGN:0.97 SNIa:0.96 RRL:0.95 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.944 worst 0.770 ccg 0.041 width 4.246 IS 5.483 cls-IS 6.549 miscls 0.922 (2.7s)
+      per class uLens:0.77 TDE:0.95 EB:0.98 SNII:0.95 SNIax:0.96 SNIbc:0.93 SNIa91bg:0.98 AGN:0.95 SNIa:0.96 RRL:0.89 SLSN:0.83
+plasticc_train h=5 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.989 worst 0.957 ccg 0.036 width 8.107 IS 8.292 cls-IS 8.877 miscls 0.985 (2.7s)
+      per class uLens:0.96 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:0.98 SNIa91bg:1.00 AGN:0.99 SNIa:0.99 RRL:0.99 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.946 worst 0.932 ccg 0.010 width 7.399 IS 8.398 cls-IS 8.887 miscls 0.969 (3.5s)
+      per class uLens:0.95 TDE:0.98 EB:0.95 SNII:0.95 SNIax:0.95 SNIbc:0.97 SNIa91bg:0.95 AGN:0.93 SNIa:0.93 RRL:0.96 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.965 worst 0.919 ccg 0.019 width 6.533 IS 7.186 cls-IS 7.746 miscls 0.970 (5.6s)
+      per class uLens:0.92 TDE:0.98 EB:0.97 SNII:0.96 SNIax:0.98 SNIbc:0.98 SNIa91bg:0.97 AGN:0.97 SNIa:0.96 RRL:0.95 SLSN:0.97
+plasticc_train h=5 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.973 worst 0.913 ccg 0.025 width 7.205 IS 7.736 cls-IS 8.183 miscls 0.974 (6.4s)
+      per class uLens:0.91 TDE:0.98 EB:0.98 SNII:0.97 SNIax:0.98 SNIbc:0.98 SNIa91bg:0.98 AGN:0.98 SNIa:0.97 RRL:0.95 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GAMUT-cert (split certificate)     marg 0.976 worst 0.960 ccg 0.027 width 9.064 IS 9.586 cls-IS 9.983 miscls 0.978 (5.2s)
+      per class uLens:0.96 TDE:0.99 EB:0.99 SNII:0.98 SNIax:0.97 SNIbc:0.98 SNIa91bg:0.98 AGN:0.99 SNIa:0.97 RRL:0.96 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GCC-prob                           marg 0.947 worst 0.770 ccg 0.038 width 4.386 IS 5.659 cls-IS 6.681 miscls 0.928 (67.3s)
+      per class uLens:0.77 TDE:0.94 EB:0.98 SNII:0.95 SNIax:0.95 SNIbc:0.94 SNIa91bg:0.97 AGN:0.96 SNIa:0.96 RRL:0.91 SLSN:0.84
+plasticc_train h=5 alpha=0.05: KandinskyCP                        marg 0.945 worst 0.873 ccg 0.022 width 5.332 IS 6.495 cls-IS 7.468 miscls 0.934 (33.1s)
+      per class uLens:0.87 TDE:0.94 EB:0.97 SNII:0.95 SNIax:0.93 SNIbc:0.94 SNIa91bg:0.98 AGN:0.95 SNIa:0.95 RRL:0.92 SLSN:0.90
+plasticc_train h=5 alpha=0.05: LocalizedCP                        marg 0.949 worst 0.789 ccg 0.036 width 4.463 IS 5.638 cls-IS 6.541 miscls 0.929 (1.1s)
+      per class uLens:0.79 TDE:0.95 EB:0.98 SNII:0.95 SNIax:0.95 SNIbc:0.93 SNIa91bg:0.98 AGN:0.96 SNIa:0.96 RRL:0.91 SLSN:0.85
+plasticc_train h=5 alpha=0.05: MDCP                               marg 0.990 worst 0.953 ccg 0.037 width 6.411 IS 6.614 cls-IS 6.957 miscls 0.985 (15.6s)
+      per class uLens:0.95 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:0.99 SNIa91bg:1.00 AGN:0.99 SNIa:0.99 RRL:0.97 SLSN:0.99
+plasticc_train h=5 alpha=0.05: MaxClassCP                         marg 0.992 worst 0.941 ccg 0.039 width 8.689 IS 8.854 cls-IS 9.318 miscls 0.988 (0.0s)
+      per class uLens:0.94 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:0.98 SNIa91bg:1.00 AGN:1.00 SNIa:0.99 RRL:0.99 SLSN:0.99
+plasticc_train h=5 alpha=0.05: MixtureCP                          marg 0.952 worst 0.842 ccg 0.028 width 4.766 IS 5.846 cls-IS 6.758 miscls 0.934 (0.5s)
+      per class uLens:0.84 TDE:0.96 EB:0.97 SNII:0.96 SNIax:0.95 SNIbc:0.94 SNIa91bg:0.96 AGN:0.96 SNIa:0.96 RRL:0.93 SLSN:0.85
+plasticc_train h=5 alpha=0.05: Oracle-true-class                  marg 0.949 worst 0.817 ccg 0.017 width 4.542 IS 5.690 cls-IS 6.694 miscls 0.939 (0.0s)
+      per class uLens:0.82 TDE:0.96 EB:0.94 SNII:0.95 SNIax:0.96 SNIbc:0.95 SNIa91bg:0.95 AGN:0.95 SNIa:0.95 RRL:0.94 SLSN:0.96
+plasticc_train h=5 alpha=0.05: PartitionCP                        marg 0.949 worst 0.780 ccg 0.039 width 4.570 IS 5.777 cls-IS 6.775 miscls 0.932 (0.1s)
+      per class uLens:0.78 TDE:0.94 EB:0.99 SNII:0.95 SNIax:0.94 SNIbc:0.94 SNIa91bg:0.98 AGN:0.96 SNIa:0.96 RRL:0.91 SLSN:0.85
+plasticc_train h=5 alpha=0.05: SplitCP                            marg 0.949 worst 0.786 ccg 0.036 width 4.428 IS 5.601 cls-IS 6.481 miscls 0.930 (0.0s)
+      per class uLens:0.79 TDE:0.95 EB:0.98 SNII:0.95 SNIax:0.94 SNIbc:0.93 SNIa91bg:0.97 AGN:0.96 SNIa:0.96 RRL:0.92 SLSN:0.85
+plasticc_train h=5 alpha=0.05: TwoStepCP                          marg 0.992 worst 0.941 ccg 0.039 width 8.688 IS 8.854 cls-IS 9.317 miscls 0.988 (0.0s)
+      per class uLens:0.94 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:0.98 SNIa91bg:1.00 AGN:1.00 SNIa:0.99 RRL:0.99 SLSN:0.99
+plasticc_train h=5 alpha=0.32: GAMUT                              marg 0.684 worst 0.661 ccg 0.026 width 2.779 IS 3.906 cls-IS 4.340 miscls 0.715 (6.2s)
+      per class uLens:0.69 TDE:0.71 EB:0.70 SNII:0.67 SNIax:0.73 SNIbc:0.71 SNIa91bg:0.76 AGN:0.66 SNIa:0.68 RRL:0.70 SLSN:0.66
+plasticc_train h=5 alpha=0.32: GAMUT (point-level unit)           marg 0.698 worst 0.676 ccg 0.031 width 3.192 IS 4.248 cls-IS 4.659 miscls 0.742 (6.4s)
+      per class uLens:0.74 TDE:0.75 EB:0.71 SNII:0.69 SNIax:0.72 SNIbc:0.73 SNIa91bg:0.69 AGN:0.70 SNIa:0.68 RRL:0.68 SLSN:0.73
+plasticc_train h=5 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.696 worst 0.667 ccg 0.027 width 2.934 IS 4.044 cls-IS 4.414 miscls 0.726 (6.8s)
+      per class uLens:0.69 TDE:0.71 EB:0.71 SNII:0.68 SNIax:0.75 SNIbc:0.72 SNIa91bg:0.74 AGN:0.67 SNIa:0.69 RRL:0.71 SLSN:0.68
+plasticc_train h=5 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.857 worst 0.730 ccg 0.160 width 3.857 IS 4.412 cls-IS 5.111 miscls 0.810 (6.6s)
+      per class uLens:0.73 TDE:0.86 EB:0.86 SNII:0.87 SNIax:0.86 SNIbc:0.84 SNIa91bg:0.91 AGN:0.86 SNIa:0.87 RRL:0.83 SLSN:0.75
+plasticc_train h=5 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.844 worst 0.724 ccg 0.159 width 3.808 IS 4.331 cls-IS 4.498 miscls 0.832 (7.0s)
+      per class uLens:0.72 TDE:0.87 EB:0.94 SNII:0.87 SNIax:0.80 SNIbc:0.83 SNIa91bg:0.81 AGN:0.92 SNIa:0.82 RRL:0.83 SLSN:0.81
+plasticc_train h=5 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.682 worst 0.655 ccg 0.024 width 2.841 IS 3.982 cls-IS 4.441 miscls 0.716 (7.2s)
+      per class uLens:0.69 TDE:0.72 EB:0.69 SNII:0.67 SNIax:0.73 SNIbc:0.70 SNIa91bg:0.76 AGN:0.65 SNIa:0.68 RRL:0.68 SLSN:0.66
+plasticc_train h=5 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.671 worst 0.425 ccg 0.068 width 1.798 IS 3.016 cls-IS 3.541 miscls 0.610 (3.4s)
+      per class uLens:0.43 TDE:0.66 EB:0.75 SNII:0.68 SNIax:0.64 SNIbc:0.62 SNIa91bg:0.71 AGN:0.71 SNIa:0.69 RRL:0.61 SLSN:0.51
+plasticc_train h=5 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.836 worst 0.708 ccg 0.185 width 3.467 IS 4.016 cls-IS 4.504 miscls 0.864 (3.3s)
+      per class uLens:0.71 TDE:0.91 EB:0.97 SNII:0.89 SNIax:0.86 SNIbc:0.87 SNIa91bg:0.95 AGN:0.92 SNIa:0.76 RRL:0.89 SLSN:0.79
+plasticc_train h=5 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.686 worst 0.665 ccg 0.028 width 2.826 IS 3.947 cls-IS 4.375 miscls 0.719 (7.3s)
+      per class uLens:0.70 TDE:0.74 EB:0.70 SNII:0.67 SNIax:0.74 SNIbc:0.71 SNIa91bg:0.76 AGN:0.67 SNIa:0.68 RRL:0.70 SLSN:0.67
+plasticc_train h=5 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.646 worst 0.598 ccg 0.036 width 2.306 IS 3.582 cls-IS 4.082 miscls 0.676 (4.4s)
+      per class uLens:0.61 TDE:0.68 EB:0.63 SNII:0.63 SNIax:0.70 SNIbc:0.67 SNIa91bg:0.68 AGN:0.61 SNIa:0.65 RRL:0.67 SLSN:0.60
+plasticc_train h=5 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.681 worst 0.656 ccg 0.024 width 2.731 IS 3.865 cls-IS 4.296 miscls 0.711 (6.4s)
+      per class uLens:0.67 TDE:0.71 EB:0.69 SNII:0.67 SNIax:0.74 SNIbc:0.70 SNIa91bg:0.76 AGN:0.66 SNIa:0.68 RRL:0.68 SLSN:0.66
+plasticc_train h=5 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.677 worst 0.637 ccg 0.029 width 2.585 IS 3.934 cls-IS 4.288 miscls 0.697 (6.6s)
+      per class uLens:0.70 TDE:0.72 EB:0.68 SNII:0.66 SNIax:0.75 SNIbc:0.71 SNIa91bg:0.74 AGN:0.66 SNIa:0.67 RRL:0.69 SLSN:0.64
+plasticc_train h=5 alpha=0.32: GAMUT-cert (split certificate)     marg 0.828 worst 0.764 ccg 0.148 width 3.679 IS 4.294 cls-IS 4.700 miscls 0.839 (3.9s)
+      per class uLens:0.76 TDE:0.85 EB:0.83 SNII:0.83 SNIax:0.84 SNIbc:0.84 SNIa91bg:0.88 AGN:0.79 SNIa:0.83 RRL:0.83 SLSN:0.81
+plasticc_train h=5 alpha=0.05: GAMUT                              marg 0.947 worst 0.932 ccg 0.014 width 7.234 IS 8.233 cls-IS 8.701 miscls 0.966 (3.9s)
+      per class uLens:0.95 TDE:0.98 EB:0.95 SNII:0.95 SNIax:0.95 SNIbc:0.96 SNIa91bg:0.98 AGN:0.93 SNIa:0.93 RRL:0.97 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT (point-level unit)           marg 0.958 worst 0.944 ccg 0.020 width 7.707 IS 8.452 cls-IS 8.907 miscls 0.977 (3.7s)
+      per class uLens:0.97 TDE:0.98 EB:0.96 SNII:0.96 SNIax:0.96 SNIbc:0.98 SNIa91bg:0.97 AGN:0.95 SNIa:0.94 RRL:0.98 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.971 worst 0.941 ccg 0.020 width 7.822 IS 8.394 cls-IS 9.042 miscls 0.972 (3.7s)
+      per class uLens:0.94 TDE:0.98 EB:0.97 SNII:0.98 SNIax:0.96 SNIbc:0.96 SNIa91bg:0.97 AGN:0.97 SNIa:0.97 RRL:0.97 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.989 worst 0.964 ccg 0.038 width 8.865 IS 9.230 cls-IS 10.150 miscls 0.982 (3.6s)
+      per class uLens:0.99 TDE:1.00 EB:1.00 SNII:1.00 SNIax:0.98 SNIbc:0.98 SNIa91bg:1.00 AGN:0.99 SNIa:0.99 RRL:0.99 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.997 worst 0.978 ccg 0.046 width 9.053 IS 9.100 cls-IS 9.299 miscls 0.997 (3.7s)
+      per class uLens:0.98 TDE:1.00 EB:1.00 SNII:1.00 SNIax:1.00 SNIbc:1.00 SNIa91bg:1.00 AGN:1.00 SNIa:1.00 RRL:0.99 SLSN:1.00
+plasticc_train h=5 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.944 worst 0.926 ccg 0.015 width 7.145 IS 8.149 cls-IS 8.676 miscls 0.963 (4.0s)
+      per class uLens:0.95 TDE:0.96 EB:0.94 SNII:0.95 SNIax:0.96 SNIbc:0.96 SNIa91bg:0.99 AGN:0.93 SNIa:0.93 RRL:0.97 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.941 worst 0.764 ccg 0.042 width 4.166 IS 5.457 cls-IS 6.532 miscls 0.920 (2.5s)
+      per class uLens:0.76 TDE:0.95 EB:0.98 SNII:0.95 SNIax:0.96 SNIbc:0.92 SNIa91bg:0.97 AGN:0.95 SNIa:0.95 RRL:0.88 SLSN:0.83
+plasticc_train h=5 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.984 worst 0.941 ccg 0.033 width 6.987 IS 7.281 cls-IS 8.017 miscls 0.978 (2.5s)
+      per class uLens:0.94 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:0.98 SNIa91bg:1.00 AGN:0.99 SNIa:0.98 RRL:0.98 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.968 worst 0.932 ccg 0.020 width 7.721 IS 8.298 cls-IS 8.693 miscls 0.973 (6.2s)
+      per class uLens:0.93 TDE:0.98 EB:0.97 SNII:0.97 SNIax:0.97 SNIbc:0.98 SNIa91bg:0.96 AGN:0.98 SNIa:0.96 RRL:0.95 SLSN:0.97
+plasticc_train h=5 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.946 worst 0.932 ccg 0.010 width 7.399 IS 8.398 cls-IS 8.887 miscls 0.969 (3.7s)
+      per class uLens:0.95 TDE:0.98 EB:0.95 SNII:0.95 SNIax:0.95 SNIbc:0.97 SNIa91bg:0.95 AGN:0.93 SNIa:0.93 RRL:0.96 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.945 worst 0.929 ccg 0.013 width 6.589 IS 7.598 cls-IS 8.158 miscls 0.959 (3.2s)
+      per class uLens:0.95 TDE:0.97 EB:0.95 SNII:0.94 SNIax:0.96 SNIbc:0.96 SNIa91bg:0.98 AGN:0.93 SNIa:0.94 RRL:0.97 SLSN:0.94
+plasticc_train h=5 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.953 worst 0.937 ccg 0.018 width 6.677 IS 7.706 cls-IS 8.045 miscls 0.970 (3.8s)
+      per class uLens:0.95 TDE:0.97 EB:0.95 SNII:0.96 SNIax:0.98 SNIbc:0.97 SNIa91bg:1.00 AGN:0.94 SNIa:0.94 RRL:0.97 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GAMUT-cert (split certificate)     marg 0.983 worst 0.978 ccg 0.037 width 8.201 IS 8.481 cls-IS 9.103 miscls 0.986 (3.1s)
+      per class uLens:0.98 TDE:1.00 EB:0.99 SNII:0.98 SNIax:0.99 SNIbc:0.99 SNIa91bg:0.99 AGN:0.98 SNIa:0.98 RRL:0.99 SLSN:0.99
+plasticc_train h=5 alpha=0.32: GAMUT                              marg 0.684 worst 0.661 ccg 0.026 width 2.779 IS 3.906 cls-IS 4.340 miscls 0.715 (11.7s)
+      per class uLens:0.69 TDE:0.71 EB:0.70 SNII:0.67 SNIax:0.73 SNIbc:0.71 SNIa91bg:0.76 AGN:0.66 SNIa:0.68 RRL:0.70 SLSN:0.66
+plasticc_train h=5 alpha=0.32: GAMUT (point-level unit)           marg 0.698 worst 0.676 ccg 0.031 width 3.192 IS 4.247 cls-IS 4.659 miscls 0.742 (11.7s)
+      per class uLens:0.74 TDE:0.75 EB:0.71 SNII:0.69 SNIax:0.72 SNIbc:0.73 SNIa91bg:0.69 AGN:0.70 SNIa:0.68 RRL:0.68 SLSN:0.73
+plasticc_train h=5 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.696 worst 0.667 ccg 0.027 width 2.934 IS 4.043 cls-IS 4.414 miscls 0.726 (12.2s)
+      per class uLens:0.69 TDE:0.71 EB:0.71 SNII:0.68 SNIax:0.75 SNIbc:0.72 SNIa91bg:0.74 AGN:0.67 SNIa:0.69 RRL:0.71 SLSN:0.68
+plasticc_train h=5 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.857 worst 0.730 ccg 0.160 width 3.856 IS 4.411 cls-IS 5.109 miscls 0.810 (11.1s)
+      per class uLens:0.73 TDE:0.86 EB:0.86 SNII:0.87 SNIax:0.86 SNIbc:0.84 SNIa91bg:0.91 AGN:0.86 SNIa:0.87 RRL:0.83 SLSN:0.75
+plasticc_train h=5 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.844 worst 0.724 ccg 0.159 width 3.808 IS 4.331 cls-IS 4.498 miscls 0.832 (11.4s)
+      per class uLens:0.72 TDE:0.87 EB:0.94 SNII:0.87 SNIax:0.80 SNIbc:0.83 SNIa91bg:0.81 AGN:0.92 SNIa:0.82 RRL:0.83 SLSN:0.81
+plasticc_train h=5 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.682 worst 0.655 ccg 0.024 width 2.841 IS 3.982 cls-IS 4.441 miscls 0.716 (11.1s)
+      per class uLens:0.69 TDE:0.72 EB:0.69 SNII:0.67 SNIax:0.73 SNIbc:0.70 SNIa91bg:0.76 AGN:0.65 SNIa:0.68 RRL:0.68 SLSN:0.66
+plasticc_train h=5 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.671 worst 0.425 ccg 0.068 width 1.798 IS 3.016 cls-IS 3.542 miscls 0.610 (6.8s)
+      per class uLens:0.43 TDE:0.66 EB:0.75 SNII:0.68 SNIax:0.64 SNIbc:0.62 SNIa91bg:0.71 AGN:0.71 SNIa:0.69 RRL:0.61 SLSN:0.51
+plasticc_train h=5 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.836 worst 0.708 ccg 0.185 width 3.467 IS 4.016 cls-IS 4.504 miscls 0.864 (6.9s)
+      per class uLens:0.71 TDE:0.91 EB:0.97 SNII:0.89 SNIax:0.86 SNIbc:0.87 SNIa91bg:0.95 AGN:0.92 SNIa:0.76 RRL:0.89 SLSN:0.79
+plasticc_train h=5 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.686 worst 0.665 ccg 0.028 width 2.827 IS 3.947 cls-IS 4.375 miscls 0.719 (12.0s)
+      per class uLens:0.70 TDE:0.74 EB:0.70 SNII:0.67 SNIax:0.74 SNIbc:0.71 SNIa91bg:0.76 AGN:0.67 SNIa:0.68 RRL:0.70 SLSN:0.67
+plasticc_train h=5 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.646 worst 0.598 ccg 0.036 width 2.307 IS 3.581 cls-IS 4.082 miscls 0.676 (7.9s)
+      per class uLens:0.61 TDE:0.68 EB:0.63 SNII:0.63 SNIax:0.70 SNIbc:0.67 SNIa91bg:0.68 AGN:0.61 SNIa:0.65 RRL:0.67 SLSN:0.60
+plasticc_train h=5 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.681 worst 0.656 ccg 0.024 width 2.731 IS 3.865 cls-IS 4.296 miscls 0.711 (11.5s)
+      per class uLens:0.67 TDE:0.71 EB:0.69 SNII:0.67 SNIax:0.74 SNIbc:0.70 SNIa91bg:0.76 AGN:0.66 SNIa:0.68 RRL:0.68 SLSN:0.66
+plasticc_train h=5 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.677 worst 0.637 ccg 0.029 width 2.585 IS 3.934 cls-IS 4.288 miscls 0.697 (11.9s)
+      per class uLens:0.70 TDE:0.72 EB:0.68 SNII:0.66 SNIax:0.75 SNIbc:0.71 SNIa91bg:0.74 AGN:0.66 SNIa:0.67 RRL:0.69 SLSN:0.64
+plasticc_train h=5 alpha=0.32: GAMUT-cert (split certificate)     marg 0.828 worst 0.764 ccg 0.148 width 3.679 IS 4.294 cls-IS 4.700 miscls 0.839 (9.5s)
+      per class uLens:0.76 TDE:0.85 EB:0.83 SNII:0.83 SNIax:0.84 SNIbc:0.84 SNIa91bg:0.88 AGN:0.79 SNIa:0.83 RRL:0.83 SLSN:0.81
+plasticc_train h=5 alpha=0.32: KandinskyCP                        marg 0.683 worst 0.497 ccg 0.048 width 2.106 IS 3.223 cls-IS 3.730 miscls 0.653 (64.9s)
+      per class uLens:0.50 TDE:0.67 EB:0.75 SNII:0.70 SNIax:0.65 SNIbc:0.69 SNIa91bg:0.73 AGN:0.72 SNIa:0.68 RRL:0.70 SLSN:0.59
+plasticc_train h=5 alpha=0.32: MDCP                               marg 0.915 worst 0.693 ccg 0.206 width 3.647 IS 3.928 cls-IS 4.213 miscls 0.894 (32.8s)
+      per class uLens:0.69 TDE:0.91 EB:0.96 SNII:0.91 SNIax:0.91 SNIbc:0.91 SNIa91bg:0.91 AGN:0.94 SNIa:0.93 RRL:0.83 SLSN:0.85
+plasticc_train h=5 alpha=0.05: GAMUT                              marg 0.947 worst 0.932 ccg 0.014 width 7.234 IS 8.232 cls-IS 8.701 miscls 0.966 (8.7s)
+      per class uLens:0.95 TDE:0.98 EB:0.95 SNII:0.95 SNIax:0.95 SNIbc:0.96 SNIa91bg:0.98 AGN:0.93 SNIa:0.93 RRL:0.97 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT (point-level unit)           marg 0.958 worst 0.944 ccg 0.020 width 7.707 IS 8.451 cls-IS 8.906 miscls 0.977 (9.2s)
+      per class uLens:0.97 TDE:0.98 EB:0.96 SNII:0.96 SNIax:0.96 SNIbc:0.98 SNIa91bg:0.97 AGN:0.95 SNIa:0.94 RRL:0.98 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.971 worst 0.941 ccg 0.020 width 7.819 IS 8.391 cls-IS 9.039 miscls 0.972 (8.4s)
+      per class uLens:0.94 TDE:0.98 EB:0.97 SNII:0.98 SNIax:0.96 SNIbc:0.96 SNIa91bg:0.97 AGN:0.97 SNIa:0.97 RRL:0.97 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.989 worst 0.964 ccg 0.038 width 8.934 IS 9.276 cls-IS 10.149 miscls 0.982 (8.2s)
+      per class uLens:0.99 TDE:1.00 EB:1.00 SNII:1.00 SNIax:0.98 SNIbc:0.98 SNIa91bg:1.00 AGN:0.99 SNIa:0.99 RRL:0.99 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.997 worst 0.978 ccg 0.046 width 9.053 IS 9.099 cls-IS 9.299 miscls 0.997 (9.2s)
+      per class uLens:0.98 TDE:1.00 EB:1.00 SNII:1.00 SNIax:1.00 SNIbc:1.00 SNIa91bg:1.00 AGN:1.00 SNIa:1.00 RRL:0.99 SLSN:1.00
+plasticc_train h=5 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.944 worst 0.926 ccg 0.015 width 7.145 IS 8.149 cls-IS 8.676 miscls 0.963 (7.9s)
+      per class uLens:0.95 TDE:0.96 EB:0.94 SNII:0.95 SNIax:0.96 SNIbc:0.96 SNIa91bg:0.99 AGN:0.93 SNIa:0.93 RRL:0.97 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.941 worst 0.764 ccg 0.042 width 4.167 IS 5.456 cls-IS 6.531 miscls 0.920 (7.6s)
+      per class uLens:0.76 TDE:0.95 EB:0.98 SNII:0.95 SNIax:0.96 SNIbc:0.92 SNIa91bg:0.97 AGN:0.95 SNIa:0.95 RRL:0.88 SLSN:0.83
+plasticc_train h=5 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.984 worst 0.941 ccg 0.033 width 6.987 IS 7.281 cls-IS 8.017 miscls 0.978 (7.3s)
+      per class uLens:0.94 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:0.98 SNIa91bg:1.00 AGN:0.99 SNIa:0.98 RRL:0.98 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.968 worst 0.932 ccg 0.020 width 7.717 IS 8.294 cls-IS 8.688 miscls 0.973 (11.5s)
+      per class uLens:0.93 TDE:0.98 EB:0.97 SNII:0.97 SNIax:0.97 SNIbc:0.98 SNIa91bg:0.96 AGN:0.98 SNIa:0.96 RRL:0.95 SLSN:0.97
+plasticc_train h=5 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.946 worst 0.932 ccg 0.010 width 7.399 IS 8.397 cls-IS 8.887 miscls 0.969 (8.3s)
+      per class uLens:0.95 TDE:0.98 EB:0.95 SNII:0.95 SNIax:0.95 SNIbc:0.97 SNIa91bg:0.95 AGN:0.93 SNIa:0.93 RRL:0.96 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.945 worst 0.929 ccg 0.013 width 6.589 IS 7.597 cls-IS 8.158 miscls 0.959 (7.2s)
+      per class uLens:0.95 TDE:0.97 EB:0.95 SNII:0.94 SNIax:0.96 SNIbc:0.96 SNIa91bg:0.98 AGN:0.93 SNIa:0.94 RRL:0.97 SLSN:0.94
+plasticc_train h=5 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.953 worst 0.937 ccg 0.018 width 6.677 IS 7.705 cls-IS 8.043 miscls 0.970 (9.9s)
+      per class uLens:0.95 TDE:0.97 EB:0.95 SNII:0.96 SNIax:0.98 SNIbc:0.97 SNIa91bg:1.00 AGN:0.94 SNIa:0.94 RRL:0.97 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GAMUT-cert (split certificate)     marg 0.983 worst 0.978 ccg 0.037 width 8.198 IS 8.478 cls-IS 9.100 miscls 0.986 (7.7s)
+      per class uLens:0.98 TDE:1.00 EB:0.99 SNII:0.98 SNIax:0.99 SNIbc:0.99 SNIa91bg:0.99 AGN:0.98 SNIa:0.98 RRL:0.99 SLSN:0.99
+plasticc_train h=5 alpha=0.05: KandinskyCP                        marg 0.945 worst 0.873 ccg 0.022 width 5.331 IS 6.493 cls-IS 7.465 miscls 0.934 (72.6s)
+      per class uLens:0.87 TDE:0.94 EB:0.97 SNII:0.95 SNIax:0.93 SNIbc:0.94 SNIa91bg:0.98 AGN:0.95 SNIa:0.95 RRL:0.92 SLSN:0.90
+plasticc_train h=5 alpha=0.05: MDCP                               marg 0.990 worst 0.953 ccg 0.037 width 6.411 IS 6.614 cls-IS 6.957 miscls 0.985 (24.8s)
+      per class uLens:0.95 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:0.99 SNIa91bg:1.00 AGN:0.99 SNIa:0.99 RRL:0.97 SLSN:0.99
+plasticc_train h=5 alpha=0.32: GAMUT                              marg 0.684 worst 0.661 ccg 0.025 width 2.779 IS 3.906 cls-IS 4.340 miscls 0.715 (12.5s)
+      per class uLens:0.69 TDE:0.71 EB:0.70 SNII:0.67 SNIax:0.73 SNIbc:0.71 SNIa91bg:0.76 AGN:0.66 SNIa:0.68 RRL:0.70 SLSN:0.66
+plasticc_train h=5 alpha=0.32: GAMUT (point-level unit)           marg 0.698 worst 0.676 ccg 0.031 width 3.192 IS 4.247 cls-IS 4.658 miscls 0.742 (12.0s)
+      per class uLens:0.74 TDE:0.75 EB:0.71 SNII:0.69 SNIax:0.72 SNIbc:0.73 SNIa91bg:0.69 AGN:0.70 SNIa:0.68 RRL:0.68 SLSN:0.73
+plasticc_train h=5 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.696 worst 0.667 ccg 0.027 width 2.934 IS 4.043 cls-IS 4.414 miscls 0.726 (13.7s)
+      per class uLens:0.69 TDE:0.71 EB:0.71 SNII:0.68 SNIax:0.75 SNIbc:0.72 SNIa91bg:0.74 AGN:0.67 SNIa:0.69 RRL:0.71 SLSN:0.68
+plasticc_train h=5 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.856 worst 0.730 ccg 0.160 width 3.856 IS 4.411 cls-IS 5.109 miscls 0.810 (16.5s)
+      per class uLens:0.73 TDE:0.86 EB:0.86 SNII:0.87 SNIax:0.86 SNIbc:0.84 SNIa91bg:0.91 AGN:0.86 SNIa:0.87 RRL:0.83 SLSN:0.75
+plasticc_train h=5 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.844 worst 0.724 ccg 0.159 width 3.808 IS 4.331 cls-IS 4.498 miscls 0.832 (13.8s)
+      per class uLens:0.72 TDE:0.87 EB:0.94 SNII:0.87 SNIax:0.80 SNIbc:0.83 SNIa91bg:0.81 AGN:0.92 SNIa:0.82 RRL:0.83 SLSN:0.81
+plasticc_train h=5 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.682 worst 0.655 ccg 0.024 width 2.842 IS 3.982 cls-IS 4.441 miscls 0.716 (14.6s)
+      per class uLens:0.69 TDE:0.72 EB:0.69 SNII:0.67 SNIax:0.73 SNIbc:0.70 SNIa91bg:0.76 AGN:0.65 SNIa:0.68 RRL:0.68 SLSN:0.66
+plasticc_train h=5 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.671 worst 0.425 ccg 0.068 width 1.799 IS 3.016 cls-IS 3.542 miscls 0.610 (10.6s)
+      per class uLens:0.43 TDE:0.66 EB:0.75 SNII:0.68 SNIax:0.64 SNIbc:0.62 SNIa91bg:0.71 AGN:0.71 SNIa:0.69 RRL:0.61 SLSN:0.51
+plasticc_train h=5 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.836 worst 0.708 ccg 0.185 width 3.467 IS 4.016 cls-IS 4.504 miscls 0.864 (11.1s)
+      per class uLens:0.71 TDE:0.91 EB:0.97 SNII:0.89 SNIax:0.86 SNIbc:0.87 SNIa91bg:0.95 AGN:0.92 SNIa:0.76 RRL:0.89 SLSN:0.79
+plasticc_train h=5 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.686 worst 0.665 ccg 0.028 width 2.827 IS 3.947 cls-IS 4.375 miscls 0.719 (15.1s)
+      per class uLens:0.70 TDE:0.74 EB:0.70 SNII:0.67 SNIax:0.74 SNIbc:0.71 SNIa91bg:0.76 AGN:0.67 SNIa:0.68 RRL:0.70 SLSN:0.67
+plasticc_train h=5 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.646 worst 0.596 ccg 0.037 width 2.307 IS 3.582 cls-IS 4.082 miscls 0.676 (11.0s)
+      per class uLens:0.61 TDE:0.68 EB:0.63 SNII:0.63 SNIax:0.70 SNIbc:0.67 SNIa91bg:0.68 AGN:0.61 SNIa:0.65 RRL:0.67 SLSN:0.60
+plasticc_train h=5 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.681 worst 0.656 ccg 0.024 width 2.731 IS 3.865 cls-IS 4.295 miscls 0.711 (12.3s)
+      per class uLens:0.67 TDE:0.71 EB:0.69 SNII:0.67 SNIax:0.74 SNIbc:0.70 SNIa91bg:0.76 AGN:0.66 SNIa:0.68 RRL:0.68 SLSN:0.66
+plasticc_train h=5 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.677 worst 0.637 ccg 0.029 width 2.585 IS 3.934 cls-IS 4.288 miscls 0.697 (13.0s)
+      per class uLens:0.70 TDE:0.72 EB:0.68 SNII:0.66 SNIax:0.75 SNIbc:0.71 SNIa91bg:0.74 AGN:0.66 SNIa:0.67 RRL:0.69 SLSN:0.64
+plasticc_train h=5 alpha=0.32: GAMUT-cert (split certificate)     marg 0.828 worst 0.764 ccg 0.147 width 3.678 IS 4.294 cls-IS 4.700 miscls 0.839 (12.2s)
+      per class uLens:0.76 TDE:0.85 EB:0.83 SNII:0.83 SNIax:0.84 SNIbc:0.84 SNIa91bg:0.88 AGN:0.79 SNIa:0.83 RRL:0.83 SLSN:0.81
+plasticc_train h=5 alpha=0.05: GAMUT                              marg 0.946 worst 0.932 ccg 0.014 width 7.233 IS 8.229 cls-IS 8.695 miscls 0.966 (12.0s)
+      per class uLens:0.95 TDE:0.98 EB:0.95 SNII:0.95 SNIax:0.95 SNIbc:0.96 SNIa91bg:0.98 AGN:0.93 SNIa:0.93 RRL:0.97 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT (point-level unit)           marg 0.958 worst 0.944 ccg 0.020 width 7.707 IS 8.451 cls-IS 8.906 miscls 0.977 (11.4s)
+      per class uLens:0.97 TDE:0.98 EB:0.96 SNII:0.96 SNIax:0.96 SNIbc:0.98 SNIa91bg:0.97 AGN:0.95 SNIa:0.94 RRL:0.98 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.971 worst 0.941 ccg 0.020 width 7.819 IS 8.391 cls-IS 9.039 miscls 0.972 (11.1s)
+      per class uLens:0.94 TDE:0.98 EB:0.97 SNII:0.98 SNIax:0.96 SNIbc:0.96 SNIa91bg:0.97 AGN:0.97 SNIa:0.97 RRL:0.97 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.989 worst 0.963 ccg 0.038 width 8.950 IS 9.279 cls-IS 10.163 miscls 0.983 (11.2s)
+      per class uLens:0.99 TDE:1.00 EB:1.00 SNII:1.00 SNIax:0.98 SNIbc:0.98 SNIa91bg:1.00 AGN:0.99 SNIa:0.99 RRL:0.99 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.997 worst 0.978 ccg 0.046 width 9.053 IS 9.099 cls-IS 9.299 miscls 0.997 (10.9s)
+      per class uLens:0.98 TDE:1.00 EB:1.00 SNII:1.00 SNIax:1.00 SNIbc:1.00 SNIa91bg:1.00 AGN:1.00 SNIa:1.00 RRL:0.99 SLSN:1.00
+plasticc_train h=5 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.944 worst 0.926 ccg 0.015 width 7.140 IS 8.146 cls-IS 8.673 miscls 0.963 (11.4s)
+      per class uLens:0.95 TDE:0.96 EB:0.94 SNII:0.95 SNIax:0.96 SNIbc:0.96 SNIa91bg:0.99 AGN:0.93 SNIa:0.93 RRL:0.97 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.941 worst 0.764 ccg 0.042 width 4.166 IS 5.457 cls-IS 6.531 miscls 0.920 (9.8s)
+      per class uLens:0.76 TDE:0.95 EB:0.98 SNII:0.95 SNIax:0.96 SNIbc:0.92 SNIa91bg:0.97 AGN:0.95 SNIa:0.95 RRL:0.88 SLSN:0.83
+plasticc_train h=5 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.984 worst 0.938 ccg 0.034 width 7.128 IS 7.415 cls-IS 8.157 miscls 0.979 (9.9s)
+      per class uLens:0.94 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:0.98 SNIa91bg:1.00 AGN:0.99 SNIa:0.98 RRL:0.98 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.968 worst 0.929 ccg 0.020 width 7.729 IS 8.302 cls-IS 8.700 miscls 0.973 (14.4s)
+      per class uLens:0.93 TDE:0.98 EB:0.97 SNII:0.97 SNIax:0.97 SNIbc:0.98 SNIa91bg:0.96 AGN:0.98 SNIa:0.96 RRL:0.95 SLSN:0.97
+plasticc_train h=5 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.946 worst 0.932 ccg 0.010 width 7.399 IS 8.397 cls-IS 8.887 miscls 0.969 (11.1s)
+      per class uLens:0.95 TDE:0.98 EB:0.95 SNII:0.95 SNIax:0.95 SNIbc:0.97 SNIa91bg:0.95 AGN:0.93 SNIa:0.93 RRL:0.96 SLSN:0.96
+plasticc_train h=5 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.945 worst 0.929 ccg 0.013 width 6.589 IS 7.597 cls-IS 8.157 miscls 0.959 (10.0s)
+      per class uLens:0.95 TDE:0.97 EB:0.95 SNII:0.94 SNIax:0.96 SNIbc:0.96 SNIa91bg:0.98 AGN:0.93 SNIa:0.94 RRL:0.97 SLSN:0.94
+plasticc_train h=5 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.953 worst 0.937 ccg 0.018 width 6.677 IS 7.705 cls-IS 8.043 miscls 0.970 (10.9s)
+      per class uLens:0.95 TDE:0.97 EB:0.95 SNII:0.96 SNIax:0.98 SNIbc:0.97 SNIa91bg:1.00 AGN:0.94 SNIa:0.94 RRL:0.97 SLSN:0.98
+plasticc_train h=5 alpha=0.05: GAMUT-cert (split certificate)     marg 0.983 worst 0.978 ccg 0.037 width 8.103 IS 8.383 cls-IS 9.001 miscls 0.986 (9.6s)
+      per class uLens:0.98 TDE:1.00 EB:0.99 SNII:0.98 SNIax:0.99 SNIbc:0.99 SNIa91bg:0.99 AGN:0.98 SNIa:0.98 RRL:0.99 SLSN:0.99
+plasticc_train h=5 alpha=0.32: MDCP + C1                          marg 0.879 worst 0.652 ccg 0.182 width 3.848 IS 4.340 cls-IS 4.632 miscls 0.868 (28.1s)
+      per class uLens:0.65 TDE:0.88 EB:0.94 SNII:0.87 SNIax:0.89 SNIbc:0.88 SNIa91bg:0.87 AGN:0.91 SNIa:0.88 RRL:0.81 SLSN:0.83
+plasticc_train h=5 alpha=0.32: MaxClassCP + C1                    marg 0.922 worst 0.758 ccg 0.222 width 3.930 IS 4.164 cls-IS 4.428 miscls 0.906 (0.2s)
+      per class uLens:0.76 TDE:0.93 EB:0.96 SNII:0.92 SNIax:0.90 SNIbc:0.92 SNIa91bg:0.89 AGN:0.95 SNIa:0.93 RRL:0.88 SLSN:0.89
+plasticc_train h=5 alpha=0.32: TwoStepCP + C1                     marg 0.921 worst 0.758 ccg 0.220 width 3.916 IS 4.156 cls-IS 4.413 miscls 0.903 (0.3s)
+      per class uLens:0.76 TDE:0.93 EB:0.96 SNII:0.91 SNIax:0.90 SNIbc:0.92 SNIa91bg:0.89 AGN:0.95 SNIa:0.93 RRL:0.87 SLSN:0.89
+plasticc_train h=5 alpha=0.05: MDCP + C1                          marg 0.990 worst 0.935 ccg 0.037 width 6.654 IS 6.886 cls-IS 7.254 miscls 0.984 (30.0s)
+      per class uLens:0.93 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.98 SNIbc:0.99 SNIa91bg:1.00 AGN:0.99 SNIa:0.99 RRL:0.97 SLSN:0.99
+plasticc_train h=5 alpha=0.05: MaxClassCP + C1                    marg 0.996 worst 0.960 ccg 0.042 width 8.715 IS 8.786 cls-IS 8.986 miscls 0.994 (0.2s)
+      per class uLens:0.96 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:1.00 SNIa91bg:1.00 AGN:1.00 SNIa:1.00 RRL:0.98 SLSN:0.99
+plasticc_train h=5 alpha=0.05: TwoStepCP + C1                     marg 0.995 worst 0.960 ccg 0.042 width 8.682 IS 8.758 cls-IS 8.951 miscls 0.993 (0.2s)
+      per class uLens:0.96 TDE:1.00 EB:1.00 SNII:0.99 SNIax:0.99 SNIbc:1.00 SNIa91bg:1.00 AGN:1.00 SNIa:1.00 RRL:0.98 SLSN:0.99

@@ -1,0 +1,264 @@
+synthetic_k1 h=0 alpha=0.32: CPTC                               marg 0.666 worst 0.356 ccg 0.134 width 1.109 IS 1.977 cls-IS 3.629 miscls 0.519 (0.2s)
+      per class common:0.70 medium:0.62 rare:0.36
+synthetic_k1 h=0 alpha=0.32: CQR                                marg 0.680 worst 0.299 ccg 0.175 width 1.125 IS 1.865 cls-IS 3.443 miscls 0.489 (0.0s)
+      per class common:0.74 medium:0.59 rare:0.30
+synthetic_k1 h=0 alpha=0.32: DCP                                marg 0.680 worst 0.298 ccg 0.176 width 1.122 IS 1.865 cls-IS 3.446 miscls 0.487 (1.2s)
+      per class common:0.74 medium:0.59 rare:0.30
+synthetic_k1 h=0 alpha=0.32: FLARE                              marg 0.680 worst 0.282 ccg 0.191 width 1.096 IS 1.909 cls-IS 3.582 miscls 0.452 (0.1s)
+      per class common:0.75 medium:0.57 rare:0.28
+synthetic_k1 h=0 alpha=0.32: GAMUT                              marg 0.682 worst 0.682 ccg 0.003 width 1.691 IS 2.451 cls-IS 3.798 miscls 0.622 (9.2s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT (point-level unit)           marg 0.682 worst 0.682 ccg 0.003 width 1.691 IS 2.451 cls-IS 3.798 miscls 0.622 (8.7s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.681 worst 0.681 ccg 0.002 width 1.956 IS 2.673 cls-IS 4.368 miscls 0.610 (10.0s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.963 worst 0.729 ccg 0.199 width 3.738 IS 3.873 cls-IS 5.047 miscls 0.845 (13.8s)
+      per class common:1.00 medium:0.91 rare:0.73
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.879 worst 0.684 ccg 0.097 width 2.909 IS 3.506 cls-IS 4.045 miscls 0.805 (12.9s)
+      per class common:0.96 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.682 worst 0.682 ccg 0.003 width 1.691 IS 2.449 cls-IS 3.784 miscls 0.624 (9.1s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.680 worst 0.275 ccg 0.245 width 0.972 IS 2.054 cls-IS 3.892 miscls 0.421 (7.5s)
+      per class common:0.79 medium:0.46 rare:0.28
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.875 worst 0.683 ccg 0.128 width 2.074 IS 2.375 cls-IS 3.626 miscls 0.769 (8.2s)
+      per class common:0.90 medium:0.84 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.683 worst 0.682 ccg 0.003 width 1.656 IS 2.452 cls-IS 3.817 miscls 0.621 (7.7s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.682 worst 0.681 ccg 0.002 width 1.683 IS 2.444 cls-IS 3.791 miscls 0.621 (5.4s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.683 worst 0.679 ccg 0.002 width 1.672 IS 2.482 cls-IS 3.750 miscls 0.621 (9.0s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT-cert (split certificate)     marg 0.752 worst 0.706 ccg 0.055 width 1.902 IS 2.484 cls-IS 3.792 miscls 0.677 (7.6s)
+      per class common:0.76 medium:0.74 rare:0.71
+synthetic_k1 h=0 alpha=0.32: GCC-prob                           marg 0.680 worst 0.285 ccg 0.192 width 1.091 IS 1.909 cls-IS 3.583 miscls 0.448 (84.9s)
+      per class common:0.75 medium:0.57 rare:0.29
+synthetic_k1 h=0 alpha=0.32: KandinskyCP                        marg 0.678 worst 0.650 ccg 0.021 width 2.167 IS 3.189 cls-IS 4.739 miscls 0.567 (104.0s)
+      per class common:0.69 medium:0.65 rare:0.65
+synthetic_k1 h=0 alpha=0.32: LocalizedCP                        marg 0.681 worst 0.283 ccg 0.191 width 1.094 IS 1.908 cls-IS 3.583 miscls 0.451 (21.4s)
+      per class common:0.75 medium:0.57 rare:0.28
+synthetic_k1 h=0 alpha=0.32: MDCP                               marg 0.904 worst 0.691 ccg 0.132 width 2.833 IS 3.237 cls-IS 3.796 miscls 0.819 (14.8s)
+      per class common:0.96 medium:0.78 rare:0.69
+synthetic_k1 h=0 alpha=0.32: MaxClassCP                         marg 0.962 worst 0.682 ccg 0.187 width 2.893 IS 3.020 cls-IS 4.016 miscls 0.855 (0.0s)
+      per class common:0.99 medium:0.93 rare:0.68
+synthetic_k1 h=0 alpha=0.32: MixtureCP                          marg 0.683 worst 0.346 ccg 0.146 width 1.194 IS 1.935 cls-IS 3.517 miscls 0.496 (0.9s)
+      per class common:0.73 medium:0.62 rare:0.35
+synthetic_k1 h=0 alpha=0.32: Oracle-true-class                  marg 0.680 worst 0.680 ccg 0.001 width 1.240 IS 1.849 cls-IS 3.172 miscls 0.577 (0.1s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: PartitionCP                        marg 0.681 worst 0.288 ccg 0.191 width 1.091 IS 1.909 cls-IS 3.586 miscls 0.450 (0.5s)
+      per class common:0.75 medium:0.57 rare:0.29
+synthetic_k1 h=0 alpha=0.32: SplitCP                            marg 0.680 worst 0.283 ccg 0.189 width 1.103 IS 1.908 cls-IS 3.577 miscls 0.454 (0.0s)
+      per class common:0.74 medium:0.58 rare:0.28
+synthetic_k1 h=0 alpha=0.32: TwoStepCP                          marg 0.944 worst 0.681 ccg 0.178 width 2.825 IS 2.977 cls-IS 3.998 miscls 0.852 (0.1s)
+      per class common:0.97 medium:0.92 rare:0.68
+synthetic_k1 h=0 alpha=0.05: CPTC                               marg 0.974 worst 0.846 ccg 0.052 width 3.565 IS 4.030 cls-IS 6.334 miscls 0.943 (0.2s)
+      per class common:0.99 medium:0.97 rare:0.85
+synthetic_k1 h=0 alpha=0.05: CQR                                marg 0.950 worst 0.705 ccg 0.104 width 2.500 IS 3.368 cls-IS 6.839 miscls 0.864 (0.0s)
+      per class common:0.98 medium:0.91 rare:0.70
+synthetic_k1 h=0 alpha=0.05: DCP                                marg 0.950 worst 0.703 ccg 0.105 width 2.488 IS 3.367 cls-IS 6.870 miscls 0.863 (1.2s)
+      per class common:0.98 medium:0.91 rare:0.70
+synthetic_k1 h=0 alpha=0.05: FLARE                              marg 0.950 worst 0.612 ccg 0.142 width 2.554 IS 3.636 cls-IS 8.109 miscls 0.822 (0.1s)
+      per class common:0.99 medium:0.90 rare:0.61
+synthetic_k1 h=0 alpha=0.05: GAMUT                              marg 0.951 worst 0.950 ccg 0.002 width 4.586 IS 5.127 cls-IS 6.546 miscls 0.948 (9.4s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT (point-level unit)           marg 0.951 worst 0.950 ccg 0.002 width 4.586 IS 5.127 cls-IS 6.546 miscls 0.948 (9.5s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.955 worst 0.950 ccg 0.008 width 6.188 IS 6.706 cls-IS 9.057 miscls 0.957 (14.3s)
+      per class common:0.95 medium:0.97 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 1.000 worst 0.998 ccg 0.049 width 6.190 IS 6.347 cls-IS 7.780 miscls 0.999 (14.8s)
+      per class common:1.00 medium:1.00 rare:1.00
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.986 worst 0.953 ccg 0.019 width 5.502 IS 5.724 cls-IS 6.161 miscls 0.984 (12.9s)
+      per class common:1.00 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.951 worst 0.950 ccg 0.001 width 4.579 IS 5.122 cls-IS 6.516 miscls 0.948 (9.4s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.950 worst 0.619 ccg 0.135 width 2.378 IS 3.445 cls-IS 8.009 miscls 0.836 (7.6s)
+      per class common:0.99 medium:0.91 rare:0.62
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.994 worst 0.953 ccg 0.030 width 4.831 IS 4.943 cls-IS 6.257 miscls 0.980 (7.7s)
+      per class common:1.00 medium:0.99 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.950 worst 0.950 ccg 0.001 width 4.550 IS 5.119 cls-IS 6.555 miscls 0.946 (8.4s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.950 worst 0.948 ccg 0.001 width 4.510 IS 5.056 cls-IS 6.501 miscls 0.946 (6.2s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.951 worst 0.951 ccg 0.002 width 4.573 IS 5.130 cls-IS 6.394 miscls 0.951 (10.1s)
+      per class common:0.95 medium:0.95 rare:0.96
+synthetic_k1 h=0 alpha=0.05: GAMUT-cert (split certificate)     marg 0.969 worst 0.969 ccg 0.019 width 5.326 IS 5.682 cls-IS 6.900 miscls 0.969 (7.0s)
+      per class common:0.97 medium:0.97 rare:0.97
+synthetic_k1 h=0 alpha=0.05: GCC-prob                           marg 0.948 worst 0.665 ccg 0.127 width 2.579 IS 3.640 cls-IS 7.834 miscls 0.820 (84.0s)
+      per class common:0.99 medium:0.89 rare:0.67
+synthetic_k1 h=0 alpha=0.05: KandinskyCP                        marg 0.949 worst 0.938 ccg 0.008 width 6.306 IS 7.266 cls-IS 9.489 miscls 0.921 (100.0s)
+      per class common:0.95 medium:0.94 rare:0.94
+synthetic_k1 h=0 alpha=0.05: LocalizedCP                        marg 0.951 worst 0.634 ccg 0.134 width 2.599 IS 3.639 cls-IS 7.908 miscls 0.826 (21.7s)
+      per class common:0.99 medium:0.90 rare:0.63
+synthetic_k1 h=0 alpha=0.05: MDCP                               marg 0.993 worst 0.948 ccg 0.028 width 5.312 IS 5.433 cls-IS 5.930 miscls 0.984 (10.8s)
+      per class common:1.00 medium:0.98 rare:0.95
+synthetic_k1 h=0 alpha=0.05: MaxClassCP                         marg 0.997 worst 0.948 ccg 0.033 width 6.068 IS 6.132 cls-IS 7.520 miscls 0.985 (0.1s)
+      per class common:1.00 medium:1.00 rare:0.95
+synthetic_k1 h=0 alpha=0.05: MixtureCP                          marg 0.941 worst 0.734 ccg 0.095 width 2.853 IS 3.842 cls-IS 7.390 miscls 0.835 (0.9s)
+      per class common:0.97 medium:0.90 rare:0.73
+synthetic_k1 h=0 alpha=0.05: Oracle-true-class                  marg 0.950 worst 0.948 ccg 0.001 width 2.670 IS 3.114 cls-IS 5.398 miscls 0.930 (0.1s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: PartitionCP                        marg 0.950 worst 0.665 ccg 0.122 width 2.604 IS 3.605 cls-IS 7.622 miscls 0.837 (0.3s)
+      per class common:0.99 medium:0.91 rare:0.67
+synthetic_k1 h=0 alpha=0.05: SplitCP                            marg 0.950 worst 0.631 ccg 0.136 width 2.595 IS 3.650 cls-IS 7.903 miscls 0.820 (0.0s)
+      per class common:0.99 medium:0.90 rare:0.63
+synthetic_k1 h=0 alpha=0.05: TwoStepCP                          marg 0.993 worst 0.946 ccg 0.031 width 5.927 IS 6.037 cls-IS 7.516 miscls 0.982 (0.1s)
+      per class common:1.00 medium:0.99 rare:0.95
+synthetic_k1 h=0 alpha=0.32: GAMUT                              marg 0.683 worst 0.683 ccg 0.004 width 1.710 IS 2.472 cls-IS 3.885 miscls 0.617 (5.1s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT (point-level unit)           marg 0.683 worst 0.683 ccg 0.004 width 1.710 IS 2.472 cls-IS 3.885 miscls 0.617 (4.7s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.681 worst 0.680 ccg 0.002 width 1.986 IS 2.707 cls-IS 4.505 miscls 0.606 (4.8s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.956 worst 0.684 ccg 0.179 width 3.470 IS 3.625 cls-IS 4.813 miscls 0.820 (7.5s)
+      per class common:1.00 medium:0.90 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.880 worst 0.680 ccg 0.096 width 2.910 IS 3.696 cls-IS 4.279 miscls 0.811 (6.9s)
+      per class common:0.96 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.683 worst 0.682 ccg 0.004 width 1.706 IS 2.470 cls-IS 3.877 miscls 0.619 (4.4s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.679 worst 0.275 ccg 0.252 width 0.969 IS 2.078 cls-IS 3.921 miscls 0.421 (3.6s)
+      per class common:0.79 medium:0.44 rare:0.28
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.873 worst 0.682 ccg 0.127 width 2.085 IS 2.385 cls-IS 3.690 miscls 0.765 (3.8s)
+      per class common:0.90 medium:0.84 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.683 worst 0.682 ccg 0.004 width 1.663 IS 2.463 cls-IS 3.890 miscls 0.617 (3.9s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.682 worst 0.682 ccg 0.003 width 1.704 IS 2.468 cls-IS 3.886 miscls 0.616 (2.6s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.683 worst 0.682 ccg 0.003 width 1.677 IS 2.491 cls-IS 3.822 miscls 0.614 (4.3s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT-cert (split certificate)     marg 0.754 worst 0.707 ccg 0.056 width 1.932 IS 2.508 cls-IS 3.907 miscls 0.675 (4.3s)
+      per class common:0.76 medium:0.74 rare:0.71
+synthetic_k1 h=0 alpha=0.05: GAMUT                              marg 0.950 worst 0.950 ccg 0.001 width 4.660 IS 5.201 cls-IS 6.764 miscls 0.944 (5.6s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT (point-level unit)           marg 0.950 worst 0.950 ccg 0.001 width 4.660 IS 5.201 cls-IS 6.764 miscls 0.944 (5.6s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.954 worst 0.950 ccg 0.006 width 6.194 IS 6.710 cls-IS 9.162 miscls 0.953 (7.9s)
+      per class common:0.95 medium:0.97 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 1.000 worst 0.998 ccg 0.049 width 6.283 IS 6.387 cls-IS 7.684 miscls 0.999 (8.7s)
+      per class common:1.00 medium:1.00 rare:1.00
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.986 worst 0.953 ccg 0.018 width 5.463 IS 5.687 cls-IS 6.129 miscls 0.983 (8.0s)
+      per class common:1.00 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.950 worst 0.950 ccg 0.001 width 4.638 IS 5.179 cls-IS 6.718 miscls 0.945 (5.6s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.950 worst 0.606 ccg 0.139 width 2.379 IS 3.471 cls-IS 8.188 miscls 0.831 (4.4s)
+      per class common:0.99 medium:0.91 rare:0.61
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.994 worst 0.954 ccg 0.031 width 4.908 IS 5.025 cls-IS 6.460 miscls 0.979 (4.7s)
+      per class common:1.00 medium:0.99 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.950 worst 0.950 ccg 0.001 width 4.640 IS 5.204 cls-IS 6.802 miscls 0.943 (4.7s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.950 worst 0.950 ccg 0.001 width 4.645 IS 5.189 cls-IS 6.757 miscls 0.944 (3.3s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.951 worst 0.950 ccg 0.002 width 4.611 IS 5.167 cls-IS 6.559 miscls 0.947 (5.9s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT-cert (split certificate)     marg 0.968 worst 0.967 ccg 0.018 width 5.470 IS 5.827 cls-IS 7.206 miscls 0.966 (3.7s)
+      per class common:0.97 medium:0.97 rare:0.97
+synthetic_k1 h=0 alpha=0.32: GAMUT                              marg 0.683 worst 0.683 ccg 0.004 width 1.710 IS 2.472 cls-IS 3.885 miscls 0.617 (4.1s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT (point-level unit)           marg 0.683 worst 0.683 ccg 0.004 width 1.710 IS 2.472 cls-IS 3.885 miscls 0.617 (4.2s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.681 worst 0.680 ccg 0.002 width 1.986 IS 2.707 cls-IS 4.505 miscls 0.606 (4.8s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.956 worst 0.684 ccg 0.179 width 3.470 IS 3.625 cls-IS 4.813 miscls 0.820 (6.5s)
+      per class common:1.00 medium:0.90 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.880 worst 0.680 ccg 0.096 width 2.910 IS 3.696 cls-IS 4.279 miscls 0.811 (6.5s)
+      per class common:0.96 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.683 worst 0.682 ccg 0.004 width 1.706 IS 2.470 cls-IS 3.877 miscls 0.619 (4.4s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.679 worst 0.275 ccg 0.252 width 0.969 IS 2.078 cls-IS 3.921 miscls 0.421 (3.4s)
+      per class common:0.79 medium:0.44 rare:0.28
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.873 worst 0.682 ccg 0.127 width 2.085 IS 2.385 cls-IS 3.690 miscls 0.765 (3.5s)
+      per class common:0.90 medium:0.84 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.683 worst 0.683 ccg 0.004 width 1.710 IS 2.472 cls-IS 3.885 miscls 0.617 (4.1s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.683 worst 0.682 ccg 0.004 width 1.663 IS 2.463 cls-IS 3.890 miscls 0.617 (3.7s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.682 worst 0.682 ccg 0.003 width 1.704 IS 2.468 cls-IS 3.886 miscls 0.616 (2.3s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.683 worst 0.682 ccg 0.003 width 1.677 IS 2.491 cls-IS 3.822 miscls 0.614 (4.1s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT-cert (split certificate)     marg 0.754 worst 0.707 ccg 0.056 width 1.932 IS 2.508 cls-IS 3.907 miscls 0.675 (3.6s)
+      per class common:0.76 medium:0.74 rare:0.71
+synthetic_k1 h=0 alpha=0.05: GAMUT                              marg 0.950 worst 0.950 ccg 0.001 width 4.660 IS 5.201 cls-IS 6.764 miscls 0.944 (4.1s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT (point-level unit)           marg 0.950 worst 0.950 ccg 0.001 width 4.660 IS 5.201 cls-IS 6.764 miscls 0.944 (4.3s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.954 worst 0.950 ccg 0.006 width 6.194 IS 6.710 cls-IS 9.162 miscls 0.953 (6.2s)
+      per class common:0.95 medium:0.97 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 1.000 worst 0.998 ccg 0.049 width 6.283 IS 6.387 cls-IS 7.684 miscls 0.999 (6.3s)
+      per class common:1.00 medium:1.00 rare:1.00
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.986 worst 0.953 ccg 0.018 width 5.463 IS 5.687 cls-IS 6.129 miscls 0.983 (6.4s)
+      per class common:1.00 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.950 worst 0.950 ccg 0.001 width 4.638 IS 5.179 cls-IS 6.718 miscls 0.945 (4.4s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.950 worst 0.606 ccg 0.139 width 2.379 IS 3.471 cls-IS 8.188 miscls 0.831 (3.4s)
+      per class common:0.99 medium:0.91 rare:0.61
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.994 worst 0.954 ccg 0.031 width 4.908 IS 5.025 cls-IS 6.460 miscls 0.979 (3.4s)
+      per class common:1.00 medium:0.99 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.950 worst 0.950 ccg 0.001 width 4.660 IS 5.201 cls-IS 6.764 miscls 0.944 (4.4s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.950 worst 0.950 ccg 0.001 width 4.640 IS 5.204 cls-IS 6.802 miscls 0.943 (3.8s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.950 worst 0.950 ccg 0.001 width 4.645 IS 5.189 cls-IS 6.757 miscls 0.944 (2.7s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.951 worst 0.950 ccg 0.002 width 4.611 IS 5.167 cls-IS 6.559 miscls 0.947 (4.4s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT-cert (split certificate)     marg 0.968 worst 0.967 ccg 0.018 width 5.470 IS 5.827 cls-IS 7.206 miscls 0.966 (3.2s)
+      per class common:0.97 medium:0.97 rare:0.97
+synthetic_k1 h=0 alpha=0.32: GAMUT                              marg 0.683 worst 0.683 ccg 0.004 width 1.710 IS 2.471 cls-IS 3.885 miscls 0.617 (7.1s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT (point-level unit)           marg 0.683 worst 0.683 ccg 0.004 width 1.710 IS 2.471 cls-IS 3.885 miscls 0.617 (7.0s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.681 worst 0.680 ccg 0.002 width 1.986 IS 2.707 cls-IS 4.505 miscls 0.606 (7.3s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.956 worst 0.684 ccg 0.179 width 3.470 IS 3.624 cls-IS 4.811 miscls 0.820 (10.5s)
+      per class common:1.00 medium:0.90 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.880 worst 0.680 ccg 0.096 width 2.910 IS 3.694 cls-IS 4.277 miscls 0.811 (9.8s)
+      per class common:0.96 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.683 worst 0.682 ccg 0.004 width 1.706 IS 2.469 cls-IS 3.876 miscls 0.619 (6.8s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.679 worst 0.275 ccg 0.252 width 0.969 IS 2.078 cls-IS 3.920 miscls 0.421 (6.4s)
+      per class common:0.79 medium:0.44 rare:0.28
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.873 worst 0.682 ccg 0.127 width 2.085 IS 2.384 cls-IS 3.689 miscls 0.765 (6.2s)
+      per class common:0.90 medium:0.84 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.683 worst 0.683 ccg 0.004 width 1.710 IS 2.471 cls-IS 3.885 miscls 0.617 (7.1s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.683 worst 0.682 ccg 0.004 width 1.664 IS 2.462 cls-IS 3.889 miscls 0.617 (7.0s)
+      per class common:0.68 medium:0.68 rare:0.69
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.682 worst 0.682 ccg 0.003 width 1.704 IS 2.467 cls-IS 3.886 miscls 0.616 (5.1s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.683 worst 0.682 ccg 0.003 width 1.677 IS 2.491 cls-IS 3.821 miscls 0.614 (7.7s)
+      per class common:0.68 medium:0.68 rare:0.68
+synthetic_k1 h=0 alpha=0.32: GAMUT-cert (split certificate)     marg 0.754 worst 0.707 ccg 0.056 width 1.932 IS 2.507 cls-IS 3.906 miscls 0.675 (6.2s)
+      per class common:0.76 medium:0.74 rare:0.71
+synthetic_k1 h=0 alpha=0.32: KandinskyCP                        marg 0.678 worst 0.650 ccg 0.021 width 2.168 IS 3.188 cls-IS 4.738 miscls 0.567 (78.4s)
+      per class common:0.69 medium:0.65 rare:0.65
+synthetic_k1 h=0 alpha=0.32: MDCP                               marg 0.904 worst 0.691 ccg 0.132 width 2.833 IS 3.237 cls-IS 3.796 miscls 0.819 (12.5s)
+      per class common:0.96 medium:0.78 rare:0.69
+synthetic_k1 h=0 alpha=0.05: GAMUT                              marg 0.950 worst 0.950 ccg 0.001 width 4.660 IS 5.201 cls-IS 6.763 miscls 0.944 (7.9s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT (point-level unit)           marg 0.950 worst 0.950 ccg 0.001 width 4.660 IS 5.201 cls-IS 6.763 miscls 0.944 (7.5s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.954 worst 0.950 ccg 0.006 width 6.191 IS 6.707 cls-IS 9.155 miscls 0.953 (10.0s)
+      per class common:0.95 medium:0.97 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 1.000 worst 1.000 ccg 0.050 width 8.163 IS 8.241 cls-IS 9.233 miscls 1.000 (9.8s)
+      per class common:1.00 medium:1.00 rare:1.00
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.986 worst 0.953 ccg 0.018 width 5.464 IS 5.687 cls-IS 6.129 miscls 0.983 (10.6s)
+      per class common:1.00 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.950 worst 0.950 ccg 0.001 width 4.638 IS 5.178 cls-IS 6.717 miscls 0.945 (6.9s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.950 worst 0.606 ccg 0.139 width 2.379 IS 3.471 cls-IS 8.187 miscls 0.831 (6.7s)
+      per class common:0.99 medium:0.91 rare:0.61
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.994 worst 0.954 ccg 0.031 width 4.908 IS 5.025 cls-IS 6.460 miscls 0.979 (6.4s)
+      per class common:1.00 medium:0.99 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.950 worst 0.950 ccg 0.001 width 4.660 IS 5.201 cls-IS 6.763 miscls 0.944 (7.2s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 0.950 worst 0.950 ccg 0.001 width 4.640 IS 5.203 cls-IS 6.801 miscls 0.943 (7.1s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.950 worst 0.950 ccg 0.001 width 4.645 IS 5.188 cls-IS 6.756 miscls 0.944 (5.5s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.951 worst 0.950 ccg 0.002 width 4.611 IS 5.167 cls-IS 6.559 miscls 0.947 (7.2s)
+      per class common:0.95 medium:0.95 rare:0.95
+synthetic_k1 h=0 alpha=0.05: GAMUT-cert (split certificate)     marg 0.968 worst 0.967 ccg 0.018 width 5.470 IS 5.827 cls-IS 7.205 miscls 0.966 (6.0s)
+      per class common:0.97 medium:0.97 rare:0.97
+synthetic_k1 h=0 alpha=0.05: KandinskyCP                        marg 0.949 worst 0.938 ccg 0.008 width 6.306 IS 7.266 cls-IS 9.489 miscls 0.921 (68.6s)
+      per class common:0.95 medium:0.94 rare:0.94
+synthetic_k1 h=0 alpha=0.05: MDCP                               marg 0.993 worst 0.948 ccg 0.028 width 5.312 IS 5.433 cls-IS 5.930 miscls 0.984 (10.1s)
+      per class common:1.00 medium:0.98 rare:0.95

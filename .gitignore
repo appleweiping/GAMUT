@@ -1,0 +1,15 @@
+data/
+__pycache__/
+*.pyc
+.aris/traces/*/raw/
+results/*/points_*.npz
+results/_archive_pilot/*.npz
+results/*/.lock_*
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg
+paper/*.out
+paper/style_dl/
+idea-stage/lit/dl/
+paper/main.pdf.bak

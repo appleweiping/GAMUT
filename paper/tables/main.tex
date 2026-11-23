@@ -1,0 +1,39 @@
+\begin{table*}[t]
+\centering
+\caption{Summary over the six main benchmarks and all forecast origins (20 settings per level). \emph{Valid}: percentage of settings in which no class is significantly under-covered (object-level bootstrap, 95\% upper bound below nominal). \emph{Worst}: mean over settings of the worst-class coverage. \emph{CCG}: mean absolute class-coverage gap. \emph{Cells}: mean number of (class, lead-time bin) cells per setting whose object-level coverage is significantly below nominal (bootstrap). \emph{Width}: mean band length relative to FLARE's. Families from top: membership-blind, probability-conditioned, latent-class-valid, and the latter given our hypothesis-conditional forecaster (+\,C1). \gamut-cert is the split variant whose finite-sample guarantee (\cref{thm:valid}) needs a strict split; here it is run under the same cross-fitted protocol as every method. The true-class Mondrian reference needs the test object's class.}
+\label{tab:main}
+\small
+\setlength{\tabcolsep}{5pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccccc@{\hspace{12pt}}ccccc}
+\toprule
+ & \multicolumn{5}{c}{68\% bands} & \multicolumn{5}{c}{95\% bands} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-11}
+Method & Valid (\%) $\uparrow$ & Worst $\uparrow$ & CCG $\downarrow$ & Cells $\downarrow$ & Width $\downarrow$ & Valid (\%) $\uparrow$ & Worst $\uparrow$ & CCG $\downarrow$ & Cells $\downarrow$ & Width $\downarrow$ \\
+\midrule
+FLARE & 5 & 0.556 & 0.042 & 10.2 & 1.00 & 10 & 0.879 & 0.021 & 7.0 & 1.00 \\
+Split CP & 5 & 0.519 & 0.074 & 14.8 & 0.95 & 5 & 0.870 & 0.029 & 11.9 & 0.95 \\
+CQR & 5 & 0.515 & 0.079 & 20.5 & 1.01 & 0 & 0.851 & 0.039 & 14.6 & 0.93 \\
+DCP & 0 & 0.532 & 0.069 & 17.1 & 1.07 & 0 & 0.880 & 0.026 & 10.3 & 1.11 \\
+\midrule
+Localized CP & 10 & 0.534 & 0.065 & 13.2 & 0.96 & 5 & 0.876 & 0.026 & 9.8 & 0.96 \\
+Label-shift mixture & 30 & 0.575 & 0.037 & 6.5 & 1.01 & 30 & 0.894 & 0.017 & 5.0 & 1.00 \\
+GCC ($p$) & 20 & 0.563 & 0.042 & 11.9 & 1.00 & 15 & 0.879 & 0.021 & 8.9 & 0.98 \\
+Learned partition & 30 & 0.563 & 0.039 & 9.2 & 1.01 & 25 & 0.883 & 0.020 & 6.8 & 1.00 \\
+CPTC & 35 & 0.585 & 0.038 & 5.8 & 1.01 & 80 & 0.922 & 0.017 & 1.1 & 1.17 \\
+\midrule
+Two-step CP & 100 & 0.700 & 0.104 & 0.0 & 1.48 & 100 & 0.956 & 0.025 & 0.0 & 1.84 \\
+Kandinsky CP & 70 & 0.615 & 0.021 & 7.5 & 1.07 & 55 & 0.917 & 0.010 & 4.8 & 1.10 \\
+MDCP & 100 & 0.705 & 0.130 & 1.8 & 1.62 & 100 & 0.948 & 0.028 & 1.9 & 1.49 \\
+Max-class CP & 100 & 0.704 & 0.121 & 0.0 & 1.55 & 100 & 0.958 & 0.030 & 0.0 & 2.61 \\
+\midrule
+Two-step CP + C1 & 100 & 0.734 & 0.135 & 0.0 & 1.70 & 100 & 0.962 & 0.029 & 0.0 & 1.75 \\
+MDCP + C1 & 100 & 0.702 & 0.141 & 2.5 & 1.73 & 100 & 0.949 & 0.030 & 1.6 & 1.54 \\
+Max-class CP + C1 & 100 & 0.751 & 0.174 & 0.0 & 1.96 & 100 & 0.968 & 0.036 & 0.0 & 2.22 \\
+\midrule
+\rowcolor{gray!12}\gamut{} (ours) & 100 & 0.671 & 0.014 & 0.2 & 1.09 & 90 & 0.949 & 0.012 & 0.8 & 1.36 \\
+\gamut-cert (split certificate) & 100 & 0.745 & 0.096 & 0.0 & 1.47 & 100 & 0.968 & 0.028 & 0.1 & 1.62 \\
+\textcolor{gray}{True-class Mondrian (reference)} & 85 & 0.633 & 0.008 & 1.6 & 1.00 & 90 & 0.926 & 0.004 & 0.2 & 1.02 \\
+\bottomrule
+\end{tabular}}
+\end{table*}

@@ -1,0 +1,28 @@
+\begin{table}[H]
+\centering
+\caption{Cross-conformal protocol: \gamut{} (in-sample dual weights, object-level unit), \gamut-cert (split certificate; its finite-sample premise needs the strict split of \cref{tab:strict}) and \gamut{} with point-level units: mean marginal coverage, worst-class coverage (minimum over origins) and length relative to \gamut.}
+\label{tab:cert}
+\scriptsize
+\begin{tabular}{llccc ccc ccc}
+\toprule
+ & & \multicolumn{3}{c}{\gamut} & \multicolumn{3}{c}{\gamut-cert} & \multicolumn{3}{c}{point-level unit} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){9-11}
+Benchmark & Level & Marg. & Worst & W. & Marg. & Worst & W. & Marg. & Worst & W. \\
+\midrule
+ZTF-BTS & 68\% & 0.684 & 0.659 & 1.00 & 0.789 & 0.742 & 1.36 & 0.681 & 0.679 & 0.99 \\
+ZTF-BTS & 95\% & 0.952 & 0.942 & 1.00 & 0.987 & 0.971 & 1.60 & 0.951 & 0.943 & 0.99 \\
+PLAsTiCC-train & 68\% & 0.679 & 0.651 & 1.00 & 0.825 & 0.761 & 1.44 & 0.693 & 0.673 & 1.09 \\
+PLAsTiCC-train & 95\% & 0.952 & 0.926 & 1.00 & 0.987 & 0.971 & 1.20 & 0.960 & 0.944 & 1.00 \\
+PLAsTiCC-DDF & 68\% & 0.689 & 0.669 & 1.00 & 0.837 & 0.778 & 1.60 & 0.685 & 0.678 & 1.02 \\
+PLAsTiCC-DDF & 95\% & 0.955 & 0.940 & 1.00 & 0.987 & 0.967 & 1.90 & 0.953 & 0.945 & 0.96 \\
+StarLight & 68\% & 0.681 & 0.680 & 1.00 & 0.692 & 0.690 & 1.03 & 0.681 & 0.680 & 1.00 \\
+StarLight & 95\% & 0.950 & 0.950 & 1.00 & 0.957 & 0.955 & 1.06 & 0.950 & 0.950 & 1.00 \\
+ECG5000 & 68\% & 0.681 & 0.668 & 1.00 & 0.755 & 0.730 & 1.38 & 0.681 & 0.668 & 1.00 \\
+ECG5000 & 95\% & 0.974 & 0.963 & 1.00 & 0.968 & 0.946 & 0.57 & 0.974 & 0.963 & 1.00 \\
+ElecDevices & 68\% & 0.688 & 0.680 & 1.00 & 0.724 & 0.694 & 1.18 & 0.688 & 0.680 & 1.00 \\
+ElecDevices & 95\% & 0.951 & 0.950 & 1.00 & 0.964 & 0.957 & 1.18 & 0.951 & 0.950 & 1.00 \\
+Wafer & 68\% & 0.684 & 0.683 & 1.00 & 0.684 & 0.684 & 1.01 & 0.684 & 0.683 & 1.00 \\
+Wafer & 95\% & 0.951 & 0.950 & 1.00 & 0.953 & 0.953 & 1.03 & 0.951 & 0.950 & 1.00 \\
+\bottomrule
+\end{tabular}
+\end{table}

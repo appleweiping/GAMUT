@@ -1,0 +1,31 @@
+rotation 0: outputs in 288s
+rotation 1: outputs in 408s
+rotation 2: outputs in 806s
+rotation 3: outputs in 881s
+rotation 4: outputs in 436s
+ztf strict h=20 alpha=0.32: FLARE                            marg 0.679 worst 0.559 obj-worst 0.556 width 0.697
+ztf strict h=20 alpha=0.32: SplitCP                          marg 0.680 worst 0.557 obj-worst 0.554 width 0.675
+ztf strict h=20 alpha=0.32: TwoStepCP                        marg 0.856 worst 0.740 obj-worst 0.767 width 1.239
+ztf strict h=20 alpha=0.32: MaxClassCP                       marg 0.856 worst 0.740 obj-worst 0.767 width 1.240
+ztf strict h=20 alpha=0.32: Oracle-true-class                marg 0.680 worst 0.617 obj-worst 0.639 width 0.718
+ztf strict h=20 alpha=0.32: CPTC                             marg 0.675 worst 0.625 obj-worst 0.610 width 0.668
+ztf strict h=20 alpha=0.32: KandinskyCP                      marg 0.688 worst 0.628 obj-worst 0.638 width 0.757
+ztf strict h=20 alpha=0.32: MDCP                             marg 0.936 worst 0.811 obj-worst 0.852 width 1.718
+ztf strict h=20 alpha=0.32: MDCP + C1                        marg 0.869 worst 0.760 obj-worst 0.813 width 1.496
+ztf strict h=20 alpha=0.32: TwoStepCP + C1                   marg 0.896 worst 0.768 obj-worst 0.798 width 1.609
+ztf strict h=20 alpha=0.32: MaxClassCP + C1                  marg 0.903 worst 0.772 obj-worst 0.803 width 1.665
+ztf strict h=20 alpha=0.32: GAMUT                            marg 0.694 worst 0.678 obj-worst 0.672 width 0.748
+ztf strict h=20 alpha=0.32: GAMUT-cert (split certificate)   marg 0.859 worst 0.829 obj-worst 0.832 width 1.252
+ztf strict h=20 alpha=0.05: FLARE                            marg 0.947 worst 0.897 obj-worst 0.892 width 1.780
+ztf strict h=20 alpha=0.05: SplitCP                          marg 0.949 worst 0.881 obj-worst 0.898 width 1.708
+ztf strict h=20 alpha=0.05: TwoStepCP                        marg 0.990 worst 0.965 obj-worst 0.980 width 3.550
+ztf strict h=20 alpha=0.05: MaxClassCP                       marg 0.990 worst 0.965 obj-worst 0.980 width 3.551
+ztf strict h=20 alpha=0.05: Oracle-true-class                marg 0.949 worst 0.918 obj-worst 0.929 width 1.844
+ztf strict h=20 alpha=0.05: CPTC                             marg 0.960 worst 0.942 obj-worst 0.943 width 1.955
+ztf strict h=20 alpha=0.05: KandinskyCP                      marg 0.953 worst 0.905 obj-worst 0.917 width 2.083
+ztf strict h=20 alpha=0.05: MDCP                             marg 0.997 worst 0.974 obj-worst 0.981 width 3.752
+ztf strict h=20 alpha=0.05: MDCP + C1                        marg 0.996 worst 0.974 obj-worst 0.982 width 3.600
+ztf strict h=20 alpha=0.05: TwoStepCP + C1                   marg 0.994 worst 0.971 obj-worst 0.976 width 4.138
+ztf strict h=20 alpha=0.05: MaxClassCP + C1                  marg 0.995 worst 0.974 obj-worst 0.980 width 4.173
+ztf strict h=20 alpha=0.05: GAMUT                            marg 0.964 worst 0.928 obj-worst 0.961 width 2.786
+ztf strict h=20 alpha=0.05: GAMUT-cert (split certificate)   marg 0.971 worst 0.959 obj-worst 0.959 width 2.364

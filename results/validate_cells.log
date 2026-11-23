@@ -1,0 +1,6 @@
+plasticc_train h=5 a=0.32: bins (default)                     worst 0.732 ccg 0.098 width 3.346 cls-IS 4.561 (21.7s)
+plasticc_train h=5 a=0.32: auto cells                         worst 0.700 ccg 0.080 width 3.121 cls-IS 4.387 (19.8s)
+plasticc_train h=5 a=0.05: bins (default)                     worst 0.946 ccg 0.027 width 9.187 cls-IS 10.011 (21.3s)
+plasticc_train h=5 a=0.05: auto cells                         worst 0.953 ccg 0.021 width 7.855 cls-IS 9.017 (13.4s)
+ztf h=5 a=0.32: auto cells                         worst 0.676 ccg 0.011 width 1.125 cls-IS 2.477 (96.6s)
+ztf h=5 a=0.05: auto cells                         worst 0.944 ccg 0.004 width 2.860 cls-IS 4.654 (93.5s)

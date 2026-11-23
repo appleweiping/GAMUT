@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\caption{Ablations, aggregated over the six main benchmarks and all origins. Width is relative to full \gamut. Columns as in \cref{tab:main}.}
+\label{tab:ablation}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccccc@{\hspace{6pt}}ccccc}
+\toprule
+ & \multicolumn{5}{c}{68\%} & \multicolumn{5}{c}{95\%} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-11}
+Variant & Val. & Worst & CCG & Cells & W. & Val. & Worst & CCG & Cells & W. \\
+\midrule
+\rowcolor{gray!12}\gamut{} (full) & 100 & 0.671 & 0.014 & 0.2 & 1.00 & 90 & 0.949 & 0.012 & 0.8 & 1.00 \\
+\midrule
+w/o C1: pooled forecaster & 100 & 0.675 & 0.017 & 0.1 & 1.04 & 85 & 0.952 & 0.015 & 0.7 & 1.03 \\
+w/o C2: uniform posterior & 100 & 0.694 & 0.094 & 0.2 & 1.43 & 100 & 0.967 & 0.032 & 0.1 & 1.47 \\
+w/o C2: argmax posterior & 100 & 0.698 & 0.089 & 0.0 & 1.38 & 100 & 0.960 & 0.029 & 0.0 & 1.35 \\
+w/o C2 calibration (raw $\tilde p$) & 100 & 0.672 & 0.014 & 0.1 & 1.01 & 90 & 0.948 & 0.012 & 0.6 & 1.00 \\
+w/o C3: posterior mixture & 0 & 0.516 & 0.068 & 15.1 & 0.86 & 0 & 0.862 & 0.026 & 10.2 & 0.73 \\
+w/o C3: prior-ratio weights & 100 & 0.686 & 0.175 & 0.1 & 1.45 & 100 & 0.964 & 0.030 & 0.0 & 1.17 \\
+fixed lead bins (no merging) & 100 & 0.671 & 0.015 & 0.1 & 1.01 & 95 & 0.946 & 0.013 & 0.2 & 1.03 \\
+\gamut-cert (split certificate) & 100 & 0.745 & 0.096 & 0.0 & 1.33 & 100 & 0.968 & 0.028 & 0.1 & 1.29 \\
+\bottomrule
+\end{tabular}}
+\end{table}

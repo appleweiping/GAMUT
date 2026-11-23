@@ -1,0 +1,33 @@
+\begin{table}[H]
+\centering
+\caption{Percentage of valid settings (six main benchmarks, all origins) under the bootstrap rule used in the main text and under the pre-registered fixed tolerance (worst class $\ge$ nominal $-0.02$ / $-0.015$).}
+\label{tab:validity}
+\scriptsize
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{68\%} & \multicolumn{2}{c}{95\%} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Method & bootstrap & tolerance & bootstrap & tolerance \\
+\midrule
+FLARE & 5 & 15 & 10 & 30 \\
+Split CP & 5 & 5 & 5 & 10 \\
+CQR & 5 & 10 & 0 & 10 \\
+DCP & 0 & 10 & 0 & 15 \\
+Localized CP & 10 & 15 & 5 & 10 \\
+Label-shift mixture & 30 & 20 & 30 & 30 \\
+GCC ($p$) & 20 & 20 & 15 & 30 \\
+Learned partition & 30 & 20 & 25 & 30 \\
+CPTC & 35 & 30 & 80 & 45 \\
+Two-step CP & 100 & 100 & 100 & 100 \\
+Kandinsky CP & 70 & 30 & 55 & 40 \\
+MDCP & 100 & 100 & 100 & 80 \\
+Max-class CP & 100 & 100 & 100 & 100 \\
+Two-step CP + C1 & 100 & 100 & 100 & 100 \\
+MDCP + C1 & 100 & 85 & 100 & 80 \\
+Max-class CP + C1 & 100 & 100 & 100 & 100 \\
+\gamut{} (ours) & 100 & 85 & 90 & 90 \\
+\gamut-cert & 100 & 100 & 100 & 100 \\
+True-class Mondrian (reference) & 85 & 75 & 90 & 75 \\
+\bottomrule
+\end{tabular}
+\end{table}

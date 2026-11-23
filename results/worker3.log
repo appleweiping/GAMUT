@@ -1,0 +1,14 @@
+ztf h=10: exit 0 in 1896s
+ztf h=15: exit 0 in 1645s
+plasticc_train h=5: exit 0 in 445s
+plasticc_train h=15: exit 0 in 463s
+plasticc_train h=30: exit 0 in 358s
+ztf h=10: exit 0 in 1288s
+ztf h=15: exit 0 in 1054s
+plasticc_train h=5: exit 0 in 315s
+plasticc_train h=15: exit 0 in 329s
+plasticc_train h=30: exit 0 in 178s
+plasticc_ddf h=5: exit 0 in 689s
+plasticc_ddf h=15: exit 0 in 475s
+ucr_electricdevices h=60: exit 0 in 3735s
+ucr_wafer h=20: exit 0 in 597s

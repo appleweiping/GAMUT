@@ -1,0 +1,8 @@
+h=5 mu: 208 iterations
+h=5 q16: 171 iterations
+h=5 q84: 172 iterations
+h=5: train objects 7347, predicted rows 81773
+h=10 mu: 418 iterations
+h=10 q16: 179 iterations
+h=10 q84: 154 iterations
+h=10: train objects 7347, predicted rows 72082

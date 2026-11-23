@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Benchmarks. Objects with at least one future point, and future points, at the earliest origin; \emph{min} is the size of the smallest class.}
+\label{tab:bench}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrrrl}
+\toprule
+Benchmark & Domain & Objects & $K$ & min & Points & Origins \\
+\midrule
+ZTF-BTS & ZTF transients & 10,492 & 6 & 68 & 273,908 & 5,10,15,20,30 d \\
+PLAsTiCC-train & LSST sim. & 2,045 & 11 & 36 & 21,461 & 5,15,30 d \\
+PLAsTiCC-DDF & LSST sim. (DDF) & 8,681 & 9 & 42 & 74,139 & 5,15,30 d \\
+StarLight & stellar light curves & 9,236 & 3 & 1329 & 221,664 & 20,40,60\% \\
+ECG5000 & ECG & 5,000 & 5 & 24 & 120,000 & 20,40,60\% \\
+ElecDevices & electricity & 16,637 & 7 & 1252 & 399,288 & 20,40,60\% \\
+Wafer & semiconductor & 7,164 & 2 & 762 & 171,936 & 20\% \\
+PLAsTiCC-WFD (held out) & LSST sim. (WFD) & 20,760 & 12 & 30 & 115,532 & 5,15,30 d \\
+\bottomrule
+\end{tabular}}
+\end{table}

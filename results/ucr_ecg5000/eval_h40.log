@@ -1,0 +1,180 @@
+ucr_ecg5000 h=40 alpha=0.32: CPTC                               marg 0.681 worst 0.634 ccg 0.022 width 0.477 IS 0.754 cls-IS 1.171 miscls 0.647 (0.3s)
+      per class class_1:0.68 class_2:0.68 class_3:0.71 class_4:0.65 class_5:0.63
+ucr_ecg5000 h=40 alpha=0.32: CQR                                marg 0.680 worst 0.599 ccg 0.038 width 0.451 IS 0.759 cls-IS 1.204 miscls 0.605 (0.0s)
+      per class class_1:0.68 class_2:0.69 class_3:0.64 class_4:0.62 class_5:0.60
+ucr_ecg5000 h=40 alpha=0.32: DCP                                marg 0.680 worst 0.630 ccg 0.030 width 0.497 IS 0.765 cls-IS 1.199 miscls 0.646 (1.3s)
+      per class class_1:0.67 class_2:0.70 class_3:0.72 class_4:0.65 class_5:0.63
+ucr_ecg5000 h=40 alpha=0.32: FLARE                              marg 0.680 worst 0.618 ccg 0.024 width 0.472 IS 0.757 cls-IS 1.193 miscls 0.637 (0.1s)
+      per class class_1:0.68 class_2:0.68 class_3:0.70 class_4:0.64 class_5:0.62
+ucr_ecg5000 h=40 alpha=0.32: GAMUT                              marg 0.681 worst 0.676 ccg 0.013 width 0.498 IS 0.770 cls-IS 1.295 miscls 0.686 (11.5s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.73
+ucr_ecg5000 h=40 alpha=0.32: GAMUT (point-level unit)           marg 0.681 worst 0.676 ccg 0.013 width 0.498 IS 0.770 cls-IS 1.295 miscls 0.686 (11.4s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.73
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.680 worst 0.674 ccg 0.010 width 0.488 IS 0.766 cls-IS 1.279 miscls 0.674 (11.7s)
+      per class class_1:0.68 class_2:0.68 class_3:0.67 class_4:0.68 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.759 worst 0.720 ccg 0.073 width 0.615 IS 0.817 cls-IS 1.495 miscls 0.725 (14.2s)
+      per class class_1:0.76 class_2:0.76 class_3:0.77 class_4:0.76 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.770 worst 0.724 ccg 0.092 width 0.689 IS 0.902 cls-IS 1.295 miscls 0.763 (13.8s)
+      per class class_1:0.74 class_2:0.82 class_3:0.81 class_4:0.77 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.681 worst 0.674 ccg 0.012 width 0.498 IS 0.771 cls-IS 1.312 miscls 0.681 (12.4s)
+      per class class_1:0.68 class_2:0.68 class_3:0.67 class_4:0.69 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.681 worst 0.597 ccg 0.033 width 0.478 IS 0.756 cls-IS 1.184 miscls 0.627 (9.1s)
+      per class class_1:0.68 class_2:0.68 class_3:0.70 class_4:0.62 class_5:0.60
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.767 worst 0.681 ccg 0.185 width 0.784 IS 0.955 cls-IS 2.033 miscls 0.916 (9.1s)
+      per class class_1:0.68 class_2:0.88 class_3:0.96 class_4:0.91 class_5:0.89
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.681 worst 0.676 ccg 0.013 width 0.498 IS 0.770 cls-IS 1.295 miscls 0.686 (11.7s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.73
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.681 worst 0.676 ccg 0.011 width 0.513 IS 0.769 cls-IS 1.268 miscls 0.679 (11.3s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.68 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.681 worst 0.668 ccg 0.014 width 0.498 IS 0.770 cls-IS 1.294 miscls 0.683 (8.7s)
+      per class class_1:0.68 class_2:0.68 class_3:0.67 class_4:0.69 class_5:0.73
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.673 worst 0.663 ccg 0.010 width 0.451 IS 0.856 cls-IS 1.432 miscls 0.656 (11.5s)
+      per class class_1:0.68 class_2:0.66 class_3:0.68 class_4:0.68 class_5:0.71
+ucr_ecg5000 h=40 alpha=0.32: GAMUT-cert (split certificate)     marg 0.767 worst 0.762 ccg 0.101 width 0.730 IS 0.916 cls-IS 1.713 miscls 0.801 (9.5s)
+      per class class_1:0.76 class_2:0.77 class_3:0.80 class_4:0.77 class_5:0.80
+ucr_ecg5000 h=40 alpha=0.32: GCC-prob                           marg 0.681 worst 0.635 ccg 0.020 width 0.477 IS 0.758 cls-IS 1.203 miscls 0.643 (50.8s)
+      per class class_1:0.68 class_2:0.68 class_3:0.69 class_4:0.64 class_5:0.64
+ucr_ecg5000 h=40 alpha=0.32: KandinskyCP                        marg 0.681 worst 0.666 ccg 0.014 width 0.489 IS 0.763 cls-IS 1.219 miscls 0.674 (80.2s)
+      per class class_1:0.68 class_2:0.69 class_3:0.69 class_4:0.67 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: LocalizedCP                        marg 0.680 worst 0.622 ccg 0.028 width 0.475 IS 0.756 cls-IS 1.191 miscls 0.635 (13.5s)
+      per class class_1:0.68 class_2:0.68 class_3:0.71 class_4:0.63 class_5:0.62
+ucr_ecg5000 h=40 alpha=0.32: MDCP                               marg 0.818 worst 0.693 ccg 0.103 width 0.616 IS 0.909 cls-IS 1.323 miscls 0.741 (33.3s)
+      per class class_1:0.80 class_2:0.86 class_3:0.77 class_4:0.79 class_5:0.69
+ucr_ecg5000 h=40 alpha=0.32: MaxClassCP                         marg 0.771 worst 0.712 ccg 0.074 width 0.610 IS 0.799 cls-IS 1.234 miscls 0.728 (0.0s)
+      per class class_1:0.77 class_2:0.78 class_3:0.79 class_4:0.73 class_5:0.71
+ucr_ecg5000 h=40 alpha=0.32: MixtureCP                          marg 0.683 worst 0.628 ccg 0.023 width 0.475 IS 0.756 cls-IS 1.191 miscls 0.645 (1.6s)
+      per class class_1:0.68 class_2:0.69 class_3:0.70 class_4:0.65 class_5:0.63
+ucr_ecg5000 h=40 alpha=0.32: Oracle-true-class                  marg 0.680 worst 0.680 ccg 0.004 width 0.473 IS 0.756 cls-IS 1.195 miscls 0.658 (0.1s)
+      per class class_1:0.68 class_2:0.68 class_3:0.69 class_4:0.68 class_5:0.69
+ucr_ecg5000 h=40 alpha=0.32: PartitionCP                        marg 0.680 worst 0.646 ccg 0.019 width 0.475 IS 0.756 cls-IS 1.187 miscls 0.653 (0.3s)
+      per class class_1:0.68 class_2:0.68 class_3:0.70 class_4:0.65 class_5:0.65
+ucr_ecg5000 h=40 alpha=0.32: SplitCP                            marg 0.680 worst 0.623 ccg 0.027 width 0.490 IS 0.759 cls-IS 1.193 miscls 0.633 (0.0s)
+      per class class_1:0.68 class_2:0.68 class_3:0.71 class_4:0.63 class_5:0.62
+ucr_ecg5000 h=40 alpha=0.32: TwoStepCP                          marg 0.764 worst 0.708 ccg 0.071 width 0.606 IS 0.798 cls-IS 1.234 miscls 0.727 (0.1s)
+      per class class_1:0.76 class_2:0.77 class_3:0.79 class_4:0.72 class_5:0.71
+ucr_ecg5000 h=40 alpha=0.05: CPTC                               marg 0.954 worst 0.922 ccg 0.012 width 1.162 IS 1.410 cls-IS 2.460 miscls 0.949 (0.3s)
+      per class class_1:0.95 class_2:0.96 class_3:0.97 class_4:0.95 class_5:0.92
+ucr_ecg5000 h=40 alpha=0.05: CQR                                marg 0.950 worst 0.875 ccg 0.025 width 1.128 IS 1.480 cls-IS 2.507 miscls 0.911 (0.0s)
+      per class class_1:0.95 class_2:0.95 class_3:0.93 class_4:0.92 class_5:0.88
+ucr_ecg5000 h=40 alpha=0.05: DCP                                marg 0.950 worst 0.910 ccg 0.011 width 1.477 IS 1.707 cls-IS 2.697 miscls 0.942 (1.1s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.94 class_5:0.91
+ucr_ecg5000 h=40 alpha=0.05: FLARE                              marg 0.950 worst 0.896 ccg 0.015 width 1.098 IS 1.392 cls-IS 2.432 miscls 0.926 (0.1s)
+      per class class_1:0.95 class_2:0.95 class_3:0.94 class_4:0.94 class_5:0.90
+ucr_ecg5000 h=40 alpha=0.05: GAMUT                              marg 0.971 worst 0.965 ccg 0.027 width 2.624 IS 2.730 cls-IS 4.157 miscls 0.985 (13.0s)
+      per class class_1:0.96 class_2:0.98 class_3:0.99 class_4:0.98 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT (point-level unit)           marg 0.971 worst 0.965 ccg 0.027 width 2.624 IS 2.730 cls-IS 4.157 miscls 0.985 (13.0s)
+      per class class_1:0.96 class_2:0.98 class_3:0.99 class_4:0.98 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.981 worst 0.977 ccg 0.035 width 2.472 IS 2.534 cls-IS 4.031 miscls 0.990 (12.5s)
+      per class class_1:0.98 class_2:0.99 class_3:0.99 class_4:0.99 class_5:0.98
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.997 worst 0.976 ccg 0.042 width 2.653 IS 2.702 cls-IS 3.882 miscls 0.991 (12.8s)
+      per class class_1:1.00 class_2:1.00 class_3:0.99 class_4:1.00 class_5:0.98
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.999 worst 0.981 ccg 0.044 width 3.458 IS 3.474 cls-IS 4.465 miscls 0.994 (12.6s)
+      per class class_1:1.00 class_2:1.00 class_3:1.00 class_4:1.00 class_5:0.98
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.968 worst 0.961 ccg 0.026 width 2.576 IS 2.697 cls-IS 4.170 miscls 0.985 (12.8s)
+      per class class_1:0.96 class_2:0.98 class_3:0.99 class_4:0.98 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.950 worst 0.887 ccg 0.016 width 1.099 IS 1.381 cls-IS 2.322 miscls 0.930 (8.7s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.94 class_5:0.89
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.989 worst 0.981 ccg 0.040 width 2.429 IS 2.478 cls-IS 3.995 miscls 0.990 (8.1s)
+      per class class_1:0.99 class_2:0.99 class_3:1.00 class_4:0.99 class_5:0.98
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.971 worst 0.965 ccg 0.027 width 2.624 IS 2.730 cls-IS 4.157 miscls 0.985 (12.6s)
+      per class class_1:0.96 class_2:0.98 class_3:0.99 class_4:0.98 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 1.000 worst 0.998 ccg 0.049 width 3.785 IS 3.790 cls-IS 4.959 miscls 0.999 (11.8s)
+      per class class_1:1.00 class_2:1.00 class_3:1.00 class_4:1.00 class_5:1.00
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.968 worst 0.961 ccg 0.025 width 2.502 IS 2.622 cls-IS 4.075 miscls 0.983 (10.1s)
+      per class class_1:0.96 class_2:0.98 class_3:0.99 class_4:0.98 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.979 worst 0.965 ccg 0.031 width 2.557 IS 2.660 cls-IS 3.985 miscls 0.986 (13.1s)
+      per class class_1:0.97 class_2:0.99 class_3:1.00 class_4:0.98 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT-cert (split certificate)     marg 0.973 worst 0.957 ccg 0.023 width 1.462 IS 1.609 cls-IS 2.962 miscls 0.972 (8.2s)
+      per class class_1:0.97 class_2:0.98 class_3:0.99 class_4:0.98 class_5:0.96
+ucr_ecg5000 h=40 alpha=0.05: GCC-prob                           marg 0.950 worst 0.922 ccg 0.007 width 1.139 IS 1.407 cls-IS 2.461 miscls 0.935 (42.0s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.92
+ucr_ecg5000 h=40 alpha=0.05: KandinskyCP                        marg 0.949 worst 0.939 ccg 0.005 width 1.216 IS 1.508 cls-IS 2.864 miscls 0.943 (64.4s)
+      per class class_1:0.95 class_2:0.95 class_3:0.94 class_4:0.95 class_5:0.94
+ucr_ecg5000 h=40 alpha=0.05: LocalizedCP                        marg 0.950 worst 0.905 ccg 0.016 width 1.108 IS 1.392 cls-IS 2.335 miscls 0.925 (13.4s)
+      per class class_1:0.95 class_2:0.95 class_3:0.94 class_4:0.93 class_5:0.90
+ucr_ecg5000 h=40 alpha=0.05: MDCP                               marg 0.986 worst 0.924 ccg 0.030 width 1.658 IS 1.780 cls-IS 2.599 miscls 0.964 (28.3s)
+      per class class_1:0.99 class_2:0.99 class_3:0.97 class_4:0.98 class_5:0.92
+ucr_ecg5000 h=40 alpha=0.05: MaxClassCP                         marg 0.990 worst 0.958 ccg 0.032 width 2.506 IS 2.578 cls-IS 4.008 miscls 0.978 (0.0s)
+      per class class_1:0.99 class_2:0.99 class_3:0.98 class_4:0.99 class_5:0.96
+ucr_ecg5000 h=40 alpha=0.05: MixtureCP                          marg 0.951 worst 0.917 ccg 0.011 width 1.114 IS 1.392 cls-IS 2.390 miscls 0.932 (1.6s)
+      per class class_1:0.95 class_2:0.95 class_3:0.94 class_4:0.94 class_5:0.92
+ucr_ecg5000 h=40 alpha=0.05: Oracle-true-class                  marg 0.950 worst 0.948 ccg 0.002 width 1.114 IS 1.400 cls-IS 2.802 miscls 0.935 (0.1s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.96
+ucr_ecg5000 h=40 alpha=0.05: PartitionCP                        marg 0.950 worst 0.915 ccg 0.008 width 1.115 IS 1.391 cls-IS 2.356 miscls 0.936 (0.2s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.95 class_5:0.91
+ucr_ecg5000 h=40 alpha=0.05: SplitCP                            marg 0.950 worst 0.913 ccg 0.014 width 1.142 IS 1.409 cls-IS 2.347 miscls 0.925 (0.0s)
+      per class class_1:0.95 class_2:0.95 class_3:0.93 class_4:0.93 class_5:0.91
+ucr_ecg5000 h=40 alpha=0.05: TwoStepCP                          marg 0.990 worst 0.958 ccg 0.032 width 2.505 IS 2.577 cls-IS 4.007 miscls 0.978 (0.1s)
+      per class class_1:0.99 class_2:0.99 class_3:0.98 class_4:0.99 class_5:0.96
+ucr_ecg5000 h=40 alpha=0.32: GAMUT                              marg 0.681 worst 0.676 ccg 0.013 width 0.498 IS 0.770 cls-IS 1.295 miscls 0.686 (20.7s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.73
+ucr_ecg5000 h=40 alpha=0.32: GAMUT (point-level unit)           marg 0.681 worst 0.676 ccg 0.013 width 0.498 IS 0.770 cls-IS 1.295 miscls 0.686 (19.4s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.73
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o C1 (pooled forecaster)   marg 0.680 worst 0.674 ccg 0.010 width 0.488 IS 0.766 cls-IS 1.279 miscls 0.674 (20.1s)
+      per class class_1:0.68 class_2:0.68 class_3:0.67 class_4:0.68 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o C2 (argmax posterior)    marg 0.758 worst 0.720 ccg 0.073 width 0.615 IS 0.817 cls-IS 1.494 miscls 0.724 (24.9s)
+      per class class_1:0.76 class_2:0.76 class_3:0.77 class_4:0.76 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o C2 (uniform posterior)   marg 0.770 worst 0.724 ccg 0.092 width 0.689 IS 0.902 cls-IS 1.295 miscls 0.763 (23.1s)
+      per class class_1:0.74 class_2:0.82 class_3:0.81 class_4:0.77 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o C2-calibration (raw posterior) marg 0.681 worst 0.674 ccg 0.012 width 0.499 IS 0.771 cls-IS 1.312 miscls 0.681 (20.0s)
+      per class class_1:0.68 class_2:0.68 class_3:0.67 class_4:0.69 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o C3-dual (posterior mixture) marg 0.681 worst 0.597 ccg 0.033 width 0.478 IS 0.756 cls-IS 1.184 miscls 0.627 (16.8s)
+      per class class_1:0.68 class_2:0.68 class_3:0.70 class_4:0.62 class_5:0.60
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o C3-dual (prior-ratio weights) marg 0.767 worst 0.681 ccg 0.185 width 0.784 IS 0.955 cls-IS 2.033 miscls 0.916 (18.5s)
+      per class class_1:0.68 class_2:0.88 class_3:0.96 class_4:0.91 class_5:0.89
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o adaptive cells (fixed lead bins) marg 0.681 worst 0.676 ccg 0.013 width 0.498 IS 0.770 cls-IS 1.295 miscls 0.686 (20.8s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.69 class_5:0.73
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o lead-bin cells (one threshold) marg 0.680 worst 0.676 ccg 0.011 width 0.513 IS 0.769 cls-IS 1.268 miscls 0.679 (17.2s)
+      per class class_1:0.68 class_2:0.68 class_3:0.68 class_4:0.68 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.681 worst 0.668 ccg 0.014 width 0.498 IS 0.770 cls-IS 1.294 miscls 0.683 (14.9s)
+      per class class_1:0.68 class_2:0.68 class_3:0.67 class_4:0.69 class_5:0.73
+ucr_ecg5000 h=40 alpha=0.32: GAMUT w/o scale normalization (absolute length) marg 0.673 worst 0.663 ccg 0.010 width 0.451 IS 0.856 cls-IS 1.432 miscls 0.656 (19.9s)
+      per class class_1:0.68 class_2:0.66 class_3:0.68 class_4:0.68 class_5:0.71
+ucr_ecg5000 h=40 alpha=0.32: GAMUT-cert (split certificate)     marg 0.767 worst 0.762 ccg 0.101 width 0.730 IS 0.916 cls-IS 1.712 miscls 0.801 (17.7s)
+      per class class_1:0.76 class_2:0.77 class_3:0.80 class_4:0.77 class_5:0.80
+ucr_ecg5000 h=40 alpha=0.32: KandinskyCP                        marg 0.681 worst 0.666 ccg 0.014 width 0.489 IS 0.763 cls-IS 1.219 miscls 0.674 (133.1s)
+      per class class_1:0.68 class_2:0.69 class_3:0.69 class_4:0.67 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: MDCP                               marg 0.818 worst 0.693 ccg 0.103 width 0.616 IS 0.909 cls-IS 1.323 miscls 0.741 (53.3s)
+      per class class_1:0.80 class_2:0.86 class_3:0.77 class_4:0.79 class_5:0.69
+ucr_ecg5000 h=40 alpha=0.05: GAMUT                              marg 0.971 worst 0.965 ccg 0.027 width 2.641 IS 2.747 cls-IS 4.164 miscls 0.985 (22.6s)
+      per class class_1:0.96 class_2:0.98 class_3:0.99 class_4:0.98 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT (point-level unit)           marg 0.971 worst 0.965 ccg 0.027 width 2.641 IS 2.747 cls-IS 4.164 miscls 0.985 (24.3s)
+      per class class_1:0.96 class_2:0.98 class_3:0.99 class_4:0.98 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o C1 (pooled forecaster)   marg 0.990 worst 0.984 ccg 0.041 width 2.584 IS 2.627 cls-IS 4.089 miscls 0.993 (25.9s)
+      per class class_1:0.99 class_2:0.99 class_3:0.99 class_4:0.99 class_5:0.98
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o C2 (argmax posterior)    marg 0.997 worst 0.974 ccg 0.042 width 2.701 IS 2.752 cls-IS 3.885 miscls 0.992 (24.7s)
+      per class class_1:1.00 class_2:1.00 class_3:0.99 class_4:1.00 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o C2 (uniform posterior)   marg 0.999 worst 0.981 ccg 0.044 width 3.458 IS 3.475 cls-IS 4.465 miscls 0.994 (23.1s)
+      per class class_1:1.00 class_2:1.00 class_3:1.00 class_4:1.00 class_5:0.98
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o C2-calibration (raw posterior) marg 0.968 worst 0.961 ccg 0.026 width 2.607 IS 2.728 cls-IS 4.181 miscls 0.985 (24.4s)
+      per class class_1:0.96 class_2:0.98 class_3:0.99 class_4:0.98 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o C3-dual (posterior mixture) marg 0.950 worst 0.887 ccg 0.016 width 1.099 IS 1.381 cls-IS 2.322 miscls 0.930 (17.8s)
+      per class class_1:0.95 class_2:0.95 class_3:0.95 class_4:0.94 class_5:0.89
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o C3-dual (prior-ratio weights) marg 0.989 worst 0.981 ccg 0.040 width 2.445 IS 2.495 cls-IS 3.999 miscls 0.990 (16.6s)
+      per class class_1:0.99 class_2:0.99 class_3:1.00 class_4:0.99 class_5:0.98
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o adaptive cells (fixed lead bins) marg 0.971 worst 0.965 ccg 0.027 width 2.641 IS 2.747 cls-IS 4.164 miscls 0.985 (23.6s)
+      per class class_1:0.96 class_2:0.98 class_3:0.99 class_4:0.98 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o lead-bin cells (one threshold) marg 1.000 worst 0.998 ccg 0.049 width 3.799 IS 3.804 cls-IS 4.961 miscls 0.999 (22.1s)
+      per class class_1:1.00 class_2:1.00 class_3:1.00 class_4:1.00 class_5:1.00
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o leave-one-object-out laws (in-sample) marg 0.968 worst 0.961 ccg 0.025 width 2.516 IS 2.636 cls-IS 4.077 miscls 0.983 (19.8s)
+      per class class_1:0.96 class_2:0.98 class_3:0.99 class_4:0.98 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT w/o scale normalization (absolute length) marg 0.979 worst 0.965 ccg 0.031 width 2.577 IS 2.680 cls-IS 3.994 miscls 0.986 (22.9s)
+      per class class_1:0.97 class_2:0.99 class_3:1.00 class_4:0.98 class_5:0.97
+ucr_ecg5000 h=40 alpha=0.05: GAMUT-cert (split certificate)     marg 0.973 worst 0.957 ccg 0.023 width 1.462 IS 1.609 cls-IS 2.961 miscls 0.972 (16.5s)
+      per class class_1:0.97 class_2:0.98 class_3:0.99 class_4:0.98 class_5:0.96
+ucr_ecg5000 h=40 alpha=0.05: KandinskyCP                        marg 0.949 worst 0.939 ccg 0.005 width 1.216 IS 1.508 cls-IS 2.861 miscls 0.943 (127.6s)
+      per class class_1:0.95 class_2:0.95 class_3:0.94 class_4:0.95 class_5:0.94
+ucr_ecg5000 h=40 alpha=0.05: MDCP                               marg 0.986 worst 0.924 ccg 0.030 width 1.658 IS 1.780 cls-IS 2.599 miscls 0.964 (49.5s)
+      per class class_1:0.99 class_2:0.99 class_3:0.97 class_4:0.98 class_5:0.92
+ucr_ecg5000 h=40 alpha=0.32: MDCP + C1                          marg 0.857 worst 0.719 ccg 0.138 width 0.724 IS 1.047 cls-IS 1.489 miscls 0.774 (52.6s)
+      per class class_1:0.83 class_2:0.90 class_3:0.79 class_4:0.85 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.32: MaxClassCP + C1                    marg 0.836 worst 0.726 ccg 0.127 width 0.758 IS 0.915 cls-IS 1.287 miscls 0.776 (0.3s)
+      per class class_1:0.83 class_2:0.85 class_3:0.83 class_4:0.79 class_5:0.73
+ucr_ecg5000 h=40 alpha=0.32: TwoStepCP + C1                     marg 0.826 worst 0.715 ccg 0.115 width 0.729 IS 0.894 cls-IS 1.262 miscls 0.763 (0.3s)
+      per class class_1:0.82 class_2:0.84 class_3:0.82 class_4:0.78 class_5:0.72
+ucr_ecg5000 h=40 alpha=0.05: MDCP + C1                          marg 0.989 worst 0.934 ccg 0.030 width 1.631 IS 1.758 cls-IS 2.531 miscls 0.967 (45.5s)
+      per class class_1:0.99 class_2:0.99 class_3:0.97 class_4:0.98 class_5:0.93
+ucr_ecg5000 h=40 alpha=0.05: MaxClassCP + C1                    marg 0.993 worst 0.951 ccg 0.033 width 2.369 IS 2.421 cls-IS 3.258 miscls 0.981 (0.2s)
+      per class class_1:0.99 class_2:0.99 class_3:0.99 class_4:0.99 class_5:0.95
+ucr_ecg5000 h=40 alpha=0.05: TwoStepCP + C1                     marg 0.993 worst 0.951 ccg 0.033 width 2.360 IS 2.414 cls-IS 3.249 miscls 0.980 (0.4s)
+      per class class_1:0.99 class_2:0.99 class_3:0.99 class_4:0.99 class_5:0.95

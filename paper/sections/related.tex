@@ -1,0 +1,26 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Conditional coverage.}
+Exact conditional coverage is impossible without assumptions \citep{vovk2012conditional,barber2021limits}.
+Group-conditional guarantees are attainable for groups defined by observed features.
+Methods include Mondrian conformal prediction \citep{vovk2005algorithmic}, multivalid calibration \citep{jung2023batch}, function-class guarantees \citep{gibbs2025conformal}, learned partitions \citep{kiyani2024conformal} and localisation \citep{guan2023localized}.
+Class-conditional prediction sets for classification use the label at calibration and test time alike \citep{sadinle2019least,ding2023class}.
+Equalised coverage needs the group attribute of the test point \citep{romano2020malice}.
+Our groups are latent at test time, which places the problem outside these frameworks (\cref{prop:gap}).
+
+\paragraph{Latent groups and multiple sources.}
+Kandinsky conformal prediction \citep{bairaktari2025kandinsky} covers groups with fractional membership $\P(Z\mid X,Y)$; it is exact when that posterior is known and searches its set over $y$.
+MDCP \citep{yang2026multi} takes a union over sources of per-source sets with max-$p$ aggregation.
+It learns $x$-dependent multipliers for coverage under \emph{every} source at \emph{every} $x$, treating the covariate density ratio as constant; its appendix gives the marginal per-source optimum, and its discussion leaves open how to exploit predicted membership with finite-sample guarantees, which \gamut-cert addresses for per-class coverage.
+Two-step CP \citep{timans2024adaptive} takes the largest class quantile within a conformal label set.
+Conformal prediction under label shift \citep{podkopaev2021distribution} or subpopulation shift \citep{wang2025conformal} reweights by class or domain probabilities for marginal or per-environment coverage, and posterior conformal prediction \citep{zhang2024posterior} conditions on mixture weights, not on the latent component.
+Mixture-of-experts sets are unions of expert intervals, valid asymptotically \citep{javanmard2022prediction}.
+CPTC \citep{sun2025conformal} combines state-conditioned forecasters with state-specific conformal sets and guarantees marginal coverage.
+Our C1 shares its use of a state-conditioned forecaster; C2 and C3, which deliver per-class validity, have no counterpart there.
+
+\paragraph{Shortest sets and level sets.}
+Density level sets are the shortest marginally valid sets \citep{lei2013distribution}; HPD-split conformalises them \citep{izbicki2022cd}, and set-valued classification \citep{sadinle2019least} is their classification analogue. \Cref{prop:oracle} adds one constraint per latent class, which turns the density into a dual-weighted posterior mixture.
+
+\paragraph{Forecasting transients.}
+Per-class forecasters score anomalies in transient surveys without coverage \citep{muthukrishna2022real}; FLARE \citep{sasli2026flare} and ASTRANet \citep{sasli2026astranet} calibrate by predicted class or anomaly stratum; conformal time-series forecasting \citep{stankeviciute2021conformal,gibbs2021adaptive} targets marginal or long-run coverage.
