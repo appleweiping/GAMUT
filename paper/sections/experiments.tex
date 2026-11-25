@@ -2,7 +2,7 @@
 \label{sec:exp}
 
 \paragraph{Benchmarks.}
-\emph{ZTF-BTS} is FLARE's public Bright Transient Survey benchmark \citep{perley2020bts,sasli2026flare}: 10,497 spectroscopically classified transients in six classes.
+\emph{ZTF-BTS} is FLARE's public Bright Transient Survey benchmark \citep{perley2020bts,sasli2026flare,sasli2026forecast}: the labelled pool contains 10,497 spectroscopically classified transients in six classes, of which 10,492 have at least one future target and enter the final benchmark.
 We use FLARE's prefix-causal features, its forecast target (magnitude relative to the brightest prefix detection, every later $g$/$r$ detection up to 90 days) and its five folds.
 \emph{PLAsTiCC-train} and \emph{PLAsTiCC-DDF} are the unblinded LSST simulation \citep{kessler2019models,hlozek2023results}.
 We use its training set (2,045 objects after FLARE's quality cut, 11 classes) and the deep-drilling objects of its first test chunk (8,686 objects, 9 classes; 8,681 remain after requiring a future target); their cadence and class balance differ.
@@ -13,11 +13,11 @@ Every benchmark uses five stratified folds and leave-one-fold-out cross-conforma
 A method is calibrated on the out-of-fold outputs of four folds and evaluated on the fifth, and the results of all folds are pooled.
 
 \paragraph{Models.}
-The classifier is FLARE's hierarchical model on ZTF and a class-weighted LightGBM elsewhere; the forecasters follow FLARE's recipe \citep{ke2017lightgbm} (L1 median and 2.5/16/84/97.5\% quantiles on the prefix features, lead time and band), and C1 appends the one-hot class. All models are cross-fitted (\cref{app:protocol}); every method uses the same outputs and only the calibration step differs.
+The classifier is FLARE's hierarchical model on ZTF and a class-weighted LightGBM elsewhere; the forecasters follow FLARE's recipe \citep{ke2017lightgbm} (L1 median and 2.5/16/84/97.5\% quantiles on the prefix features, lead time and band), and C1 appends the one-hot class. We keep the base classifier and point forecaster shared across methods, so GAMUT changes the uncertainty-calibration layer rather than the point-prediction model. All models are cross-fitted (\cref{app:protocol}); every method uses the same outputs and only the calibration step differs.
 
 \paragraph{Baselines.}
 We compare against 13 published methods.
-\emph{Deployed:} FLARE's Mondrian bands by predicted class, band and lead-time bin \citep{sasli2026flare}.
+\emph{Deployed:} FLARE's Mondrian bands by predicted class, band and lead-time bin \citep{sasli2026flare,sasli2026forecast}.
 \emph{Membership-blind:} split CP with normalised residuals \citep{lei2018distribution}, CQR \citep{romano2019conformalized} and DCP \citep{chernozhukov2021distributional}.
 \emph{Probability-conditioned:} localised CP in posterior space \citep{guan2023localized}, the label-shift mixture of class-wise score laws \citep{podkopaev2021distribution}, GCC with posterior features \citep{gibbs2025conformal}, learned-partition Mondrian CP \citep{kiyani2024conformal} and CPTC \citep{sun2025conformal}.
 \emph{Latent-class-valid:} two-step CP \citep{timans2024adaptive}, Kandinsky CP with a learned $\P(Z\mid X,Y)$ \citep{bairaktari2025kandinsky}, MDCP \citep{yang2026multi} and the max-class quantile \citep{barber2021limits}.
@@ -41,7 +41,7 @@ With tiny classes (PLAsTiCC-train, 30--40 calibration objects; ECG5000, about 19
 On the per-(class, horizon) quantity of \cref{eq:target}, two-step and max-class CP do better, leaving no (class, lead-time bin) cell significantly under-covered; MDCP does worse (\MainCellsMDCPSixtyeight{} and \MainCellsMDCPNinetyfive{} per setting), against \MainCellsGamutSixtyeight{} (68\%) and \MainCellsGamutNinetyfive{} (95\%) for \gamut{} and \MainCellsFlareSixtyeight{} and \MainCellsFlareNinetyfive{} for FLARE; On \gamut's own merged cells it leaves \MergedGamutSixtyeight{} and \MergedGamutNinetyfive{}, mostly rare PLAsTiCC classes with few objects per cell, and \gamut-cert \MergedCertSixtyeight{} and \MergedCertNinetyfive{}, as few as two-step CP (\cref{app:unfavourable}).
 \gamut's efficiency comes from using all calibration data, without a finite-sample guarantee; \gamut-cert, run under the same cross-fitted protocol, is \MainWidthCertSixtyeight{} and \MainWidthCertNinetyfive{} times FLARE's, about as wide as two-step CP at 68\% and wider than MDCP at 95\%.
 \paragraph{Held-out benchmark.}
-As some design choices followed test results (\cref{app:history}), we pre-registered one run on unseen data with frozen code: the wide-fast-deep objects of PLAsTiCC test chunk 02 (20,763 objects, 12 classes; \cref{app:held}).
+As some design choices followed test results (\cref{app:history}), we pre-registered one run on unseen data with frozen code: the wide-fast-deep objects of PLAsTiCC test chunk 02 (20,763 raw objects; 20,760 have a future point at the earliest origin; 12 classes; \cref{app:held}).
 FLARE under-covers a class at every origin (worst \HeldWorstFlareSixtyeight{} at 68\%); \gamut{} passes the bootstrap test at all origins and levels, with bands \HeldWidthGamutSixtyeight{} (68\%) and \HeldWidthGamutNinetyfive{} (95\%) times FLARE's.
 A second untouched set (chunk 03; \cref{app:held}) confirms this: \gamut{} is valid at every origin and level with bands \HeldBWidthGamutSixtyeight{} and \HeldBWidthGamutNinetyfive{} times FLARE's, and FLARE at none.
 Two-step CP, MDCP and max-class CP need \HeldWidthValidSixtyeight{} and \HeldWidthValidNinetyfive{} times on chunk 02; at 95\% MDCP is narrower than \gamut{}, and two-step and max-class CP leave no (class, lead-time bin) cell under-covered, against \HeldCellsGamutNinetyfive{} per setting for \gamut{}.
