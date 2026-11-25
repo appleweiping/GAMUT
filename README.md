@@ -377,10 +377,10 @@ cd paper && pdflatex main && bibtex main && pdflatex main && pdflatex main
 
 ```bibtex
 @misc{gamut2026,
-  title  = {Forecast Bands Valid for Every Latent Class},
-  author = {Anonymous},
+  title  = {Class-Conditional Forecast Bands Under Type Uncertainty},
+  author = {Yan, Weiping},
   year   = {2026},
-  note   = {GAMUT: Guarantees for All Members Under Type uncertainty. Code: https://github.com/appleweiping/GAMUT}
+  note   = {Manuscript and code: https://github.com/appleweiping/GAMUT}
 }
 ```
 
