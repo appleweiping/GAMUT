@@ -950,7 +950,7 @@ def held_table(R, M):
 def held2_table(R, M):
     """Second pre-registered held-out confirmation (PLAsTiCC-WFD, test chunk 03): the summary of tab:main for that benchmark alone."""
     rows = []
-    for key, disp, fam in BASE + [(OURS[0], OURS[1], "ours"), ("GAMUT-Q", "\central-interval ablation", "q"), ("GAMUT-cert (split certificate)", "\\gamut{} (strict split; certificate)", "ours2"),
+    for key, disp, fam in BASE + [(OURS[0], OURS[1], "ours"), ("GAMUT-Q", "central-interval ablation", "q"), ("GAMUT-cert (split certificate)", "\\gamut{} (strict split; certificate)", "ours2"),
                                   (ORACLE[0], ORACLE[1], "oracle")]:
         cells = []
         for a in LEVELS:
