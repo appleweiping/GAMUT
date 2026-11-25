@@ -57,7 +57,7 @@ We therefore temperature-scale the classifier \citep{guo2017calibration}: $\hat 
 The classifier estimates $\P(Z=c\mid x_0)$, not $p_c(x)$ under $Q_b$, which also conditions on the lead time and on a point being observed.
 If the two differ by class-level factors, $Q_b(Z=c\mid x)\propto\P(Z=c\mid x_0)\,a_{c,b}$, then the per-bin dual weights absorb the $a_{c,b}$, up to an input-dependent normalisation that changes the effective length weight.
 Without this assumption \gamut{} only approximates the oracle.
-Either way the posterior's error affects the width of the band, not the validity of \gamut-cert (\cref{thm:valid}).
+Either way the posterior's error affects the width of the band, not the validity of the strict-split GAMUT protocol (\cref{thm:valid}).
 
 \paragraph{C3: dual-weighted level-set calibration.}
 For weights $v$ let $s_v(x,y)=\bar\sigma(x)\sum_c v_{c}\hat p_c(x)\hat f_c(y\mid x)$.
