@@ -1,5 +1,8 @@
-\section{Conclusion}
-\label{sec:conclusion}
+\\section{Conclusion}
+\\label{sec:conclusion}
 
-Calibrating by predicted type or its probabilities under-covers rare latent types; \gamut{} estimates the shortest band covering every type and horizon, a dual-weighted posterior mixture, and a split variant adds a finite-sample guarantee.
-It removes FLARE's rare-class under-coverage on ZTF, also under a strict split and on two held-out sets; over the main benchmarks its bands are \MainWidthGamutSixtyeight{} (68\%) and \MainWidthGamutNinetyfive{} (95\%) times FLARE's, against \MainWidthValidBaselinesSixtyeight{} and \MainWidthValidBaselinesNinetyfive{} for always-valid baselines. The default carries no guarantee.
+Calibrating by the predicted type or its probabilities can under-cover rare latent types when the class is uncertain at prediction time.
+\\gamut{} estimates a scale-weighted band from class-conditional forecast distributions, classifier probabilities, and dual-weighted conformal calibration, while \\gamut-cert{} supplies a finite-sample guarantee for eligible class--horizon cells under a strict split.
+On ZTF, the method substantially improves the rare-class coverage problem in the reported settings, including the strict split and two held-out sets, with bands \\MainWidthGamutSixtyeight{} (68\\%) and \\MainWidthGamutNinetyfive{} (95\\%) times FLARE's and shorter bands than the always-valid baselines on average.
+The default \\gamut{} is an empirical method because it reuses calibration data; the certificate belongs to \\gamut-cert{} and depends on having enough certification objects in each eligible cell.
+The bands can become wider for very small classes at 95\\%, and the closure study's main gain comes from the learned next-point law, while the additional benefit from class conditioning is smaller and not uniform across rare classes.
