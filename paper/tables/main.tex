@@ -1,6 +1,6 @@
 \begin{table*}[t]
 \centering
-\caption{Summary over the six main benchmarks and all forecast origins (20 settings per level). \emph{Valid}: percentage of settings in which no class is significantly under-covered (object-level bootstrap, 95\% upper bound below nominal). \emph{Worst}: mean over settings of the worst-class coverage. \emph{CCG}: mean absolute class-coverage gap. \emph{Cells}: mean number of (class, lead-time bin) cells per setting whose object-level coverage is significantly below nominal (bootstrap). \emph{Width}: mean band length relative to FLARE's. Families from top: membership-blind, probability-conditioned, latent-class-valid, and the latter given our hypothesis-conditional forecaster (+\,C1). \gamut-cert is the split variant whose finite-sample guarantee (\cref{thm:valid}) needs a strict split; here it is run under the same cross-fitted protocol as every method. The true-class Mondrian reference needs the test object's class.}
+\caption{Summary over the six main benchmarks and all forecast origins (20 settings per level). \emph{Valid}: percentage of settings in which no class is significantly under-covered (object-level bootstrap, 95\% upper bound below nominal). \emph{Worst}: mean over settings of the worst-class coverage. \emph{CCG}: mean absolute class-coverage gap. \emph{Cells}: mean number of (class, lead-time bin) cells per setting whose object-level coverage is significantly below nominal (bootstrap). \emph{Width}: mean band length relative to FLARE's. Families from top: membership-blind, probability-conditioned, latent-class-valid, and the latter given our hypothesis-conditional forecaster (+\,C1). The split-calibration row is the same GAMUT method with nuisance quantities fit on an auxiliary calibration split; under this cross-fitted evaluation it is empirical and does not invoke \cref{thm:valid}. The finite-sample guarantee is reported only for the strict protocol in \cref{tab:strict}. The true-class Mondrian reference needs the test object's class.}
 \label{tab:main}
 \small
 \setlength{\tabcolsep}{5pt}
@@ -32,7 +32,7 @@ MDCP + C1 & 100 & 0.702 & 0.141 & 2.5 & 1.73 & 100 & 0.949 & 0.030 & 1.6 & 1.54 
 Max-class CP + C1 & 100 & 0.751 & 0.174 & 0.0 & 1.96 & 100 & 0.968 & 0.036 & 0.0 & 2.22 \\
 \midrule
 \rowcolor{gray!12}\gamut{} (ours) & 100 & 0.671 & 0.014 & 0.2 & 1.09 & 90 & 0.949 & 0.012 & 0.8 & 1.36 \\
-\gamut-cert (split certificate) & 100 & 0.745 & 0.096 & 0.0 & 1.47 & 100 & 0.968 & 0.028 & 0.1 & 1.62 \\
+\gamut{} (split calibration) & 100 & 0.745 & 0.096 & 0.0 & 1.47 & 100 & 0.968 & 0.028 & 0.1 & 1.62 \\
 \textcolor{gray}{True-class Mondrian (reference)} & 85 & 0.633 & 0.008 & 1.6 & 1.00 & 90 & 0.926 & 0.004 & 0.2 & 1.02 \\
 \bottomrule
 \end{tabular}}
