@@ -29,7 +29,7 @@ def chips(ax,x,y,w,h,names,colors,fs=6.2):
     for i,(n,c) in enumerate(zip(names,colors)):
         xx=x+i*(cw+gap); ax.add_patch(FancyBboxPatch((xx,y),cw,h,boxstyle='round,pad=.004,rounding_size=.006',lw=.75,edgecolor=c,facecolor=WHITE))
         ax.text(xx+cw/2,y+h/2,n,fontsize=fs,ha='center',va='center')
-classes=['SN Ia','SN CC','SLSN','AGN','TDE','CV']; ccol=[BLUE,BLUE,ORANGE,AQUA,ORANGE,AQUA]
+classes=['SN Ia','CC SN','SLSN','AGN','TDE','CV']; ccol=[BLUE,BLUE,ORANGE,AQUA,ORANGE,AQUA]
 
 # A. Real motivation panel and protocol input.
 ax=axes[0]; header(ax,'A. Observed prefix & type uncertainty','ZTF-BTS / FLARE folds')
