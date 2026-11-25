@@ -47,7 +47,7 @@ The default \gamut{} reuses the calibration data and approximates the oracle; we
 (ii) The oracle form of the shortest scale-weighted band under one coverage constraint per class and horizon, together with GAMUT, a three-component method that estimates this oracle. The finite-sample guarantee is obtained by running the same method under its strict-split protocol.
 (iii) A benchmark suite for latent-class forecasting (ZTF-BTS with FLARE's folds, PLAsTiCC train and deep-drilling sets, three UCR archives, a synthetic family) with a pre-registered held-out set and a strict split on ZTF.
 (iv) A learned next-point simulation of FLARE's closure probability, recalibrated by Venn--Abers.
-We compare against 13 published methods, at every forecast origin and at both levels.
+We compare against 13 external baselines, at every forecast origin and at both levels.
 On ZTF, two-step, multi-distribution and max-class conformal prediction also leave no class under-covered, but their bands are \ZTFValidOverFlareSixtyeight{} (68\%) and \ZTFValidOverFlareNinetyfive{} (95\%) longer than FLARE's.
 \gamut{} achieves the same with bands \ZTFWidthRatioSixtyeight{} and \ZTFWidthRatioNinetyfive{} times as long as FLARE's (\StrictWidthGamutSixtyeight{} and \StrictWidthGamutNinetyfive{} under a strict split).
 In the synthetic family, the same three baselines are \SynValidOverGamutSixtyeight{} (68\%) and \SynValidOverGamutNinetyfive{} (95\%) longer than \gamut{}.
