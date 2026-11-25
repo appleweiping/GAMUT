@@ -1,4 +1,4 @@
-"""GAMUT-Q, the interval-score variant of GAMUT (registered in refine-logs/EXPERIMENT_PLAN.md before implementation).
+"""central-interval ablation, the interval-score variant of GAMUT (registered in the preregistered experiment plan before implementation).
 Kept in its own module so that gamut/methods.py stays byte-identical to the code frozen for the held-out runs."""
 from __future__ import annotations
 
@@ -10,14 +10,14 @@ from .methods import (DIAG, EGRID, _apply_temperature, _class_thresholds, _horiz
 
 def gamut_q(task, cal, test, alpha, crc=False, n_iter=100, min_bin=150, bw_mult=2.0, unit="object", finite=True,
             prune=1e-3, seed=0, **_):
-    """GAMUT-Q: the interval-score variant (registered in refine-logs/EXPERIMENT_PLAN.md before implementation).
+    """central-interval ablation: the interval-score variant (registered in the preregistered experiment plan before implementation).
 
     Same C1 (hypothesis-conditional forecaster with per-(class, lead-bin) kernel residual laws), C2 (temperature-scaled
     posterior) and C3 (dual fixed point equalising per-class object-level CRC thresholds, adaptive horizon cells) as
     GAMUT; only the score differs: s_v(x, y) = min(F_v(y|x), 1 - F_v(y|x)) with F_v the CDF of the dual-weighted
     posterior mixture sum_c v_c p_c(x) F_c(y|x) / sum_c v_c p_c(x). The band is the central interval
     [F_v^{-1}(t), F_v^{-1}(1 - t)]: a single interval whose misses split between the tails, which is what the interval
-    score rewards. crc=True: weights and laws on half A, thresholds on half B (the certificate of Thm. 4 applies, since
+    score rewards. crc=True: weights and laws on half A, thresholds on half B (the certificate of the strict-split guarantee applies, since
     the score is again monotone in t)."""
     K = task.K; nb = int(task.lead_bin.max()) + 1
     cal_objs = np.unique(task.obj[cal])
@@ -113,4 +113,4 @@ def gamut_q(task, cal, test, alpha, crc=False, n_iter=100, min_bin=150, bw_mult=
     return cov, lo, hi, length
 
 
-VARIANTS = {"GAMUT-Q": gamut_q}
+VARIANTS = {"central-interval ablation": gamut_q}
