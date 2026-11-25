@@ -17,7 +17,7 @@ RES = ROOT / "results"; PAPER = ROOT / "paper"
 MAIN = ["ztf", "plasticc_train", "plasticc_ddf", "ucr_starlightcurves", "ucr_ecg5000", "ucr_electricdevices"]
 APPX = ["ucr_wafer"]
 HELD = ["plasticc_wfd"]          # pre-registered held-out set (review round 4); never used for design
-HELD2 = ["plasticc_wfd03"]       # second held-out set (registered for GAMUT-Q); also a second confirmation of GAMUT
+HELD2 = ["plasticc_wfd03"]       # second held-out set (registered for the interval-score ablation); also a second confirmation of GAMUT
 SYN = ["synthetic_k1", "synthetic_k0.5", "synthetic_k2"]
 BNAME = {"ztf": "ZTF-BTS", "plasticc_train": "PLAsTiCC-train", "plasticc_ddf": "PLAsTiCC-DDF",
          "ucr_starlightcurves": "StarLight", "ucr_ecg5000": "ECG5000", "ucr_electricdevices": "ElecDevices",
