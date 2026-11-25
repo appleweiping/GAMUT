@@ -181,7 +181,7 @@ are selected on nested validation folds only.
 | Synthetic family with known laws | Check Prop. 1 against the truth; distance to the oracle band of Prop. 2 |
 | Ablations (12 variants) | Contribution of C1, C2, C3, leave-one-object-out laws, horizon cells, scale normalisation, units |
 | Hyperparameter analysis on validation folds | Sensitivity of pooling size, bandwidth, pruning and dual iterations |
-| Strict three-way split, ZTF, all origins | The only protocol that meets Thm. 4's premise |
+| Strict three-way split, ZTF, all origins | The only protocol that meets the strict-split guarantee's premise |
 | Pre-registered held-out PLAsTiCC-WFD | Guard against design choices that followed test results |
 | Runtime | Cost per fold |
 | Closure probability (pre-registered) | FLARE's second open problem ([Section 8](#8-second-open-problem-the-closure-probability)) |
