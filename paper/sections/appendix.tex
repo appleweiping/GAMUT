@@ -5,7 +5,7 @@
 \input{tables/bench}
 
 \paragraph{ZTF-BTS.}
-The objects, classes, light curves and catalogue context are those of FLARE's public benchmark \citep{sasli2026flare}.
+The objects, classes, light curves and catalogue context are those of FLARE's public benchmark \\citep{sasli2026flare,sasli2026forecast}.
 For each origin $h\in\{5,10,15,20,30\}$ days after the first detection, the input is FLARE's prefix-causal feature vector computed on the detections up to $h$, exactly the inference path of FLARE's forecaster.
 The targets are all later $g$- or $r$-band detections with $h<t\le90$ days, as AB magnitude relative to the brightest prefix detection.
 Folds are FLARE's: \texttt{StratifiedKFold(5, shuffle, seed 42)} over the pool in the order train, val, test.
