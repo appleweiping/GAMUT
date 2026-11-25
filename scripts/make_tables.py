@@ -837,7 +837,7 @@ def extra_analysis_macros(M):
 
 
 def gamutq_macros(R, M):
-    """GAMUT-Q (registered interval-score variant): development on the main benchmarks, confirmation on chunk 03."""
+    """central-interval ablation (registered interval-score analysis): development on the main benchmarks, confirmation on chunk 03."""
     for a, tag in ((0.32, "Sixtyeight"), (0.05, "Ninetyfive")):
         g = agg(R, MAIN, "GAMUT-Q", a)
         if g:
@@ -868,7 +868,7 @@ def sensitivity_macros(R, M):
 
 
 def plan_table(M):
-    """Outcome of every claim and block registered in refine-logs/EXPERIMENT_PLAN.md (main plan)."""
+    """Outcome of every claim and block registered in the preregistered experiment plan (main plan)."""
     f = RES / "is_bootstrap.json"
     if f.exists():
         d = json.loads(f.read_text())
@@ -894,7 +894,7 @@ def plan_table(M):
          f"Run after review (\\texttt{{scripts/is\\_bootstrap.py}}): significantly better in {g('ISBetterSixtyeight')}/{g('ISBetterNinetyfive')}, worse in {g('ISWorseSixtyeight')}/{g('ISWorseNinetyfive')}"),
         ("B4 grid", "Bandwidth $\\times\\{0.5,1,2\\}$ and other hyperparameters on validation folds",
          "Run with bandwidth $\\times\\{1,2,4\\}$ (the default moved to $\\times2$), plus dual iterations and fixed lead bins; the other registered values as planned"),
-        ("GAMUT-Q (registered after review)", "Valid at every origin and level of PLAsTiCC chunk 03 and lower class-averaged IS than every valid baseline in most settings",
+        ("central-interval ablation (not adopted)", "Valid at every origin and level of PLAsTiCC chunk 03 and lower class-averaged IS than every valid baseline in most settings",
          f"Not met: valid in {g('QHeldValidSixtyeight')} and {g('QHeldValidNinetyfive')} of the chunk-03 settings, IS better/worse in {g('QHeldISSixtyeight')} and {g('QHeldISNinetyfive')}; not adopted"),
         ("B0, B2, B3, B5, B7, B8", "Observation, ablations, synthetic, per-horizon curves, runtime, closure probability",
          "Run as registered (B8 with its own registration, \\cref{app:closure})"),
@@ -950,7 +950,7 @@ def held_table(R, M):
 def held2_table(R, M):
     """Pre-registered held-out benchmark (PLAsTiCC-WFD, test chunk 02): the summary of tab:main for that benchmark alone."""
     rows = []
-    for key, disp, fam in BASE + [(OURS[0], OURS[1], "ours"), ("GAMUT-Q", "\\gamut-Q (interval-score variant)", "q"), ("GAMUT-cert (split certificate)", "\\gamut-cert (split certificate)", "ours2"),
+    for key, disp, fam in BASE + [(OURS[0], OURS[1], "ours"), ("GAMUT-Q", "\central-interval ablation", "q"), ("GAMUT-cert (split certificate)", "\\gamut-cert (split certificate)", "ours2"),
                                   (ORACLE[0], ORACLE[1], "oracle")]:
         cells = []
         for a in LEVELS:
