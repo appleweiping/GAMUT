@@ -2,8 +2,8 @@
 \label{sec:conclusion}
 
 Calibrating by the predicted type or its probabilities can under-cover rare latent types when the class is uncertain at prediction time.
-\gamut{} estimates a scale-weighted band from class-conditional forecast distributions, classifier probabilities, and dual-weighted conformal calibration, while \gamut-cert{} supplies a finite-sample guarantee for eligible class--horizon cells under a strict split.
+GAMUT estimates a scale-weighted band from class-conditional forecast distributions, classifier probabilities, and dual-weighted conformal calibration. The same method supplies a finite-sample guarantee for eligible class--horizon cells when it is fitted under the strict-split protocol labeled \gamut-cert{}.
 On ZTF, \gamut{} improves rare-class coverage in the reported settings, including the strict split, and both held-out PLAsTiCC sets pass the reported bootstrap validity test at every origin and level.
 Across the main benchmark settings, the bands are \MainWidthGamutSixtyeight{} (68\%) and \MainWidthGamutNinetyfive{} (95\%) times FLARE's on average, with the expected width trade-off for small classes at 95\%.
-The default \gamut{} is an empirical method because it reuses calibration data; the certificate belongs to \gamut-cert{} and depends on having enough certification objects in each eligible cell.
+The default cross-fitted GAMUT protocol is empirical because it reuses calibration data. The certificate is obtained only under the strict-split protocol and depends on having enough certification objects in each eligible cell.
 The closure study's main gain comes from the learned next-point law, while the additional benefit from class conditioning is smaller and not uniform across rare classes.
