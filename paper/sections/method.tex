@@ -114,7 +114,7 @@ Calibration and prediction take \RuntimeGamutZTF{} seconds per fold on ZTF (\cre
 \subsection{Guarantees}
 \label{sec:theory}
 
-\begin{theorem}[finite-sample class validity of \gamut-cert]
+\begin{theorem}[finite-sample class validity under the strict GAMUT protocol]
 \label{thm:valid}
 Assume the classifier and forecasters are trained on objects disjoint from the calibration and test objects.
 Assume also that, within each class, the calibration objects and the test object are exchangeable.
@@ -135,4 +135,4 @@ A uniform-convergence bound is given in \cref{app:proofs}, but its constants are
 We therefore check validity empirically.
 Every method in the main experiments uses cross-fitted base models (FLARE's protocol), whose training data include the test fold.
 This places them outside \cref{thm:valid} \citep{barber2021predictive}.
-A strict three-way split on ZTF, with disjoint training, calibration and test objects, is reported in \cref{app:cert}.
+A strict three-way split on ZTF, with disjoint training, calibration and test objects, is reported in \cref{app:cert}. In the tables, we call this strict-split evaluation \gamut-cert{}; it is the same GAMUT method under a different fitting protocol.
