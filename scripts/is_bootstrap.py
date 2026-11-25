@@ -6,6 +6,7 @@ one with the lowest class-averaged interval score is the comparator. Objects are
 resamples, seeded per setting); the statistic is the ratio of class-averaged interval scores GAMUT / comparator.
 Output: results/is_bootstrap.json
 Run: python scripts/is_bootstrap.py [--method GAMUT-Q] [--benches plasticc_wfd03] [--out results/is_bootstrap_q.json]
+(GAMUT-Q is the legacy result key for the central-interval ablation.)
 """
 from __future__ import annotations
 
