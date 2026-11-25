@@ -1,6 +1,6 @@
 \begin{table*}[t]
 \centering
-\caption{Summary over the six main benchmarks and all forecast origins (20 settings per level). \emph{Valid}: percentage of settings in which no class is significantly under-covered (object-level bootstrap, 95\% upper bound below nominal). \emph{Worst}: mean over settings of the worst-class coverage. \emph{CCG}: mean absolute class-coverage gap. \emph{Cells}: mean number of (class, lead-time bin) cells per setting whose object-level coverage is significantly below nominal (bootstrap). \emph{Width}: mean band length relative to FLARE's. Families from top: membership-blind, probability-conditioned, latent-class-valid, and the latter given our hypothesis-conditional forecaster (+\,C1). The split-calibration row is the same GAMUT method with nuisance quantities fit on an auxiliary calibration split; under this cross-fitted evaluation it is empirical and does not make a theorem-level guarantee. The finite-sample guarantee is reported only for the strict protocol in \cref{tab:strict}. The true-class Mondrian reference needs the test object's class.}
+\caption{Aggregate performance across the six main benchmarks and all forecast origins (20 settings per nominal level). \emph{Valid}: percentage of settings with no significantly under-covered class (95\% object-level bootstrap upper bound $\ge 1-\alpha$). \emph{Worst}: mean worst-class coverage across settings. \emph{CCG}: mean absolute class-coverage gap. \emph{Cells}: mean number of significantly under-covered (class, lead-time bin) cells per setting. \emph{Width}: mean band length relative to deployed FLARE. Rows are grouped into deployed/membership-blind, probability-conditioned, latent-class-valid, controlled \emph{+\,C1} variants, and \gamut{}. Boldface highlights the best metric among methods achieving $\ge90\%$ empirical class validity at that level. Under this cross-fitted protocol, \emph{\gamut{} (split calibration)} is empirical; formal finite-sample certification requires the strict split in \cref{tab:strictsum,tab:strict}.}
 \label{tab:main}
 \small
 \setlength{\tabcolsep}{5pt}
@@ -22,17 +22,17 @@ GCC ($p$) & 20 & 0.563 & 0.042 & 11.9 & 1.00 & 15 & 0.879 & 0.021 & 8.9 & 0.98 \
 Learned partition & 30 & 0.563 & 0.039 & 9.2 & 1.01 & 25 & 0.883 & 0.020 & 6.8 & 1.00 \\
 CPTC & 35 & 0.585 & 0.038 & 5.8 & 1.01 & 80 & 0.922 & 0.017 & 1.1 & 1.17 \\
 \midrule
-Two-step CP & 100 & 0.700 & 0.104 & 0.0 & 1.48 & 100 & 0.956 & 0.025 & 0.0 & 1.84 \\
+Two-step CP & \textbf{100} & 0.700 & 0.104 & \textbf{0.0} & 1.48 & \textbf{100} & 0.956 & 0.025 & \textbf{0.0} & 1.84 \\
 Kandinsky CP & 70 & 0.615 & 0.021 & 7.5 & 1.07 & 55 & 0.917 & 0.010 & 4.8 & 1.10 \\
-MDCP & 100 & 0.705 & 0.130 & 1.8 & 1.62 & 100 & 0.948 & 0.028 & 1.9 & 1.49 \\
-Max-class CP & 100 & 0.704 & 0.121 & 0.0 & 1.55 & 100 & 0.958 & 0.030 & 0.0 & 2.61 \\
+MDCP & \textbf{100} & 0.705 & 0.130 & 1.8 & 1.62 & \textbf{100} & 0.948 & 0.028 & 1.9 & 1.49 \\
+Max-class CP & \textbf{100} & 0.704 & 0.121 & \textbf{0.0} & 1.55 & \textbf{100} & 0.958 & 0.030 & \textbf{0.0} & 2.61 \\
 \midrule
-Two-step CP + C1 & 100 & 0.734 & 0.135 & 0.0 & 1.70 & 100 & 0.962 & 0.029 & 0.0 & 1.75 \\
-MDCP + C1 & 100 & 0.702 & 0.141 & 2.5 & 1.73 & 100 & 0.949 & 0.030 & 1.6 & 1.54 \\
-Max-class CP + C1 & 100 & 0.751 & 0.174 & 0.0 & 1.96 & 100 & 0.968 & 0.036 & 0.0 & 2.22 \\
+Two-step CP + C1 & \textbf{100} & 0.734 & 0.135 & \textbf{0.0} & 1.70 & \textbf{100} & 0.962 & 0.029 & \textbf{0.0} & 1.75 \\
+MDCP + C1 & \textbf{100} & 0.702 & 0.141 & 2.5 & 1.73 & \textbf{100} & 0.949 & 0.030 & 1.6 & 1.54 \\
+Max-class CP + C1 & \textbf{100} & \textbf{0.751} & 0.174 & \textbf{0.0} & 1.96 & \textbf{100} & \textbf{0.968} & 0.036 & \textbf{0.0} & 2.22 \\
 \midrule
-\rowcolor{gray!12}\gamut{} (ours) & 100 & 0.671 & 0.014 & 0.2 & 1.09 & 90 & 0.949 & 0.012 & 0.8 & 1.36 \\
-\gamut{} (split calibration) & 100 & 0.745 & 0.096 & 0.0 & 1.47 & 100 & 0.968 & 0.028 & 0.1 & 1.62 \\
+\rowcolor{gray!12}\gamut{} (ours) & \textbf{100} & 0.671 & \textbf{0.014} & 0.2 & \textbf{1.09} & 90 & 0.949 & \textbf{0.012} & 0.8 & \textbf{1.36} \\
+\gamut{} (split calibration) & \textbf{100} & 0.745 & 0.096 & \textbf{0.0} & 1.47 & \textbf{100} & \textbf{0.968} & 0.028 & 0.1 & 1.62 \\
 \textcolor{gray}{True-class Mondrian (reference)} & 85 & 0.633 & 0.008 & 1.6 & 1.00 & 90 & 0.926 & 0.004 & 0.2 & 1.02 \\
 \bottomrule
 \end{tabular}}

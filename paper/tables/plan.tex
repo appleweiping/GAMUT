@@ -1,23 +1,25 @@
-{\scriptsize
-\begin{longtable}{p{1.6cm}p{4.2cm}p{9.2cm}}
-\caption{Every claim and block registered in the experiment plan, with its outcome.}
+\begingroup
+\scriptsize
+\begin{longtable}{p{2.5cm}p{4.2cm}p{8.3cm}}
+\caption{Audit of hypotheses and evaluation protocols registered in the initial study plan prior to main benchmark execution.}
 \label{tab:plan}\\
 \toprule
-Registered & Criterion & Outcome \\
+Registered item & Pre-registered criterion & Empirical outcome \\
 \midrule
 \endfirsthead
 \toprule
-Registered & Criterion & Outcome \\
+Registered item & Pre-registered criterion & Empirical outcome \\
 \midrule
 \endhead
-C1 validity & Worst class $\ge$ nominal $-0.02$/$-0.015$ on $\ge$6 benchmarks at every origin & Not met as registered: 85\% (68\%) and 90\% (95\%) of settings under this tolerance; 100\% and 90\% under the bootstrap rule used in the text \\
-C2 efficiency & Smallest class-averaged IS and width among valid methods on $\ge$6 benchmarks & Not met: lowest class-averaged IS in 3/20 and 5/20 settings; paired bootstrap significantly better in 3/20 and 5/20, worse in 13/20 and 14/20. Width: shorter than the always-valid baselines by 27\% (68\%) and 20\% (95\%) on average, but wider than MDCP in 7/20 settings at 95\% \\
-C3 components & Removing any of C1/C2/C3 degrades validity or IS on most benchmarks & Met for C2 and C3 (validity or width, \cref{tab:ablation}); not met for C1 on the real benchmarks (+3--4\% width, validity at 95\% 90\% $\to$ 85\%), met on the synthetic family \\
-C4 theory & Synthetic: observed gap matches Prop.~1; \gamut{} near the oracle length & Met: Prop.~1 within 0.026; \gamut{} 2.3\%/7.5\% longer than the oracle band \\
-C5 robustness & Coverage under degraded posteriors, prior shift, small calibration sets & Partly run: posterior temperature distortion (synthetic $\kappa$) only. Label-noise posteriors, calibration subsampling and the train$\to$DDF prior shift (block B6) were not run; the strict split and the held-out set were added instead \\
-B1 paired IS test & Paired object-level bootstrap of class-averaged IS vs the best valid baseline & Run (\texttt{scripts/is\_bootstrap.py}): significantly better in 3/20/5/20, worse in 13/20/14/20 \\
-B4 grid & Bandwidth $\times\{0.5,1,2\}$ and other hyperparameters on validation folds & Run with bandwidth $\times\{1,2,4\}$ (the default moved to $\times2$), plus dual iterations and fixed lead bins; the other registered values as planned \\
-central-interval ablation (not adopted) & Valid at every origin and level of PLAsTiCC chunk 03 and lower class-averaged IS than every valid baseline in most settings & Not met: valid in 100\% and 33\% of the chunk-03 settings, IS better/worse in 3/0 and 1/2; not adopted \\
-B0, B2, B3, B5, B7, B8 & Observation, ablations, synthetic, per-horizon curves, runtime, closure probability & Run as registered (B8 with its own registration, \cref{app:closure}) \\
+Goal 1: Class validity & Worst class $\ge$ nominal $-0.02$/$-0.015$ on $\ge$6 benchmarks at every origin & Not met under fixed tolerance: 85\% (68\%) and 90\% (95\%) of settings pass; 100\% and 90\% pass under the object-level bootstrap rule (\cref{tab:validity}) \\
+Goal 2: Efficiency & Lowest class-averaged IS and width among valid methods on $\ge$6 benchmarks & Partly met: lowest class-averaged IS among all valid methods in 3/20 and 5/20 settings (paired bootstrap better in 3/20 and 5/20, worse in 13/20 and 14/20). On width: shorter than always-valid baselines by 27\% (68\%) and 20\% (95\%) on average, though wider than MDCP in 7/20 settings at 95\% \\
+Goal 3: Module necessity & Removing any of \textbf{C1}/\textbf{C2}/\textbf{C3} degrades validity or efficiency on most benchmarks & Met for \textbf{C2} and \textbf{C3} (\cref{tab:ablation}); modest on real benchmarks for \textbf{C1} (+3--4\% width, 95\% validity 90\% $\to$ 85\%), strongly met on the synthetic suite \\
+Goal 4: Theory match & Synthetic coverage gap matches \cref{prop:gap}; \gamut{} approaches oracle length & Met: \cref{prop:gap} accurate within 0.026; \gamut{} within 2.3\% (68\%) and 7.5\% (95\%) of the population oracle band \\
+Goal 5: Robustness & Coverage under distorted posteriors, prior shift, and small calibration sets & Partly executed: synthetic posterior distortion ($\kappa\in\{0.5,1,2\}$) completed; label-noise perturbations, subsampling curves, and train$\to$DDF transfer were replaced by the strict ZTF split and two untouched WFD benchmarks \\
+Paired IS test & Paired object-level bootstrap of class-averaged IS vs.\ single best valid baseline & Executed: significantly lower in 3/20 (68\%) and 5/20 (95\%) settings, higher in 13/20 and 14/20; head-to-head wins vs.\ each always-valid baseline reported in \cref{app:unfavourable} \\
+Validation grid & Kernel bandwidth $\times\{0.5,1,2\}$ and auxiliary hyperparameters on validation folds & Executed on nested validation folds with bandwidth $\times\{1,2,4\}$ (selecting $\times2$), dual iteration counts, and fixed vs.\ merged lead-time bins (\cref{tab:hyper}) \\
+Central-interval check & Valid across PLAsTiCC chunk 03 with lower class-averaged IS than valid baselines & Not met: valid in 100\% (68\%) and 33\% (95\%) of chunk-03 settings, IS wins/losses 3/0 and 1/2; superlevel sets retained (\cref{app:held}) \\
+Auxiliary studies & ZTF diagnosis, ablations, synthetic suite, horizon curves, runtime, set closure & Completed as planned (set-closure study pre-registered separately in \cref{app:closure}) \\
 \bottomrule
-\end{longtable}}
+\end{longtable}
+\par\endgroup

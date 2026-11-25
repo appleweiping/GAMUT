@@ -1,83 +1,58 @@
-\section{Proofs}
+\section{Proofs and Theoretical Details}
 \label{app:proofs}
 
-Throughout, $(X,Z,Y)$ is drawn from one of the laws $Q_b$ of \cref{sec:setup}.
-For a band $C$ we write $M=\one\{Y\notin C(X)\}$, $m(x)=\P(M=1\mid X=x)$, $m_c(x)=\P(M=1\mid X=x,Z=c)$ and $p_c(x)=\P(Z=c\mid X=x)$.
+Throughout, $(X,Z,Y)$ is drawn from one of the cell laws $Q_b$ defined in \cref{sec:setup}.
+For any prediction band $C$, we write $M=\one\{Y\notin C(X)\}$, $m(x)=\P(M=1\mid X=x)$, $m_c(x)=\P(M=1\mid X=x,Z=c)$, and $p_c(x)=\P(Z=c\mid X=x)$.
 
 \paragraph{Proof of \cref{prop:gap}.}
 By the tower property, $\P(M=1,Z=c)=\E[\E(\one\{Z=c\}M\mid X)]=\E[p_c(X)m_c(X)]$ and $\E[p_c(X)M]=\E[p_c(X)m(X)]$.
-Subtracting and dividing by $\pi_c$ gives \cref{eq:gap}.
-Moreover $\Cov(\one\{Z=c\},M\mid X)=\E[\one\{Z=c\}M\mid X]-p_c(X)m(X)=p_c(X)\{m_c(X)-m(X)\}$.
-If a calibration ensures $\E[\hat p_c(X)(M-\alpha)]=0$, then
+Subtracting and dividing by $\pi_c$ yields \cref{eq:gap}.
+Moreover, $\Cov(\one\{Z=c\},M\mid X)=\E[\one\{Z=c\}M\mid X]-p_c(X)m(X)=p_c(X)\{m_c(X)-m(X)\}$.
+If a calibration rule enforces $\E[\hat p_c(X)(M-\alpha)]=0$, then
 $\E[p_c(X)M]=\E[\hat p_c(X)M]+\E[(p_c-\hat p_c)(X)M]=\alpha\E[\hat p_c(X)]+\E[(p_c-\hat p_c)(X)M]$.
-Since $\E[\hat p_c(X)]=\pi_c-\E[(p_c-\hat p_c)(X)]$, this equals $\alpha\pi_c+\E[(p_c-\hat p_c)(X)(M-\alpha)]$.
-Substituting into \cref{eq:gap} gives the stated miscoverage.
-The randomised version of the method of \citet{gibbs2025conformal} attains the moment equality exactly for every function in its finite-dimensional class, under the law of its exchangeable units.
-Under $Q_b$ the units are objects drawn with one point each.
-Point-level, unrandomised or subsampled versions, such as our baseline, attain the equality only approximately.
-For Mondrian calibration by the predicted class $L$, apply the same argument with the sub-$\sigma$-algebra $\sigma(L)$ in place of $\sigma(X)$; the weight $\P(Z=c\mid L)$ is a linear combination of the cell indicators.
-With exact cells and almost surely distinct scores, each cell's conformal quantile gives $\P(M=1\mid L=k)=\alpha-\varepsilon_k$ with $\varepsilon_k\in[0,1/(n_k+1)]$.
-Substituting gives the formula in \cref{prop:gap}.
-FLARE's fallback for small cells and its cross-conformal protocol make this only approximate.
+Since $\E[\hat p_c(X)]=\pi_c-\E[(p_c-\hat p_c)(X)]$, this equals $\alpha\pi_c+\E[(p_c-\hat p_c)(X)(M-\alpha)]$, and substituting into \cref{eq:gap} gives the stated miscoverage expression.
+The randomised conditional-guarantee procedure of \citet{gibbs2025conformal} attains this moment equality exactly for every function in its finite-dimensional class under the law of its exchangeable sampling units (under $Q_b$, objects drawn with one uniform cell-$b$ point each); deterministic, point-level, or subsampled implementations (such as our GCC baseline) satisfy the moment condition approximately.
+For Mondrian calibration stratified by predicted class $L$, applying the identical argument with the sub-$\sigma$-algebra $\sigma(L)$ in place of $\sigma(X)$---where $\P(Z=c\mid L)$ is a linear combination of cell indicators---gives $\P(M=1\mid L=k)=\alpha-\varepsilon_k$ with conformal slack $\varepsilon_k\in[0,1/(n_k+1)]$ whenever cells are exact and scores are almost surely distinct, yielding the stated Mondrian expression (approximated in practice under FLARE's small-cell fallback and cross-conformal reuse).
 \hfill$\square$
 
 \paragraph{Proof of \cref{prop:oracle}.}
-Write $\mathrm{cov}_c(I)=\pi_{c,b}^{-1}\E_{Q_b}\!\int I(X,y)\,p_c(X)f_c(y\mid X)\,dy$ for $I:\mathcal X\times\R\to[0,1]$, and $h_\lambda(x,y)=\sum_c(\lambda_c/\pi_{c,b})\,p_c(x)f_c(y\mid x)$.
-\emph{Weak duality.} For feasible $I$ and $\lambda\ge0$,
+Write $\mathrm{cov}_c(I)=\pi_{c,b}^{-1}\E_{Q_b}\!\int I(X,y)\,p_c(X)f_c(y\mid X)\,dy$ for measurable $I:\mathcal X\times\R\to[0,1]$, and let $h_\lambda(x,y)=\sum_c(\lambda_c/\pi_{c,b})\,p_c(x)f_c(y\mid x)$.
+\emph{Weak duality.} For any feasible $I$ and multiplier vector $\lambda\in\R_+^K$,
 \[
 \E\!\int \omega I\,dy \ \ge\ \E\!\int \omega I\,dy-\sum_c\lambda_c\{\mathrm{cov}_c(I)-(1-\alpha)\}
 = \E\!\int I(\omega-h_\lambda)\,dy+(1-\alpha)\sum_c\lambda_c \ \ge\ D(\lambda),
 \]
-where $D(\lambda)=(1-\alpha)\sum_c\lambda_c-\E\!\int(h_\lambda-\omega)_+dy$.
-The last step uses $I(\omega-h_\lambda)\ge-(h_\lambda-\omega)_+$ for $I\in[0,1]$.
-$D$ is concave as an infimum of affine functions of $\lambda$.
-\emph{Existence and strong duality.} The set $\{0\le I\le1\}$ is weak-$^*$ compact in $L^\infty$, and the constraints are weak-$^*$ continuous because $p_cf_c\in L^1$.
-The objective is weak-$^*$ lower semicontinuous.
-A minimiser therefore exists among the feasible $I$ of finite weighted length, which are assumed to exist.
-The programme is linear in $I$, with finitely many constraints and a Slater point (the assumption of the proposition).
-Lagrange duality for convex programmes \citep[\S8.6, Thm.~1]{luenberger1969optimization} gives $\lambda^\star\ge0$ with $\min=D(\lambda^\star)$.
-\emph{Characterisation.} Both inequalities are equalities iff three conditions hold: $I=1$ on $\{h_{\lambda^\star}>\omega\}$; $I=0$ on $\{h_{\lambda^\star}<\omega\}$; and $\lambda^\star_c\{\mathrm{cov}_c(I)-(1-\alpha)\}=0$ for all $c$.
-With $v^\star_c=\lambda^\star_c/\pi_{c,b}$ this is \cref{eq:oracle}.
-The solution need not be unique on $\{h_{\lambda^\star}=\omega\}$.
-Finally, the union or maximum of class-wise valid bands is feasible, so its weighted length is at least that of $C^\star$.
+where $D(\lambda)=(1-\alpha)\sum_c\lambda_c-\E\!\int(h_\lambda-\omega)_+dy$ and the final inequality uses $I(\omega-h_\lambda)\ge-(h_\lambda-\omega)_+$ for $I\in[0,1]$.
+As a pointwise infimum of affine functions of $\lambda$, $D$ is concave.
+\emph{Existence and strong duality.} The unit ball $\{0\le I\le1\}$ is weak-$^*$ compact in $L^\infty$, each coverage functional is weak-$^*$ continuous because $p_cf_c\in L^1$, and the weighted-length objective is weak-$^*$ lower semicontinuous; a primal minimiser therefore exists because a feasible band of finite weighted length is assumed.
+Because the programme is linear in $I$ with finitely many inequality constraints and a strict Slater point by hypothesis, Lagrange duality for infinite-dimensional convex programmes \citep[\S8.6, Thm.~1]{luenberger1969optimization} yields $\lambda^\star\in\R_+^K$ attaining $\min_I = D(\lambda^\star)$.
+\emph{Characterisation.} Both inequalities hold with equality if and only if $I=1$ almost everywhere on $\{h_{\lambda^\star}>\omega\}$, $I=0$ almost everywhere on $\{h_{\lambda^\star}<\omega\}$, and complementary slackness $\lambda^\star_c\{\mathrm{cov}_c(I)-(1-\alpha)\}=0$ holds for every $c\in[K]$.
+Setting $v^\star_c=\lambda^\star_c/\pi_{c,b}$ recovers \cref{eq:oracle} (unique up to measure-zero ties or boundary randomisation on $\{h_{\lambda^\star}=\omega\}$).
+Finally, any union or maximum of class-wise valid bands is primal-feasible and therefore cannot achieve smaller expected weighted length than $C^\star$.
 \hfill$\square$
 
 \paragraph{Proof of \cref{thm:valid}.}
-Condition on the base models, on everything computed from $A$ (including the horizon cells), and on the class labels and cell memberships ($m_b\ge1$ or not) of the objects of $B$; the counts $n^B_{c,b}$ are then fixed.
-Fix a cell $b$ with calibration points in $B$ and a class $c$ with $n^B_{c,b}\ge1/\alpha-1$.
-The score $s_{v_b}$ is then a fixed function.
-The losses $L_i(t)$ of the class-$c$ objects of $B$ with points in bin $b$ lie in $[0,1]$.
-They are non-decreasing and left-continuous in $t$.
-In the parametrisation $\lambda=-t$ they are non-increasing and right-continuous, and $L_i\to0$ as $t\to-\infty$.
-These objects and a class-$c$ test object with points in cell $b$ are exchangeable given this conditioning, because nothing used to build the score depends on $B$ or on the test object, and the target \cref{eq:target} conditions on the same event $\{Z=c,\ m_b\ge1\}$.
-Conformal risk control \citep[Thm.~1]{angelopoulos2024conformal} with bound $B=1$ therefore gives $\E[L_{n+1}(t_c)]\le\alpha$, with $t_c$ from \cref{eq:crc}.
-The budget is non-negative because $n^B_{c,b}\ge1/\alpha-1$.
-Since $\hat t_b\le t_c$ and $L_{n+1}$ is non-decreasing, $L_{n+1}(\hat t_b)\le L_{n+1}(t_c)$ pointwise.
-Hence $1-\cov_{c,b}=\E[L_{n+1}(\hat t_b)]\le\alpha$, whatever the other classes' thresholds are.
-Classes below the size cutoff are excluded from the minimum and receive no guarantee in that bin.
-Cells without calibration points in $B$, which borrow a neighbour's threshold, receive none either.
-\Cref{app:cert} counts both, and lists the realised cells.
+Condition on the disjointly trained base models, on all quantities fitted on calibration half $A$ (including the merged horizon cells and dual weights $\hat v_b$), and on the class labels and cell-occupancy indicators ($\one\{m_{i,b}\ge1\}$) of calibration half $B$; under this conditioning, the counts $n^B_{c,b}$ and the scoring function $s_{\hat v_b}$ are fixed.
+Consider any cell $b$ populated in $B$ and any class $c$ satisfying $n^B_{c,b}\ge1/\alpha-1$.
+For class-$c$ objects in $B$ with $m_{i,b}\ge1$, the object-level miscoverage losses $L_i(t)\in[0,1]$ are non-decreasing and left-continuous in $t$; reparametrising via $\vartheta=-t$ makes $\tilde L_i(\vartheta)=L_i(-\vartheta)$ non-increasing and right-continuous with $\tilde L_i(\vartheta)\to0$ as $\vartheta\to\infty$.
+Because neither the base models nor $s_{\hat v_b}$ depend on $B$ or the test object, and \cref{eq:target} conditions on the identical event $\{Z=c,\, m_b\ge1\}$, these $n^B_{c,b}$ calibration objects and a class-$c$ test object with $m_b\ge1$ are exchangeable conditional on the above $\sigma$-algebra.
+Conformal risk control \citep[Thm.~1]{angelopoulos2024conformal} with upper bound $B=1$ and non-negative budget $\alpha(n^B_{c,b}+1)-1\ge0$ therefore guarantees $\E[L_{n+1}(t_c(\hat v_b))]\le\alpha$.
+Since $\hat t_b=\min_{k:\,n^B_{k,b}\ge1/\alpha-1} t_k(\hat v_b)\le t_c(\hat v_b)$ and $L_{n+1}$ is non-decreasing in $t$, we have $L_{n+1}(\hat t_b)\le L_{n+1}(t_c(\hat v_b))$ pointwise, whence $1-\cov_{c,b}(C)=\E[L_{n+1}(\hat t_b)]\le\alpha$ regardless of all other classes' thresholds.
+Classes with $n^B_{c,b}<1/\alpha-1$ and cells unpopulated in $B$ (which borrow a neighbouring cell's threshold) are excluded from this certificate and enumerated explicitly in \cref{app:cert}.
 \hfill$\square$
 
-\paragraph{A uniform-convergence bound for in-sample weights.}
-Suppose the features $\tilde T(x,y)=\bar\sigma(x)\,(\hat p_c(x)\hat f_c(y\mid x))_{c\le K}$ are fixed, that is, fitted on data independent of the calibration set.
-Suppose also that, within a bin, $(v,t)$ is chosen on the calibration objects by any rule with $\hat R_c(v,t)\le\alpha$.
-The miss indicators $\one\{\langle v,\tilde T\rangle<t\}$ are affine half-spaces in $\R^K$, so their VC dimension is at most $K+1$.
-On $n_c$ i.i.d.\ objects with at most $m_{\max}$ points each, let $N_c=n_cm_{\max}\ge K+1$.
-The Sauer--Shelah and Massart lemmas bound the Rademacher complexity of the object-level losses by $\sqrt{2(K+1)\log(eN_c/(K+1))/n_c}$.
-With the bounded-differences inequality \citep[Thm.~3.3]{mohri2018foundations} and a union bound over $K$ classes and $J$ cells, with probability at least $1-\delta$ over the calibration data,
+\paragraph{Uniform-convergence bound for in-sample dual weights.}
+Suppose the feature vector $\tilde T(x,y)=\bar\sigma(x)\,(\hat p_c(x_0)\hat f_c(y\mid x))_{c=1}^K$ is fitted on data independent of the calibration set, while $(v,t)$ is selected in-sample on the calibration objects subject to empirical risk $\hat R_c(v,t)\le\alpha$.
+Each point-level miss indicator $\one\{\langle v,\tilde T(x,y)\rangle<t\}$ is an affine half-space in $\R^K$ of VC dimension at most $K+1$.
+For $n_c$ i.i.d.\ class-$c$ objects with at most $m_{\max}$ points each ($N_c=n_c m_{\max}\ge K+1$), the Sauer--Shelah and Massart lemmas bound the Rademacher complexity of object-averaged losses by $\sqrt{2(K+1)\log(eN_c/(K+1))/n_c}$.
+Applying McDiarmid's bounded-differences inequality \citep[Thm.~3.3]{mohri2018foundations} with a union bound across $K$ classes and $J$ pre-fixed horizon cells shows that with probability at least $1-\delta$,
 \[
-\cov_{c,b}\ \ge\ 1-\alpha-2\sqrt{2(K+1)\log\big(eN_c/(K+1)\big)/n_c}-\sqrt{\log(KJ/\delta)/(2n_c)}
+\cov_{c,b}(C)\ \ge\ 1-\alpha-2\sqrt{2(K+1)\log\big(eN_c/(K+1)\big)/n_c}-\sqrt{\log(KJ/\delta)/(2n_c)}
 \]
-for all $c$ and $b$.
-Here the cells are fixed in advance; data-dependent merging adds a further union bound over the $2^{9}$ contiguous partitions of FLARE's ten bins.
-With $K=6$, $m_{\max}=267$ (the most points of any ZTF object at day 5), $\delta=0.1$ and $J=10$, the slack is about 2.0 at $n_c=150$ and 0.35 at $n_c=7{,}000$, so the bound is uninformative for rare classes.
-Moreover the default \gamut{} also fits $T$ and $\hat g$ on the calibration objects, so its features are not fixed.
-We state the bound only to show that the in-sample fit of $K$ weights per bin costs $O(\sqrt{K\log N/n})$ in principle; we make no practical claim from it.
+for all $c$ and $b$ (data-adaptive merging adds a union bound over the $2^9$ contiguous partitions of FLARE's ten bins).
+At ZTF-BTS dimensions ($K=6$, $m_{\max}=267$ at day 5, $\delta=0.1$, $J=10$), the slack is approximately $2.0$ at $n_c=150$ and $0.35$ at $n_c=7{,}000$, rendering the bound vacuous for rare classes; moreover, default \gamut{} estimates $T$ and $\hat g_{c,b}$ on the calibration folds as well.
+We record this bound solely to show that learning $K$ scalar weights per cell incurs $O(\sqrt{K\log N_c/n_c})$ complexity in principle, without claiming practical finite-sample certification from it.
 
-\paragraph{The dual fixed point.}
-If $t_c(v)=t$ for all included classes, then $\{y:s_v\ge t\}=\{y:s_{v/t}\ge1\}$.
-Every included class's calibration constraint \cref{eq:crc} then binds at the same threshold.
-If $\hat p$ and $\hat f$ were the true laws, this would be the complementary-slackness pattern of \cref{prop:oracle} with all multipliers positive.
-We do not claim more.
-The update \cref{eq:dual} is a damped multiplicative rule on threshold ratios, not a gradient step on $D$, and we prove neither its convergence nor the uniqueness of its fixed point.
+\paragraph{Stationarity of the multiplicative fixed point.}
+Whenever $t_c(v)=t>0$ holds across all included classes, $\{y:s_v(x,y)\ge t\}=\{y:s_{v/t}(x,y)\ge 1\}$, so every included class's empirical risk constraint in \cref{eq:crc} binds simultaneously at unit threshold.
+Under exact population laws $(\hat p,\hat f)=(p,f)$, this matches the complementary-slackness condition of \cref{prop:oracle} when all multipliers are strictly positive; we note that \cref{eq:dual} is a damped multiplicative heuristic on threshold ratios rather than projected subgradient ascent on $D(\lambda)$, and we do not claim global convergence or uniqueness.

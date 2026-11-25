@@ -1,145 +1,93 @@
-\section{\gamut}
+\section{Methodology: The \gamut{} Framework}
 \label{sec:method}
 
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/GAMUT_framework_figure_gemini.png}
-\caption{Overview of \gamut{} and its failure mode under type uncertainty. The upper row is a schematic diagnosis: early class errors, conservative buffers, and uncalibrated posteriors can produce loose or miscalibrated forecast bands. The lower row shows the single \gamut{} framework: multi-hypothesis inputs, hypothesis-conditional forecasting with temperature-scaled membership, and dual-weighted conformal calibration. The strict-split variant is the same GAMUT method under disjoint fitting and certification subsets. The small curves and icons are schematic; quantitative results are reported in the repository-derived ZTF-BTS figures.}
-\label{fig:gamut-overview}
-\end{figure*}
+Given prefix features $x_0$ and lead time $\ell$ in cell $b$, \gamut{} queries a shared hypothesis-conditional forecaster across all $K$ classes to obtain densities $\hat f_c(y\mid x)$ (\textbf{C1}), calibrates membership probabilities $\hat p_c(x_0)$ via temperature scaling (\textbf{C2}), and thresholds $s_v(x,y)=\bar\sigma(x)\sum_c v_c\hat p_c(x_0)\hat f_c(y\mid x)$ using dual multipliers $v_c$ that equalise per-class conformal risk-control thresholds (\textbf{C3}; \cref{fig:gamut-overview,alg:gamut}).
 
-\subsection{The band we want}
-Among all bands that cover every class in every horizon bin, which is the shortest?
-Forecasts are heteroscedastic, so we measure length in units of the forecast's own scale through a weight $\omega(x)>0$ (below, $\omega=1/\bar\sigma$).
-Relax $C$ to $I(x,y)\in[0,1]$, the probability that $y$ is included.
+\subsection{Oracle Level-Set Characterisation}
+\label{sec:oracle}
+To accommodate heteroscedasticity across brightness and horizon, we weight band length by $\omega(x)>0$ (with $\omega=1/\bar\sigma$ below) and relax $C(x)$ to an inclusion rule $I(x,y)\in[0,1]$.
 
-\begin{proposition}[oracle band]
+\begin{proposition}[Oracle class-valid forecast band]
 \label{prop:oracle}
-Fix a horizon cell $b$ with $\pi_{c,b}>0$ for all $c$, and assume $Y$ has a Lebesgue density given $X,Z$.
-Assume the problem $\min_C \E_{Q_b}\big[\omega(X)\,|C(X)|\big]$ subject to $Q_b(Y\in C(X)\mid Z=c)\ge1-\alpha$ for all $c$ has a feasible band of finite weighted length that covers every class strictly above $1-\alpha$.
-Then the problem has a solution of the form
+Fix a cell $b$ with $\pi_{c,b}>0$ for all $c\in[K]$, and assume $Y$ has Lebesgue density $f_c(\cdot\mid x)$ given $(X=x,Z=c)$.
+If $\min_C \E_{Q_b}[\omega(X)\,|C(X)|]$ subject to $Q_b(Y\in C(X)\mid Z=c)\ge1-\alpha$ ($\forall c$) admits a feasible band of finite weighted length covering every class strictly above $1-\alpha$, an optimal band is
 \begin{equation}
 \label{eq:oracle}
-C^\star(x)=\Big\{y:\ \tfrac{1}{\omega(x)}\textstyle\sum_{c=1}^K v^\star_{c}\,p_c(x)\,f_c(y\mid x)\ \ge 1\Big\}
+C^\star(x)=\Big\{y\in\R:\ \tfrac{1}{\omega(x)}\textstyle\sum_{c=1}^K v^\star_{c}\,p_c(x)\,f_c(y\mid x)\ \ge 1\Big\}
 \end{equation}
-up to randomisation on its boundary $\{\sum_c v^\star_cp_cf_c=\omega\}$.
-Here $v^\star_c=\lambda^\star_c/\pi_{c,b}$, and $\lambda^\star\ge0$ maximises the concave dual $(1-\alpha)\sum_c\lambda_c-\E_{Q_b}\!\int\big(\sum_c\tfrac{\lambda_c}{\pi_{c,b}}p_cf_c-\omega\big)_+dy$.
-Every class with $v^\star_c>0$ is covered at exactly $1-\alpha$ by the (possibly randomised) optimum.
+up to randomisation on $\{\sum_c v^\star_c p_c f_c=\omega\}$, where $v^\star_c=\lambda^\star_c/\pi_{c,b}$, $\lambda^\star\in\R_+^K$ maximises $(1-\alpha)\sum_c\lambda_c-\E_{Q_b}\!\int(\sum_c\tfrac{\lambda_c}{\pi_{c,b}}p_c f_c-\omega)_+dy$, and every class with $v^\star_c>0$ is covered at $1-\alpha$.
 \end{proposition}
 
-Three remarks guide the design.
-(a) The weights are constants, one per class in each bin.
-This per-class marginal programme is the analogue of MDCP's $x$-conditional one; MDCP's appendix states the same form with abstract density ratios \citep[Thm.~7]{yang2026multi}.
-Under $Q_b$, Bayes' rule gives these ratios as $p_c(x)/\pi_{c,b}$, so a class posterior supplies them.
-In classification, the analogous multi-constraint Neyman--Pearson sets are the class-specific-coverage sets of \citet{sadinle2019least}.
-(b) With $v$ constant across classes the band is a level set of $\omega^{-1}$ times the posterior predictive mixture, which is the shortest marginally valid band in weighted length \citep{lei2013distribution,lei2014distribution}.
-A weight $v_c$ above the common value trades length for class $c$'s coverage.
-(c) In the population, the union or the maximum over class-wise valid bands is feasible for the same programme, so neither has a smaller weighted length than $C^\star$.
-We use $\omega=1/\bar\sigma$, with $\bar\sigma(x)=\sum_c p_c(x)\sigma_c(x)$ the posterior-mean forecast scale.
-With $K=1$ and a symmetric unimodal residual law, the band is then the normalised-residual band of FLARE \citep{lei2018distribution}.
+Three properties guide \gamut{}:
+(a) \emph{Scalar cell weights:} Whereas MDCP learns $x$-dependent multipliers, our marginal class programme needs only $K$ scalars $v_c$ per cell; Bayes' rule identifies MDCP's abstract density ratios \citep[Thm.~7]{yang2026multi} as $p_c(x)/\pi_{c,b}$, supplied by a class posterior as in classification \citep{sadinle2019least}.
+(b) \emph{HPD interpolation:} Constant $v_c$ recovers the shortest marginally valid weighted level set \citep{lei2013distribution,lei2014distribution}, while larger $v_c$ selectively expands coverage for class $c$.
+(c) \emph{Dominance over unions:} Class-wise unions or maxima are primal-feasible and hence no shorter in weighted length than $C^\star$.
+With $\omega=1/\bar\sigma$ and $\bar\sigma(x)=\sum_c p_c(x)\sigma_c(x)$, $K=1$ under symmetric unimodal residuals recovers FLARE's normalised-residual band \citep{lei2018distribution}.
 
-\begin{remark}[why weighted length]
+\begin{remark}[Scale-weighted length]
 \label{rem:abs}
-With $\omega\equiv1$ the optimum covers a point only where its density exceeds a level that is common to the whole bin.
-Inside a bin, coverage is then spent on objects with sharp forecasts, and objects with uncertain forecasts are given up.
-Scale normalisation optimises the weighted length, not the absolute length that we report; without it the bands are 2--16\% shorter in absolute length but trade coverage across objects and horizons (\cref{app:ablation}). The imbalance is small on our benchmarks, so the choice is a design preference for even coverage rather than an efficiency gain.
+Setting $\omega\equiv1$ thresholds raw density at one bin-wide constant, concentrating coverage on sharp forecasts while abandoning uncertain objects.
+Omitting $\bar\sigma$ shortens unweighted length by 2--16\% while trading coverage across objects and horizons (\cref{app:ablation}); we retain $\omega=1/\bar\sigma$ for even forecast adaptivity.
 \end{remark}
 
-\subsection{The three components}
+\subsection{Three-Component Estimator (C1--C3)}
+\label{sec:c3}
+\paragraph{C1: Hypothesis-conditional forecaster.}
+We train three shared LightGBM models (median and 16\%/84\% quantiles) using FLARE's features augmented with the one-hot true class.
+Querying them under each hypothesis $c\in[K]$ gives $\hat\mu_c(x)$ and $\hat\sigma_c(x)=\max\{(\hat q_{84,c}-\hat q_{16,c})/2,\sigma_{\min}\}$, letting small classes borrow cadence, colour, and lead-time splits from abundant ones.
+On out-of-fold calibration predictions, we estimate per $(c,b)$ the density $\hat g_{c,b}$ of $(y-\hat\mu_c)/\hat\sigma_c$ via a Gaussian-smoothed histogram on $[-60,60]$ with bandwidth twice Silverman's rule (validation-selected; \cref{app:hyper}), pooling bins of class $c$ with $<150$ points to obtain $\hat f_c(y\mid x)=\hat g_{c,b}((y-\hat\mu_c)/\hat\sigma_c)/\hat\sigma_c$.
+When scoring a calibration point under its own true class, all points of that object are held out of $\hat g_{c,b}$, preventing self-kernel density inflation.
 
-\paragraph{C1: hypothesis-conditional forecaster.}
-We train three additional LightGBM models, the median and the 16\%/84\% quantiles, with FLARE's recipe and the one-hot true class appended to the prefix features.
-At prediction time we query them under every hypothesis $c$, obtaining $\hat\mu_c(x)$ and $\hat\sigma_c(x)=\max\{(\hat q_{84,c}-\hat q_{16,c})/2,\sigma_{\min}\}$.
-All classes share trees, so a class with 100 objects borrows the dependence on cadence, colour and lead time from classes with thousands.
-On the calibration objects (out-of-fold) we estimate, per class and bin, the density $\hat g_{c,b}$ of the standardised residual $(y-\hat\mu_c)/\hat\sigma_c$.
-We use a Gaussian-smoothed histogram on $[-60,60]$ standardised units, wide enough for heavy-tailed residuals. Its bandwidth is twice Silverman's rule (chosen on validation folds, \cref{app:hyper}), and we pool the bins of a class when a bin has fewer than 150 points.
-This gives $\hat f_c(y\mid x)=\hat g_{c,b}\big((y-\hat\mu_c(x))/\hat\sigma_c(x)\big)/\hat\sigma_c(x)$.
-When a calibration point's density under its own class is evaluated, its own object's points are left out of $\hat g$.
-This removes the main source of in-sample optimism, since a point's own kernel inflates its density.
-The bandwidth and the pooling decision still use all objects.
+\paragraph{C2: Calibrated membership posterior.}
+Because \cref{eq:oracle} uses $p_c$ as a likelihood-ratio weight, we temperature-scale raw classifier probabilities \citep{guo2017calibration}: $\hat p_c(x_0)\propto \tilde p_c(x_0)^{1/T}$, fitting $T>0$ by calibration NLL.
+Although the classifier targets $\P(Z=c\mid x_0)$ whereas $Q_b(Z=c\mid x)$ also conditions on observing a point in cell $b$, multiplicative observation-rate factors $a_{c,b}$ are absorbed into $v_c$ up to input normalisation; residual approximation error affects width but never compromises strict-split validity (\cref{thm:valid}).
 
-\paragraph{C2: calibrated membership.}
-\Cref{eq:oracle} uses $p_c$ as a likelihood ratio, not only through its argmax, and early classifiers of rare objects are poorly calibrated.
-We therefore temperature-scale the classifier \citep{guo2017calibration}: $\hat p_c(x)\propto \tilde p_c(x_0)^{1/T}$, where $T$ minimises the negative log-likelihood of the calibration objects' true classes.
-The classifier estimates $\P(Z=c\mid x_0)$, not $p_c(x)$ under $Q_b$, which also conditions on the lead time and on a point being observed.
-If the two differ by class-level factors, $Q_b(Z=c\mid x)\propto\P(Z=c\mid x_0)\,a_{c,b}$, then the per-bin dual weights absorb the $a_{c,b}$, up to an input-dependent normalisation that changes the effective length weight.
-Without this assumption \gamut{} only approximates the oracle.
-Either way the posterior's error affects the width of the band, not the validity of the strict-split GAMUT protocol (\cref{thm:valid}).
-
-\paragraph{C3: dual-weighted level-set calibration.}
-For weights $v$ let $s_v(x,y)=\bar\sigma(x)\sum_c v_{c}\hat p_c(x)\hat f_c(y\mid x)$.
-In bin $b$, let $L_i(t)$ be the fraction of object $i$'s bin-$b$ points that $\{y:s_v\ge t\}$ misses.
-The per-class conformal risk-control threshold \citep{angelopoulos2024conformal} is
+\paragraph{C3: Dual-weighted level-set calibration.}
+Let $s_v(x,y)=\bar\sigma(x)\sum_c v_c\hat p_c(x_0)\hat f_c(y\mid x)$ and let $L_i(t)$ be the fraction of object $i$'s cell-$b$ points missed by $\{y:s_v(x,y)\ge t\}$.
+Per-class conformal risk control \citep{angelopoulos2024conformal} sets
 \begin{equation}
 \label{eq:crc}
-t_{c}(v)=\sup\Big\{t:\ \textstyle\sum_{i:z_i=c}L_i(t)\le \alpha(n_{c}+1)-1\Big\},
+t_{c}(v)=\sup\Big\{t\in\R:\ \textstyle\sum_{i:z_i=c}L_i(t)\le \alpha(n_{c}+1)-1\Big\}
 \end{equation}
-where the sum and $n_c$ run over the class-$c$ objects with points in cell $b$.
-The cells are FLARE's lead-time bins, merged with their neighbours until every class with at least $\lceil2/\alpha\rceil$ calibration objects overall has that many objects in each cell.
-With four calibration folds this keeps 6 to 10 of ZTF's 10 bins at 68\% and 2 to 7 at 95\%, and all 6 bins on the UCR benchmarks. On PLAsTiCC, whose smallest classes have 30 to 40 calibration objects, it keeps 4 to 9 cells at 68\% but only 1 or 2 at 95\%. There, validity at 95\% is per class over all horizons, not per horizon (\cref{app:cert} lists every setting).
-This is the analogue of FLARE's fallback for small Mondrian cells.
-The merging uses calibration labels and lead times only, never outcomes.
-The common threshold is $\hat t=\min_c t_c(v)$, taken over the classes with $n_c\ge 1/\alpha-1$.
-For smaller classes only $t=-\infty$ (the whole line) would be valid, so we exclude them from the minimum.
-The band is short only if no class's threshold lies far below the others.
-At the oracle, every class with a positive multiplier is covered at exactly $1-\alpha$, which here means that its threshold equals the common one.
-We search for such $v$ in each cell with a damped multiplicative fixed point:
+over the $n_c$ class-$c$ calibration objects in cell $b$.
+Using only calibration labels and lead times, we merge adjacent bins until every class with $\ge\lceil2/\alpha\rceil$ calibration objects overall has $\ge\lceil2/\alpha\rceil$ per cell---retaining 6--10 of ZTF's 10 bins at 68\% (2--7 at 95\%), all 6 UCR bins, and 4--9 PLAsTiCC cells at 68\% (1--2 at 95\%, yielding horizon-pooled class validity; \cref{app:cert}).
+The cell threshold is $\hat t_b=\min_c t_c(v)$ over eligible classes with $n_c\ge 1/\alpha-1$.
+To prevent a single class from pulling $\hat t_b$ down, we equalise $t_c(v)$ via the damped multiplicative fixed point
 \begin{equation}
 \label{eq:dual}
 v_c\leftarrow v_c\cdot\mathrm{clip}\big((\bar t/t_c(v))^{1/2},\tfrac12,2\big),
 \end{equation}
-where $\bar t$ is the geometric mean of the included $t_c(v)$, after which $v$ is renormalised to geometric mean one.
-A class whose threshold is low is under-covered at the common level and gains weight.
-The iteration starts from $v_c=1/\hat\pi_c$ (the class-balanced score) and stops when $\max_c|\log(t_c/\bar t)|<0.005$ or after 100 iterations.
-The fixed point is a heuristic for the dual of \cref{prop:oracle}.
-We do not prove that it converges.
-A class whose constraint is slack keeps losing weight until the cap, which mimics a zero multiplier.
-In our runs the median number of iterations per bin was \DualItersMedian{}, and \DualItersCapPct{} of the bins reached the cap (\DualItersCapSmall{} on PLAsTiCC-train and ECG5000 at 95\%).
-The band $\{y:s_{\hat v}(x,y)\ge\hat t\}$ can be a union of intervals when the class forecasts disagree.
-Coverage is computed from the exact score.
-We report the length of the band on a grid of 400 uniform points over $\pm8\hat\sigma_c$ around the hypotheses with $\hat p_c\ge10^{-3}$, plus 49 points within $\pm3\hat\sigma_c$ of every hypothesis. Kandinsky CP and MDCP use the same grid.
-Bins without calibration points borrow the nearest bin's $(v,\hat t)$.
-\Cref{alg:gamut} summarises the procedure.
-Calibration and prediction take \RuntimeGamutZTF{} seconds per fold on ZTF (\cref{app:runtime}).
+with $\bar t$ the geometric mean of included $t_c(v)$ and $v$ renormalised to unit geometric mean, starting from $v_c=1/\hat\pi_c$ and stopping at $\max_c|\log(t_c/\bar t)|<0.005$ or 100 steps.
+This heuristic requires a median of \DualItersMedian{} iterations per cell, hitting the cap in \DualItersCapPct{} of cells (\DualItersCapSmall{} on PLAsTiCC-train and ECG5000 at 95\% as slack weights decay toward zero).
+Coverage uses exact scores $s_{\hat v_b}(x,y)$, while band length is integrated on a shared grid (400 uniform points across $\pm8\hat\sigma_c$ for $\hat p_c\ge10^{-3}$ plus 49 points within $\pm3\hat\sigma_c$ per hypothesis, shared with Kandinsky CP and MDCP); empty calibration cells borrow the nearest cell's $(\hat v_b,\hat t_b)$.
+Calibration and inference take \RuntimeGamutZTF{}s per ZTF fold (\cref{alg:gamut,app:runtime}).
 
 \begin{algorithm}[t]
-\caption{\gamut{} calibration and prediction}
+\caption{\gamut{} Calibration and Prediction}
 \label{alg:gamut}
 \begin{algorithmic}[1]
-\REQUIRE calibration objects with true classes; hypothesis forecasts $\hat\mu_c,\hat\sigma_c$ (C1); probabilities $\tilde p$; level $\alpha$
-\STATE $T\gets\argmin_T$ NLL of the true classes under $\tilde p^{1/T}$; $\hat p\gets\tilde p^{1/T}$ normalised \hfill (C2)
-\STATE fit residual laws $\hat g_{c,b}$; score calibration points leave-one-object-out \hfill (C1)
-\STATE merge lead-time bins into cells until every class with $\ge\lceil2/\alpha\rceil$ objects has that many per cell
+\REQUIRE Calibration objects with labels $z_i$; forecasts $\hat\mu_c,\hat\sigma_c$ (\textbf{C1}); raw posteriors $\tilde p$; level $\alpha$
+\STATE Fit $T\gets\argmin_T \text{NLL}(\tilde p^{1/T}, z)$; normalise $\hat p\propto \tilde p^{1/T}$ \hfill (\textbf{C2})
+\STATE Fit residual laws $\hat g_{c,b}$; score calibration points leave-one-object-out \hfill (\textbf{C1})
+\STATE Merge adjacent bins until classes with $\ge\lceil2/\alpha\rceil$ objects overall have $\ge\lceil2/\alpha\rceil$ per cell
 \FOR{each horizon cell $b$}
-\STATE $v\gets 1/\hat\pi$; iterate \cref{eq:dual} until the thresholds agree or 100 steps \hfill (C3)
-\STATE $\hat t_b\gets\min_c t_c(v)$ over classes with $n_{c,b}\ge1/\alpha-1$; store $v_b$
+\STATE Set $v\gets 1/\hat\pi$; iterate \cref{eq:dual} until $\max_c|\log(t_c/\bar t)|<0.005$ or 100 steps \hfill (\textbf{C3})
+\STATE Set $\hat t_b\gets\min_c t_c(v)$ over classes with $n_{c,b}\ge1/\alpha-1$; store $\hat v_b\gets v$
 \ENDFOR
-\STATE \textbf{predict:} $C(x)=\{y:\bar\sigma(x)\sum_c v_{b(x),c}\,\hat p_c(x)\hat f_c(y\mid x)\ge \hat t_{b(x)}\}$
+\STATE \textbf{Predict:} $C(x)=\big\{y:\bar\sigma(x)\sum_c \hat v_{b(x),c}\,\hat p_c(x_0)\hat f_c(y\mid x)\ge \hat t_{b(x)}\big\}$
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{Guarantees}
+\subsection{Finite-Sample Guarantees and Operating Protocols}
 \label{sec:theory}
 
-\begin{theorem}[finite-sample class validity under the strict GAMUT protocol]
+\begin{theorem}[Finite-sample per-class validity under strict split]
 \label{thm:valid}
-Assume the classifier and forecasters are trained on objects disjoint from the calibration and test objects.
-Assume also that, within each class, the calibration objects and the test object are exchangeable.
-Split the calibration objects, stratified by class, into halves $A$ and $B$.
-On $A$ fit, by any rule, everything except the thresholds: the temperature, $\hat\pi$, the residual laws (bandwidth and pooling included), the horizon cells and the weights $v_b$.
-On $B$ compute the thresholds of \cref{eq:crc}.
-Let $n^B_{c,b}$ be the number of class-$c$ objects of $B$ with points in cell $b$.
-Then, conditionally on $A$ and on the classes and cell memberships of the objects in $B$, every class $c$ with $n^B_{c,b}\ge1/\alpha-1$ satisfies $\cov_{c,b}\ge1-\alpha$ in every cell $b$ that has calibration points in $B$.
+Assume base classifiers and forecasters are trained disjointly from calibration and test objects, and calibration and test objects are exchangeable within each true class.
+Split calibration objects by stratified halves into $A$ and $B$: on $A$, fit $T$, $\hat\pi$, $\hat g_{c,b}$ (bandwidth and pooling included), merged cells, and weights $\hat v_b$; on $B$, compute $t_c(\hat v_b)$ via \cref{eq:crc} and $\hat t_b=\min_c t_c(\hat v_b)$ over classes with $n^B_{c,b}\ge 1/\alpha-1$.
+Conditional on $A$ and on the class labels and cell memberships of $B$, every class $c$ with $n^B_{c,b}\ge1/\alpha-1$ satisfies $\cov_{c,b}(C)\ge1-\alpha$ in every cell $b$ populated in $B$.
 \end{theorem}
 
-The proof combines per-class conformal risk control with the monotonicity of the band in $t$ (\cref{app:proofs}).
-The guarantee needs only correct calibration labels (and the size condition).
-A miscalibrated posterior or a misspecified $\hat f_c$ leaves it intact and changes only the width.
-Kandinsky's fractional-membership guarantee, by contrast, needs the true $\P(Z\mid X,Y)$.
-The default \gamut{} uses all calibration objects for both steps.
-It approximates the oracle band and carries no finite-sample guarantee.
-A uniform-convergence bound is given in \cref{app:proofs}, but its constants are too loose to be informative at our class sizes.
-We therefore check validity empirically.
-Every method in the main experiments uses cross-fitted base models (FLARE's protocol), whose training data include the test fold.
-This places them outside \cref{thm:valid} \citep{barber2021predictive}.
-A strict three-way split on ZTF, with disjoint training, calibration and test objects, is reported in \cref{app:cert}. In the tables, we call this strict-split evaluation ``GAMUT (strict split)''; it is the same GAMUT method under a different fitting protocol.
+The proof (\cref{app:proofs}) pairs conformal risk control on $B$ with monotonicity of $L_i(t)$ in $t$.
+Validity requires only accurate calibration labels and $n^B_{c,b}\ge1/\alpha-1$; misspecified $\hat p_c$ or $\hat f_c$ affects only width, unlike Kandinsky CP's reliance on exact $\P(Z\mid X,Y)$.
+Default \gamut{} uses all out-of-fold calibration objects under FLARE's cross-conformal protocol---where overlapping base-model folds preclude exact finite-sample guarantees for every method \citep{barber2021predictive} and in-sample VC bounds (\cref{app:proofs}) are loose---and is validated empirically; \emph{\gamut{} (strict split)} executes the exact three-way + $A/B$ protocol of \cref{thm:valid} (\cref{app:cert}).

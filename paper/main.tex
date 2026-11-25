@@ -8,6 +8,7 @@
 \usepackage{longtable}
 \usepackage{colortbl}
 \usepackage{float}
+\usepackage{placeins}
 \usepackage{hyperref}
 \newcommand{\theHalgorithm}{\arabic{algorithm}}
 \usepackage{icml2026}
@@ -17,22 +18,35 @@
 \usepackage{mathtools}
 \usepackage{amsthm}
 \usepackage{xcolor}
-\usepackage[capitalize,noabbrev]{cleveref}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage[capitalize,noabbrev]{cleveref}
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
 \theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
 \theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remark}{Remark}
 
-\newcommand{\gamut}{\textsc{Gamut}}
+\crefname{theorem}{Theorem}{Theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{proposition}{Proposition}{Propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{lemma}{Lemma}{Lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{Corollary}{Corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{remark}{Remark}{Remarks}
+\Crefname{remark}{Remark}{Remarks}
+\crefname{appendix}{Appendix}{Appendices}
+\Crefname{appendix}{Appendix}{Appendices}
+
+\newcommand{\gamut}{GAMUT}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\E}{\mathbb{E}}
 \renewcommand{\P}{\mathbb{P}}
@@ -44,12 +58,12 @@
 \input{numbers}
 \input{closure_numbers}
 
-\icmltitlerunning{Forecast Bands Valid for Every Latent Class}
+\icmltitlerunning{GAMUT: Class-Conditional Forecast Bands Under Latent Type Uncertainty}
 
 \begin{document}
 
 \twocolumn[
-  \icmltitle{\gamut: Forecast Bands that Hold for Every Class\\When the Class Is Still Uncertain}
+  \icmltitle{\texorpdfstring{\gamut{}: Class-Conditional Conformal Forecast Bands\\Under Latent Type Uncertainty}{GAMUT: Class-Conditional Conformal Forecast Bands Under Latent Type Uncertainty}}
 
   \begin{icmlauthorlist}
     \icmlauthor{Anonymous Authors}{anon}
@@ -77,6 +91,10 @@
 
 \newpage
 \appendix
+\crefalias{section}{appendix}
+\crefalias{subsection}{appendix}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
 \onecolumn
 \input{sections/appendix}
 

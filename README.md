@@ -8,7 +8,7 @@ first days for rare objects, so the band is calibrated for the wrong population.
 
 This repository contains the method, 13 external baselines (plus three of them given GAMUT's forecaster), six main
 benchmarks, an appendix benchmark, two held-out PLAsTiCC chunks, a synthetic family, the reproducibility scripts and
-an ICML-style paper source (`paper/main.tex` and `paper/main_advisor.tex`).
+an ICML-style paper source (`paper/main.tex` and `paper/main_authors.tex`).
 
 ---
 
@@ -370,7 +370,7 @@ cd paper && pdflatex main && bibtex main && pdflatex main && pdflatex main
 | `scripts/closure_c1.py`, `scripts/closure.py`, `scripts/closure_eval.py` | Closure-probability study |
 | `scripts/make_tables.py`, `scripts/make_figures.py` | Every table, macro and figure of the paper |
 | `results/` | All raw results: per-setting JSON, logs, bootstrap, strict split, held-out set, closure, macros |
-| `paper/` | ICML 2026 style paper (`main.tex`, `main_advisor.tex`, `sections/`, generated `tables/`, `figures/`) |
+| `paper/` | ICML 2026 style paper (`main.tex`, `main_authors.tex`, `sections/`, generated `tables/`, `figures/`) |
 
 
 ## 11. Citation and acknowledgements

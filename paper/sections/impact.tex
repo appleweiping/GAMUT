@@ -1,6 +1,5 @@
-This work aims to make uncertainty statements reliable for every subpopulation, including rare ones, when the subpopulation of a new case is unknown.
-In astronomy it supports the allocation of scarce follow-up time to rare transients.
-In other domains with latent types, for example clinical subtypes, the same property guards against systematically over-confident predictions for minority groups.
-The class-validity claim is limited by the labels of the calibration set and the chosen taxonomy; the finite-sample certificate also requires the strict split and enough certification objects.
-A group missing from the taxonomy, or labelled unreliably, receives no protection.
-Practitioners should audit both before relying on per-group coverage. The limitations of the method, including its dependence on the class taxonomy and on the quality of the calibration labels, are listed in \cref{app:limits}.
+This work develops conformal calibration methods designed to maintain reliable forecast uncertainty across every latent subpopulation---including rare classes---when group membership must be inferred from partial observations at test time.
+In time-domain astronomy, calibrated rare-class forecast bands and next-observation closure probabilities support more equitable and efficient allocation of scarce spectroscopic telescope time to scientifically valuable transients such as superluminous supernovae and tidal disruption events.
+More broadly, in domains where historical records carry ground-truth subgroup annotations that are unavailable at deployment (such as clinical disease subtypes), latent-class validity helps prevent minority subpopulations from being systematically under-covered behind seemingly well-calibrated aggregate metrics.
+At the same time, per-class guarantees apply strictly to classes represented and accurately labelled in the calibration taxonomy, and formal finite-sample certification additionally requires strict data splitting and sufficient per-class calibration counts (\cref{app:limits}).
+Subpopulations absent from the taxonomy or subject to systematic selection bias receive no automatic protection, and practitioners should audit taxonomy completeness and label provenance prior to operational deployment.

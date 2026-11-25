@@ -1,6 +1,6 @@
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
-\caption{Outcome of the pre-registered closure-probability comparisons on the test split (difference ours $-$ reference; paired object-level bootstrap interval). VA: Venn--Abers.}
+\caption{Outcome of pre-registered next-observation closure-probability comparisons on FLARE's test split (reported as ours minus reference, with paired object-level 95\% bootstrap confidence intervals). \emph{Dep.}: deployed FLARE $p_{\rm singleton}$; \emph{VA}: inductive Venn--Abers recalibration.}
 \label{tab:closurereg}
 \scriptsize
 \resizebox{\columnwidth}{!}{%
@@ -8,23 +8,23 @@
 \toprule
 Day & Comparison & Metric & Difference & 95\% CI & Registered claim \\
 \midrule
-5 & ours vs S0 & ECE & -0.048 & [-0.064, -0.026] & met \\
-5 & ours vs S0 & Brier & -0.028 & [-0.036, -0.020] & met \\
-5 & ours vs S0 & AUC & +0.026 & -- & met \\
-5 & ours vs S0 + VA & ECE & +0.000 & [-0.016, +0.014] & not met (no difference) \\
-5 & ours vs S0 + VA & Brier & -0.021 & [-0.028, -0.013] & met \\
-5 & ours vs S0 + VA & AUC & +0.026 & -- & met \\
-5 & sets with $>1$ class ($n=771$) vs S0 + VA & Brier & -0.028 & [-0.039, -0.017] & met \\
-5 & sets with $>1$ class & ECE & ours 0.030, S0 0.052, S0+VA 0.037 & -- & -- \\
+5 & ours vs.\ Dep. & ECE & -0.048 & [-0.064, -0.026] & met \\
+5 & ours vs.\ Dep. & Brier & -0.028 & [-0.036, -0.020] & met \\
+5 & ours vs.\ Dep. & AUC & +0.026 & -- & met \\
+5 & ours vs.\ Dep.\ + VA & ECE & +0.000 & [-0.016, +0.014] & not met (no difference) \\
+5 & ours vs.\ Dep.\ + VA & Brier & -0.021 & [-0.028, -0.013] & met \\
+5 & ours vs.\ Dep.\ + VA & AUC & +0.026 & -- & met \\
+5 & sets with $>1$ class ($n=771$) vs.\ Dep.\ + VA & Brier & -0.028 & [-0.039, -0.017] & met \\
+5 & sets with $>1$ class & ECE & ours 0.030, Dep.\ 0.052, Dep.+VA 0.037 & -- & -- \\
 \midrule
-10 & ours vs S0 & ECE & -0.037 & [-0.046, -0.018] & met \\
-10 & ours vs S0 & Brier & -0.015 & [-0.024, -0.006] & met \\
-10 & ours vs S0 & AUC & +0.018 & -- & met \\
-10 & ours vs S0 + VA & ECE & -0.000 & [-0.015, +0.011] & not met (no difference) \\
-10 & ours vs S0 + VA & Brier & -0.010 & [-0.019, -0.002] & met \\
-10 & ours vs S0 + VA & AUC & +0.019 & -- & met \\
-10 & sets with $>1$ class ($n=569$) vs S0 + VA & Brier & -0.019 & [-0.033, -0.006] & met \\
-10 & sets with $>1$ class & ECE & ours 0.028, S0 0.037, S0+VA 0.050 & -- & -- \\
+10 & ours vs.\ Dep. & ECE & -0.037 & [-0.046, -0.018] & met \\
+10 & ours vs.\ Dep. & Brier & -0.015 & [-0.024, -0.006] & met \\
+10 & ours vs.\ Dep. & AUC & +0.018 & -- & met \\
+10 & ours vs.\ Dep.\ + VA & ECE & -0.000 & [-0.015, +0.011] & not met (no difference) \\
+10 & ours vs.\ Dep.\ + VA & Brier & -0.010 & [-0.019, -0.002] & met \\
+10 & ours vs.\ Dep.\ + VA & AUC & +0.019 & -- & met \\
+10 & sets with $>1$ class ($n=569$) vs.\ Dep.\ + VA & Brier & -0.019 & [-0.033, -0.006] & met \\
+10 & sets with $>1$ class & ECE & ours 0.028, Dep.\ 0.037, Dep.+VA 0.050 & -- & -- \\
 \bottomrule
 \end{tabular}}
 \end{table}

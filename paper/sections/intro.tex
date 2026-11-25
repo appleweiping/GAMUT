@@ -1,53 +1,40 @@
 \section{Introduction}
 \label{sec:intro}
 
-Wide-field time-domain surveys such as the Zwicky Transient Facility \citep[ZTF;][]{bellm2019ztf} discover far more transients than can be followed up spectroscopically.
-Decisions on whether, when and with which instrument to observe are made from the first few days of photometry.
-They rely on two kinds of prediction: \emph{what} the object is, and \emph{how bright it will be}.
-FLARE \citep{sasli2026forecast,sasli2026flare} provides both for ZTF.
-Its classifier assigns one of six types (SN~Ia, core-collapse SN, superluminous SN, AGN, TDE, cataclysmic variable).
-Its gradient-boosted forecaster predicts the $g$- and $r$-band magnitudes from forecast origins 5 to 30 days after the first detection.
-Each forecast comes with 68\% and 95\% conformal bands.
+Wide-field optical surveys such as the Zwicky Transient Facility \citep[ZTF;][]{bellm2019ztf} discover far more transients than spectroscopic facilities can follow up \citep{fremling2020bts,perley2020bts}.
+Allocating telescope time from the first few nights of photometry depends on two coupled inferences: \emph{what} the object is and \emph{how bright} it will be.
+FLARE \citep{sasli2026forecast,sasli2026flare} supplies both on ZTF: its hierarchical classifier assigns probabilities over six types---SN~Ia, core-collapse SN (CC~SN), superluminous SN (SLSN), AGN, tidal disruption event (TDE), and cataclysmic variable (CV)---while LightGBM quantile models forecast $g$- and $r$-band magnitudes from origins 5--30 days post-detection with 68\% and 95\% conformal bands.
 
-The bands reach the nominal coverage over the population.
-They do not reach it for the classes that matter most for follow-up.
-On FLARE's public benchmark, the 68\% band of a superluminous supernova (SLSN) seen for five days contains only \ZTFflareSLSNsixtyeight{} of its future measurements.
-Tidal disruption events and cataclysmic variables are under-covered as well (\cref{sec:observation}).
-The cause is structural.
-The conformal multiplier is chosen by the \emph{predicted} class.
-Early on, the predicted class of a rare object is often wrong, so its band is calibrated for the wrong population.
-The same situation arises whenever a forecast or regression target depends on a type that is labelled in historical data but must be inferred at prediction time.
-Examples are disease subtypes, machine operating regimes and source classes.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.97\textwidth]{figures/gamut_framework.png}
+\vspace{-4pt}
+\caption{Overview of \gamut{} and calibration failure modes under latent type uncertainty. \textbf{Top:} Routing multipliers by the early argmax class under-covers misclassified rare transients, probability reweighting leaves a positive covariance gap (\cref{prop:gap}), and worst-case unions inflate band width across common sources. \textbf{Bottom:} \gamut{} queries a shared hypothesis-conditional quantile forecaster and leave-one-object-out residual laws across all $K$ classes (\textbf{C1}), temperature-scales raw type posteriors (\textbf{C2}), and solves a multiplicative fixed point to equalise per-class conformal risk-control thresholds (\textbf{C3}), outputting level-set bands $C(x)$. Curves and icons are schematic.}
+\label{fig:gamut-overview}
+\vspace{-4pt}
+\end{figure*}
 
-The natural repairs condition on the classifier's \emph{probabilities} rather than its decision.
-They include conditional-guarantee conformal prediction with the probabilities as features \citep{gibbs2025conformal}, kernel localisation in probability space \citep{guan2023localized}, and bands mixed with class weights equal to the probabilities \citep{podkopaev2021distribution}.
-We show why this falls short (\cref{prop:gap}).
-A calibration that equalises coverage under reweighting by the class probabilities controls a probability-weighted coverage.
-The coverage of the true class differs from it by a conditional covariance between class membership and miscoverage, plus the posterior's own error.
-The covariance adds miscoverage whenever a class is harder to forecast than the classes it is confused with, which is the situation of rare, heterogeneous transients.
-Constructions that are valid for every class do exist: the maximum class quantile \citep{barber2021limits}, two-step label-set methods \citep{timans2024adaptive}, and multi-distribution conformal prediction \citep[MDCP;][]{yang2026multi}.
-They ignore or under-use the membership information and pay for validity with wide bands.
+While FLARE's bands achieve nominal marginal coverage across the SN~Ia-dominated stream, they systematically under-cover the rare classes most valuable for follow-up: five days after first detection, the 68\% band contains only \ZTFflareSLSNsixtyeight{} of future SLSN measurements, alongside substantial shortfalls for TDEs and CVs (\cref{fig:observation}).
+The cause is structural: routing conformal multipliers by the \emph{predicted} class calibrates misclassified rare transients against common-supernova residuals.
+The same mismatch arises across clinical subtyping, regime monitoring, and multi-source sensing whenever calibration data carry ground-truth group labels that remain latent at test time.
 
-We take a different route.
-We first derive the band we want (\cref{prop:oracle}): the band of smallest scale-weighted length that satisfies one coverage constraint per class and horizon is a level set of $\bar\sigma(x)\sum_c v_c\, p_c(x) f_c(y\mid x)$.
-Here $p_c$ is the class posterior and $f_c$ is the class-$c$ predictive density.
-The dual weights $v_c$ are constants that up-weight the classes that are hard to cover.
-\gamut{} (\emph{Guarantees for All Members Under Type uncertainty}) estimates this band with three components that work together:
-\begin{itemize}
-\item[\textbf{C1}] a \emph{hypothesis-conditional forecaster}, one model that takes the class as input and is queried under every hypothesis, so rare classes borrow strength from common ones;
-\item[\textbf{C2}] a \emph{calibrated membership posterior}, the classifier's probabilities after temperature scaling on the calibration objects;
-\item[\textbf{C3}] \emph{dual-weighted level-set calibration}: a multiplicative fixed point searches for weights $v$ that equalise the per-class conformal risk-control thresholds, and the band keeps the smallest threshold.
+Existing remedies force a choice between rare-class under-coverage and excessive width (\cref{fig:gamut-overview}, top).
+Conditioning on classifier \emph{probabilities}---via conditional-guarantee conformal prediction \citep{gibbs2025conformal}, posterior localisation \citep{guan2023localized}, or label-shift mixtures \citep{podkopaev2021distribution}---controls a probability-weighted moment rather than true-class coverage.
+By \cref{prop:gap}, the two differ by the conditional covariance between class membership and miscoverage plus posterior error; whenever a rare class exhibits broader forecast residuals than the classes with which it is confused, this covariance is positive and sustains under-coverage.
+Conversely, latent-class-valid constructions---the max-class quantile \citep{barber2021limits}, two-step label-set unions \citep{timans2024adaptive}, and multi-distribution CP \citep[MDCP;][]{yang2026multi}---ignore or coarsen posterior shape, inflating widths by $1.5\times$--$2.6\times$.
+
+To resolve this tension, we derive the population-optimal band (\cref{prop:oracle}): the set of minimal scale-weighted length satisfying per-class coverage constraints is a superlevel set of $\bar\sigma(x)\sum_c v_c\,p_c(x)f_c(y\mid x)$, with posterior $p_c(x)$, class-$c$ predictive density $f_c(y\mid x)$, posterior-mean scale $\bar\sigma(x)$, and dual weights $v_c$ up-weighting hard-to-cover classes.
+\gamut{} (\emph{Guarantees for All Members Under Type uncertainty}; \cref{fig:gamut-overview}, bottom) estimates this oracle via three modules:
+\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}\setlength{\topsep}{2pt}
+\item[\textbf{C1}] \textbf{Hypothesis-conditional forecaster:} shared LightGBM quantile trees queried across all $K$ hypotheses paired with leave-one-object-out smoothed residual laws $\hat f_c(y\mid x)$, letting rare classes borrow cadence and colour structure from common ones;
+\item[\textbf{C2}] \textbf{Calibrated membership posterior:} temperature-scaled probabilities $\hat p_c(x_0)$ fitted on calibration labels;
+\item[\textbf{C3}] \textbf{Dual-weighted level-set calibration:} a multiplicative fixed point adjusting $v_c$ to equalise per-class conformal risk-control thresholds across adaptive horizon cells, keeping the minimum eligible threshold.
 \end{itemize}
-The same calibration rule has a finite-sample guarantee under a strict train/calibration/test split (\cref{thm:valid}); we use ``strict-split \gamut{}'' only as a label for that protocol.
-The guarantee rests on the true labels of the calibration objects, not on the posterior or the forecaster being correct, and it applies to every class and horizon cell with enough certification objects.
-The default \gamut{} reuses the calibration data and approximates the oracle; we validate it empirically.
+Under FLARE's cross-conformal protocol, \gamut{} reuses out-of-fold calibration data to approximate the oracle empirically.
+Under a strict train/calibration/test split reserving a disjoint calibration half for threshold certification (\cref{thm:valid}), the identical rule guarantees finite-sample coverage for every class--horizon cell with sufficient certification objects, regardless of posterior or density misspecification.
 
 \paragraph{Contributions.}
-(i) A precise account of why calibration by predicted class or by class probabilities fails for rare classes (\cref{prop:gap}), and an observation study on ZTF that measures it.
-(ii) The oracle form of the shortest scale-weighted band under one coverage constraint per class and horizon, together with GAMUT, a three-component method that estimates this oracle. The finite-sample guarantee is obtained by running the same method under its strict-split protocol.
-(iii) A benchmark suite for latent-class forecasting (ZTF-BTS with FLARE's folds, PLAsTiCC train and deep-drilling sets, three UCR archives, a synthetic family) with a pre-registered held-out set and a strict split on ZTF.
-(iv) A learned next-point simulation of FLARE's closure probability, recalibrated by Venn--Abers.
-We compare against 13 external baselines, at every forecast origin and at both levels.
-On ZTF, two-step, multi-distribution and max-class conformal prediction also leave no class under-covered, but their bands are \ZTFValidOverFlareSixtyeight{} (68\%) and \ZTFValidOverFlareNinetyfive{} (95\%) longer than FLARE's.
-\gamut{} achieves the same with bands \ZTFWidthRatioSixtyeight{} and \ZTFWidthRatioNinetyfive{} times as long as FLARE's (\StrictWidthGamutSixtyeight{} and \StrictWidthGamutNinetyfive{} under a strict split).
-In the synthetic family, the same three baselines are \SynValidOverGamutSixtyeight{} (68\%) and \SynValidOverGamutNinetyfive{} (95\%) longer than \gamut{}.
+(i) An exact coverage-gap decomposition showing why predicted-class and probability-conditioned calibration under-cover hard rare classes (\cref{prop:gap}), validated on ZTF-BTS.
+(ii) Characterisation of the shortest scale-weighted class-valid band (\cref{prop:oracle}), the \gamut{} estimator (\cref{alg:gamut}), and its strict-split finite-sample guarantee (\cref{thm:valid}).
+(iii) Evaluation across ZTF-BTS, PLAsTiCC, three UCR archives, a synthetic suite, a strict ZTF split, and two pre-registered untouched PLAsTiCC WFD chunks against 13 baselines: on ZTF, conservative valid baselines are \ZTFValidOverFlareSixtyeight{} (68\%) and \ZTFValidOverFlareNinetyfive{} (95\%) wider than FLARE, whereas \gamut{} achieves class validity at \ZTFWidthRatioSixtyeight{} and \ZTFWidthRatioNinetyfive{} times FLARE's width (\StrictWidthGamutSixtyeight{} and \StrictWidthGamutNinetyfive{} under the strict split) and is \SynValidOverGamutSixtyeight{} (68\%) and \SynValidOverGamutNinetyfive{} (95\%) narrower than valid baselines on synthetic data.
+(iv) A learned next-detection simulation with Venn--Abers recalibration that sharpens FLARE's set-closure probabilities.
