@@ -1,10 +1,10 @@
-\\begin{abstract}
+\begin{abstract}
 Forecast bands for transient light curves must be issued before the object's class is known.
 FLARE's bands are calibrated by the predicted class and therefore under-cover rare classes when their early predicted labels are wrong.
-We introduce \\gamut{}, which targets coverage for every latent class by combining hypothesis-conditional forecasts, a calibrated membership posterior, and dual-weighted conformal calibration.
-The default \\gamut{} reuses the calibration data and is evaluated empirically; its strict-split variant, \\gamut-cert{}, has a finite-sample guarantee for eligible class--horizon cells with enough certification objects.
+We introduce \gamut{}, which targets coverage for every latent class by combining hypothesis-conditional forecasts, a calibrated membership posterior, and dual-weighted conformal calibration.
+The default \gamut{} reuses the calibration data and is evaluated empirically; its strict-split variant, \gamut-cert{}, has a finite-sample guarantee for eligible class--horizon cells with enough certification objects.
 We evaluate both variants on the public ZTF benchmark, five additional benchmarks, 13 baselines, a strict split, and two untouched held-out sets.
-On ZTF, \\gamut{} raises day-5 SLSN coverage from \\ZTFflareSLSNsixtyeight{} to \\ZTFgamutSLSNsixtyeight{} at 68\\%, and it leaves no class significantly under-covered in \\MainValidGamutSixtyeight{} of the main settings at 68\\% and \\MainValidGamutNinetyfive{} at 95\\% under the reported bootstrap criterion; its bands are \\ZTFfiveWidthRatioSixtyeight{} times as long as FLARE's at day 5.
-Across the main benchmarks, its bands are on average \\WidthGainValidSixtyeight{} shorter at 68\\% and \\WidthGainValidNinetyfive{} shorter at 95\\% than the always-valid baselines, while very small classes can make the bands wider at 95\\%.
+On ZTF, \gamut{} raises day-5 SLSN coverage from \ZTFflareSLSNsixtyeight{} to \ZTFgamutSLSNsixtyeight{} at 68\%, and it leaves no class significantly under-covered in \MainValidGamutSixtyeight{} of the main settings at 68\% and \MainValidGamutNinetyfive{} at 95\% under the reported bootstrap criterion; its bands are \ZTFfiveWidthRatioSixtyeight{} times as long as FLARE's at day 5.
+Across the main benchmarks, its bands are on average \WidthGainValidSixtyeight{} shorter at 68\% and \WidthGainValidNinetyfive{} shorter at 95\% than the always-valid baselines, while very small classes can make the bands wider at 95\%.
 A secondary closure study finds that the improvement comes mainly from the learned next-point law, with a smaller and non-uniform additional gain from class conditioning.
-\\end{abstract}
+\end{abstract}
