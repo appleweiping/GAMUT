@@ -222,10 +222,10 @@ under-covered.
 | FLARE | 0 | 1.00 | 0 | 1.00 |
 | Two-step / max-class / MDCP | 100 | 1.84–2.01 | 100 | 1.88–2.18 |
 | **GAMUT** | **100** | **1.08** | **100** | 1.70 |
-| GAMUT-cert | 100 | 1.70 | 100 | 1.27* |
+| strict-split GAMUT | 100 | 1.70 | 100 | 1.27* |
 
 \* At 95%, half of one calibration fold leaves SLSN, AGN, TDE and CV below the $1/\alpha-1$ certification objects a
-threshold needs. GAMUT-cert's guarantee then covers only the two supernova classes; the others are covered
+threshold needs. strict-split GAMUT's guarantee then covers only the two supernova classes; the others are covered
 empirically but not certified.
 
 **Pre-registered held-out set** (PLAsTiCC-WFD, 3 origins; 20,763 objects pass the quality cut, 20,760 of them have
@@ -356,7 +356,7 @@ cd paper && pdflatex main && bibtex main && pdflatex main && pdflatex main
 
 | Path | Content |
 |---|---|
-| `gamut/methods.py` | GAMUT (`gamut`, `crc=True` for GAMUT-cert), the ablation registry, and the conformal baselines: FLARE bands, split CP, CQR, DCP, localized CP, label-shift mixture, GCC, learned partition |
+| `gamut/methods.py` | GAMUT (`gamut`, `crc=True` for strict-split GAMUT), the ablation registry, and the conformal baselines: FLARE bands, split CP, CQR, DCP, localized CP, label-shift mixture, GCC, learned partition |
 | `gamut/latent_baselines.py` | Two-step CP, max-class CP, CPTC, Kandinsky CP, MDCP, and their "+ C1" variants |
 | `gamut/data.py`, `gamut/metrics.py` | Task arrays (point level, object ids, lead bins) and every metric |
 | `benchmarks/` | Builders for ZTF-BTS, PLAsTiCC (train / DDF / WFD), UCR and the synthetic family; the registry of classifier recipes |
