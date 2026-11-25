@@ -3,8 +3,8 @@
 Two benchmarks with different cadence and selection:
   * plasticc_train: the 7,848-object training set (spectroscopically biased, bright, WFD + DDF);
   * plasticc_ddf:   the deep-drilling-field objects of test chunk 01 with their unblinded classes (deep, unbiased);
-  * plasticc_wfd03: the same for test chunk 03 (second held-out set, registered for GAMUT-Q);
-  * plasticc_wfd:   the wide-fast-deep objects of test chunk 02 (held-out set, pre-registered after review round 4;
+  * plasticc_wfd03: the same for test chunk 03 (second held-out set);
+  * plasticc_wfd:   the wide-fast-deep objects of test chunk 02 (held-out set, pre-registered;
                     never used for design). Rows are pre-filtered to the detections that to_events keeps, and objects to
                     those that can pass the quality cut, before feature extraction (equivalent result, for speed).
 Each object's g, r, i detections (detected_bool = 1, passbands 1-3) are converted to the FLARE event layout (time since
