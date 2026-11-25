@@ -16,7 +16,7 @@ A method is calibrated on the out-of-fold outputs of four folds and evaluated on
 The classifier is FLARE's hierarchical model on ZTF and a class-weighted LightGBM elsewhere; the forecasters follow FLARE's recipe \citep{ke2017lightgbm} (L1 median and 2.5/16/84/97.5\% quantiles on the prefix features, lead time and band), and C1 appends the one-hot class. We keep the base classifier and point forecaster shared across methods, so GAMUT changes the uncertainty-calibration layer rather than the point-prediction model. All models are cross-fitted (\cref{app:protocol}); every method uses the same outputs and only the calibration step differs.
 
 \paragraph{Baselines.}
-We compare against 13 published methods.
+We compare against 13 external baselines.
 \emph{Deployed:} FLARE's Mondrian bands by predicted class, band and lead-time bin \citep{sasli2026forecast,sasli2026flare}.
 \emph{Membership-blind:} split CP with normalised residuals \citep{lei2018distribution}, CQR \citep{romano2019conformalized} and DCP \citep{chernozhukov2021distributional}.
 \emph{Probability-conditioned:} localised CP in posterior space \citep{guan2023localized}, the label-shift mixture of class-wise score laws \citep{podkopaev2021distribution}, GCC with posterior features \citep{gibbs2025conformal}, learned-partition Mondrian CP \citep{kiyani2024conformal} and CPTC \citep{sun2025conformal}.
