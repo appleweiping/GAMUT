@@ -1,0 +1,85 @@
+\documentclass{article}
+
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{hyperref}
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+\usepackage[preprint]{icml2026}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage[capitalize,noabbrev]{cleveref}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\gamut}{\textsc{Gamut}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\cov}{\operatorname{cov}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\input{numbers}
+\input{closure_numbers}
+
+\icmltitlerunning{Forecast Bands Valid for Every Latent Class}
+
+\begin{document}
+
+\twocolumn[
+  \icmltitle{\gamut: Forecast Bands that Hold for Every Class\\When the Class Is Still Uncertain}
+
+  \begin{icmlauthorlist}
+    \icmlauthor{Weiping Yan}{umn}
+    \icmlauthor{Argyro Sasli}{phys}
+  \end{icmlauthorlist}
+  \icmlaffiliation{umn}{University of Minnesota}
+  \icmlaffiliation{phys}{School of Physics and Astronomy, University of Minnesota}
+  \icmlcorrespondingauthor{Argyro Sasli}{asasli@umn.edu}
+  \icmlkeywords{conformal prediction, conditional coverage, latent class, forecasting, time-domain astronomy}
+  \vskip 0.3in
+]
+\printAffiliationsAndNotice{}
+
+\input{sections/abstract}
+\input{sections/intro}
+\input{sections/setup}
+\input{sections/method}
+\input{sections/experiments}
+\input{sections/related}
+\input{sections/conclusion}
+
+\section*{Impact Statement}
+\input{sections/impact}
+
+\bibliography{references}
+\bibliographystyle{icml2026}
+
+\newpage
+\appendix
+\onecolumn
+\input{sections/appendix}
+
+\end{document}
