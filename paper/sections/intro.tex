@@ -20,7 +20,7 @@ The same situation arises whenever a forecast or regression target depends on a 
 Examples are disease subtypes, machine operating regimes and source classes.
 
 The natural repairs condition on the classifier's \emph{probabilities} rather than its decision.
-They include conditional-guarantee conformal prediction with the probabilities as features \citep{gibbs2025conformal}, kernel localisation in probability space \citep{guan2023localized}, and bands mixed with class weights equal to the probabilities \citep{podkopaev2021distribution,sun2025conformal}.
+They include conditional-guarantee conformal prediction with the probabilities as features \citep{gibbs2025conformal}, kernel localisation in probability space \citep{guan2023localized}, and bands mixed with class weights equal to the probabilities \citep{podkopaev2021distribution}.
 We show why this falls short (\cref{prop:gap}).
 A calibration that equalises coverage under reweighting by the class probabilities controls a probability-weighted coverage.
 The coverage of the true class differs from it by a conditional covariance between class membership and miscoverage, plus the posterior's own error.
@@ -38,7 +38,7 @@ The dual weights $v_c$ are constants that up-weight the classes that are hard to
 \item[\textbf{C2}] a \emph{calibrated membership posterior}, the classifier's probabilities after temperature scaling on the calibration objects;
 \item[\textbf{C3}] \emph{dual-weighted level-set calibration}: a multiplicative fixed point searches for weights $v$ that equalise the per-class conformal risk-control thresholds, and the band keeps the smallest threshold.
 \end{itemize}
-A split variant, \gamut-cert, has a finite-sample guarantee under a strict train/calibration/test split (\cref{thm:valid}).
+The same calibration rule has a finite-sample guarantee under a strict train/calibration/test split (\cref{thm:valid}); we use \gamut-cert{} only as a label for that strict-split protocol.
 The guarantee rests on the true labels of the calibration objects, not on the posterior or the forecaster being correct, and it applies to every class and horizon cell with enough certification objects.
 The default \gamut{} reuses the calibration data and approximates the oracle; we validate it empirically.
 
