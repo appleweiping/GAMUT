@@ -5,7 +5,7 @@
 \emph{ZTF-BTS} is FLARE's public Bright Transient Survey benchmark \citep{perley2020bts,sasli2026flare}: 10,497 spectroscopically classified transients in six classes.
 We use FLARE's prefix-causal features, its forecast target (magnitude relative to the brightest prefix detection, every later $g$/$r$ detection up to 90 days) and its five folds.
 \emph{PLAsTiCC-train} and \emph{PLAsTiCC-DDF} are the unblinded LSST simulation \citep{kessler2019models,hlozek2023results}.
-We use its training set (2,045 objects after FLARE's quality cut, 11 classes) and the deep-drilling objects of its first test chunk (8,686 objects, 9 classes); their cadence and class balance differ.
+We use its training set (2,045 objects after FLARE's quality cut, 11 classes) and the deep-drilling objects of its first test chunk (8,686 objects, 9 classes; 8,681 remain after requiring a future target); their cadence and class balance differ.
 Three UCR archives \citep{dau2019ucr} turn early series into forecasting tasks: StarLightCurves (9,236 series, 3 classes), ECG5000 (5,000, 5 classes, the smallest with 24) and ElectricDevices (16,637, 7 classes), observed up to 20/40/60\% of the series (\cref{tab:bench}).
 ZTF uses FLARE's five origins (5, 10, 15, 20, 30 days); for compute reasons PLAsTiCC uses three (5, 15, 30 days).
 UCR Wafer (2 classes; evaluated at the 20\% prefix only, for compute reasons) and a synthetic family with a known posterior are used in the appendix.
