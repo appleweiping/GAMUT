@@ -126,7 +126,7 @@ For \cref{prop:gap}, the class coverage of each single-interval band is predicte
 
 \section{Pre-registered held-out benchmark}
 \label{app:held}
-The evaluation was registered in \texttt{refine-logs/EXPERIMENT\_PLAN.md} before the data were downloaded, with the md5 hashes of the frozen method and metric code.
+The evaluation was registered in the frozen evaluation protocol before the data were downloaded, with the md5 hashes of the frozen method and metric code.
 The data are the wide-fast-deep objects ($\texttt{ddf\_bool}=0$) of the unblinded PLAsTiCC test chunk 02 \citep{kessler2019models}, which no earlier run had read.
 The pipeline is that of PLAsTiCC-DDF: FLARE's quality cut, classes with at least 30 objects, five stratified folds, origins 5, 15 and 30 days, and the same cross-fit recipe.
 Rows were pre-filtered to the detections the event conversion keeps, and objects to those that can pass the quality cut, which changes speed but not the result.
@@ -155,7 +155,7 @@ the law of total probability over the latent class. $\hat f_c$ is \gamut's C1 fo
 An inductive Venn--Abers layer \citep{vovk2014venn} fitted on the validation split maps the score to a probability.
 Venn--Abers predictors are calibrated when the scoring function is fixed and calibration and test objects are exchangeable. Here C1 is fixed, but the temperature and the residual quantiles are fitted on the same validation split, so we make no finite-sample claim.
 \paragraph{Protocol.}
-The study was registered before any computation (\texttt{refine-logs/EXPERIMENT\_PLAN.md}).
+The study was registered before any computation (the frozen evaluation protocol).
 FLARE's deployed day-5 and day-10 classifiers and its forecaster were trained on its \texttt{train} split. For this study C1 is trained on the same split, so no validation or test object enters any model and the two forecasters see the same objects.
 Every calibrator is fitted on \texttt{val} and results are reported on \texttt{test}.
 The event is the object's real next detection in each band within two days of the origin, appended to the prefix; the outcome is whether the deployed set becomes a singleton.
@@ -199,7 +199,7 @@ On PLAsTiCC-train (smallest class 36 objects) and ECG5000 (smallest class 24 ser
 \gamut{}'s object-level conformal risk control then leaves that class a risk budget $\alpha(n+1)-1$ of at most one object.
 Its threshold must cover nearly every calibration point of the class, and the minimum over classes passes this conservativeness to the whole band.
 MDCP and two-step CP calibrate on points rather than objects, which costs them less width but gives no object-level guarantee.
-We tried two alternatives (\texttt{refine-logs/DESIGN\_LOG.md}). Raising the inclusion cutoff left the small classes under-covered on validation folds. Pooling their thresholds across horizons was wider still in a check on a test fold, so we did not adopt it.
+We tried two alternatives (the design documentation in this appendix). Raising the inclusion cutoff left the small classes under-covered on validation folds. Pooling their thresholds across horizons was wider still in a check on a test fold, so we did not adopt it.
 \item \textbf{Pooled versus object-level coverage.}
 On PLAsTiCC-train at 95\%, SN~Ia is covered at 0.93 when pooled over points, although the calibration targets object-averaged coverage.
 Objects with many points are covered less often.
@@ -220,7 +220,7 @@ Kandinsky CP, however, is valid in only \MainValidKandinskySixtyeight{} of the s
 
 \section{Design history and test-set exposure}
 \label{app:history}
-The design of \gamut{} changed during the project; every change and its evidence is logged in \texttt{refine-logs/DESIGN\_LOG.md}.
+The design of \gamut{} changed during the project; every change and its evidence is logged in the design documentation in this appendix.
 Several changes were triggered by results on test folds, so the reported results are not fully held out.
 \begin{itemize}
 \item The data-adaptive horizon cells were motivated by PLAsTiCC-train test results and adopted on nested validation folds.
