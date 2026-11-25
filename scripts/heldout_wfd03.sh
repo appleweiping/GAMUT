@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pre-registered held-out evaluation (refine-logs/EXPERIMENT_PLAN.md, round-4 response): PLAsTiCC test chunk 02 WFD.
+# Pre-registered held-out evaluation (the preregistered experiment plan, round-4 response): PLAsTiCC test chunk 03 WFD.
 # Waits for the download, builds the benchmark, cross-fits origins 5/15/30 with the PLAsTiCC recipe, evaluates every method.
 cd "$(dirname "$0")/.."
 PY=${PYTHON:-python}
