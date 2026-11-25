@@ -1,8 +1,6 @@
 # GAMUT — Forecast bands that hold for every class when the class is still uncertain
 
-**GAMUT** (*Guarantees for All Members Under Type uncertainty*) is a conformal method for multi-horizon forecast bands
-whose coverage holds **for every latent class**. The class is labelled in the calibration data but unknown at test
-time. The motivating application is early light-curve forecasting of astronomical transients with
+**GAMUT** (*Guarantees for All Members Under Type uncertainty*) is a conformal method for multi-horizon forecast bands that targets coverage **for every latent class**. The class is labelled in the calibration data but unknown at test time. The default GAMUT is evaluated empirically; the strict-split GAMUT-cert variant has a finite-sample guarantee for eligible class--horizon cells with enough certification objects. The motivating application is early light-curve forecasting of astronomical transients with
 [FLARE](https://github.com/applecider-ml/flare) on the ZTF Bright Transient Survey (BTS). FLARE's bands reach nominal
 coverage over the whole population, but they under-cover superluminous supernovae (SLSNe) and, at later horizons,
 cataclysmic variables (CVs). Its conformal multiplier depends on the *predicted* class, which is often wrong in the
@@ -57,7 +55,7 @@ ICML-style paper (`paper/main.pdf`).
   - GAMUT has no under-covered class at either level, with bands **1.08×** (68%) and 1.70× (95%) FLARE's.
   - The always-valid baselines need 1.84–2.01× and 1.88–2.18×.
   - FLARE under-covers a class at every origin.
-- **Pre-registered held-out set** (PLAsTiCC test chunk 02, wide-fast-deep; 20,763 objects; frozen code, run once):
+- **Pre-registered held-out set** (PLAsTiCC test chunk 02, wide-fast-deep; 20,763 raw objects, 20,760 with a future point at the earliest origin; frozen code, run once):
   - GAMUT is valid at all three origins at both levels, with bands 1.51× and 1.67× FLARE's.
   - The always-valid baselines need 1.84–2.02× and 1.49–1.96×; MDCP is narrower than GAMUT at 95%.
   - FLARE's worst class falls to 0.27.
