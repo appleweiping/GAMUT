@@ -126,14 +126,14 @@ For \cref{prop:gap}, the class coverage of each single-interval band is predicte
 
 \section{Pre-registered held-out benchmark}
 \label{app:held}
-The evaluation was registered in the frozen evaluation protocol before the data were downloaded, with the md5 hashes of the frozen method and metric code.
+The evaluation was registered before the data were downloaded; the frozen method and metric code are identified by their md5 hashes.
 The data are the wide-fast-deep objects ($\texttt{ddf\_bool}=0$) of the unblinded PLAsTiCC test chunk 02 \citep{kessler2019models}, which no earlier run had read.
 The pipeline is that of PLAsTiCC-DDF: FLARE's quality cut, classes with at least 30 objects, five stratified folds, origins 5, 15 and 30 days, and the same cross-fit recipe.
 Rows were pre-filtered to the detections the event conversion keeps, and objects to those that can pass the quality cut, which changes speed but not the result.
 Every method and ablation was evaluated once, and no design decision followed.
 \input{tables/held}
 \paragraph{A second held-out set and the interval-score variant.}
-After the reviews we registered an interval-score variant, the central-interval ablation: the same C1--C3 with the central-interval score $\min(F_v,1-F_v)$ of the dual-weighted mixture CDF $F_v$, whose band is $[F_v^{-1}(t),F_v^{-1}(1-t)]$ (\texttt{gamut/variants.py}). Its development runs on the main benchmarks are test-informed: it is valid in \QValidSixtyeight{} and \QValidNinetyfive{} of the settings with bands \QWidthSixtyeight{} and \QWidthNinetyfive{} times FLARE's, and against the best valid method of each setting it is significantly better/worse in \QISSixtyeight{} and \QISNinetyfive{} settings, no better than \gamut{}.
+We also evaluated a central-interval ablation: the same C1--C3 with the central-interval score $\min(F_v,1-F_v)$ of the dual-weighted mixture CDF $F_v$, whose band is $[F_v^{-1}(t),F_v^{-1}(1-t)]$ . Its development runs on the main benchmarks are test-informed: it is valid in \QValidSixtyeight{} and \QValidNinetyfive{} of the settings with bands \QWidthSixtyeight{} and \QWidthNinetyfive{} times FLARE's, and against the best valid method of each setting it is significantly better/worse in \QISSixtyeight{} and \QISNinetyfive{} settings, no better than \gamut{}.
 The registered confirmation used the wide-fast-deep objects of PLAsTiCC test chunk 03, never read before, with the code frozen before the data were downloaded. The registered claim, validity at every origin and level and a lower class-averaged interval score than every valid baseline in most settings, is not met: the central-interval ablation is valid in \QHeldValidSixtyeight{} and \QHeldValidNinetyfive{} of the settings, and better/worse in \QHeldISSixtyeight{} and \QHeldISNinetyfive{}. We do not adopt it.
 The same untouched set gives a second confirmation of \gamut{} itself (\cref{tab:held2}): valid in \HeldBValidGamutSixtyeight{} and \HeldBValidGamutNinetyfive{} of the settings, with bands \HeldBWidthGamutSixtyeight{} and \HeldBWidthGamutNinetyfive{} times FLARE's, against \HeldBWidthValidSixtyeight{} and \HeldBWidthValidNinetyfive{} for the always-valid baselines; FLARE is valid in \HeldBValidFlareSixtyeight{} and \HeldBValidFlareNinetyfive{}.
 \input{tables/held2}
@@ -155,7 +155,7 @@ the law of total probability over the latent class. $\hat f_c$ is \gamut's C1 fo
 An inductive Venn--Abers layer \citep{vovk2014venn} fitted on the validation split maps the score to a probability.
 Venn--Abers predictors are calibrated when the scoring function is fixed and calibration and test objects are exchangeable. Here C1 is fixed, but the temperature and the residual quantiles are fitted on the same validation split, so we make no finite-sample claim.
 \paragraph{Protocol.}
-The study was registered before any computation (the frozen evaluation protocol).
+The study was registered before any computation.
 FLARE's deployed day-5 and day-10 classifiers and its forecaster were trained on its \texttt{train} split. For this study C1 is trained on the same split, so no validation or test object enters any model and the two forecasters see the same objects.
 Every calibrator is fitted on \texttt{val} and results are reported on \texttt{test}.
 The event is the object's real next detection in each band within two days of the origin, appended to the prefix; the outcome is whether the deployed set becomes a singleton.
@@ -220,7 +220,7 @@ Kandinsky CP, however, is valid in only \MainValidKandinskySixtyeight{} of the s
 
 \section{Design history and test-set exposure}
 \label{app:history}
-The design of \gamut{} changed during the project; every change and its evidence is logged in the design documentation in this appendix.
+Design choices and their validation are summarized below.
 Several changes were triggered by results on test folds, so the reported results are not fully held out.
 \begin{itemize}
 \item The data-adaptive horizon cells were motivated by PLAsTiCC-train test results and adopted on nested validation folds.
