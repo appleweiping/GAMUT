@@ -211,7 +211,7 @@ significantly under-covered. *Worst*: mean worst-class coverage. *Cells*: mean n
 | MDCP + C1 | 100 | 0.702 | 0.141 | 2.5 | 1.73 | 100 | 0.949 | 0.030 | 1.6 | 1.54 |
 | Max-class CP + C1 | 100 | 0.751 | 0.174 | 0.0 | 1.96 | 100 | 0.968 | 0.036 | 0.0 | 2.22 |
 | **GAMUT (ours)** | **100** | 0.671 | **0.014** | 0.2 | **1.09** | 90 | 0.949 | **0.012** | 0.8 | **1.36** |
-| GAMUT-cert | 100 | 0.745 | 0.096 | 0.0 | 1.47 | 100 | 0.968 | 0.028 | 0.1 | 1.62 |
+| strict-split GAMUT | 100 | 0.745 | 0.096 | 0.0 | 1.47 | 100 | 0.968 | 0.028 | 0.1 | 1.62 |
 | True-class Mondrian (reference) | 85 | 0.633 | 0.008 | 1.6 | 1.00 | 90 | 0.926 | 0.004 | 0.2 | 1.02 |
 
 **Strict train/calibration/test split** (ZTF, five origins). Valid = % of origins with no class significantly
