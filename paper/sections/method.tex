@@ -1,6 +1,13 @@
 \section{\gamut}
 \label{sec:method}
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/GAMUT_framework_figure_detailed.pdf}
+\caption{Overview of \gamut. (A) An observed prefix $x_0$ is mapped to a classifier posterior over latent transient classes; calibration retains all class hypotheses. (B) C1 queries a shared quantile forecaster under each class and estimates class--lead-bin residual laws; C2 temperature-scales the membership posterior; C3 calibrates a dual-weighted level set with per-class conformal risk-control thresholds in merged horizon cells. (C) The band $C(x)$ is evaluated by class and horizon. Cross-fitted \gamut{} is the default empirical protocol; the dashed strict-split lane is the same method with nuisance fits on A and thresholds on B, yielding a certificate only for eligible cells. Insets are repository-generated ZTF-BTS results.}
+\label{fig:gamut-overview}
+\end{figure*}
+
 \subsection{The band we want}
 Among all bands that cover every class in every horizon bin, which is the shortest?
 Forecasts are heteroscedastic, so we measure length in units of the forecast's own scale through a weight $\omega(x)>0$ (below, $\omega=1/\bar\sigma$).
