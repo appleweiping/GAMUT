@@ -51,7 +51,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--bench", required=True); ap.add_argument("--h", type=float, required=True)
     ap.add_argument("--alpha", type=float, nargs="+", default=[0.32, 0.05])
-    ap.add_argument("--variants", default=None, help="JSON dict name -> prism_dual kwargs (default: GRID)")
+    ap.add_argument("--variants", default=None, help="JSON dict name -> GAMUT kwargs (default: GRID)")
     a = ap.parse_args()
     task = data.load(a.bench, a.h)
     variants = json.loads(a.variants) if a.variants else GRID
