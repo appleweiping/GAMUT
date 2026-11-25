@@ -113,4 +113,4 @@ def gamut_q(task, cal, test, alpha, crc=False, n_iter=100, min_bin=150, bw_mult=
     return cov, lo, hi, length
 
 
-VARIANTS = {"central-interval ablation": gamut_q}
+VARIANTS = {"GAMUT-Q": gamut_q}
