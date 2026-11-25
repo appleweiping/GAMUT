@@ -3,8 +3,8 @@
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/GAMUT_framework_figure_detailed.pdf}
-\caption{Overview of \gamut. (A) An observed prefix $x_0$ is mapped to a classifier posterior over latent transient classes; calibration retains all class hypotheses. (B) C1 queries a shared quantile forecaster under each class and estimates class--lead-bin residual laws; C2 temperature-scales the membership posterior; C3 calibrates a dual-weighted level set with per-class conformal risk-control thresholds in merged horizon cells. (C) The band $C(x)$ is evaluated by class and horizon. Cross-fitted \gamut{} is the default empirical protocol; the dashed strict-split lane is the same method with nuisance fits on A and thresholds on B, yielding a certificate only for eligible cells. Insets use repository-derived ZTF-BTS results.}
+\includegraphics[width=\textwidth]{figures/GAMUT_framework_figure_gemini.png}
+\caption{Overview of \gamut{} and its failure mode under type uncertainty. The upper row is a schematic diagnosis: early class errors, conservative buffers, and uncalibrated posteriors can produce loose or miscalibrated forecast bands. The lower row shows the single GAMUT framework: multi-hypothesis inputs, hypothesis-conditional forecasting with temperature-scaled membership, and dual-weighted conformal calibration. The strict-split variant uses this same framework under disjoint fitting and certification subsets. The small curves and icons are schematic; quantitative results are reported in the repository-derived ZTF-BTS figures.}
 \label{fig:gamut-overview}
 \end{figure*}
 
