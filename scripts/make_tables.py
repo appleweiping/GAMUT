@@ -16,8 +16,8 @@ RES = ROOT / "results"; PAPER = ROOT / "paper"
 
 MAIN = ["ztf", "plasticc_train", "plasticc_ddf", "ucr_starlightcurves", "ucr_ecg5000", "ucr_electricdevices"]
 APPX = ["ucr_wafer"]
-HELD = ["plasticc_wfd"]          # pre-registered held-out set (review round 4); never used for design
-HELD2 = ["plasticc_wfd03"]       # second held-out set (registered for the interval-score ablation); also a second confirmation of GAMUT
+HELD = ["plasticc_wfd"]          # pre-registered held-out set; never used for design
+HELD2 = ["plasticc_wfd03"]       # second held-out confirmation set; evaluated once with frozen code
 SYN = ["synthetic_k1", "synthetic_k0.5", "synthetic_k2"]
 BNAME = {"ztf": "ZTF-BTS", "plasticc_train": "PLAsTiCC-train", "plasticc_ddf": "PLAsTiCC-DDF",
          "ucr_starlightcurves": "StarLight", "ucr_ecg5000": "ECG5000", "ucr_electricdevices": "ElecDevices",
@@ -39,10 +39,10 @@ ABL = [("GAMUT", "\\gamut{} (full)"), ("GAMUT w/o C1 (pooled forecaster)", "w/o 
        ("GAMUT w/o C2-calibration (raw posterior)", "w/o C2 calibration (raw $\\tilde p$)"),
        ("GAMUT w/o C3-dual (posterior mixture)", "w/o C3: posterior mixture"),
        ("GAMUT w/o C3-dual (prior-ratio weights)", "w/o C3: prior-ratio weights")]
-EXTRA = [("GAMUT-cert (split certificate)", "\\gamut-cert (split certificate)"), ("GAMUT (point-level unit)", "\\gamut{} (point-level unit)"),
+EXTRA = [("GAMUT-cert (split certificate)", "\\gamut{} (strict split; certificate)"), ("GAMUT (point-level unit)", "\\gamut{} (point-level unit)"),
          ("GAMUT-union (early design)", "Union of class bands (early design)")]
 TOL = {0.32: 0.02, 0.05: 0.015}
-BASE_NAMES = [("GAMUT", "\\gamut"), ("GAMUT-cert (split certificate)", "\\gamut-cert"), ("Oracle-true-class", "Oracle (true class)"),
+BASE_NAMES = [("GAMUT", "\\gamut"), ("GAMUT-cert (split certificate)", "\\gamut{} (strict split)"), ("Oracle-true-class", "Oracle (true class)"),
               ("TwoStepCP", "Two-step CP"), ("MaxClassCP", "Max-class CP"), ("SplitCP", "Split CP"), ("FLARE", "FLARE")]
 LEVELS = (0.32, 0.05)
 
@@ -101,7 +101,7 @@ def f2(x):
 
 def main_table(R):
     rows = []
-    for key, disp, fam in BASE + [(OURS[0], OURS[1], "ours"), ("GAMUT-cert (split certificate)", "\\gamut-cert (split certificate)", "ours2"),
+    for key, disp, fam in BASE + [(OURS[0], OURS[1], "ours"), ("GAMUT-cert (split certificate)", "\\gamut{} (strict split; certificate)", "ours2"),
                                   (ORACLE[0], ORACLE[1], "oracle")]:
         cells = []
         for a in LEVELS:
@@ -714,7 +714,7 @@ def diag_macros(R, M):
         h = float(f.stem.split("_a")[0][1:]); a = float(f.stem.split("_a")[1])
         sources.append((("ztf (strict split)", h, a), json.loads(f.read_text())))
     for (b, h, a), res in sorted(sources, key=lambda x: (str(x[0][0]), x[0][1], x[0][2])):
-        for k, disp in (("GAMUT", "\\gamut"), ("GAMUT-cert (split certificate)", "cert")):
+        for k, disp in (("GAMUT", "\\gamut"), ("GAMUT-cert (split certificate)", "strict split")):
             if k not in res or not res[k].get("diag"):
                 continue
             D = res[k]["diag"]
@@ -891,7 +891,7 @@ def plan_table(M):
         ("C5 robustness", "Coverage under degraded posteriors, prior shift, small calibration sets",
          "Partly run: posterior temperature distortion (synthetic $\\kappa$) only. Label-noise posteriors, calibration subsampling and the train$\\to$DDF prior shift (block B6) were not run; the strict split and the held-out set were added instead"),
         ("B1 paired IS test", "Paired object-level bootstrap of class-averaged IS vs the best valid baseline",
-         f"Run after review (\\texttt{{scripts/is\\_bootstrap.py}}): significantly better in {g('ISBetterSixtyeight')}/{g('ISBetterNinetyfive')}, worse in {g('ISWorseSixtyeight')}/{g('ISWorseNinetyfive')}"),
+         f"Registered paired object-level bootstrap (\\texttt{{scripts/is\\_bootstrap.py}}): significantly better in {g('ISBetterSixtyeight')}/{g('ISBetterNinetyfive')}, worse in {g('ISWorseSixtyeight')}/{g('ISWorseNinetyfive')}"),
         ("B4 grid", "Bandwidth $\\times\\{0.5,1,2\\}$ and other hyperparameters on validation folds",
          "Run with bandwidth $\\times\\{1,2,4\\}$ (the default moved to $\\times2$), plus dual iterations and fixed lead bins; the other registered values as planned"),
         ("central-interval ablation (not adopted)", "Valid at every origin and level of PLAsTiCC chunk 03 and lower class-averaged IS than every valid baseline in most settings",
@@ -909,7 +909,7 @@ def plan_table(M):
 def held_table(R, M):
     """Pre-registered held-out benchmark (PLAsTiCC-WFD, test chunk 02): the summary of tab:main for that benchmark alone."""
     rows = []
-    for key, disp, fam in BASE + [(OURS[0], OURS[1], "ours"), ("GAMUT-cert (split certificate)", "\\gamut-cert (split certificate)", "ours2"),
+    for key, disp, fam in BASE + [(OURS[0], OURS[1], "ours"), ("GAMUT-cert (split certificate)", "\\gamut{} (strict split; certificate)", "ours2"),
                                   (ORACLE[0], ORACLE[1], "oracle")]:
         cells = []
         for a in LEVELS:
@@ -948,9 +948,9 @@ def held_table(R, M):
 
 
 def held2_table(R, M):
-    """Pre-registered held-out benchmark (PLAsTiCC-WFD, test chunk 02): the summary of tab:main for that benchmark alone."""
+    """Second pre-registered held-out confirmation (PLAsTiCC-WFD, test chunk 03): the summary of tab:main for that benchmark alone."""
     rows = []
-    for key, disp, fam in BASE + [(OURS[0], OURS[1], "ours"), ("GAMUT-Q", "\central-interval ablation", "q"), ("GAMUT-cert (split certificate)", "\\gamut-cert (split certificate)", "ours2"),
+    for key, disp, fam in BASE + [(OURS[0], OURS[1], "ours"), ("GAMUT-Q", "\central-interval ablation", "q"), ("GAMUT-cert (split certificate)", "\\gamut{} (strict split; certificate)", "ours2"),
                                   (ORACLE[0], ORACLE[1], "oracle")]:
         cells = []
         for a in LEVELS:
@@ -963,7 +963,7 @@ def held2_table(R, M):
             rows.append("\\midrule")
     n = agg(R, HELD2, "GAMUT", 0.32)
     tex = ("\\begin{table}[H]\n\\centering\n\\caption{Pre-registered held-out benchmark: wide-fast-deep objects of PLAsTiCC test chunk 03, "
-           "registered for the interval-score variant and evaluated once with frozen code (" + str(n["n"] if n else 0) + " origins per level). Columns as in \\cref{tab:main}.}\n"
+           "evaluated once with frozen code (" + str(n["n"] if n else 0) + " origins per level). Columns as in \\cref{tab:main}.}\n"
            "\\label{tab:held2}\n\\scriptsize\n\\resizebox{\\textwidth}{!}{%\n\\begin{tabular}{lccccc@{\\hspace{8pt}}ccccc}\n\\toprule\n"
            " & \\multicolumn{5}{c}{68\\% bands} & \\multicolumn{5}{c}{95\\% bands} \\\\\n\\cmidrule(lr){2-6} \\cmidrule(lr){7-11}\n"
            "Method & Valid & Worst & CCG & Cells & Width & Valid & Worst & CCG & Cells & Width \\\\\n\\midrule\n"
@@ -988,7 +988,7 @@ def held2_table(R, M):
 
 
 def extra_macros(R, M):
-    """Macros added after review round 3 (guarantee-matched widths, tolerance validity, ablation details)."""
+    """Additional registered diagnostics (guarantee-matched widths, tolerance validity, ablation details)."""
     tol = lambda key, a: np.mean([R[(b, h, a)][key]["worst_class"] >= 1 - a - TOL[a] for b, h in settings(R, MAIN, a, need=(key,))])
     M["MainValidTolGamutSixtyeight"] = f"{100 * tol('GAMUT', 0.32):.0f}\\%"
     M["MainValidTolGamutNinetyfive"] = f"{100 * tol('GAMUT', 0.05):.0f}\\%"
@@ -1053,7 +1053,7 @@ def extra_macros(R, M):
         M["DualItersCapSmall"] = f"{100 * np.mean(np.array(it) >= 100):.0f}\\%"
     # validity under both rules, all methods (appendix)
     lines = []
-    for key, disp, _ in BASE + [(OURS[0], OURS[1], ""), ("GAMUT-cert (split certificate)", "\\gamut-cert", ""), (ORACLE[0], ORACLE[1], "")]:
+    for key, disp, _ in BASE + [(OURS[0], OURS[1], ""), ("GAMUT-cert (split certificate)", "\\gamut{} (strict split)", ""), (ORACLE[0], ORACLE[1], "")]:
         cells_ = []
         for a in LEVELS:
             g = agg(R, MAIN, key, a)
