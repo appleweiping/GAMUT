@@ -17,7 +17,7 @@ C4 theory & Synthetic: observed gap matches Prop.~1; \gamut{} near the oracle le
 C5 robustness & Coverage under degraded posteriors, prior shift, small calibration sets & Partly run: posterior temperature distortion (synthetic $\kappa$) only. Label-noise posteriors, calibration subsampling and the train$\to$DDF prior shift (block B6) were not run; the strict split and the held-out set were added instead \\
 B1 paired IS test & Paired object-level bootstrap of class-averaged IS vs the best valid baseline & Run after review (\texttt{scripts/is\_bootstrap.py}): significantly better in 3/20/5/20, worse in 13/20/14/20 \\
 B4 grid & Bandwidth $\times\{0.5,1,2\}$ and other hyperparameters on validation folds & Run with bandwidth $\times\{1,2,4\}$ (the default moved to $\times2$), plus dual iterations and fixed lead bins; the other registered values as planned \\
-GAMUT-Q (registered after review) & Valid at every origin and level of PLAsTiCC chunk 03 and lower class-averaged IS than every valid baseline in most settings & Not met: valid in 100\% and 33\% of the chunk-03 settings, IS better/worse in 3/0 and 1/2; not adopted \\
+central-interval ablation (not adopted) & Valid at every origin and level of PLAsTiCC chunk 03 and lower class-averaged IS than every valid baseline in most settings & Not met: valid in 100\% and 33\% of the chunk-03 settings, IS better/worse in 3/0 and 1/2; not adopted \\
 B0, B2, B3, B5, B7, B8 & Observation, ablations, synthetic, per-horizon curves, runtime, closure probability & Run as registered (B8 with its own registration, \cref{app:closure}) \\
 \bottomrule
 \end{longtable}}
