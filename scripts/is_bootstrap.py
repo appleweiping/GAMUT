@@ -1,5 +1,5 @@
 """Registered block B1: paired object-level bootstrap of the class-averaged interval score, GAMUT vs the best valid
-baseline of each setting (refine-logs/EXPERIMENT_PLAN.md).
+baseline of each setting (the preregistered experiment plan).
 
 For every main (benchmark, origin, level): the baselines valid under the bootstrap rule (results/bootstrap.json); the
 one with the lowest class-averaged interval score is the comparator. Objects are resampled within each class (1,000
