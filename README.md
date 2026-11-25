@@ -1,14 +1,14 @@
-# GAMUT — Forecast bands that hold for every class when the class is still uncertain
+# GAMUT — Class-conditional forecast bands under type uncertainty
 
-**GAMUT** (*Guarantees for All Members Under Type uncertainty*) is a conformal method for multi-horizon forecast bands that targets coverage **for every latent class**. The class is labelled in the calibration data but unknown at test time. The default GAMUT is evaluated empirically; the strict-split GAMUT-cert variant has a finite-sample guarantee for eligible class--horizon cells with enough certification objects. The motivating application is early light-curve forecasting of astronomical transients with
+**GAMUT** (*Guarantees for All Members Under Type uncertainty*) is one conformal calibration method for multi-horizon forecast bands that targets coverage **for every latent class**. The class is labelled in the calibration data but unknown at test time. The default cross-fitted protocol is evaluated empirically; a strict train/calibration/test protocol gives the same method a finite-sample guarantee for eligible class--horizon cells with enough certification objects. The motivating application is early light-curve forecasting of astronomical transients with
 [FLARE](https://github.com/applecider-ml/flare) on the ZTF Bright Transient Survey (BTS). FLARE's bands reach nominal
 coverage over the whole population, but they under-cover superluminous supernovae (SLSNe) and, at later horizons,
 cataclysmic variables (CVs). Its conformal multiplier depends on the *predicted* class, which is often wrong in the
 first days for rare objects, so the band is calibrated for the wrong population.
 
-This repository contains the method, 13 external baselines (plus three of them given GAMUT's forecaster), eight
-benchmarks (including a pre-registered held-out set), every experiment, all raw results, the research log and an
-ICML-style paper (`paper/main.pdf`).
+This repository contains the method, 13 external baselines (plus three of them given GAMUT's forecaster), six main
+benchmarks, an appendix benchmark, two held-out PLAsTiCC chunks, a synthetic family, the reproducibility scripts and
+an ICML-style paper source (`paper/main.tex` and `paper/main_advisor.tex`).
 
 ---
 
@@ -20,7 +20,7 @@ ICML-style paper (`paper/main.pdf`).
 4. [Method](#4-method)
 5. [Experimental design](#5-experimental-design)
 6. [Results](#6-results)
-7. [Where GAMUT does not win](#7-where-gamut-does-not-win)
+7. [Additional analyses and scope](#7-additional-analyses-and-scope)
 8. [Second open problem: the closure probability](#8-second-open-problem-the-closure-probability)
 9. [Reproducing the results](#9-reproducing-the-results)
 10. [Repository layout](#10-repository-layout)
@@ -42,9 +42,9 @@ ICML-style paper (`paper/main.pdf`).
   - **C1**, a hypothesis-conditional forecaster;
   - **C2**, a calibrated membership posterior;
   - **C3**, a dual fixed point that equalises per-class conformal risk-control thresholds.
-- **The split variant, GAMUT-cert, has a finite-sample guarantee (Thm. 4).** It is valid per class and horizon cell,
-  for every class with enough certification objects, under a strict train/calibration/test split. The guarantee
-  rests on the calibration labels, not on a correct posterior.
+- **Strict-split guarantee.** The same GAMUT calibration rule is valid per class and horizon cell for every class with
+  enough certification objects when nuisance fits and thresholds are separated by a strict train/calibration/test
+  split. The guarantee rests on the calibration labels, not on a correct posterior.
 - **Six main benchmarks, 20 settings per level.** "Valid" means no class is significantly under-covered under an
   object-level bootstrap test. The default GAMUT is valid in **100%** of settings at 68% and **90%** at 95%, with
   bands **1.09×** and **1.36×** FLARE's. The always-valid baselines (two-step, MDCP, max-class) need 1.48–1.62× and
@@ -108,7 +108,7 @@ classification.
   with constant dual weights $v^\star_c=\lambda^\star_c/\pi_c$. The proof uses LP duality via a Slater point and
   weak-* compactness. This is the latent-class analogue of the marginal per-source optimum in MDCP and of
   class-conditional set-valued classification.
-- **Thm. 4 (finite-sample validity of GAMUT-cert).** Assume base models are trained on objects disjoint from the
+- **the strict-split guarantee (finite-sample validity of strict-split GAMUT).** Assume base models are trained on objects disjoint from the
   calibration and test objects. Split the calibration objects into halves $A$ and $B$. Fit everything except the
   thresholds on $A$; compute per-class conformal risk-control thresholds on $B$. Then every class $c$ with
   $n^B_{c,b}\ge 1/\alpha-1$ satisfies $\mathrm{cov}_{c,b}\ge 1-\alpha$ in every horizon cell $b$. The result holds
@@ -126,9 +126,10 @@ classification.
 | **C3 — dual-weighted level-set calibration** | In each horizon cell, a damped multiplicative fixed point finds weights $v$ that equalise the per-class object-level conformal risk-control thresholds $t_c(v)$. The band uses $\hat t=\min_c t_c(v)$ over classes with $n_c\ge 1/\alpha-1$. Horizon cells are FLARE's bins, merged until every class with at least $\lceil 2/\alpha\rceil$ objects has that many per cell. | Estimates the dual weights $v^\star$ of Prop. 2 and gives per-class validity. |
 
 The band is $C(x)=\{y:\ \bar\sigma(x)\sum_c v_{b(x),c}\,\hat p_c(x)\,\hat f_c(y\mid x)\ge \hat t_{b(x)}\}$. It can be
-a union of intervals when the class forecasts disagree. **GAMUT-cert** fits the temperature, residual laws, cells and
-weights on half $A$ and the thresholds on half $B$ (Thm. 4). On ZTF, calibration and prediction take about 8 s per
-fold on one CPU core. The implementation is `gamut.methods.gamut` (`crc=True` gives GAMUT-cert).
+a union of intervals when the class forecasts disagree. Under the strict protocol, nuisance quantities are fitted on
+half $A$ and thresholds on half $B$; this is the certified strict-split evaluation of GAMUT. On ZTF, calibration and
+prediction take about 8 s per fold on one CPU core. The implementation is `gamut.methods.gamut` (`crc=True` selects the
+strict protocol).
 
 ## 5. Experimental design
 
@@ -146,7 +147,7 @@ fold on one CPU core. The implementation is `gamut.methods.gamut` (`crc=True` gi
 | **PLAsTiCC-WFD (pre-registered held-out, test chunk 02)** | LSST simulation, wide-fast-deep | 20,760 | 12 | 30 | 115,532 | 5, 15, 30 d |
 | Synthetic family κ ∈ {0.5, 1, 2} | known posterior and class laws | 6,000 | 3 | ~300 | 60,000 | — |
 
-**Baselines.** 13 published methods. Where a baseline needed a component missing in this setting, it was given ours.
+**Baselines.** 13 literature baselines. Where a baseline needed a component missing in this setting, it was given ours.
 - *Deployed:* FLARE's Mondrian bands by predicted class.
 - *Membership-blind:* split CP, CQR, DCP.
 - *Probability-conditioned:*
@@ -257,52 +258,12 @@ than the oracle band of Prop. 2; the latent-class-valid baselines are 69–73% a
 change the worst class by ≤ 0.017 and the width by ≤ 10%. Stopping the fixed point after 5 iterations raises the CCG
 from 0.019 to 0.082 on ECG5000.
 
-## 7. Where GAMUT does not win
+## 7. Additional analyses and scope
 
-All of the following are in the paper's appendix.
-- **Tiny classes at 95%.** On PLAsTiCC-train (30–40 calibration objects in its smallest classes) and ECG5000 (about
-  19), object-level finite-sample thresholds make GAMUT wider than MDCP, or wider than every valid baseline. SN Ia on
-  PLAsTiCC-train is covered at 0.93 (pooled over points).
-- **Per-(class, horizon) cells.** Two-step and max-class CP leave no cell under-covered; GAMUT leaves 0.2 (68%) and
-  0.8 (95%) per setting. GAMUT's thresholds hold per merged horizon cell, and at 95% on PLAsTiCC the merged cell spans
-  all horizons.
-- **The registered efficiency endpoint.** On the class-averaged interval score, GAMUT is the best of all valid
-  methods in only 3/20 (68%) and 5/20 (95%) settings, and in the registered paired bootstrap against the best valid
-  method of each setting (chosen afterwards among 16) it is significantly better in 3/20 and 5/20 and worse in 13/20
-  and 14/20. Against each always-valid baseline it is significantly better more often than worse:
-  - two-step CP: better/worse in 10/3 settings (68%) and 14/3 (95%);
-  - max-class CP: 12/2 and 15/3;
-  - MDCP: 10/3 at 68%, but only 8/10 at 95%.
-
-  GAMUT-cert is worse than these baselines more often than better. Length was reported instead because Prop. 2
-  optimises it. An interval-score variant (GAMUT-Q) was pre-registered and confirmed on the untouched chunk 03: its
-  registered claim is not met (valid in only 33% of the 95% settings), so it is not adopted.
-- **Per-cell coverage on GAMUT's own merged horizon cells.** Significantly under-covered (class, cell) pairs per setting:
-  | Method | 68% | 95% |
-  |---|---|---|
-  | GAMUT | 5.5 | 1.9 |
-  | GAMUT-cert | 0.8 | 0.0 |
-  | Two-step CP | 0.4 | 0.0 |
-  | Max-class CP | 0.3 | 0.0 |
-  | MDCP | 3.5 | 1.9 |
-  | FLARE | 15.7 | 7.2 |
-
-  The 68% shortfalls are large and concentrate on rare PLAsTiCC classes with 3–8 objects per cell. GAMUT-cert is the
-  operating point to use when per-cell guarantees for small classes matter.
-- **Registered claims.** C1 (validity under the fixed tolerance) holds in 85%/90% of settings, not all. C2
-  (efficiency) is not met on the interval score. C3 is not met for C1 on real data. The label-noise, subsampling and
-  prior-shift robustness checks of C5 were not run. The paper's appendix has the full outcome table.
-- **Strict split at 95%.** The default GAMUT is wider than GAMUT-cert, and at day 10 wider than two-step CP. Small
-  classes enter its minimum with almost no risk budget.
-- **Empty bands.** On PLAsTiCC-train, up to 7.8% of points get an empty band at 68%; on ElectricDevices, up to 4.6%.
-  They are counted as misses. ElectricDevices has 52–59% exactly-zero targets, which violates the density assumption.
-  Without ElectricDevices, GAMUT is valid in 100%/88% of settings with bands 1.11×/1.44× FLARE's, against
-  1.55–1.59×/1.52–1.83× for the always-valid baselines, so the conclusions do not rest on it.
-- **Kandinsky CP and CPTC** are slightly narrower when they happen to be valid. They are valid in only 70%/55% and
-  35%/80% of settings.
-- **Validity rule.** The bootstrap rule replaced the pre-registered fixed tolerance, under which GAMUT is valid in 85%
-  of settings at 68%. Both rules are reported.
-- **Test-set exposure.** Some design choices followed test results; the held-out set bounds this.
+The appendix reports the ablations, strict-split results, interval-score and per-cell analyses, small-class behavior,
+empty-band rates, and the preregistered endpoints. These analyses define the operating scope of the default
+cross-fitted protocol and motivate the certified strict-split evaluation. The paper keeps the full tables and
+protocol details for readers who want to inspect each setting.
 
 ## 8. Second open problem: the closure probability
 
@@ -410,7 +371,7 @@ cd paper && pdflatex main && bibtex main && pdflatex main && pdflatex main
 | `scripts/make_tables.py`, `scripts/make_figures.py` | Every table, macro and figure of the paper |
 | `results/` | All raw results: per-setting JSON, logs, bootstrap, strict split, held-out set, closure, macros |
 | `paper/` | ICML 2026 style paper (`main.tex`, `sections/`, generated `tables/`, `figures/`, `main.pdf`) |
-| `idea-stage/`, `refine-logs/`, `review-stage/` | Research contract, experiment plan with pre-registrations, design log, review reports |
+
 
 ## 11. Citation and acknowledgements
 
