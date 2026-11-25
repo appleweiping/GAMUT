@@ -1,6 +1,6 @@
 """Closure probability: P(the deployed 90% prediction set becomes a singleton after one more observation).
 
-Pre-registered in refine-logs/EXPERIMENT_PLAN.md ("Closure probability"). FLARE's deployed day-5/10 classifiers were
+Pre-registered in the preregistered experiment plan ("Closure probability"). FLARE's deployed day-5/10 classifiers were
 trained on FLARE's `train` split; objects of `val` (calibration of our scores) and `test` (evaluation) are used here.
 
 For each object and band b in {g, r} with a real next detection in band b within (h, h + 2] days:
