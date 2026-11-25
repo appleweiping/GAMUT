@@ -32,7 +32,7 @@ plasticc_train h=15 alpha=0.32: GAMUT-cert (split certificate)     marg 0.872 wo
       per class uLens:0.83 TDE:0.90 EB:0.91 SNII:0.87 SNIax:0.88 SNIbc:0.90 SNIa91bg:0.93 AGN:0.82 SNIa:0.87 RRL:0.91 SLSN:0.88
 plasticc_train h=15 alpha=0.32: GCC-prob                           marg 0.679 worst 0.413 ccg 0.078 width 1.549 IS 2.506 cls-IS 3.280 miscls 0.637 (80.2s)
       per class uLens:0.41 TDE:0.66 EB:0.79 SNII:0.67 SNIax:0.72 SNIbc:0.67 SNIa91bg:0.60 AGN:0.73 SNIa:0.70 RRL:0.62 SLSN:0.47
-/tmp/claude-0/-home-user/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/linear_model/_quantile.py:274: ConvergenceWarning: Linear programming for QuantileRegressor did not succeed.
+/tmp/runner/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/linear_model/_quantile.py:274: ConvergenceWarning: Linear programming for QuantileRegressor did not succeed.
 Status is 4: Numerical difficulties encountered.
 Result message of linprog:
 (HiGHS Status 0: Not Set)
@@ -51,9 +51,9 @@ Traceback (most recent call last):
     beta = _qr(PhiB, r_pooled(task, calB), 1 - alpha, max_n=15000, seed=seed)
   File "/home/user/PRISM/gamut/methods.py", line 207, in _qr
     m = QuantileRegressor(quantile=level, alpha=0.0, fit_intercept=False, solver="highs").fit(Phi, s)
-  File "/tmp/claude-0/-home-user/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/base.py", line 1403, in wrapper
+  File "/tmp/runner/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/base.py", line 1403, in wrapper
     return fit_method(estimator, *args, **kwargs)
-  File "/tmp/claude-0/-home-user/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/linear_model/_quantile.py", line 286, in fit
+  File "/tmp/runner/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/linear_model/_quantile.py", line 286, in fit
     params = solution[:n_params] - solution[n_params : 2 * n_params]
              ~~~~~~~~^^^^^^^^^^^
 TypeError: 'NoneType' object is not subscriptable
@@ -121,12 +121,12 @@ plasticc_train h=15 alpha=0.32: GAMUT-cert (split certificate)     marg 0.840 wo
       per class uLens:0.76 TDE:0.86 EB:0.84 SNII:0.83 SNIax:0.89 SNIbc:0.87 SNIa91bg:0.90 AGN:0.83 SNIa:0.84 RRL:0.86 SLSN:0.81
 plasticc_train h=15 alpha=0.32: GCC-prob                           marg 0.679 worst 0.413 ccg 0.078 width 1.549 IS 2.506 cls-IS 3.280 miscls 0.637 (66.8s)
       per class uLens:0.41 TDE:0.66 EB:0.79 SNII:0.67 SNIax:0.72 SNIbc:0.67 SNIa91bg:0.60 AGN:0.73 SNIa:0.70 RRL:0.62 SLSN:0.47
-/tmp/claude-0/-home-user/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/linear_model/_quantile.py:274: ConvergenceWarning: Linear programming for QuantileRegressor did not succeed.
+/tmp/runner/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/linear_model/_quantile.py:274: ConvergenceWarning: Linear programming for QuantileRegressor did not succeed.
 Status is 4: Numerical difficulties encountered.
 Result message of linprog:
 (HiGHS Status 0: Not Set)
   warnings.warn(
-/tmp/claude-0/-home-user/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/linear_model/_quantile.py:274: ConvergenceWarning: Linear programming for QuantileRegressor did not succeed.
+/tmp/runner/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/linear_model/_quantile.py:274: ConvergenceWarning: Linear programming for QuantileRegressor did not succeed.
 Status is 4: Numerical difficulties encountered.
 Result message of linprog:
 (HiGHS Status 0: Not Set)
@@ -229,12 +229,12 @@ plasticc_train h=15 alpha=0.32: GAMUT w/o scale normalization (absolute length) 
       per class uLens:0.64 TDE:0.68 EB:0.67 SNII:0.66 SNIax:0.70 SNIbc:0.69 SNIa91bg:0.75 AGN:0.68 SNIa:0.67 RRL:0.67 SLSN:0.69
 plasticc_train h=15 alpha=0.32: GAMUT-cert (split certificate)     marg 0.840 worst 0.761 ccg 0.165 width 3.203 IS 3.636 cls-IS 4.396 miscls 0.841 (10.3s)
       per class uLens:0.76 TDE:0.86 EB:0.84 SNII:0.83 SNIax:0.89 SNIbc:0.87 SNIa91bg:0.90 AGN:0.83 SNIa:0.84 RRL:0.86 SLSN:0.81
-/tmp/claude-0/-home-user/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/linear_model/_quantile.py:274: ConvergenceWarning: Linear programming for QuantileRegressor did not succeed.
+/tmp/runner/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/linear_model/_quantile.py:274: ConvergenceWarning: Linear programming for QuantileRegressor did not succeed.
 Status is 4: Numerical difficulties encountered.
 Result message of linprog:
 (HiGHS Status 0: Not Set)
   warnings.warn(
-/tmp/claude-0/-home-user/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/linear_model/_quantile.py:274: ConvergenceWarning: Linear programming for QuantileRegressor did not succeed.
+/tmp/runner/b7a3bffa-f6b0-5070-bc7a-5d265c2a384b/scratchpad/venv/lib/python3.13/site-packages/sklearn/linear_model/_quantile.py:274: ConvergenceWarning: Linear programming for QuantileRegressor did not succeed.
 Status is 4: Numerical difficulties encountered.
 Result message of linprog:
 (HiGHS Status 0: Not Set)
