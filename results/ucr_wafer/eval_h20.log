@@ -36,7 +36,7 @@ ucr_wafer h=20 alpha=0.32: GCC-prob                           marg 0.681 worst 0
       per class class_-1:0.68 class_1:0.68
 ucr_wafer h=20 alpha=0.32: KandinskyCP                        marg 0.677 worst 0.676 ccg 0.003 width 0.156 IS 0.440 cls-IS 0.591 miscls 0.468 (60.9s)
       per class class_-1:0.68 class_1:0.68
-/home/user/PRISM/gamut/methods.py:193: RuntimeWarning: invalid value encountered in divide
+/workspace/GAMUT/gamut/methods.py:193: RuntimeWarning: invalid value encountered in divide
   cs = np.cumsum(Wp, axis=1) / (Wp.sum(1, keepdims=True) + W.max(1, keepdims=True))       # test mass = max kernel
 ucr_wafer h=20 alpha=0.32: LocalizedCP                        marg 0.676 worst 0.662 ccg 0.010 width 0.177 IS 0.458 cls-IS 0.644 miscls 0.119 (29.6s)
       per class class_-1:0.66 class_1:0.68
@@ -92,7 +92,7 @@ ucr_wafer h=20 alpha=0.05: GCC-prob                           marg 0.951 worst 0
       per class class_-1:0.95 class_1:0.95
 ucr_wafer h=20 alpha=0.05: KandinskyCP                        marg 0.949 worst 0.948 ccg 0.002 width 0.556 IS 1.080 cls-IS 1.508 miscls 0.856 (44.5s)
       per class class_-1:0.95 class_1:0.95
-/home/user/PRISM/gamut/methods.py:193: RuntimeWarning: invalid value encountered in divide
+/workspace/GAMUT/gamut/methods.py:193: RuntimeWarning: invalid value encountered in divide
   cs = np.cumsum(Wp, axis=1) / (Wp.sum(1, keepdims=True) + W.max(1, keepdims=True))       # test mass = max kernel
 ucr_wafer h=20 alpha=0.05: LocalizedCP                        marg 0.902 worst 0.768 ccg 0.107 width 0.503 IS 1.455 cls-IS 2.492 miscls 0.000 (27.5s)
       per class class_-1:0.77 class_1:0.92
