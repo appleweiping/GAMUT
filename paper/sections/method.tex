@@ -1,6 +1,13 @@
 \section{\gamut}
 \label{sec:method}
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/GAMUT_framework_figure_gemini.png}
+\caption{Overview of \gamut{} and its failure mode under type uncertainty. The upper row is a schematic diagnosis: early class errors, conservative buffers, and uncalibrated posteriors can produce loose or miscalibrated forecast bands. The lower row shows the single \gamut{} framework: multi-hypothesis inputs, hypothesis-conditional forecasting with temperature-scaled membership, and dual-weighted conformal calibration. The strict-split variant is the same GAMUT method under disjoint fitting and certification subsets. The small curves and icons are schematic; quantitative results are reported in the repository-derived ZTF-BTS figures.}
+\label{fig:gamut-overview}
+\end{figure*}
+
 \subsection{The band we want}
 Among all bands that cover every class in every horizon bin, which is the shortest?
 Forecasts are heteroscedastic, so we measure length in units of the forecast's own scale through a weight $\omega(x)>0$ (below, $\omega=1/\bar\sigma$).
