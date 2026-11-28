@@ -12,6 +12,10 @@
 \usepackage{hyperref}
 \newcommand{\theHalgorithm}{\arabic{algorithm}}
 \usepackage{icml2026}
+\hypersetup{
+  pdftitle={GAMUT: Class-Conditional Conformal Forecast Bands Under Latent Type Uncertainty},
+  pdfauthor={Anonymous Authors}
+}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -85,6 +89,9 @@
 
 \section*{Impact Statement}
 \input{sections/impact}
+
+\section*{Software and Data}
+Source code implementing \gamut{}, all thirteen external baselines, the benchmark builders, pre-registration checksums, and end-to-end reproduction scripts is included in the anonymous supplementary material. All empirical benchmarks draw on publicly available datasets: the Zwicky Transient Facility Bright Transient Survey \citep{bellm2019ztf,fremling2020bts,perley2020bts} via the published FLARE feature and model pipeline \citep{sasli2026flare,sasli2026forecast}, the unblinded LSST PLAsTiCC simulation \citep{kessler2019models,hlozek2023results}, and the UCR Time Series Archive \citep{dau2019ucr}.
 
 \bibliography{references}
 \bibliographystyle{icml2026}

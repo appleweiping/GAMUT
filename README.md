@@ -8,7 +8,7 @@ first days for rare objects, so the band is calibrated for the wrong population.
 
 This repository contains the method, 13 external baselines (plus three of them given GAMUT's forecaster), six main
 benchmarks, an appendix benchmark, two held-out PLAsTiCC chunks, a synthetic family, the reproducibility scripts and
-an ICML-style paper source (`paper/main.tex` and `paper/main_authors.tex`).
+both ICML-style manuscript versions: the double-blind submission (`paper/main.tex` / `paper/main.pdf`) and the full-information author preprint (`paper/main_authors.tex` / `paper/main_authors.pdf`).
 
 ---
 
@@ -335,9 +335,11 @@ bash scripts/heldout_wfd.sh
 python scripts/closure_c1.py --h 5 && python scripts/closure.py --h 5   # and --h 10
 python scripts/closure_eval.py
 
-# 5. every table, macro and figure of the paper, then the PDF
+# 5. every table, macro and figure of the paper, then both PDFs (double-blind + preprint)
 python scripts/make_tables.py && python scripts/make_figures.py
-cd paper && pdflatex main && bibtex main && pdflatex main && pdflatex main
+cd paper
+pdflatex main && bibtex main && pdflatex main && pdflatex main
+pdflatex main_authors && bibtex main_authors && pdflatex main_authors && pdflatex main_authors
 ```
 
 **Compute.** Everything was run on 4 CPU cores without a GPU:
@@ -370,17 +372,17 @@ cd paper && pdflatex main && bibtex main && pdflatex main && pdflatex main
 | `scripts/closure_c1.py`, `scripts/closure.py`, `scripts/closure_eval.py` | Closure-probability study |
 | `scripts/make_tables.py`, `scripts/make_figures.py` | Every table, macro and figure of the paper |
 | `results/` | All raw results: per-setting JSON, logs, bootstrap, strict split, held-out set, closure, macros |
-| `paper/` | ICML 2026 style paper (`main.tex`, `main_authors.tex`, `sections/`, generated `tables/`, `figures/`) |
+| `paper/` | ICML 2026 manuscripts: double-blind review (`main.tex`, `main.pdf`) and full-information preprint (`main_authors.tex`, `main_authors.pdf`), plus shared `sections/`, `tables/`, and `figures/` |
 
 
 ## 11. Citation and acknowledgements
 
 ```bibtex
-@misc{gamut2026,
-  title  = {Class-Conditional Forecast Bands Under Type Uncertainty},
-  author = {Yan, Weiping},
+@misc{yan2026gamut,
+  title  = {GAMUT: Class-Conditional Conformal Forecast Bands Under Latent Type Uncertainty},
+  author = {Yan, Weiping and Sasli, Argyro},
   year   = {2026},
-  note   = {Manuscript and code: https://github.com/appleweiping/GAMUT}
+  note   = {Preprint and code: https://github.com/appleweiping/GAMUT}
 }
 ```
 

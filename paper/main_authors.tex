@@ -11,7 +11,13 @@
 \usepackage{placeins}
 \usepackage{hyperref}
 \newcommand{\theHalgorithm}{\arabic{algorithm}}
+% Use \usepackage[accepted]{icml2026} for the camera-ready version.
 \usepackage[preprint]{icml2026}
+\hypersetup{
+  pdftitle={GAMUT: Class-Conditional Conformal Forecast Bands Under Latent Type Uncertainty},
+  pdfauthor={Weiping Yan, Argyro Sasli},
+  pdfsubject={Preprint}
+}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -69,8 +75,9 @@
     \icmlauthor{Weiping Yan}{umn}
     \icmlauthor{Argyro Sasli}{phys}
   \end{icmlauthorlist}
-  \icmlaffiliation{umn}{University of Minnesota}
-  \icmlaffiliation{phys}{School of Physics and Astronomy, University of Minnesota}
+  \icmlaffiliation{umn}{University of Minnesota, Minneapolis, MN, USA}
+  \icmlaffiliation{phys}{School of Physics and Astronomy, University of Minnesota, Minneapolis, MN, USA}
+  \icmlcorrespondingauthor{Weiping Yan}{yan00944@umn.edu}
   \icmlcorrespondingauthor{Argyro Sasli}{asasli@umn.edu}
   \icmlkeywords{conformal prediction, conditional coverage, latent class, forecasting, time-domain astronomy}
   \vskip 0.3in
@@ -87,6 +94,12 @@
 
 \section*{Impact Statement}
 \input{sections/impact}
+
+\section*{Software and Data}
+Source code implementing \gamut{}, all thirteen external baselines, the benchmark builders, pre-registration checksums, raw evaluation tables, and end-to-end reproduction scripts is publicly available at \url{https://github.com/appleweiping/GAMUT}. The ZTF Bright Transient Survey photometric classification and forecasting pipeline from FLARE \citep{sasli2026flare,sasli2026forecast} is available at \url{https://github.com/applecider-ml/flare}. The unblinded LSST PLAsTiCC dataset \citep{kessler2019models,hlozek2023results} is archived on Zenodo (\texttt{doi:10.5281/zenodo.2539456}), and the UCR Time Series Archive \citep{dau2019ucr} is publicly available from the UCR repository.
+
+\section*{Acknowledgements}
+We thank the FLARE team and the Zwicky Transient Facility (ZTF) Bright Transient Survey collaboration for making their transient photometry, spectroscopic classifications, feature pipelines, and baseline models available \citep{bellm2019ztf,fremling2020bts,perley2020bts,sasli2026flare,sasli2026forecast}. We also acknowledge the LSST Dark Energy Science Collaboration and the PLAsTiCC team for the public transient simulation archive \citep{kessler2019models,hlozek2023results}, and the maintainers of the UCR Time Series Archive \citep{dau2019ucr}.
 
 \bibliography{references}
 \bibliographystyle{icml2026}
